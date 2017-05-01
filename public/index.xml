@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Big Data Passion</title>
+    <link>http://bigdatapassion.pl/index.xml</link>
+    <description>Recent content on Big Data Passion</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Apr 2017 17:08:29 +0200</lastBuildDate>
+    <atom:link href="http://bigdatapassion.pl/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hbase Shell</title>
+      <link>http://bigdatapassion.pl/blog/hbase-shell/</link>
+      <pubDate>Fri, 07 Apr 2017 17:08:29 +0200</pubDate>
+      
+      <guid>http://bigdatapassion.pl/blog/hbase-shell/</guid>
+      <description>
+
+&lt;h1 id=&#34;podstawowy-hbase-shell&#34;&gt;Podstawowy HBase Shell&lt;/h1&gt;
+
+&lt;p&gt;Uruchomienie&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[sages@sandbox ~]$ hbase shell
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/hdp/2.4.0.0-169/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/hdp/2.4.0.0-169/zookeeper/lib/slf4j-log4j12-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+HBase Shell; enter &#39;help&amp;lt;RETURN&amp;gt;&#39; for list of supported commands.
+Type &amp;quot;exit&amp;lt;RETURN&amp;gt;&amp;quot; to leave the HBase Shell
+Version 1.1.2.2.4.0.0-169, r61dfb2b344f424a11f93b3f086eab815c1eb0b6a, Wed Feb 10 07:08:51 UTC 2016
+
+hbase(main):001:0&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pomoc dla Shell&amp;rsquo;a&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;hbase(main):053:0* help
+HBase Shell, version 1.1.2.2.4.0.0-169, r61dfb2b344f424a11f93b3f086eab815c1eb0b6a, Wed Feb 10 07:08:51 UTC 2016
+Type &#39;help &amp;quot;COMMAND&amp;quot;&#39;, (e.g. &#39;help &amp;quot;get&amp;quot;&#39; -- the quotes are necessary) for help on a specific command.
+Commands are grouped. Type &#39;help &amp;quot;COMMAND_GROUP&amp;quot;&#39;, (e.g. &#39;help &amp;quot;general&amp;quot;&#39;) for help on a command group.
+
+COMMAND GROUPS:
+  Group name: general
+  Commands: status, table_help, version, whoami
+
+  Group name: ddl
+  Commands: alter, alter_async, alter_status, create, describe, disable, disable_all, drop, drop_all, enable, enable_all, exists, get_table, is_disabled, is_enabled, list, show_filters
+
+  Group name: namespace
+  Commands: alter_namespace, create_namespace, describe_namespace, drop_namespace, list_namespace, list_namespace_tables
+
+  Group name: dml
+  Commands: append, count, delete, deleteall, get, get_counter, get_splits, incr, put, scan, truncate, truncate_preserve
+
+  Group name: tools
+  Commands: assign, balance_switch, balancer, balancer_enabled, catalogjanitor_enabled, catalogjanitor_run, catalogjanitor_switch, close_region, compact, compact_rs, flush, major_compact, merge_region, move, normalize, normalizer_enabled, normalizer_switch, split, trace, unassign, wal_roll, zk_dump
+
+  Group name: replication
+  Commands: add_peer, append_peer_tableCFs, disable_peer, disable_table_replication, enable_peer, enable_table_replication, list_peers, list_replicated_tables, remove_peer, remove_peer_tableCFs, set_peer_tableCFs, show_peer_tableCFs
+
+  Group name: snapshots
+  Commands: clone_snapshot, delete_all_snapshot, delete_snapshot, list_snapshots, restore_snapshot, snapshot, snapshot_all, snapshot_restore
+
+  Group name: configuration
+  Commands: update_all_config, update_config
+
+  Group name: quotas
+  Commands: list_quotas, set_quota
+
+  Group name: security
+  Commands: grant, revoke, user_permission
+
+  Group name: procedures
+  Commands: abort_procedure, list_procedures
+
+  Group name: visibility labels
+  Commands: add_labels, clear_auths, get_auths, list_labels, set_auths, set_visibility
+
+SHELL USAGE:
+Quote all names in HBase Shell such as table and column names.  Commas delimit
+command parameters.  Type &amp;lt;RETURN&amp;gt; after entering a command to run it.
+Dictionaries of configuration used in the creation and alteration of tables are
+Ruby Hashes. They look like this:
+
+  {&#39;key1&#39; =&amp;gt; &#39;value1&#39;, &#39;key2&#39; =&amp;gt; &#39;value2&#39;, ...}
+
+and are opened and closed with curley-braces.  Key/values are delimited by the
+&#39;=&amp;gt;&#39; character combination.  Usually keys are predefined constants such as
+NAME, VERSIONS, COMPRESSION, etc.  Constants do not need to be quoted.  Type
+&#39;Object.constants&#39; to see a (messy) list of all constants in the environment.
+
+If you are using binary keys or values and need to enter them in the shell, use
+double-quote&#39;d hexadecimal representation. For example:
+
+  hbase&amp;gt; get &#39;t1&#39;, &amp;quot;key\x03\x3f\xcd&amp;quot;
+  hbase&amp;gt; get &#39;t1&#39;, &amp;quot;key\003\023\011&amp;quot;
+  hbase&amp;gt; put &#39;t1&#39;, &amp;quot;test\xef\xff&amp;quot;, &#39;f1:&#39;, &amp;quot;\x01\x33\x40&amp;quot;
+
+The HBase shell is the (J)Ruby IRB with the above HBase-specific commands added.
+For more on the HBase Shell, see http://hbase.apache.org/book.html
+hbase(main):054:0&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;podstawowe-polecenia&#34;&gt;Podstawowe polecenia&lt;/h1&gt;
+
+&lt;p&gt;Sprawdzenie stanu bazy danych&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hbase(main):001:0&amp;gt; status
+
+ERROR: Can&#39;t get master address from ZooKeeper; znode data == null
+
+Here is some help for this command:
+Show cluster status. Can be &#39;summary&#39;, &#39;simple&#39;, &#39;detailed&#39;, or &#39;replication&#39;. The
+default is &#39;summary&#39;. Examples:
+
+  hbase&amp;gt; status
+  hbase&amp;gt; status &#39;simple&#39;
+  hbase&amp;gt; status &#39;summary&#39;
+  hbase&amp;gt; status &#39;detailed&#39;
+  hbase&amp;gt; status &#39;replication&#39;
+  hbase&amp;gt; status &#39;replication&#39;, &#39;source&#39;
+  hbase&amp;gt; status &#39;replication&#39;, &#39;sink&#39;
+
+
+hbase(main):002:0&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Jak widać status może być typu:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;simple&lt;/li&gt;
+&lt;li&gt;summary&lt;/li&gt;
+&lt;li&gt;detailed&lt;/li&gt;
+&lt;li&gt;replication&lt;/li&gt;
+&lt;li&gt;replication source&lt;/li&gt;
+&lt;li&gt;replication sink&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;W powyższym przykładzie widać, że baza nie jest uruchomiona (dokładnie rzecz biorąc ZooKeeper bez którego HBase nie potrafi działać)&lt;/p&gt;
+
+&lt;p&gt;Uruchomienie bazy (Sandbox Hortonworks)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;[root@sandbox ~]# /etc/init.d/hbase-starter start
+Starting HBase...
+Starting Postgre SQL                                      [  OK  ]
+Starting name node                                        [  OK  ]
+Starting zookeeper nodes                                  [  OK  ]
+Starting hbase master                                     [  OK  ]
+Starting hbase thrift                                     [  OK  ]
+Starting hbase stargate                                   [  OK  ]
+Starting hbase regionservers                              [  OK  ]
+[root@sandbox ~]# 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sprawdzenie stanu bazy po włączeniu&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;hbase(main):001:0&amp;gt; status
+1 servers, 0 dead, 280.0000 average load
+hbase(main):002:0&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sprawdzenie wersji na jakiej pracujemy&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;hbase(main):062:0&amp;gt; version
+1.1.2.2.4.0.0-169, r61dfb2b344f424a11f93b3f086eab815c1eb0b6a, Wed Feb 10 07:08:51 UTC 2016
+hbase(main):063:0&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sprawdzanie jakim jesteśmy użytkownikiem&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;hbase(main):025:0* whoami
+xrszmit (auth:SIMPLE)
+    groups: users, wheel
+
+hbase(main):026:0&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Informacja na temat używania zmiennych w Shell&amp;rsquo;u (dostępne od wersji 0.96+)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;hbase(main):058:0&amp;gt; table_help
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;zarządzanie-schematem-ddl&#34;&gt;Zarządzanie schematem (DDL)&lt;/h1&gt;
+
+&lt;p&gt;Tworzenie tabeli&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;hbase(main):036:0* create &#39;person&#39;, &#39;cf&#39;
+0 row(s) in 1.2750 seconds
+
+=&amp;gt; Hbase::Table - person
+hbase(main):037:0&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Stworzenie tabeli z jedną rodziną kolumn i liczbą wersji równą 5&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;hbase&amp;gt; create &#39;person&#39;, {NAME =&amp;gt; &#39;cf&#39;, VERSIONS =&amp;gt; 5}
+hbase&amp;gt; create &#39;t1&#39;, {NAME =&amp;gt; &#39;f1&#39;, VERSIONS =&amp;gt; 1, TTL =&amp;gt; 2592000, BLOCKCACHE =&amp;gt; true}
+hbase&amp;gt; create &#39;t1&#39;, {NAME =&amp;gt; &#39;f1&#39;, CONFIGURATION =&amp;gt; {&#39;hbase.hstore.blockingStoreFiles&#39; =&amp;gt; &#39;10&#39;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Stworzenie tabeli z kilkoma rodzinami&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;hbase&amp;gt; create &#39;t1&#39;, {NAME =&amp;gt; &#39;f1&#39;}, {NAME =&amp;gt; &#39;f2&#39;}, {NAME =&amp;gt; &#39;f3&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lista istniejących tabel&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;hbase(main):038:0* list
+person
+1 row(s) in 0.0290 seconds
+
+=&amp;gt; [&amp;quot;SYSTEM.CATALOG&amp;quot;, &amp;quot;SYSTEM.FUNCTION&amp;quot;, &amp;quot;SYSTEM.SEQUENCE&amp;quot;, &amp;quot;SYSTEM.STATS&amp;quot;, &amp;quot;ibm:ibmtable&amp;quot;, &amp;quot;iemployee&amp;quot;, &amp;quot;inventory&amp;quot;, &amp;quot;java&amp;quot;, &amp;quot;movies&amp;quot;, &amp;quot;movies_comedy&amp;quot;, &amp;quot;movies_data&amp;quot;, &amp;quot;nam1:tab5&amp;quot;, &amp;quot;person&amp;quot;, &amp;quot;product&amp;quot;, &amp;quot;ratings&amp;quot;, &amp;quot;ratings_average&amp;quot;, &amp;quot;sages:tabelkav2&amp;quot;, &amp;quot;tabelkav&amp;quot;, &amp;quot;tabv5&amp;quot;, &amp;quot;tags&amp;quot;, &amp;quot;test&amp;quot;, &amp;quot;test:tablename&amp;quot;, &amp;quot;users&amp;quot;]
+hbase(main):039:0&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Opis tabeli&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hbase(main):040:0* describe &#39;person&#39;
+Table person is ENABLED 
+person
+COLUMN FAMILIES DESCRIPTION
+{NAME =&amp;gt; &#39;cf&#39;, DATA_BLOCK_ENCODING =&amp;gt; &#39;NONE&#39;, BLOOMFILTER =&amp;gt; &#39;ROW&#39;, REPLICATION_SCOPE =&amp;gt; &#39;0&#39;, VERSIONS =&amp;gt; &#39;1&#39;, COMPRESSION =&amp;gt; &#39;NONE&#39;, MIN_VERSIONS =&amp;gt; &#39;0&#39;, TTL =&amp;gt; &#39;FOREVER&#39;, KEEP_DELETED_CELLS =&amp;gt; &#39;FALSE&#39;, BLOCKSIZE =&amp;gt; &#39;65536&#39;, IN_MEMORY =&amp;gt; &#39;false&#39;, BLOCKCACHE =&amp;gt; &#39;true&#39;} 
+1 row(s) in 0.0970 seconds
+hbase(main):041:0&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Shell zwraca informację że tabela jest aktywna (ENABLED) oraz zwraca listę rodzin kolumn wraz z ich parametrami, każda w oddzielnym nawiasie klamrowym {}&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;NAME - nazwa rodziny&lt;/li&gt;
+&lt;li&gt;DATA_BLOCK_ENCODING - algorytm enkodowania kluczy głównych, do wyboru [NONE, PREFIX, DIFF, FAST_DIFF, PREFIX_TREE]&lt;/li&gt;
+&lt;li&gt;BLOOMFILTER - Filtr Blooma [NONE, ROW (default), ROWCOL]&lt;/li&gt;
+&lt;li&gt;REPLICATION_SCOPE - Mechanizm replikacji pomiędzy dwoma klastrami HBase zwiększające HA na poziomie dwóch różnych klastrów [0 - brak, 1 - aktywna replikacja]&lt;/li&gt;
+&lt;li&gt;VERSIONS - maksymalna liczba wersji do przechowywania, domyślnie 1&lt;/li&gt;
+&lt;li&gt;COMPRESSION - algorytm kompresji bloków [NONE, Snappy, LZO, LZ4, GZ]&lt;/li&gt;
+&lt;li&gt;MIN_VERSIONS - minimalna liczba wersji, domyślnie 0, używać w połączeniu z TTL&lt;/li&gt;
+&lt;li&gt;TTL - czas (sekundy) po który wersja jest usuwana (dotyczy także najnowszych)&lt;/li&gt;
+&lt;li&gt;KEEP_DELETED_CELLS - Polecenia &amp;ldquo;delete&amp;rdquo; nie usuwają fizycznie danych lecz tylko oznaczają je jako usunięte, wciąż jest możliwość pobrania ich za pomocą poleceń Scan lub Get.&lt;/li&gt;
+&lt;li&gt;BLOCKSIZE - wielkość bloku, domyślnie 64k, większe komórki wymagają większych bloków, mniejsze bloki to szybszy dostęp ale większe użycie pamięci RAM dla indeksów&lt;/li&gt;
+&lt;li&gt;IN_MEMORY - sugestia dla HBase by silniej korzystał z cache&amp;rsquo;a dla tej rodziny (nie ma gwarancji że całość będzie w pamięci operacyjnej)&lt;/li&gt;
+&lt;li&gt;BLOCKCACHE - cache blokowy przyśpieszający odczyty popularnych (często uzywanych) danych&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Wyjście z konsoli&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;hbase(main):002:0&amp;gt; exit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;lub Ctrl+C / Ctrl+C&lt;/p&gt;
+
+&lt;h1 id=&#34;polecenia-zaawansowane&#34;&gt;Polecenia zaawansowane&lt;/h1&gt;
+
+&lt;p&gt;Tworzenie tabeli z narzuconym wstępnym podziałem regionów&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;create &#39;t1&#39;,&#39;f&#39;,SPLITS =&amp;gt; [&#39;10&#39;,&#39;20&#39;,30&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;skrypty-w-ruby&#34;&gt;Skrypty w Ruby&lt;/h1&gt;
+
+&lt;p&gt;Uruchamianie z pliku ruby i pliku txt
+Sztuczki w ruby&lt;/p&gt;
+
+&lt;h1 id=&#34;konfiguracja-shella-za-pomocą-zmiennej-systemowej&#34;&gt;Konfiguracja Shella za pomocą zmiennej systemowej&lt;/h1&gt;
+
+&lt;p&gt;Jeśli chcemy by shell używałe więcej pamięci RAM lub przekazać mu inne parametry, możemy to zrobić za pomocą zmiennej systemowej HBASE_SHELL_OPTS&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;export HBASE_SHELL_OPTS=&amp;quot;-verbose:gc -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDateStamps -XX:+PrintGCDetails -Xloggc:$HBASE_HOME/logs/gc-hbase.log&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;przydatne-linki&#34;&gt;Przydatne linki&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://hbase.apache.org/1.2/book.html#shell&#34;&gt;http://hbase.apache.org/1.2/book.html#shell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://archive.cloudera.com/cdh5/cdh/5/hbase-0.98.6-cdh5.2.0/book/shell.html&#34;&gt;http://archive.cloudera.com/cdh5/cdh/5/hbase-0.98.6-cdh5.2.0/book/shell.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://community.hortonworks.com/articles/54761/compression-in-hbase.html&#34;&gt;https://community.hortonworks.com/articles/54761/compression-in-hbase.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ruby-lang.org/pl/documentation/quickstart/&#34;&gt;https://www.ruby-lang.org/pl/documentation/quickstart/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://hadoop-hbase.blogspot.com/2011/12/deletion-in-hbase.html&#34;&gt;http://hadoop-hbase.blogspot.com/2011/12/deletion-in-hbase.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cloudera.com/documentation/enterprise/5-6-x/topics/admin_hbase_blockcache_configure.html&#34;&gt;https://www.cloudera.com/documentation/enterprise/5-6-x/topics/admin_hbase_blockcache_configure.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cloudera.com/documentation/enterprise/5-5-x/topics/admin_configure_blocksize.html&#34;&gt;https://www.cloudera.com/documentation/enterprise/5-5-x/topics/admin_configure_blocksize.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>O nas</title>
+      <link>http://bigdatapassion.pl/about/</link>
+      <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://bigdatapassion.pl/about/</guid>
+      <description>&lt;p&gt;Big Data Passion to strona dla pasjonatów szeroko rozumianego Big Data. Treści prezentowane na stronie będą dotyczyć takich tematów jak:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Języki programowania (Java, Scala, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Przetwarzanie danych (MapReduce, Spark, Flink, Storm, Apex, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Analizę danych, Data Science, NLP, Machine Learning (Mahout, Spark MLlib, Spark GraphX, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;NoSQL i składowanie danych (HDFS, HBase, Cassandra, Mongo, Redis, Hazelcast, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Przesyłanie danych (Kafka, ActiveMQ, Flume, NiFi, WSO2, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Biblioteki i narzędzia (Vert.x, Netty, Akka, Spring framework, Spring Data, Spring Integration, Spring XD)&lt;/li&gt;
+&lt;li&gt;Business Intelligence (Pentaho, Mondrian, Kettle, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Administrowanie rozproszonymi klastrami obliczeniowymi (DevOps, Docker, Ansible, Hortonworks, Cloudera, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Chmury obliczeniowe (AWS, Azure, Google Cloud, &amp;hellip;)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Witaj świecie</title>
+      <link>http://bigdatapassion.pl/blog/hello-world/</link>
+      <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://bigdatapassion.pl/blog/hello-world/</guid>
+      <description>&lt;p&gt;Big Data Passion to strona dla pasjonatów szeroko rozumianego Big Data. Treści prezentowane na stronie będą dotyczyć takich tematów jak:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Języki programowania (Java, Scala, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Przetwarzanie danych (MapReduce, Spark, Flink, Storm, Apex, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Analizę danych, Data Science, NLP, Machine Learning (Mahout, Spark MLlib, Spark GraphX, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;NoSQL i składowanie danych (HDFS, HBase, Cassandra, Mongo, Redis, Hazelcast, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Przesyłanie danych (Kafka, ActiveMQ, Flume, NiFi, WSO2, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Biblioteki i narzędzia (Vert.x, Netty, Akka, Spring framework, Spring Data, Spring Integration, Spring XD)&lt;/li&gt;
+&lt;li&gt;Business Intelligence (Pentaho, Mondrian, Kettle, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Administrowanie rozproszonymi klastrami obliczeniowymi (DevOps, Docker, Ansible, Hortonworks, Cloudera, &amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Chmury obliczeniowe (AWS, Azure, Google Cloud, &amp;hellip;)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,997 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Hbase Shell</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.18.1" />
+        
+    
+        
+    
+
+    
+
+    <link rel="apple-touch-icon-precomposed"
+        href='/favicon/apple-touch-icon-precomposed.png'>
+    <link rel="icon" href='/favicon/favicon.png'>
+    
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage"
+        content='/favicon/mstile.png'>
+
+
+
+        
+            <meta name="author" content="Radosław Szmit">
+        
+        
+            
+                <meta name="description" content="Big Data Passion">
+            
+        
+
+        
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="Hbase Shell"/>
+<meta name="twitter:description" content="Podstawowy HBase Shell Uruchomienie
+[sages@sandbox ~]$ hbase shell SLF4J: Class path contains multiple SLF4J bindings. SLF4J: Found binding in [jar:file:/usr/hdp/2.4.0.0-169/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class] SLF4J: Found binding in [jar:file:/usr/hdp/2.4.0.0-169/zookeeper/lib/slf4j-log4j12-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class] SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation. SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory] HBase Shell; enter &#39;help&lt;RETURN&gt;&#39; for list of supported commands. Type &quot;exit&lt;RETURN&gt;&quot; to leave the HBase Shell Version 1.1.2.2.4.0.0-169, r61dfb2b344f424a11f93b3f086eab815c1eb0b6a, Wed Feb 10 07:08:51 UTC 2016 hbase(main):001:0&gt;  Pomoc dla Shell&rsquo;a
+hbase(main):053:0* help HBase Shell, version 1."/>
+<meta name="twitter:site" content="@radoslawszmit"/>
+
+
+        <meta property="og:title" content="Hbase Shell" />
+<meta property="og:description" content="Podstawowy HBase Shell Uruchomienie
+[sages@sandbox ~]$ hbase shell SLF4J: Class path contains multiple SLF4J bindings. SLF4J: Found binding in [jar:file:/usr/hdp/2.4.0.0-169/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class] SLF4J: Found binding in [jar:file:/usr/hdp/2.4.0.0-169/zookeeper/lib/slf4j-log4j12-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class] SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation. SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory] HBase Shell; enter &#39;help&lt;RETURN&gt;&#39; for list of supported commands. Type &quot;exit&lt;RETURN&gt;&quot; to leave the HBase Shell Version 1.1.2.2.4.0.0-169, r61dfb2b344f424a11f93b3f086eab815c1eb0b6a, Wed Feb 10 07:08:51 UTC 2016 hbase(main):001:0&gt;  Pomoc dla Shell&rsquo;a
+hbase(main):053:0* help HBase Shell, version 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://bigdatapassion.pl/blog/hbase-shell/" />
+
+
+<meta property="og:updated_time" content="2017-04-07T17:08:29&#43;02:00"/>
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="Hbase Shell">
+<meta itemprop="description" content="Podstawowy HBase Shell Uruchomienie
+[sages@sandbox ~]$ hbase shell SLF4J: Class path contains multiple SLF4J bindings. SLF4J: Found binding in [jar:file:/usr/hdp/2.4.0.0-169/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class] SLF4J: Found binding in [jar:file:/usr/hdp/2.4.0.0-169/zookeeper/lib/slf4j-log4j12-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class] SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation. SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory] HBase Shell; enter &#39;help&lt;RETURN&gt;&#39; for list of supported commands. Type &quot;exit&lt;RETURN&gt;&quot; to leave the HBase Shell Version 1.1.2.2.4.0.0-169, r61dfb2b344f424a11f93b3f086eab815c1eb0b6a, Wed Feb 10 07:08:51 UTC 2016 hbase(main):001:0&gt;  Pomoc dla Shell&rsquo;a
+hbase(main):053:0* help HBase Shell, version 1.">
+
+
+<meta itemprop="dateModified" content="2017-04-07T17:08:29&#43;02:00" />
+<meta itemprop="wordCount" content="1065">
+
+
+
+<meta itemprop="keywords" content="HBase," />
+
+        
+
+        
+
+        
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/monokai-sublime.css">
+        
+
+        
+
+        
+        
+        
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-97213302-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">Big Data Passion</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories">
+                        Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about">
+                        About
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:http://bigdatapassion.pl/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:http://bigdatapassion.pl/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            <h3>
+                                
+                                Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            <h3>
+                                
+                                About
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="http://bigdatapassion.pl/blog/hbase-shell/"><p>Hbase Shell</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://bigdatapassion.pl/blog/hello-world/"><p>Witaj świecie</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f&text=Hbase%20Shell&via=radoslawszmit" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f&title=Hbase%20Shell" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f&title=Hbase%20Shell" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f&title=Hbase%20Shell" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Rados%c5%82aw%20Szmit&body=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="http://bigdatapassion.pl/blog/hbase-shell/">Hbase Shell</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-04-07'>
+            April 7, 2017</time>
+        <span class="author">Radosław Szmit</span>
+        
+            <p>5 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f&text=Hbase%20Shell&via=radoslawszmit" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f&title=Hbase%20Shell" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f&title=Hbase%20Shell" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f&title=Hbase%20Shell" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Rados%c5%82aw%20Szmit&body=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-shell%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+
+    <div id="content">
+        
+
+<h1 id="podstawowy-hbase-shell">Podstawowy HBase Shell</h1>
+
+<p>Uruchomienie</p>
+
+<pre><code>[sages@sandbox ~]$ hbase shell
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/hdp/2.4.0.0-169/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/hdp/2.4.0.0-169/zookeeper/lib/slf4j-log4j12-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+HBase Shell; enter 'help&lt;RETURN&gt;' for list of supported commands.
+Type &quot;exit&lt;RETURN&gt;&quot; to leave the HBase Shell
+Version 1.1.2.2.4.0.0-169, r61dfb2b344f424a11f93b3f086eab815c1eb0b6a, Wed Feb 10 07:08:51 UTC 2016
+
+hbase(main):001:0&gt; 
+</code></pre>
+
+<p>Pomoc dla Shell&rsquo;a</p>
+
+<pre><code class="language-ruby">hbase(main):053:0* help
+HBase Shell, version 1.1.2.2.4.0.0-169, r61dfb2b344f424a11f93b3f086eab815c1eb0b6a, Wed Feb 10 07:08:51 UTC 2016
+Type 'help &quot;COMMAND&quot;', (e.g. 'help &quot;get&quot;' -- the quotes are necessary) for help on a specific command.
+Commands are grouped. Type 'help &quot;COMMAND_GROUP&quot;', (e.g. 'help &quot;general&quot;') for help on a command group.
+
+COMMAND GROUPS:
+  Group name: general
+  Commands: status, table_help, version, whoami
+
+  Group name: ddl
+  Commands: alter, alter_async, alter_status, create, describe, disable, disable_all, drop, drop_all, enable, enable_all, exists, get_table, is_disabled, is_enabled, list, show_filters
+
+  Group name: namespace
+  Commands: alter_namespace, create_namespace, describe_namespace, drop_namespace, list_namespace, list_namespace_tables
+
+  Group name: dml
+  Commands: append, count, delete, deleteall, get, get_counter, get_splits, incr, put, scan, truncate, truncate_preserve
+
+  Group name: tools
+  Commands: assign, balance_switch, balancer, balancer_enabled, catalogjanitor_enabled, catalogjanitor_run, catalogjanitor_switch, close_region, compact, compact_rs, flush, major_compact, merge_region, move, normalize, normalizer_enabled, normalizer_switch, split, trace, unassign, wal_roll, zk_dump
+
+  Group name: replication
+  Commands: add_peer, append_peer_tableCFs, disable_peer, disable_table_replication, enable_peer, enable_table_replication, list_peers, list_replicated_tables, remove_peer, remove_peer_tableCFs, set_peer_tableCFs, show_peer_tableCFs
+
+  Group name: snapshots
+  Commands: clone_snapshot, delete_all_snapshot, delete_snapshot, list_snapshots, restore_snapshot, snapshot, snapshot_all, snapshot_restore
+
+  Group name: configuration
+  Commands: update_all_config, update_config
+
+  Group name: quotas
+  Commands: list_quotas, set_quota
+
+  Group name: security
+  Commands: grant, revoke, user_permission
+
+  Group name: procedures
+  Commands: abort_procedure, list_procedures
+
+  Group name: visibility labels
+  Commands: add_labels, clear_auths, get_auths, list_labels, set_auths, set_visibility
+
+SHELL USAGE:
+Quote all names in HBase Shell such as table and column names.  Commas delimit
+command parameters.  Type &lt;RETURN&gt; after entering a command to run it.
+Dictionaries of configuration used in the creation and alteration of tables are
+Ruby Hashes. They look like this:
+
+  {'key1' =&gt; 'value1', 'key2' =&gt; 'value2', ...}
+
+and are opened and closed with curley-braces.  Key/values are delimited by the
+'=&gt;' character combination.  Usually keys are predefined constants such as
+NAME, VERSIONS, COMPRESSION, etc.  Constants do not need to be quoted.  Type
+'Object.constants' to see a (messy) list of all constants in the environment.
+
+If you are using binary keys or values and need to enter them in the shell, use
+double-quote'd hexadecimal representation. For example:
+
+  hbase&gt; get 't1', &quot;key\x03\x3f\xcd&quot;
+  hbase&gt; get 't1', &quot;key\003\023\011&quot;
+  hbase&gt; put 't1', &quot;test\xef\xff&quot;, 'f1:', &quot;\x01\x33\x40&quot;
+
+The HBase shell is the (J)Ruby IRB with the above HBase-specific commands added.
+For more on the HBase Shell, see http://hbase.apache.org/book.html
+hbase(main):054:0&gt; 
+</code></pre>
+
+<h1 id="podstawowe-polecenia">Podstawowe polecenia</h1>
+
+<p>Sprawdzenie stanu bazy danych</p>
+
+<pre><code>hbase(main):001:0&gt; status
+
+ERROR: Can't get master address from ZooKeeper; znode data == null
+
+Here is some help for this command:
+Show cluster status. Can be 'summary', 'simple', 'detailed', or 'replication'. The
+default is 'summary'. Examples:
+
+  hbase&gt; status
+  hbase&gt; status 'simple'
+  hbase&gt; status 'summary'
+  hbase&gt; status 'detailed'
+  hbase&gt; status 'replication'
+  hbase&gt; status 'replication', 'source'
+  hbase&gt; status 'replication', 'sink'
+
+
+hbase(main):002:0&gt; 
+</code></pre>
+
+<p>Jak widać status może być typu:</p>
+
+<ul>
+<li>simple</li>
+<li>summary</li>
+<li>detailed</li>
+<li>replication</li>
+<li>replication source</li>
+<li>replication sink</li>
+</ul>
+
+<p>W powyższym przykładzie widać, że baza nie jest uruchomiona (dokładnie rzecz biorąc ZooKeeper bez którego HBase nie potrafi działać)</p>
+
+<p>Uruchomienie bazy (Sandbox Hortonworks)</p>
+
+<pre><code class="language-shell">[root@sandbox ~]# /etc/init.d/hbase-starter start
+Starting HBase...
+Starting Postgre SQL                                      [  OK  ]
+Starting name node                                        [  OK  ]
+Starting zookeeper nodes                                  [  OK  ]
+Starting hbase master                                     [  OK  ]
+Starting hbase thrift                                     [  OK  ]
+Starting hbase stargate                                   [  OK  ]
+Starting hbase regionservers                              [  OK  ]
+[root@sandbox ~]# 
+</code></pre>
+
+<p>Sprawdzenie stanu bazy po włączeniu</p>
+
+<pre><code class="language-ruby">hbase(main):001:0&gt; status
+1 servers, 0 dead, 280.0000 average load
+hbase(main):002:0&gt; 
+</code></pre>
+
+<p>Sprawdzenie wersji na jakiej pracujemy</p>
+
+<pre><code class="language-ruby">hbase(main):062:0&gt; version
+1.1.2.2.4.0.0-169, r61dfb2b344f424a11f93b3f086eab815c1eb0b6a, Wed Feb 10 07:08:51 UTC 2016
+hbase(main):063:0&gt; 
+</code></pre>
+
+<p>Sprawdzanie jakim jesteśmy użytkownikiem</p>
+
+<pre><code class="language-ruby">hbase(main):025:0* whoami
+xrszmit (auth:SIMPLE)
+    groups: users, wheel
+
+hbase(main):026:0&gt; 
+</code></pre>
+
+<p>Informacja na temat używania zmiennych w Shell&rsquo;u (dostępne od wersji 0.96+)</p>
+
+<pre><code class="language-ruby">hbase(main):058:0&gt; table_help
+</code></pre>
+
+<h1 id="zarządzanie-schematem-ddl">Zarządzanie schematem (DDL)</h1>
+
+<p>Tworzenie tabeli</p>
+
+<pre><code class="language-ruby">hbase(main):036:0* create 'person', 'cf'
+0 row(s) in 1.2750 seconds
+
+=&gt; Hbase::Table - person
+hbase(main):037:0&gt;
+</code></pre>
+
+<p>Stworzenie tabeli z jedną rodziną kolumn i liczbą wersji równą 5</p>
+
+<pre><code class="language-ruby">hbase&gt; create 'person', {NAME =&gt; 'cf', VERSIONS =&gt; 5}
+hbase&gt; create 't1', {NAME =&gt; 'f1', VERSIONS =&gt; 1, TTL =&gt; 2592000, BLOCKCACHE =&gt; true}
+hbase&gt; create 't1', {NAME =&gt; 'f1', CONFIGURATION =&gt; {'hbase.hstore.blockingStoreFiles' =&gt; '10'}}
+</code></pre>
+
+<p>Stworzenie tabeli z kilkoma rodzinami</p>
+
+<pre><code class="language-ruby">hbase&gt; create 't1', {NAME =&gt; 'f1'}, {NAME =&gt; 'f2'}, {NAME =&gt; 'f3'}
+</code></pre>
+
+<p>Lista istniejących tabel</p>
+
+<pre><code class="language-ruby">hbase(main):038:0* list
+person
+1 row(s) in 0.0290 seconds
+
+=&gt; [&quot;SYSTEM.CATALOG&quot;, &quot;SYSTEM.FUNCTION&quot;, &quot;SYSTEM.SEQUENCE&quot;, &quot;SYSTEM.STATS&quot;, &quot;ibm:ibmtable&quot;, &quot;iemployee&quot;, &quot;inventory&quot;, &quot;java&quot;, &quot;movies&quot;, &quot;movies_comedy&quot;, &quot;movies_data&quot;, &quot;nam1:tab5&quot;, &quot;person&quot;, &quot;product&quot;, &quot;ratings&quot;, &quot;ratings_average&quot;, &quot;sages:tabelkav2&quot;, &quot;tabelkav&quot;, &quot;tabv5&quot;, &quot;tags&quot;, &quot;test&quot;, &quot;test:tablename&quot;, &quot;users&quot;]
+hbase(main):039:0&gt; 
+</code></pre>
+
+<p>Opis tabeli</p>
+
+<pre><code>hbase(main):040:0* describe 'person'
+Table person is ENABLED 
+person
+COLUMN FAMILIES DESCRIPTION
+{NAME =&gt; 'cf', DATA_BLOCK_ENCODING =&gt; 'NONE', BLOOMFILTER =&gt; 'ROW', REPLICATION_SCOPE =&gt; '0', VERSIONS =&gt; '1', COMPRESSION =&gt; 'NONE', MIN_VERSIONS =&gt; '0', TTL =&gt; 'FOREVER', KEEP_DELETED_CELLS =&gt; 'FALSE', BLOCKSIZE =&gt; '65536', IN_MEMORY =&gt; 'false', BLOCKCACHE =&gt; 'true'} 
+1 row(s) in 0.0970 seconds
+hbase(main):041:0&gt; 
+</code></pre>
+
+<p>Shell zwraca informację że tabela jest aktywna (ENABLED) oraz zwraca listę rodzin kolumn wraz z ich parametrami, każda w oddzielnym nawiasie klamrowym {}</p>
+
+<ul>
+<li>NAME - nazwa rodziny</li>
+<li>DATA_BLOCK_ENCODING - algorytm enkodowania kluczy głównych, do wyboru [NONE, PREFIX, DIFF, FAST_DIFF, PREFIX_TREE]</li>
+<li>BLOOMFILTER - Filtr Blooma [NONE, ROW (default), ROWCOL]</li>
+<li>REPLICATION_SCOPE - Mechanizm replikacji pomiędzy dwoma klastrami HBase zwiększające HA na poziomie dwóch różnych klastrów [0 - brak, 1 - aktywna replikacja]</li>
+<li>VERSIONS - maksymalna liczba wersji do przechowywania, domyślnie 1</li>
+<li>COMPRESSION - algorytm kompresji bloków [NONE, Snappy, LZO, LZ4, GZ]</li>
+<li>MIN_VERSIONS - minimalna liczba wersji, domyślnie 0, używać w połączeniu z TTL</li>
+<li>TTL - czas (sekundy) po który wersja jest usuwana (dotyczy także najnowszych)</li>
+<li>KEEP_DELETED_CELLS - Polecenia &ldquo;delete&rdquo; nie usuwają fizycznie danych lecz tylko oznaczają je jako usunięte, wciąż jest możliwość pobrania ich za pomocą poleceń Scan lub Get.</li>
+<li>BLOCKSIZE - wielkość bloku, domyślnie 64k, większe komórki wymagają większych bloków, mniejsze bloki to szybszy dostęp ale większe użycie pamięci RAM dla indeksów</li>
+<li>IN_MEMORY - sugestia dla HBase by silniej korzystał z cache&rsquo;a dla tej rodziny (nie ma gwarancji że całość będzie w pamięci operacyjnej)</li>
+<li>BLOCKCACHE - cache blokowy przyśpieszający odczyty popularnych (często uzywanych) danych</li>
+</ul>
+
+<p>Wyjście z konsoli</p>
+
+<pre><code class="language-ruby">hbase(main):002:0&gt; exit
+</code></pre>
+
+<p>lub Ctrl+C / Ctrl+C</p>
+
+<h1 id="polecenia-zaawansowane">Polecenia zaawansowane</h1>
+
+<p>Tworzenie tabeli z narzuconym wstępnym podziałem regionów</p>
+
+<pre><code class="language-ruby">create 't1','f',SPLITS =&gt; ['10','20',30']
+</code></pre>
+
+<h1 id="skrypty-w-ruby">Skrypty w Ruby</h1>
+
+<p>Uruchamianie z pliku ruby i pliku txt
+Sztuczki w ruby</p>
+
+<h1 id="konfiguracja-shella-za-pomocą-zmiennej-systemowej">Konfiguracja Shella za pomocą zmiennej systemowej</h1>
+
+<p>Jeśli chcemy by shell używałe więcej pamięci RAM lub przekazać mu inne parametry, możemy to zrobić za pomocą zmiennej systemowej HBASE_SHELL_OPTS</p>
+
+<pre><code class="language-shell">export HBASE_SHELL_OPTS=&quot;-verbose:gc -XX:+PrintGCApplicationStoppedTime -XX:+PrintGCDateStamps -XX:+PrintGCDetails -Xloggc:$HBASE_HOME/logs/gc-hbase.log&quot;
+</code></pre>
+
+<h1 id="przydatne-linki">Przydatne linki</h1>
+
+<ul>
+<li><a href="http://hbase.apache.org/1.2/book.html#shell">http://hbase.apache.org/1.2/book.html#shell</a></li>
+<li><a href="http://archive.cloudera.com/cdh5/cdh/5/hbase-0.98.6-cdh5.2.0/book/shell.html">http://archive.cloudera.com/cdh5/cdh/5/hbase-0.98.6-cdh5.2.0/book/shell.html</a></li>
+<li><a href="https://community.hortonworks.com/articles/54761/compression-in-hbase.html">https://community.hortonworks.com/articles/54761/compression-in-hbase.html</a></li>
+<li><a href="https://www.ruby-lang.org/pl/documentation/quickstart/">https://www.ruby-lang.org/pl/documentation/quickstart/</a></li>
+<li><a href="http://hadoop-hbase.blogspot.com/2011/12/deletion-in-hbase.html">http://hadoop-hbase.blogspot.com/2011/12/deletion-in-hbase.html</a></li>
+<li><a href="https://www.cloudera.com/documentation/enterprise/5-6-x/topics/admin_hbase_blockcache_configure.html">https://www.cloudera.com/documentation/enterprise/5-6-x/topics/admin_hbase_blockcache_configure.html</a></li>
+<li><a href="https://www.cloudera.com/documentation/enterprise/5-5-x/topics/admin_configure_blocksize.html">https://www.cloudera.com/documentation/enterprise/5-5-x/topics/admin_configure_blocksize.html</a></li>
+</ul>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+
+                    
+                        Category
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categorieshbase'>HBase</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="http://bigdatapassion.pl/blog/hello-world/"
+                class="button big previous">Witaj świecie</a></li>
+    
+
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shortname';
+    var disqus_identifier = 'http:\/\/bigdatapassion.pl\/blog\/hbase-shell\/';
+    var disqus_title = 'Hbase Shell';
+    var disqus_url = 'http:\/\/bigdatapassion.pl\/blog\/hbase-shell\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <a href="/" class="logo"><img src="/img/hadoop.png" alt="Big Data Passion" /></a>
+                
+            
+            
+                <header>
+                    <h2>Big Data Passion</h2>
+                    <p>Big Data Passion to strona dla pasjonatów szeroko rozumianego Big Data</p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/radoslawszmit" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/rszmit" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/radoslawszmit" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://bigdatapassion.pl/blog/hbase-shell/">Hbase Shell</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-04-07'>
+                                    April 7, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://bigdatapassion.pl/blog/hello-world/">Witaj świecie</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-04-01'>
+                                    April 1, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hbase/">HBase</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+        <section class="blurb">
+            <h2>About</h2>
+            <p>Big Data Passion to strona dla pasjonatów szeroko rozumianego Big Data</p>
+
+            <ul class="actions">
+                <li><a href="/about/" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/radoslawszmit" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/rszmit" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/radoslawszmit" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; Big Data Passion. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/skel.min.js"></script>
+            <script src="/js/util.js"></script>
+            <script src="/js/main.js"></script>
+            <script src="/js/backToTop.js"></script>
+            <script src="/js/highlight.pack.js"></script>
+        
+
+        
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+
