@@ -1,14 +1,14 @@
 +++
 author = "Radosław Szmit"
-type = "post"
-featuredpath = ""
-description = ""
 categories = ["HBase"]
-featuredalt = ""
-featured = ""
 date = "2017-04-07T17:08:29+02:00"
-title = "Hbase Shell"
+description = "Korzystanie z HBase za pomocą linii komend"
+featured = ""
+featuredalt = ""
+featuredpath = ""
 linktitle = ""
+title = "Hbase shell"
+type = "post"
 
 +++
 

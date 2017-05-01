@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Big Data Passion</title>
+    <link>http://bigdatapassion.pl/categories/</link>
+    <description>Recent content in Categories on Big Data Passion</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 May 2017 17:04:17 +0200</lastBuildDate>
+    
+	<atom:link href="http://bigdatapassion.pl/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Administracja</title>
+      <link>http://bigdatapassion.pl/categories/administracja/</link>
+      <pubDate>Mon, 01 May 2017 17:04:17 +0200</pubDate>
+      
+      <guid>http://bigdatapassion.pl/categories/administracja/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HBase</title>
+      <link>http://bigdatapassion.pl/categories/hbase/</link>
+      <pubDate>Mon, 01 May 2017 17:04:17 +0200</pubDate>
+      
+      <guid>http://bigdatapassion.pl/categories/hbase/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

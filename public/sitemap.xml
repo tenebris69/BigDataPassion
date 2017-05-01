@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bigdatapassion.pl/blog/hbase-troubleshooting/</loc>
+    <lastmod>2017-05-01T17:04:17+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://bigdatapassion.pl/blog/hbase-shell/</loc>
     <lastmod>2017-04-07T17:08:29+02:00</lastmod>
   </url>
@@ -17,25 +22,37 @@
   </url>
   
   <url>
+    <loc>http://bigdatapassion.pl/categories/administracja/</loc>
+    <lastmod>2017-05-01T17:04:17+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://bigdatapassion.pl/</loc>
-    <lastmod>2017-04-07T17:08:29+02:00</lastmod>
+    <lastmod>2017-05-01T17:04:17+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://bigdatapassion.pl/blog/</loc>
-    <lastmod>2017-04-07T17:08:29+02:00</lastmod>
+    <lastmod>2017-05-01T17:04:17+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://bigdatapassion.pl/categories/</loc>
+    <lastmod>2017-05-01T17:04:17+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://bigdatapassion.pl/categories/hbase/</loc>
-    <lastmod>2017-04-07T17:08:29+02:00</lastmod>
+    <lastmod>2017-05-01T17:04:17+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://bigdatapassion.pl/tags/</loc>
     <priority>0</priority>
   </url>
   

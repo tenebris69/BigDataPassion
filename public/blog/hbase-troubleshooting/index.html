@@ -4,7 +4,7 @@
     <head>
         
             
-                <title>Witaj świecie</title>
+                <title>Hbase troubleshooting</title>
             
         
 
@@ -32,9 +32,7 @@
             <meta name="author" content="Radosław Szmit">
         
         
-            
-                <meta name="description" content="Big Data Passion">
-            
+            <meta name="description" content="Rozwiązywanie problemów z bazą HBase">
         
 
         
@@ -43,22 +41,20 @@
 
 
 
-<meta name="twitter:text:title" content="Witaj świecie"/>
-<meta name="twitter:title" content="Witaj świecie"/>
-<meta name="twitter:description" content="Big Data Passion to strona dla pasjonatów szeroko rozumianego Big Data. Treści prezentowane na stronie będą dotyczyć takich tematów jak:
- Języki programowania (Java, Scala, &hellip;) Przetwarzanie danych (MapReduce, Spark, Flink, Storm, Apex, &hellip;) Analizę danych, Data Science, NLP, Machine Learning (Mahout, Spark MLlib, Spark GraphX, &hellip;) NoSQL i składowanie danych (HDFS, HBase, Cassandra, Mongo, Redis, Hazelcast, &hellip;) Przesyłanie danych (Kafka, ActiveMQ, Flume, NiFi, WSO2, &hellip;) Biblioteki i narzędzia (Vert.x, Netty, Akka, Spring framework, Spring Data, Spring Integration, Spring XD) Business Intelligence (Pentaho, Mondrian, Kettle, &hellip;) Administrowanie rozproszonymi klastrami obliczeniowymi (DevOps, Docker, Ansible, Hortonworks, Cloudera, &hellip;) Chmury obliczeniowe (AWS, Azure, Google Cloud, &hellip;)  "/>
+<meta name="twitter:text:title" content="Hbase troubleshooting"/>
+<meta name="twitter:title" content="Hbase troubleshooting"/>
+<meta name="twitter:description" content="Rozwiązywanie problemów z bazą HBase"/>
 <meta name="twitter:site" content="@radoslawszmit"/>
 
-        <meta property="og:title" content="Witaj świecie" />
-<meta property="og:description" content="Big Data Passion to strona dla pasjonatów szeroko rozumianego Big Data. Treści prezentowane na stronie będą dotyczyć takich tematów jak:
- Języki programowania (Java, Scala, &hellip;) Przetwarzanie danych (MapReduce, Spark, Flink, Storm, Apex, &hellip;) Analizę danych, Data Science, NLP, Machine Learning (Mahout, Spark MLlib, Spark GraphX, &hellip;) NoSQL i składowanie danych (HDFS, HBase, Cassandra, Mongo, Redis, Hazelcast, &hellip;) Przesyłanie danych (Kafka, ActiveMQ, Flume, NiFi, WSO2, &hellip;) Biblioteki i narzędzia (Vert.x, Netty, Akka, Spring framework, Spring Data, Spring Integration, Spring XD) Business Intelligence (Pentaho, Mondrian, Kettle, &hellip;) Administrowanie rozproszonymi klastrami obliczeniowymi (DevOps, Docker, Ansible, Hortonworks, Cloudera, &hellip;) Chmury obliczeniowe (AWS, Azure, Google Cloud, &hellip;)  " />
+        <meta property="og:title" content="Hbase troubleshooting" />
+<meta property="og:description" content="Rozwiązywanie problemów z bazą HBase" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://bigdatapassion.pl/blog/hello-world/" />
+<meta property="og:url" content="http://bigdatapassion.pl/blog/hbase-troubleshooting/" />
 
 
 
-<meta property="article:published_time" content="2017-04-01T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-04-01T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2017-05-01T17:04:17&#43;02:00"/>
+<meta property="article:modified_time" content="2017-05-01T17:04:17&#43;02:00"/>
 
 
 
@@ -71,13 +67,12 @@
 
 
         
-<meta itemprop="name" content="Witaj świecie">
-<meta itemprop="description" content="Big Data Passion to strona dla pasjonatów szeroko rozumianego Big Data. Treści prezentowane na stronie będą dotyczyć takich tematów jak:
- Języki programowania (Java, Scala, &hellip;) Przetwarzanie danych (MapReduce, Spark, Flink, Storm, Apex, &hellip;) Analizę danych, Data Science, NLP, Machine Learning (Mahout, Spark MLlib, Spark GraphX, &hellip;) NoSQL i składowanie danych (HDFS, HBase, Cassandra, Mongo, Redis, Hazelcast, &hellip;) Przesyłanie danych (Kafka, ActiveMQ, Flume, NiFi, WSO2, &hellip;) Biblioteki i narzędzia (Vert.x, Netty, Akka, Spring framework, Spring Data, Spring Integration, Spring XD) Business Intelligence (Pentaho, Mondrian, Kettle, &hellip;) Administrowanie rozproszonymi klastrami obliczeniowymi (DevOps, Docker, Ansible, Hortonworks, Cloudera, &hellip;) Chmury obliczeniowe (AWS, Azure, Google Cloud, &hellip;)  ">
+<meta itemprop="name" content="Hbase troubleshooting">
+<meta itemprop="description" content="Rozwiązywanie problemów z bazą HBase">
 
 
-<meta itemprop="dateModified" content="2017-04-01T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="102">
+<meta itemprop="dateModified" content="2017-05-01T17:04:17&#43;02:00" />
+<meta itemprop="wordCount" content="495">
 
 
 
@@ -258,43 +253,43 @@ ga('send', 'pageview');
             
 
 
-<li><a href="//twitter.com/share?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f&text=Witaj%20%c5%9bwiecie&via=radoslawszmit" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f&text=Hbase%20troubleshooting&via=radoslawszmit" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f&title=Witaj%20%c5%9bwiecie" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f&title=Hbase%20troubleshooting" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f&title=Witaj%20%c5%9bwiecie" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f&title=Hbase%20troubleshooting" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f&title=Witaj%20%c5%9bwiecie" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f&title=Hbase%20troubleshooting" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Rados%c5%82aw%20Szmit&body=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Rados%c5%82aw%20Szmit&body=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -311,9 +306,11 @@ ga('send', 'pageview');
     <header>
     <div class="title">
         
-            <h1><a href="http://bigdatapassion.pl/blog/hello-world/">Witaj świecie</a></h1>
+            <h1><a href="http://bigdatapassion.pl/blog/hbase-troubleshooting/">Hbase troubleshooting</a></h1>
             
         
+        
+            <p>Rozwiązywanie problemów z bazą HBase</p>
         
     </div>
     <div class="meta">
@@ -322,11 +319,11 @@ ga('send', 'pageview');
         
 
         <time class="published"
-            datetime='2017-04-01'>
-            April 1, 2017</time>
+            datetime='2017-05-01'>
+            May 1, 2017</time>
         <span class="author">Radosław Szmit</span>
         
-            <p>1 minute read</p>
+            <p>3 minute read</p>
         
         
     </div>
@@ -338,43 +335,43 @@ ga('send', 'pageview');
             
 
 
-<li><a href="//twitter.com/share?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f&text=Witaj%20%c5%9bwiecie&via=radoslawszmit" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f&text=Hbase%20troubleshooting&via=radoslawszmit" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f&title=Witaj%20%c5%9bwiecie" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f&title=Hbase%20troubleshooting" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f&title=Witaj%20%c5%9bwiecie" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f&title=Hbase%20troubleshooting" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f&title=Witaj%20%c5%9bwiecie" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f&title=Hbase%20troubleshooting" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Rados%c5%82aw%20Szmit&body=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhello-world%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Rados%c5%82aw%20Szmit&body=http%3a%2f%2fbigdatapassion.pl%2fblog%2fhbase-troubleshooting%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -384,19 +381,92 @@ ga('send', 'pageview');
     
 
     <div id="content">
-        <p>Big Data Passion to strona dla pasjonatów szeroko rozumianego Big Data. Treści prezentowane na stronie będą dotyczyć takich tematów jak:</p>
+        
 
-<ul>
-<li>Języki programowania (Java, Scala, &hellip;)</li>
-<li>Przetwarzanie danych (MapReduce, Spark, Flink, Storm, Apex, &hellip;)</li>
-<li>Analizę danych, Data Science, NLP, Machine Learning (Mahout, Spark MLlib, Spark GraphX, &hellip;)</li>
-<li>NoSQL i składowanie danych (HDFS, HBase, Cassandra, Mongo, Redis, Hazelcast, &hellip;)</li>
-<li>Przesyłanie danych (Kafka, ActiveMQ, Flume, NiFi, WSO2, &hellip;)</li>
-<li>Biblioteki i narzędzia (Vert.x, Netty, Akka, Spring framework, Spring Data, Spring Integration, Spring XD)</li>
-<li>Business Intelligence (Pentaho, Mondrian, Kettle, &hellip;)</li>
-<li>Administrowanie rozproszonymi klastrami obliczeniowymi (DevOps, Docker, Ansible, Hortonworks, Cloudera, &hellip;)</li>
-<li>Chmury obliczeniowe (AWS, Azure, Google Cloud, &hellip;)</li>
-</ul>
+<p>HBase jak i sam HDFS na którym bazuje, zapewnia bardzo dobrą odporność na awarię na wielu płaszczyznach (awarie dysków, maszyn, całysz szaf rakowych, etc). Mimo to w specyficznych sytuacjach może się zdarzyć awaria która będzie wymagała od nas konkrtenych działań by umożliwiśc dalszą pracę naszego klastra obliczeniowego.</p>
+
+<h1 id="problemy-sprzętowe-i-systemowe">Problemy sprzętowe i systemowe</h1>
+
+<p>Zanim zaczniemy cokolwiek robić po stronie oprogramowania, neleży najpierw uporać się z problemami sprzętowymi lub systemowymi</p>
+
+<h1 id="problemy-z-hdfs">Problemy z HDFS</h1>
+
+<p>HBase składuje wszystkie swoje dane w HDFSie. Dlatego do jego poprawnego działania niezbędne jest prawidłowe działanie samego HDFS&rsquo;a.</p>
+
+<p>Stan naszego rozproszonego dysku (Hadoop Distrubuted File System) możemy łatwo sprawdzić za pomocą polecenia:</p>
+
+<pre><code class="language-shell">hdfs fsck /
+</code></pre>
+
+<p>w rezultacie powinniśmy otrzymać podobny wynik w konsoli:</p>
+
+<pre><code class="language-shell">hdfs fsck /
+Connecting to namenode via http://hadoop1:50070/fsck?ugi=hdfs&amp;path=%2F
+FSCK started by hdfs (auth:SIMPLE) from /192.168.145.16 for path / at Mon May 01 15:13:59 UTC 2017
+....................................................................................................
+....................................................................................................
+....................................................................................................
+...........................................................................................Status: HEALTHY
+ Total size:    3862908544014 B (Total open files size: 279711 B)
+ Total dirs:    2203
+ Total files:   3691
+ Total symlinks:                0 (Files currently being written: 9)
+ Total blocks (validated):      31347 (avg. block size 123230565 B) (Total open file blocks (not validated): 9)
+ Minimally replicated blocks:   31347 (100.0 %)
+ Over-replicated blocks:        0 (0.0 %)
+ Under-replicated blocks:       0 (0.0 %)
+ Mis-replicated blocks:         0 (0.0 %)
+ Default replication factor:    2
+ Average block replication:     2.0
+ Corrupt blocks:                0
+ Missing replicas:              0 (0.0 %)
+ Number of data-nodes:          8
+ Number of racks:               1
+FSCK ended at Mon May 01 15:14:00 UTC 2017 in 171 milliseconds
+
+The filesystem under path '/' is HEALTHY
+</code></pre>
+
+<p>Jak widać dostajemy komunikat o tym, że nasz system jest zdrowy (HEALTHY) oraz trochę statystyk z których wynika, że nie mamy żadnych brakujących bloków lub replik, żadne też nie są w nadmiarze.</p>
+
+<p>W dalszej części zakładam, że HDFS jest sprawny i rozwiązywanie problemów dotyczy tylko bazy HBase (rozwiązywaniu problemów z HDFS&rsquo;em będzie poświęcony inny wpis).</p>
+
+<h1 id="problemy-z-hbase">Problemy z HBase</h1>
+
+<p>Podstawowym narzędziem od którego możemy zacząć jest sprawdzenie spójności regionów i tabel zwanego <strong>hbck</strong> będącego odpowiednikiem <strong>fsck</strong> dla HDFS&rsquo;a.</p>
+
+<p>By skorzystać z <strong>hbck</strong> wystarczy w konsoli wywołać polecenie:</p>
+
+<pre><code class="language-shell">hbase hbck
+</code></pre>
+
+<p>W wyniku otrzymujemy informację o stanie klastra w postaci napisu &ldquo;OK&rdquo; lub liczby odnalezionych niespójności (INCONSISTENCIES).</p>
+
+<pre><code class="language-shell">2017-05-01 17:36:38,049 INFO  [main] util.HBaseFsck: Finishing hbck
+Summary:
+Table products is okay.
+    Number of regions: 31
+    Deployed on:  hadoop1,16020,1493654453604 hadoop2,16020,1493654453068 hadoop3,16020,1493654453803 hadoop4,16020,1493654453906 hadoop5,16020,1493654452818 hadoop6,16020,1493654452432 hadoop7,16020,1493654453616
+Table hbase:meta is okay.
+    Number of regions: 1
+    Deployed on:  hadoop2,16020,1493654453068
+Table hbase:backup is okay.
+    Number of regions: 1
+    Deployed on:  hadoop3,16020,1493654453803
+Table movies is okay.
+    Number of regions: 34
+    Deployed on:  hadoop1,16020,1493654453604 hadoop2,16020,1493654453068 hadoop3,16020,1493654453803 hadoop4,16020,1493654453906 hadoop5,16020,1493654452818 hadoop6,16020,1493654452432 hadoop7,16020,1493654453616
+Table hbase:namespace is okay.
+    Number of regions: 1
+    Deployed on:  hadoop7,16020,1493654453616
+Table data is okay.
+    Number of regions: 381
+    Deployed on:  hadoop1,16020,1493654453604 hadoop2,16020,1493654453068 hadoop3,16020,1493654453803 hadoop4,16020,1493654453906 hadoop5,16020,1493654452818 hadoop6,16020,1493654452432 hadoop7,16020,1493654453616
+0 inconsistencies detected.
+Status: OK
+</code></pre>
+
+<p><strong>UWAGA</strong> w niektórych przypadkach (start klastra, podział regionu) polecenie może wskazać niespójności mimo, że z naszą bazą jest wszystko w porządku. W takiej sytuacji należy ponowić polecenie po jakimś czasie. Dopiero informacja o niespójności przy kilku próbach pod rząd może oznaczać rzeczywisty problem ze spójnością naszych danych.</p>
 
     </div>
 
@@ -407,9 +477,28 @@ ga('send', 'pageview');
 
         
         
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+
+                    
+                        Categories
+                    
+                
+            </li>
+        
     
 
     
+    
+        <li><a href='/categorieshbase'>HBase</a></li>
+    
+        <li><a href='/categoriesadministracja'>Administracja</a></li>
     
 </ul>
 
@@ -417,10 +506,10 @@ ga('send', 'pageview');
 </article>
 <ul class="actions pagination">
     
-
-    
         <li><a href="http://bigdatapassion.pl/blog/hbase-shell/"
-                class="button big next">Hbase shell</a></li>
+                class="button big previous">Hbase shell</a></li>
+    
+
     
 </ul>
 
@@ -431,9 +520,9 @@ ga('send', 'pageview');
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'shortname';
-    var disqus_identifier = 'http:\/\/bigdatapassion.pl\/blog\/hello-world\/';
-    var disqus_title = 'Witaj świecie';
-    var disqus_url = 'http:\/\/bigdatapassion.pl\/blog\/hello-world\/';
+    var disqus_identifier = 'http:\/\/bigdatapassion.pl\/blog\/hbase-troubleshooting\/';
+    var disqus_title = 'Hbase troubleshooting';
+    var disqus_url = 'http:\/\/bigdatapassion.pl\/blog\/hbase-troubleshooting\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

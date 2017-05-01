@@ -1,14 +1,14 @@
 +++
-type = "post"
-featuredpath = ""
+author = "Radosław Szmit"
+categories = []
+date = "2017-04-01"
+description = ""
 featured = ""
+featuredalt = ""
+featuredpath = ""
 linktitle = ""
 title = "Witaj świecie"
-categories = []
-author = ""
-date = "2017-04-01"
-featuredalt = ""
-description = ""
+type = "post"
 
 +++
 

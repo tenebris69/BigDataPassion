@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Administracja on Big Data Passion</title>
+    <link>http://bigdatapassion.pl/categories/administracja/</link>
+    <description>Recent content in Administracja on Big Data Passion</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 May 2017 17:04:17 +0200</lastBuildDate>
+    
+	<atom:link href="http://bigdatapassion.pl/categories/administracja/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hbase troubleshooting</title>
+      <link>http://bigdatapassion.pl/blog/hbase-troubleshooting/</link>
+      <pubDate>Mon, 01 May 2017 17:04:17 +0200</pubDate>
+      
+      <guid>http://bigdatapassion.pl/blog/hbase-troubleshooting/</guid>
+      <description>HBase jak i sam HDFS na którym bazuje, zapewnia bardzo dobrą odporność na awarię na wielu płaszczyznach (awarie dysków, maszyn, całysz szaf rakowych, etc). Mimo to w specyficznych sytuacjach może się zdarzyć awaria która będzie wymagała od nas konkrtenych działań by umożliwiśc dalszą pracę naszego klastra obliczeniowego.
+Problemy sprzętowe i systemowe Zanim zaczniemy cokolwiek robić po stronie oprogramowania, neleży najpierw uporać się z problemami sprzętowymi lub systemowymi
+Problemy z HDFS HBase składuje wszystkie swoje dane w HDFSie.</description>
+    </item>
+    
+  </channel>
+</rss>
