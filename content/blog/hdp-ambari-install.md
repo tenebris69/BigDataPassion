@@ -107,13 +107,71 @@ cd /etc/yum.repos.d/
 wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari.repo
 yum install ambari-server -y
 ambari-server setup
+~~~
+
+W przypadku ambari-server setup upewniamy się, że nie ma żadnych ostrzeżeń, zaś na wszystkie pytania odpowiadamy wartościami domyślnymi klikając enter:
+
+~~~shell
+[root@hadoop1 ~]# ambari-server setup
+Using python  /usr/bin/python
+Setup ambari-server
+Checking SELinux...
+SELinux status is 'disabled'
+Customize user account for ambari-server daemon [y/n] (n)? 
+Adjusting ambari-server permissions and ownership...
+Checking firewall status...
+Checking JDK...
+[1] Oracle JDK 1.8 + Java Cryptography Extension (JCE) Policy Files 8
+[2] Oracle JDK 1.7 + Java Cryptography Extension (JCE) Policy Files 7
+[3] Custom JDK
+==============================================================================
+Enter choice (1): 
+To download the Oracle JDK and the Java Cryptography Extension (JCE) Policy Files you must accept the license terms found at http://www.oracle.com/technetwork/java/javase/terms/license/index.html and not accepting will cancel the Ambari Server setup and you must install the JDK and JCE files manually.
+Do you accept the Oracle Binary Code License Agreement [y/n] (y)? 
+Downloading JDK from http://public-repo-1.hortonworks.com/ARTIFACTS/jdk-8u112-linux-x64.tar.gz to /var/lib/ambari-server/resources/jdk-8u112-linux-x64.tar.gz
+jdk-8u112-linux-x64.tar.gz... 100% (174.7 MB of 174.7 MB)
+Successfully downloaded JDK distribution to /var/lib/ambari-server/resources/jdk-8u112-linux-x64.tar.gz
+Installing JDK to /usr/jdk64/
+Successfully installed JDK to /usr/jdk64/
+Downloading JCE Policy archive from http://public-repo-1.hortonworks.com/ARTIFACTS/jce_policy-8.zip to /var/lib/ambari-server/resources/jce_policy-8.zip
+
+Successfully downloaded JCE Policy archive to /var/lib/ambari-server/resources/jce_policy-8.zip
+Installing JCE policy...
+Completing setup...
+Configuring database...
+Enter advanced database configuration [y/n] (n)? 
+Configuring database...
+Default properties detected. Using built-in database.
+Configuring ambari database...
+Checking PostgreSQL...
+Running initdb: This may take up to a minute.
+Initializing database ... OK
+
+
+About to start PostgreSQL
+Configuring local database...
+Configuring PostgreSQL...
+Restarting PostgreSQL
+Creating schema and user...
+done.
+Creating tables...
+done.
+Extracting system views...
+ambari-admin-2.5.0.3.7.jar
+...........
+Adjusting ambari-server permissions and ownership...
+Ambari Server 'setup' completed successfully.
+~~~
+
+# Uruchamiamy Ambari
+
+~~~shell
 ambari-server start
 ~~~
 
-Następnie wchodzimy na adres: http://hadoop1:8080 i całą instalację kontynuujemy w trybie graficznym.
-
 # Konfiguracja klastra HDP
 
+Następnie wchodzimy na adres: http://hadoop1:8080 i całą instalację kontynuujemy w trybie graficznym. Logujemy się jako admin / admin.
 
 
 # Legenda
