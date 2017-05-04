@@ -82,11 +82,12 @@ ssh-copy-id root@hadoop3
 # Instalacja Apache Ambari
 
 ~~~
-wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.4.2.0/ambari.repo
+cd /etc/yum.repos.d/
+wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari.repo
 yum install ambari-server -y
 ambari-server setup
 ambari-server start
 ~~~
 
 # Legenda
-* 
+* https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ambari_repositories.html
