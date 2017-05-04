@@ -173,6 +173,13 @@ ambari-server start
 
 Następnie wchodzimy na adres: http://hadoop1:8080 i całą instalację kontynuujemy w trybie graficznym. Logujemy się jako admin / admin.
 
+~~~shell
+hadoop1.bigdatapassion.pl
+hadoop2.bigdatapassion.pl
+hadoop3.bigdatapassion.pl
+~~~
+
+Plik .ssh/id_rsa
 
 # Legenda
 * https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ambari_repositories.html
