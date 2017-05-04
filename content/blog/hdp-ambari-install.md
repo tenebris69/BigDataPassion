@@ -79,5 +79,14 @@ ssh-copy-id root@hadoop2
 ssh-copy-id root@hadoop3
 ~~~
 
+# Instalacja Apache Ambari
+
+~~~
+wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.4.2.0/ambari.repo
+yum install ambari-server -y
+ambari-server setup
+ambari-server start
+~~~
+
 # Legenda
 * 
