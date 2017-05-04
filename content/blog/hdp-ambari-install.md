@@ -43,8 +43,16 @@ yum install -y vim htop
 
 # Zmieniamy hostname
 
+Na każdej z maszyn ustawiamy inny hostname, na przykład:
 ~~~shell
 hostnamectl set-hostname hadoop1.bigdatapassion.pl --static
+hostnamectl set-hostname hadoop2.bigdatapassion.pl --static
+hostnamectl set-hostname hadoop3.bigdatapassion.pl --static
+~~~
+
+Status możemy sprawdzić
+~~~shell
+hostnamectl status
 ~~~
 
 # Konfigurujemy hosty
