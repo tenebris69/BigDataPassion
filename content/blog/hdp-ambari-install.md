@@ -14,6 +14,13 @@ type = "post"
 
 Instrukcja instalacji dystrybucji Hortonworks na maszynach z systemem CentOS 7. Do instalacji zostanie użyte Apache Ambari.
 
+# Klaster ssh
+
+Jeśli chcemy wykonywać wybrane polecenia jednocześnie na wszystkich maszynach możemy użyć polecenia _cssh_.
+~~~shell
+cssh root@hadoop1 root@hadoop2 root@hadoop3
+~~~
+
 # Aktualizacja systemu
 
 ~~~shell
@@ -63,11 +70,13 @@ hostnamectl status
 192.168.172.203 hadoop3 hadoop3.bigdatapassion.pl
 ~~~
 
-# Klaster ssh
+# Konfigurujemy logowanie SSH bez hasła
 
-Jeśli chcemy wykonywać wybrane polecenia jednocześnie na wszystkich maszynach możemy użyć polecenia _cssh_.
-~~~shell
-cssh root@hadoop1 root@hadoop2 root@hadoop3
+~~~
+ssh-keygen
+ssh-copy-id root@hadoop1
+ssh-copy-id root@hadoop2
+ssh-copy-id root@hadoop3
 ~~~
 
 # Legenda
