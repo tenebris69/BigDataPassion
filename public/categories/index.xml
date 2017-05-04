@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Big Data Passion</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 May 2017 17:04:17 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 04 May 2017 12:59:11 +0200</lastBuildDate>
     
 	<atom:link href="http://bigdatapassion.pl/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>Administracja</title>
       <link>http://bigdatapassion.pl/categories/administracja/</link>
-      <pubDate>Mon, 01 May 2017 17:04:17 +0200</pubDate>
+      <pubDate>Thu, 04 May 2017 12:59:11 +0200</pubDate>
       
       <guid>http://bigdatapassion.pl/categories/administracja/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CentOS</title>
+      <link>http://bigdatapassion.pl/categories/centos/</link>
+      <pubDate>Thu, 04 May 2017 12:59:11 +0200</pubDate>
+      
+      <guid>http://bigdatapassion.pl/categories/centos/</guid>
       <description></description>
     </item>
     
@@ -26,6 +35,15 @@
       <pubDate>Mon, 01 May 2017 17:04:17 +0200</pubDate>
       
       <guid>http://bigdatapassion.pl/categories/hbase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtualbox</title>
+      <link>http://bigdatapassion.pl/categories/virtualbox/</link>
+      <pubDate>Thu, 04 May 2017 12:59:11 +0200</pubDate>
+      
+      <guid>http://bigdatapassion.pl/categories/virtualbox/</guid>
       <description></description>
     </item>
     
