@@ -31,8 +31,8 @@ dhclient -v enp0s3
 Ręcznie dodajemy następujące wpisy do pliku /etc/sysconfig/network-scripts/ifcfg-enp0s3
 
 ~~~shell
-BOOTPROTO=static
-ONBOOT=yes
+BOOTPROTO="static"
+ONBOOT="yes"
 IPADDR=192.168.172.186
 NETMASK=255.255.255.0
 GATEWAY=192.168.172.1
@@ -43,6 +43,11 @@ Ewentualnie można zamiast edytora vi użyć sed'a:
 ~~~shell
 sed -i 's/ONBOOT=no/ONBOOT=yes/g'  /etc/sysconfig/network-scripts/ifcfg-enp0s3
 sed -i 's/BOOTPROTO=dhcp/BOOTPROTO=static/g'  /etc/sysconfig/network-scripts/ifcfg-enp0s3
+~~~
+
+Restartujemy serwis sieciowy
+~~~shell
+systemctl restart network.service
 ~~~
 
 # Statyczne IP ustawiane za pomocą Network Manageraip
