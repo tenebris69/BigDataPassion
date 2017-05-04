@@ -21,40 +21,40 @@ VirtualBox'a można zainstalować na systemie Windows, Linux, MacOS i Solaris ś
 Po zainstalowaniu możemy uruchomić narzędzie w trybie graficznym lub korzystać z linii komend. Ta druga opcja udostępnia większe możliwości, jednak jest adresowana do bardziej doświadczonych użytkowników, dlatego skorzystamy z wersji okienkowej.
 
 Po uruchomieniu wersji graficznej powinniśmy zobaczyć coś takiego:
-![Example image](/img/virtualbox-installing-cluster-with-centos/virtualbox1.png)
+![](/img/virtualbox-installing-cluster-with-centos/virtualbox1.png)
 
 
-# Stworzenie czystej maszyny w VirtualBox
+# Stworzenie maszyny w VirtualBox
 
 Teraz tworzymy nową czystą maszynę klikając _New_.
 
 W nowo otwartym oknie wpisujemy nazwę, np. _hadoop1_, wybieramy Typ _Linux_ i wersję _Red Hat (64-bit)_ (CentOS jest oparty o dystrubucję Red Hat Enterprise Linux).
 
-![Example image](/img/virtualbox-installing-cluster-with-centos/virtualbox2.png)
+![](/img/virtualbox-installing-cluster-with-centos/virtualbox2.png)
 
 W kolejnym ekranie przydzielamy pamięć RAM do maszyny, np. 16 GB.
 
-![Example image](/img/virtualbox-installing-cluster-with-centos/virtualbox3.png)
+![](/img/virtualbox-installing-cluster-with-centos/virtualbox3.png)
 
 Tworzymy nowy wirtualny dysk dla naszej maszyny wirtualnej.
 
-![Example image](/img/virtualbox-installing-cluster-with-centos/virtualbox4.png)
+![](/img/virtualbox-installing-cluster-with-centos/virtualbox4.png)
 
 Wybieramy domyślny typ dysku VDI.
 
-![Example image](/img/virtualbox-installing-cluster-with-centos/virtualbox5.png)
+![](/img/virtualbox-installing-cluster-with-centos/virtualbox5.png)
 
 Ustawiamy dynamiczne alokowanie powierzchni dysku (nasz wirtualny dysk będzie miał od razu widoczną całkowitą powierzchnię, ale fizycznie plik na dysku komputera hosta na którym zainstalowany jest VirtualBox będzie miał wielkość proporcjonalną do wielkości zajmowanego miejsca na wirtualnym dysku).
 
-![Example image](/img/virtualbox-installing-cluster-with-centos/virtualbox6.png)
+![](/img/virtualbox-installing-cluster-with-centos/virtualbox6.png)
 
 Ustawiamy docelową wielkość dysku (z racji dynamicznej alokacji możemy ustawić więcej niż potrzebujemy, np. 100 GB) i klimay _Create_.
 
-![Example image](/img/virtualbox-installing-cluster-with-centos/virtualbox7.png)
+![](/img/virtualbox-installing-cluster-with-centos/virtualbox7.png)
 
 Nasza maszyna jest już utworzona i widzimy ją na liście.
 
-![Example image](/img/virtualbox-installing-cluster-with-centos/virtualbox8.png)
+![](/img/virtualbox-installing-cluster-with-centos/virtualbox8.png)
 
 # Pobranie CentOS'a
 
@@ -62,7 +62,48 @@ Najnowszą siądmą wersję systemu CentOS (Community ENTerprise Operating Syste
 
 # Instalacja CentOS'a
 
-TODO
+Uruchamiamy utworzoną maszynę wirtualną przyciskiem _Run_. Następnie wybieramy wcześniej ściągnięty obraz ISO systemu CentOS (klikamy ikonkę katalogu obok wybieranej listy)
+
+![](/img/virtualbox-installing-cluster-with-centos/centos1.png)
+![](/img/virtualbox-installing-cluster-with-centos/centos2.png)
+
+Po uruchomieniu maszyny z obrazu ISO wybieramy instalację.
+
+![](/img/virtualbox-installing-cluster-with-centos/centos3.png)
+
+Możemy ustawić język polski dla zgodności z polskimi stronami kodowymi.
+
+![](/img/virtualbox-installing-cluster-with-centos/centos4.png)
+
+Instalator będzie nas prosić o potwierdzenie automatycznego partycjonowania całego dysku.
+
+![](/img/virtualbox-installing-cluster-with-centos/centos5.png)
+
+Podczas instalacji systemu konieczne jest ustawienie hasła dla użytkownika _root_.
+
+![](/img/virtualbox-installing-cluster-with-centos/centos6.png)
+
+Gdy system skończy się instalować uruchamiamy ponownie maszynę (Virtualbox uruchomi ją już automatycznie z dysku wirtualnego a nie z wskazanego obrazu ISO)
+
+![](/img/virtualbox-installing-cluster-with-centos/centos7.png)
+
+Po uruchomieniu maszyny możemy zalogować się do niej na użytkownika _root_ wpisując go jako login i podając wcześniej ustawione hasło.
+
+![](/img/virtualbox-installing-cluster-with-centos/centos8.png)
+
+# Dodatkowe maszyny
+
+Jeśli chcemy mieć więcej maszyn możemy ten proces powtórzyć mogąc jednocześnie wybrać inne opcje konfiguracyjne lub po prostu gdy chcemy mieć identyczne maszyny sklonować już stworzoną maszynę. W tym celu klikamy prawym przyciskiem myszy na wybranej maszynie i wybieramy opcję klonowania (Ctrl+O)
+
+Warto przy tym wybrać opcję stworzenia innego numeru MAC adresu karty sieciowej:
+
+![](/img/virtualbox-installing-cluster-with-centos/virtualbox9.png)
+
+oraz wybrać pełną kopię.
+
+![](/img/virtualbox-installing-cluster-with-centos/virtualbox10.png)
+
+W ten sposób otrzymaliśmy gotowy klaster testowy i możemy zainstalować na nim Hadoopa lub całą wybraną jego dystrybucję czemu poświęcone będą kolejne wpisy.
 
 # Legenda
 * https://www.virtualbox.org/
