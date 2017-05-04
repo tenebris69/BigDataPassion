@@ -133,6 +133,11 @@ Edytujemy ustawienia urządzeni _enp0s3_
 nmtui edit enp0s3 
 ~~~
 
+Gdyby narzędzie nie było dostępne można je zainstalować za pomocą
+~~~shell
+yum install -y NetworkManager NetworkManager-tui
+~~~
+
 Ustawiamy statyczny adres IP
 ~~~bash
 192.168.172.186
