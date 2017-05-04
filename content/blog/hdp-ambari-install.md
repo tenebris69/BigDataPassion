@@ -45,7 +45,7 @@ yum repolist
 # Instalacja kolejnych przydatnych narzędzi
 
 ~~~shell
-yum install -y vim htop
+yum install -y vim htop ntp openssh-server openssh-clients nano bash-completion
 ~~~
 
 # Zmieniamy hostname
@@ -72,22 +72,32 @@ hostnamectl status
 
 # Konfigurujemy logowanie SSH bez hasła
 
-~~~
+~~~shell
 ssh-keygen
 ssh-copy-id root@hadoop1
 ssh-copy-id root@hadoop2
 ssh-copy-id root@hadoop3
 ~~~
 
+# Wyłączamy selinux
+
+Edytujemy plik /etc/sysconfig/selinux ustawiając SELINUX na disabled.
+
 # Instalacja Apache Ambari
 
-~~~
+~~~shell
 cd /etc/yum.repos.d/
 wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari.repo
 yum install ambari-server -y
 ambari-server setup
 ambari-server start
 ~~~
+
+Następnie wchodzimy na adres: http://hadoop1:8080 i całą instalację kontynuujemy w trybie graficznym.
+
+# Konfiguracja klastra HDP
+
+
 
 # Legenda
 * https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ambari_repositories.html
