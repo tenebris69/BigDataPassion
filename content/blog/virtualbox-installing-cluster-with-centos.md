@@ -91,6 +91,59 @@ Po uruchomieniu maszyny możemy zalogować się do niej na użytkownika _root_ w
 
 ![](/img/virtualbox-installing-cluster-with-centos/centos8.png)
 
+# Konfiguracja sieci
+
+Dla wyłączonej maszyny w VirtualBox w zakładce _Sieć_ ustawiamy _Mostkowana karta sieciowa (bridge)_.
+
+Uruchamiamy maszynę i logujemy się
+
+~~~bash
+ip l
+~~~
+
+Łączymy się z siecią za pomocą DHCP i urządzenai enp03
+
+~~~bash
+dhclient -v enp0s3
+~~~
+
+Gdy mamy już przydzielone IP (ponownie uruchamiamy ip l) możemy doinstalować kilka niezbędnych pakietów:
+
+~~~bash
+yum update -y
+yum install -y wget
+
+wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm
+rpm -ivh epel-release-7-9.noarch.rpm
+
+yum update -y
+yum repolist
+
+yum install -y NetworkManager NetworkManager-tui
+~~~
+
+Before using nmtui, first set "NM_CONTROLLED=yes" in /etc/sysconfig/network-scripts/ifcfg-enp0s3.
+~~~bash
+yum install vim -y
+vim /etc/sysconfig/network-scripts/ifcfg-enp0s3
+~~~
+
+Edytujemy ustawienia urządzeni _enp0s3_
+~~~bash
+nmtui edit enp0s3 
+~~~
+
+Ustawiamy statyczny adres IP
+~~~bash
+192.168.172.186
+192.168.172.200/24
+~~~
+
+Restartujemy serwis sieciowy
+~~~bash
+systemctl restart network.service
+~~~
+
 # Dodatkowe maszyny
 
 Jeśli chcemy mieć więcej maszyn możemy ten proces powtórzyć mogąc jednocześnie wybrać inne opcje konfiguracyjne lub po prostu gdy chcemy mieć identyczne maszyny sklonować już stworzoną maszynę. W tym celu klikamy prawym przyciskiem myszy na wybranej maszynie i wybieramy opcję klonowania (Ctrl+O)
