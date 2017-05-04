@@ -39,6 +39,12 @@ GATEWAY=192.168.172.1
 DNS1=8.8.8.8
 ~~~
 
+Ewentualnie można zamiast edytora vi użyć sed'a:
+~~~shell
+sed -i 's/ONBOOT=no/ONBOOT=yes/g'  /etc/sysconfig/network-scripts/ifcfg-enp0s3
+sed -i 's/BOOTPROTO=dhcp/BOOTPROTO=static/g'  /etc/sysconfig/network-scripts/ifcfg-enp0s3
+~~~
+
 # Statyczne IP ustawiane za pomocą Network Manageraip
 
 Zanim zaczniemy używać narzędzia nmtui, musimy ustawić "NM_CONTROLLED=yes" w pliku /etc/sysconfig/network-scripts/ifcfg-enp0s3.
