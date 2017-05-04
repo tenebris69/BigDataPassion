@@ -35,6 +35,18 @@ yum update -y
 yum repolist
 ~~~
 
+# Instalacja kolejnych przydatnych narzędzi
+
+~~~shell
+yum install -y vim htop
+~~~
+
+# Zmieniamy hostname
+
+~~~shell
+hostnamectl set-hostname hadoop1.bigdatapassion.pl --static
+~~~
+
 # Konfigurujemy hosty
 
 ~~~shell
