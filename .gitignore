@@ -1,0 +1,11 @@
+# Repositories
+.git
+.hg
+.svn
+.hgsvn
+
+# IntelliJ IDEA
+.idea
+*.iml
+*.ipr
+*.iws
