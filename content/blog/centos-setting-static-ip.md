@@ -31,6 +31,12 @@ dhclient -v enp0s3
 Ręcznie dodajemy następujące wpisy do pliku /etc/sysconfig/network-scripts/ifcfg-enp0s3
 
 ~~~shell
+BOOTPROTO=static
+ONBOOT=yes
+IPADDR=192.168.172.186
+NETMASK=255.255.255.0
+GATEWAY=192.168.172.1
+DNS1=8.8.8.8
 ~~~
 
 # Statyczne IP ustawiane za pomocą Network Manageraip
