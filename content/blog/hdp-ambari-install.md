@@ -83,6 +83,23 @@ ssh-copy-id root@hadoop3
 
 Edytujemy plik /etc/sysconfig/selinux ustawiając SELINUX na disabled.
 
+# Wyłączamy zaporę ogniową
+
+~~~shell
+systemctl disable firewalld
+systemctl stop firewalld
+systemctl status firewalld
+~~~
+
+# Włączenie serwera synchronizacji czasu
+
+~~~shell
+systemctl enable ntpd
+systemctl start ntpd
+systemctl is-enabled ntpd
+systemctl status ntpd
+~~~
+
 # Instalacja Apache Ambari
 
 ~~~shell
