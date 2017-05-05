@@ -234,7 +234,21 @@ oraz usługi robocze (Slaves) (wybieramy wszystkie 3 maszyny dla każdej z usłu
 
 ![](/img/hdp-ambari-install/hdp-assign-slaves.png)
 
+Konfigurujemy nasze serwisy, pola wymagane są na czerwono (najczęściej konieczność ustawienia hasła do bazy danych), pozostałe ustawienia na ten moment możemy pozostawić w ich wartościach domyślnych
 
+![](/img/hdp-ambari-install/hdp-configure.png)
+
+Akceptujemy ostrzeżenia i dostajemy podsumowanie instalacji
+
+![](/img/hdp-ambari-install/hdp-review.png)
+
+Na koniec Ambari zaczyna instalować wszystkie usługi zgodnie z naszymi wytycznymi
+
+![](/img/hdp-ambari-install/hdp-install.png)
+
+Po zakończonej instalacji możemy korzystać już w pełni wdrożonego klastra.
+
+Gdyby w trakcie instalacji wystąpiły jakieś błędy podczas uruchamiania usług, możemy spróbować zatrzymać wszystkie serwisy a następnie ponownie je włączyć. W tym celu w lewym pasku serwisów w menu _Actions_ wybieramy _Stop All_ a następnie _Start All_.
 
 # Legenda
 * https://hortonworks.com/products/data-center/hdp/
