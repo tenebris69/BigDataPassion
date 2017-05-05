@@ -186,6 +186,18 @@ ambari-server start
 
 Następnie wchodzimy na adres: http://hadoop1:8080 i całą instalację kontynuujemy w trybie graficznym. Logujemy się jako admin / admin.
 
+Następnie klikamy przycisk _Launch Install Wizard_
+
+![](/img/hdp-ambari-install/hdp-lanuch-install.png)
+
+Ustawiamy nazwę naszego klastra
+
+![](/img/hdp-ambari-install/hdp-cluster-name.png)
+
+Wybieramy wersję dystrybucji którą chcemy zainstalować
+
+![](/img/hdp-ambari-install/hdp-select-version.png)
+
 ~~~shell
 hadoop1.bigdatapassion.pl
 hadoop2.bigdatapassion.pl
@@ -193,6 +205,8 @@ hadoop3.bigdatapassion.pl
 ~~~
 
 Plik .ssh/id_rsa
+
+
 
 # Legenda
 * https://hortonworks.com/products/data-center/hdp/
