@@ -21,6 +21,11 @@ Jeśli chcemy wykonywać wybrane polecenia jednocześnie na wszystkich maszynach
 cssh root@hadoop1 root@hadoop2 root@hadoop3
 ~~~
 
+Jeśli wolimy klasyczne ssh, logujemy się na każdą maszynę oddzielnie:
+~~~shell
+ssh root@hadoop1
+~~~
+
 # Aktualizacja systemu
 
 ~~~shell
