@@ -214,6 +214,13 @@ Po kliknięciu _Register and Confirm_ Ambari przygotowuje nasze maszyny do insta
 
 ![](/img/hdp-ambari-install/hdp-confirm-hosts.png)
 
+Po zakończonym procesie powinniśmy dostać informację o udanym przygotowaniu maszyn
+
+![](/img/hdp-ambari-install/hdp-confirm-hosts-success.png)
+
+Jeśli jednak mamy informację o ostrzeżeniach, należy przejrzeć ich listę i rozwiązać problemy
+
+![](/img/hdp-ambari-install/hdp-confirm-hosts-error.png)
 
 
 
