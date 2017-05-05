@@ -1,7 +1,7 @@
 +++
 author = "Radosław Szmit"
 categories = ["CentOS","Administracja"]
-date = "2017-05-04T21:34:44+02:00"
+date = "2017-04-02T21:34:44+02:00"
 description = ""
 featured = ""
 featuredalt = ""
@@ -27,6 +27,13 @@ dhclient -v enp0s3
 ~~~
 
 # Statyczne IP ustawiane ręcznie
+
+Wyłączamy NetworkManager'a
+
+~~~shell
+systemctl disable NetworkManager.service
+systemctl stop NetworkManager.service
+~~~
 
 Ręcznie dodajemy następujące wpisy do pliku /etc/sysconfig/network-scripts/ifcfg-enp0s3
 
