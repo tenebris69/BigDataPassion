@@ -222,6 +222,18 @@ Jeśli jednak mamy informację o ostrzeżeniach, należy przejrzeć ich listę i
 
 ![](/img/hdp-ambari-install/hdp-confirm-hosts-error.png)
 
+Następnie wybieramy narzędzia które chcemy zainstalować (ilość i rodzaj według uznania, np. HDFS, MapReduce2, Tez, Hive, Pig, HBase, Oozie, Flume, Ambari Metrics)
+
+![](/img/hdp-ambari-install/hdp-choose-services.png)
+
+Wskazujemy na których maszynach mają być zainstalowane usługi zarządzające (Masters) (można zostawić na początek proponowane rozmieszczenie)
+
+![](/img/hdp-ambari-install/hdp-assign-masters.png)
+
+oraz usługi robocze (Slaves) (wybieramy wszystkie 3 maszyny dla każdej z usług)
+
+![](/img/hdp-ambari-install/hdp-assign-slaves.png)
+
 
 
 # Legenda
