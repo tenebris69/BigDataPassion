@@ -83,6 +83,10 @@ ssh-copy-id root@hadoop3
 
 Edytujemy plik /etc/sysconfig/selinux ustawiając SELINUX na disabled.
 
+~~~shell
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+~~~
+
 # Wyłączamy zaporę ogniową
 
 ~~~shell
@@ -105,6 +109,7 @@ systemctl status ntpd
 ~~~shell
 cd /etc/yum.repos.d/
 wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari.repo
+wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.4.2.0/ambari.repo
 yum install ambari-server -y
 ambari-server setup
 ~~~
