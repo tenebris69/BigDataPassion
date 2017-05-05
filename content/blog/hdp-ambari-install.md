@@ -1,13 +1,13 @@
 +++
 author = "Radosław Szmit"
-categories = ["HDP","Hadoop dystrybucje","Administracja"]
+categories = ["Dystrybucje Big Data","Hortonworks Data Platform (HDP)","Administracja"]
 date = "2017-05-05T19:24:48+02:00"
-description = ""
+description = "Instalacja HDP 2.6 za pomocą Ambari 2.5"
 featured = ""
 featuredalt = ""
 featuredpath = ""
 linktitle = ""
-title = "Instalacja HDP 2.6 za pomocą Ambari 2.5"
+title = "Instalacja dystrybucji Hortonworks Data Platform za pomocą Apache Ambari"
 type = "post"
 
 +++
@@ -195,6 +195,7 @@ hadoop3.bigdatapassion.pl
 Plik .ssh/id_rsa
 
 # Legenda
+* https://hortonworks.com/products/data-center/hdp/
 * https://ambari.apache.org/
 * https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ambari_repositories.html
 * https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.5.0

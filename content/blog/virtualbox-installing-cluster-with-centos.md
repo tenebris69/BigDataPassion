@@ -106,9 +106,12 @@ Warto przy tym wybrać opcję stworzenia innego numeru MAC adresu karty sieciowe
 
 ![](/img/virtualbox-installing-cluster-with-centos/virtualbox9.png)
 
-oraz wybrać pełną kopię.
+oraz wybrać pełną kopię
 
 ![](/img/virtualbox-installing-cluster-with-centos/virtualbox10.png)
+
+W przypadku dodatkowego pytania o klonowanie snapshotów, możemy je pominąć i wybrać tylko aktualny stan
+![](/img/virtualbox-installing-cluster-with-centos/virtualbox11.png)
 
 W ten sposób otrzymaliśmy gotowy klaster testowy i możemy zainstalować na nim Hadoopa lub całą wybraną jego dystrybucję czemu poświęcone będą kolejne wpisy.
 
