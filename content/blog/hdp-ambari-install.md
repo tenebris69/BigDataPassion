@@ -198,13 +198,22 @@ Wybieramy wersję dystrybucji którą chcemy zainstalować
 
 ![](/img/hdp-ambari-install/hdp-select-version.png)
 
+W kolejnym ekranie w polu _Target Hosts_ wskazujemy pełne adresy wybranych maszyn na których chcemy postawić dystrybucję
+
 ~~~shell
 hadoop1.bigdatapassion.pl
 hadoop2.bigdatapassion.pl
 hadoop3.bigdatapassion.pl
 ~~~
 
-Plik .ssh/id_rsa
+oraz wklejamy zawartość pliku /root/.ssh/id_rsa maszyny na której zainstalowaliśmy Ambari
+
+![](/img/hdp-ambari-install/hdp-install-options.png)
+
+Po kliknięciu _Register and Confirm_ Ambari przygotowuje nasze maszyny do instalacji
+
+![](/img/hdp-ambari-install/hdp-confirm-hosts.png)
+
 
 
 
