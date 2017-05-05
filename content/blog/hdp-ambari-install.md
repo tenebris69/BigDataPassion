@@ -1,13 +1,13 @@
 +++
 author = "Radosław Szmit"
 categories = ["HDP","Hadoop dystrybucje","Administracja"]
-date = "2017-05-04T19:24:48+02:00"
+date = "2017-05-05T19:24:48+02:00"
 description = ""
 featured = ""
 featuredalt = ""
 featuredpath = ""
 linktitle = ""
-title = "Instalacja HDP za pomocą Ambari 2.5"
+title = "Instalacja HDP 2.6 za pomocą Ambari 2.5"
 type = "post"
 
 +++
@@ -98,17 +98,20 @@ systemctl status firewalld
 # Włączenie serwera synchronizacji czasu
 
 ~~~shell
-systemctl enable ntpd
-systemctl start ntpd
-systemctl is-enabled ntpd
-systemctl status ntpd
+systemctl disable chrony.service
+
+systemctl enable ntpd.service
+systemctl is-enabled ntpd.service
+
+systemctl start ntpd.service
+systemctl status ntpd.service
 ~~~
 
 # Instalacja Apache Ambari
 
 ~~~shell
 cd /etc/yum.repos.d/
-wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari.repo
+#wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari.repo
 wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.4.2.0/ambari.repo
 yum install ambari-server -y
 ambari-server setup
@@ -187,4 +190,6 @@ hadoop3.bigdatapassion.pl
 Plik .ssh/id_rsa
 
 # Legenda
+* https://ambari.apache.org/
 * https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ambari_repositories.html
+* https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.5.0

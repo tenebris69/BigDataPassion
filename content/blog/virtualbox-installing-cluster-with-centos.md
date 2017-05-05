@@ -95,59 +95,8 @@ Po uruchomieniu maszyny możemy zalogować się do niej na użytkownika _root_ w
 
 Dla wyłączonej maszyny w VirtualBox w zakładce _Sieć_ ustawiamy _Mostkowana karta sieciowa (bridge)_.
 
-Uruchamiamy maszynę i logujemy się
-
-~~~bash
-ip l
-~~~
-
-Łączymy się z siecią za pomocą DHCP i urządzenai enp03
-
-~~~bash
-dhclient -v enp0s3
-~~~
-
-Gdy mamy już przydzielone IP (ponownie uruchamiamy ip l) możemy doinstalować kilka niezbędnych pakietów:
-
-~~~bash
-yum update -y
-yum install -y wget
-
-wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm
-rpm -ivh epel-release-7-9.noarch.rpm
-
-yum update -y
-yum repolist
-
-yum install -y NetworkManager NetworkManager-tui
-~~~
-
-Before using nmtui, first set "NM_CONTROLLED=yes" in /etc/sysconfig/network-scripts/ifcfg-enp0s3.
-~~~bash
-yum install vim -y
-vim /etc/sysconfig/network-scripts/ifcfg-enp0s3
-~~~
-
-Edytujemy ustawienia urządzeni _enp0s3_
-~~~bash
-nmtui edit enp0s3 
-~~~
-
-Gdyby narzędzie nie było dostępne można je zainstalować za pomocą
-~~~shell
-yum install -y NetworkManager NetworkManager-tui
-~~~
-
-Ustawiamy statyczny adres IP
-~~~bash
-192.168.172.186
-192.168.172.200/24
-~~~
-
-Restartujemy serwis sieciowy
-~~~bash
-systemctl restart network.service
-~~~
+Następnie konfigurujemy stałe IP jedną z dwóch metod:
+[Konfiguracja sieci w systemie CentOS 7](/blog/centos-setting-static-ip)
 
 # Dodatkowe maszyny
 
