@@ -57,14 +57,17 @@ Dodatkowo jesteśmy informowania o pracy z językiem _Ruby_ w którym _HBase She
 # Podstawowe polecenia #
 
 Sprawdzenie stanu bazy danych
+~~~ruby
+status
+~~~
+
+wywołanie
 ~~~shell
 hbase(main):001:0> status
 1 active master, 0 backup masters, 3 servers, 0 dead, 1.0000 average load
-
 hbase(main):002:0> 
 ~~~
-w wyniku dostajemy informację o liczbie działających usług sterujących i roboczych (master & slave), w naszym przypadku 1 usługa sterująca i 3
-robocze.
+w wyniku dostajemy informację o liczbie działających usług sterujących i roboczych (master & slave), w naszym przypadku 1 usługa sterująca i 3 robocze. Ostatnia pozycja _average load_ mówi nam o średniej liczbie regionów udostępnianych (host) przez region serwer, wyliczana w momencie uruchomienia polecenia.
 
 W razie problemów z bazą możemy dostać wyjątek mówiący np. braku połączenia z ZooKeeper'em
 ~~~shell
@@ -97,38 +100,48 @@ Jak widać wyżej, status może być typu:
 * replication source
 * replication sink
 
-Gdy nie wybierzemy żadnego z powyższych, domyślnie jest brany status _summary_. Opjce _simple_ i _detailed_ zwracają nam więcej informacji o stanie poszczególnych usług (serwerów), zaś ostatnie 3 dotyczą replikacji bazy z inną jej instancją czemu poświęcony będzie oddzielny wpis.
+Gdy nie wybierzemy żadnego z powyższych, domyślnie jest brany status _summary_. Opcje _simple_ i _detailed_ zwracają nam więcej informacji o stanie poszczególnych usług (serwerów), zaś ostatnie 3 dotyczą replikacji bazy z inną jej instancją czemu poświęcony będzie oddzielny wpis.
 
+~~~shell
+hbase(main):065:0* status 'simple'
+active master:  hadoop1:16000 1494057920582
+0 backup masters
+3 live servers
+    hadoop2:16020 1494057949122
+        requestsPerSecond=0.0, numberOfOnlineRegions=2, usedHeapMB=149, maxHeapMB=2007, numberOfStores=3, numberOfStorefiles=1, storefileUncompressedSizeMB=0, storefileSizeMB=0, memstoreSizeMB=0, storefileIndexSizeMB=0, readRequestsCount=4, writeRequestsCount=0, rootIndexSizeKB=0, totalStaticIndexSizeKB=0, totalStaticBloomSizeKB=0, totalCompactingKVs=0, currentCompactedKVs=0, compactionProgressPct=NaN, coprocessors=[SecureBulkLoadEndpoint]
+    hadoop1:16020 1494057947164
+        requestsPerSecond=0.0, numberOfOnlineRegions=1, usedHeapMB=181, maxHeapMB=2007, numberOfStores=1, numberOfStorefiles=1, storefileUncompressedSizeMB=0, storefileSizeMB=0, memstoreSizeMB=0, storefileIndexSizeMB=0, readRequestsCount=48, writeRequestsCount=2, rootIndexSizeKB=0, totalStaticIndexSizeKB=0, totalStaticBloomSizeKB=0, totalCompactingKVs=32, currentCompactedKVs=32, compactionProgressPct=1.0, coprocessors=[MultiRowMutationEndpoint, SecureBulkLoadEndpoint]
+    hadoop3:16020 1494057948195
+        requestsPerSecond=0.0, numberOfOnlineRegions=0, usedHeapMB=201, maxHeapMB=2007, numberOfStores=0, numberOfStorefiles=0, storefileUncompressedSizeMB=0, storefileSizeMB=0, memstoreSizeMB=0, storefileIndexSizeMB=0, readRequestsCount=0, writeRequestsCount=0, rootIndexSizeKB=0, totalStaticIndexSizeKB=0, totalStaticBloomSizeKB=0, totalCompactingKVs=0, currentCompactedKVs=0, compactionProgressPct=NaN, coprocessors=[]
+0 dead servers
+Aggregate load: 0, regions: 3
 
-
-
-
+hbase(main):066:0>
+~~~
+W powyższym przykładzie wywołania polecenia _status 'simple'_ widzimy status dla każdej z maszyn używanych przez bazę, wraz z statystykami takimi jak liczba żądań (requestsPerSecond), liczbę dostępnych regionów (numberOfOnlineRegions), konfigurację pamięci (usedHeapMB, maxHeapMB), liczbę przestrzeni _Store_ i plików składujących _StoreFile_ (numberOfStores, numberOfStorefiles), wielkość tych plików wraz z indeksem (storefileUncompressedSizeMB, storefileSizeMB, storefileIndexSizeMB), wielkość sprzestrzeni _MemStore_ (memstoreSizeMB), liczbę żądań całkowitą (readRequestsCount, writeRequestsCount), wielkość głównego indeksu (rootIndexSizeKB), wielkość wszystkich indeksów (totalStaticIndexSizeKB), całkowita wielkość fitru Bloom (totalStaticBloomSizeKB), stan kompatkowania (totalCompactingKVs, currentCompactedKVs, compactionProgressPct) oraz zarejestrowane koprocesory (coprocessors). Parametr _Aggregate load_ jest wyznaczany z _requestsPerSecond_ ze wszystkich maszyn.
 
 
 Sprawdzenie wersji na jakiej pracujemy
-~~~ruby
-hbase(main):062:0> version
-1.1.2.2.4.0.0-169, r61dfb2b344f424a11f93b3f086eab815c1eb0b6a, Wed Feb 10 07:08:51 UTC 2016
-hbase(main):063:0> 
+~~~shell
+hbase(main):001:0> version
+1.1.2.2.5.3.0-37, rcb8c969d1089f1a34e9df11b6eeb96e69bcf878d, Tue Nov 29 18:48:22 UTC 2016
+
+hbase(main):002:0>
 ~~~
 
 Sprawdzanie jakim jesteśmy użytkownikiem
-~~~ruby
-hbase(main):025:0* whoami
-xrszmit (auth:SIMPLE)
-    groups: users, wheel
+~~~shell
+hbase(main):002:0> whoami
+hbase (auth:SIMPLE)
+    groups: hadoop
 
-hbase(main):026:0> 
+hbase(main):003:0> 
 ~~~
 
 Informacja na temat używania zmiennych w Shell'u (dostępne od wersji 0.96+)
 ~~~ruby
 hbase(main):058:0> table_help
 ~~~
-
-
-
-
 
 
 
@@ -249,16 +262,17 @@ export HBASE_SHELL_OPTS="-verbose:gc -XX:+PrintGCApplicationStoppedTime -XX:+Pri
 
 
 
-# Przydatne linki #
+# Legenda
 
 * http://hbase.apache.org/1.2/book.html#shell
-* http://archive.cloudera.com/cdh5/cdh/5/hbase-0.98.6-cdh5.2.0/book/shell.html
-* https://community.hortonworks.com/articles/54761/compression-in-hbase.html
-* https://www.ruby-lang.org/pl/documentation/quickstart/
 * http://hadoop-hbase.blogspot.com/2011/12/deletion-in-hbase.html
+* https://community.hortonworks.com/articles/54761/compression-in-hbase.html
+* http://archive.cloudera.com/cdh5/cdh/5/hbase-0.98.6-cdh5.2.0/book/shell.html
 * https://www.cloudera.com/documentation/enterprise/5-6-x/topics/admin_hbase_blockcache_configure.html
 * https://www.cloudera.com/documentation/enterprise/5-5-x/topics/admin_configure_blocksize.html
-
+* https://github.com/apache/hbase/tree/master/hbase-shell/src/main/ruby/shell/commands
+* https://github.com/GoogleCloudPlatform/cloud-bigtable-examples/tree/master/quickstart/thirdparty/ruby/shell/commands
+* https://www.ruby-lang.org/pl/documentation/quickstart/
 
 
 
