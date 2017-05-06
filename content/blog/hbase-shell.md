@@ -52,10 +52,22 @@ help "ddl"
 help "alter"
 ~~~
 
+Dodatkowo jesteśmy informowania o pracy z językiem _Ruby_ w którym _HBase Shell_ został stworzony i podstawach jego składni.
+
 # Podstawowe polecenia #
 
 Sprawdzenie stanu bazy danych
+~~~shell
+hbase(main):001:0> status
+1 active master, 0 backup masters, 3 servers, 0 dead, 1.0000 average load
+
+hbase(main):002:0> 
 ~~~
+w wyniku dostajemy informację o liczbie działających usług sterujących i roboczych (master & slave), w naszym przypadku 1 usługa sterująca i 3
+robocze.
+
+W razie problemów z bazą możemy dostać wyjątek mówiący np. braku połączenia z ZooKeeper'em
+~~~shell
 hbase(main):001:0> status
 
 ERROR: Can't get master address from ZooKeeper; znode data == null
@@ -75,7 +87,8 @@ default is 'summary'. Examples:
 
 hbase(main):002:0> 
 ~~~
-Jak widać status może być typu:
+
+Jak widać wyżej, status może być typu:
 
 * simple
 * summary
@@ -84,29 +97,12 @@ Jak widać status może być typu:
 * replication source
 * replication sink
 
-W powyższym przykładzie widać, że baza nie jest uruchomiona (dokładnie rzecz biorąc ZooKeeper bez którego HBase nie potrafi działać)
-
-Uruchomienie bazy (Sandbox Hortonworks)
-~~~shell
-[root@sandbox ~]# /etc/init.d/hbase-starter start
-Starting HBase...
-Starting Postgre SQL                                      [  OK  ]
-Starting name node                                        [  OK  ]
-Starting zookeeper nodes                                  [  OK  ]
-Starting hbase master                                     [  OK  ]
-Starting hbase thrift                                     [  OK  ]
-Starting hbase stargate                                   [  OK  ]
-Starting hbase regionservers                              [  OK  ]
-[root@sandbox ~]# 
-~~~
+Gdy nie wybierzemy żadnego z powyższych, domyślnie jest brany status _summary_. Opjce _simple_ i _detailed_ zwracają nam więcej informacji o stanie poszczególnych usług (serwerów), zaś ostatnie 3 dotyczą replikacji bazy z inną jej instancją czemu poświęcony będzie oddzielny wpis.
 
 
-Sprawdzenie stanu bazy po włączeniu
-~~~ruby
-hbase(main):001:0> status
-1 servers, 0 dead, 280.0000 average load
-hbase(main):002:0> 
-~~~
+
+
+
 
 
 Sprawdzenie wersji na jakiej pracujemy
