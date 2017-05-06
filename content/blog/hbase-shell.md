@@ -27,9 +27,9 @@ hbase(main):001:0>
 
 Wyjście z konsoli
 ~~~ruby
-hbase(main):002:0> exit
+exit
 ~~~
-lub Ctrl+C / Ctrl+C
+lub Ctrl+C / Ctrl+D
 
 Pomoc dla Shell'a możemy wywołać poleceniem
 ~~~ruby
@@ -273,14 +273,17 @@ exists 'table'
 ~~~
 
 Definicję tabel można także zmieniać już po ich stworzeniu za pomocą poleceń
-
 ~~~ruby
 alter 'table'
 alter_async 'table'
 ~~~
 Drugie wywołanie jest asynchroniczne, to znaczy nie czekamy na zmianę na wszystkich regionach.
 
-Przykład użycia
+Za pomocą tych poleceń możemy dodawać, modyfikować i usuwać rodziny kolumn oraz zmieniać ich konfigurację.
+
+**UWAGA** Operacje _alter_ na aktywnych tabelach (enabled) może powodować problemy, zwłaszcza w starszych wersjach dlatego w bazach produkcyjnych bezpieczniej jest robić to na nieaktywnych tabelach lub wcześniej przetestować polecenie na bazie testowej. Administratorzy mogą ustawić parametr "hbase.online.schema.update.enable" na false zmuszając użytkowników do wykonywania polecenia _alter_ tylko na tabelach nieaktywnych.
+
+Przykład użycia wywołania synchronicznego (dodajemy trzecią rodzinę)
 ~~~ruby
 create 'person', {NAME => 'cf1'}, {NAME => 'cf2'}
 describe 'person'
@@ -293,7 +296,7 @@ W przypadku wywołania asynchronicznego status operacji możemy sprawdzić za po
 ~~~ruby
 alter_status 'table' 
 ~~~
-przykład użycia
+przykład użycia (dodajemy trzecią rodzinę)
 ~~~ruby
 create 'person', {NAME => 'cf1'}, {NAME => 'cf2'}
 describe 'person'
@@ -302,6 +305,53 @@ alter_status 'person'
 describe 'person'
 disable 'person'; drop 'person'
 ~~~
+
+Jeśli chcemy usunąć rodzinę
+~~~ruby
+alter 'table', NAME => 'f1', METHOD => 'delete'
+alter 'table', 'delete' => 'f1'
+~~~
+
+Jeśli modyfikujemy tylko jedną rodzinę, możemy użyć krótszej składni
+~~~ruby
+alter 't1', NAME => 'f1', VERSIONS => 5
+~~~
+
+Przy modyfikacji kilku rodzin trzeba już użyć nawiasów {}
+~~~ruby
+alter 't1', 'f1', {NAME => 'f2', IN_MEMORY => true}, {NAME => 'f3', VERSIONS => 5}
+~~~
+
+Możemy także zmienać parametry tabeli, np. MAX_FILESIZE, READONLY, MEMSTORE_FLUSHSIZE, DURABILITY (w HBase większość parametrów jest definiowanych na poziomie rodziny kolumn), poniżej przykład zmiany domyślnego rozmiaru regionu na 128MB
+~~~ruby
+alter 'table', MAX_FILESIZE => '134217728'
+~~~
+
+Oprócz ustawiania atrybutów tabel, możemy je usuwać
+~~~ruby
+alter 'table', METHOD => 'table_att_unset', NAME => 'MAX_FILESIZE'
+~~~
+
+Jeśli chcemy jednocześnie modyfikować rodziny kolumn oraz dodawać dodatkowe parametry możemy to zrobić jak na poniższym przykładzie
+~~~ruby
+alter 'table', { NAME => 'f1', VERSIONS => 3 }, { MAX_FILESIZE => '134217728' }, { METHOD => 'delete', NAME => 'f2' }, OWNER => 'johndoe', METADATA => { 'mykey' => 'myvalue' }
+~~~
+
+
+
+
+
+
+
+~~~ruby
+~~~
+
+
+
+
+
+
+
 
 
 
@@ -315,7 +365,25 @@ show_filters
 
 
 
+
+
+
+
+
 # Skrypty w Ruby
+
+HBase Shell'a możemy też używać do wykonywania naszych skryptów zapisanych w postaci pliku tekstowego
+~~~shell
+cat nasz_skrypt.rb | hbase shell
+~~~
+
+lub możemy do niego przekierować pojedyńcze polecenie
+~~~shell
+echo "status 'detailed'" | hbase shell > /tmp/hbase-status-detailed.txt
+~~~
+tutaj dodatkowo wynik polecenia przekierowaliśmy do pliku txt.
+
+TODO
 
 Uruchamianie z pliku ruby i pliku txt
 Sztuczki w ruby
@@ -346,10 +414,3 @@ export HBASE_SHELL_OPTS="-verbose:gc -XX:+PrintGCApplicationStoppedTime -XX:+Pri
 * https://github.com/apache/hbase/tree/master/hbase-shell/src/main/ruby/shell/commands
 * https://github.com/GoogleCloudPlatform/cloud-bigtable-examples/tree/master/quickstart/thirdparty/ruby/shell/commands
 * https://www.ruby-lang.org/pl/documentation/quickstart/
-
-
-
-
-
-
-
