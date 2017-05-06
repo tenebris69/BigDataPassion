@@ -357,27 +357,8 @@ describe 'person'
 disable 'person'; drop 'person'
 ~~~
 
-
-
-
-
-
+HBase ma wbudowaną listę filtrów (użyje ich przy okazji polecenia _scan_) którą to listę możemy wyświetlić poleceniem
 ~~~ruby
-~~~
-
-
-
-
-
-
-
-
-
-
-
-TODO
-~~~ruby
-locate_region, 
 show_filters
 ~~~
 

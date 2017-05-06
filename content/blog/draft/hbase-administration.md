@@ -45,3 +45,18 @@ You can also set configuration settings specific to this table or column family:
 
 
   hbase> alter 't1', METHOD => 'table_att_unset', NAME => 'coprocessor$1'
+
+
+
+
+
+
+
+scan 'hbase:meta',{FILTER=>"PrefixFilter('table_name')"}
+
+
+TODO
+~~~ruby
+locate_region, 
+show_filters
+~~~
