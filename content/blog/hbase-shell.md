@@ -337,7 +337,18 @@ Jeśli chcemy jednocześnie modyfikować rodziny kolumn oraz dodawać dodatkowe 
 alter 'table', { NAME => 'f1', VERSIONS => 3 }, { MAX_FILESIZE => '134217728' }, { METHOD => 'delete', NAME => 'f2' }, OWNER => 'johndoe', METADATA => { 'mykey' => 'myvalue' }
 ~~~
 
+Przykład użycia
+~~~ruby
+create 'person', {NAME => 'cf1'}
+alter 'person', NAME => 'cf1', VERSIONS => 5
+describe 'person'
 
+alter 'person', {NAME => 'cf2'}
+alter 'person', {NAME => 'cf1', VERSIONS => 3}, {NAME => 'cf2', VERSIONS => 3}
+describe 'person'
+
+disable 'person'; drop 'person'
+~~~
 
 
 
