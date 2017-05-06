@@ -267,42 +267,51 @@ drop 'table'
 drop_all 'regex' 
 ~~~
 
+W każdej chwili możemy sprawdzić czy jakaś tabela istnieje poleceniem
+~~~ruby
+exists 'table'
+~~~
 
-
-
-
-
-
+Definicję tabel można także zmieniać już po ich stworzeniu za pomocą poleceń
 
 ~~~ruby
+alter 'table'
+alter_async 'table'
+~~~
+Drugie wywołanie jest asynchroniczne, to znaczy nie czekamy na zmianę na wszystkich regionach.
+
+Przykład użycia
+~~~ruby
+create 'person', {NAME => 'cf1'}, {NAME => 'cf2'}
+describe 'person'
+alter 'person', {NAME => 'cf3'}
+describe 'person'
+disable 'person'; drop 'person'
+~~~
+
+W przypadku wywołania asynchronicznego status operacji możemy sprawdzić za pomocą polecenia
+~~~ruby
+alter_status 'table' 
+~~~
+przykład użycia
+~~~ruby
+create 'person', {NAME => 'cf1'}, {NAME => 'cf2'}
+describe 'person'
+alter_async 'person', {NAME => 'cf3'}
+alter_status 'person'
+describe 'person'
+disable 'person'; drop 'person'
 ~~~
 
 
 
-alter, 
-alter_async, 
-alter_status, 
-exists, 
+
+TODO
+~~~ruby
 get_table, 
 locate_region, 
 show_filters
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+~~~
 
 
 
