@@ -14,6 +14,7 @@ draft = true
 +++
 
 
+The animal on the cover of Architecting HBase Applications is a killer whale or orca (Orcinus orca). Killer whales have black and white coloring, including a ...
 
 
 # Spis treści
