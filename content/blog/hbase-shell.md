@@ -222,35 +222,64 @@ COLUMN FAMILIES DESCRIPTION
 3 row(s) in 0.0370 seconds
 hbase(main):096:0> 
 ~~~
-
 Shell zwraca informację że tabela jest aktywna (ENABLED) oraz zwraca listę rodzin kolumn wraz z ich parametrami, każda w oddzielnym nawiasie klamrowym {}
 
+Domyślnie każda tabela jest aktywna, co oznacza, że jest gotowa do operowania na niej. Wiele poleceń administracyjnych dotyczących tabel wymaga jednak by tabela była nieaktywna (disabled). Administrator może także w ten sposób zablokować dostęp do tej tabeli użytkownikom, np. na czas trwania backupu. Żeby zmienić stan tabeli na disabled należy użyć polecenia
+
+~~~ruby
+disable 'person'
+~~~
+
+Aby ponownie zrobić tabelę dostępną należy użyć odwrotnego polecenia
+
+~~~ruby
+enable 'person'
+~~~
+
+Jeśli chcemy zmienić status większej liczbie tabel możemy uruchomić je wiele razy w pętli lub użyć poleceń które przyjmują wyrażenia regularne
+~~~ruby
+disable_all 'regex' 
+enable_all 'regex'
+~~~
+W tym przypadku shell wyświetli nam listę odnalezionych tabel i poprosi o potwierdzenie operacji
+~~~shell
+hbase(main):111:0* disable_all 'per.*'
+person                                      
+Disable the above 1 tables (y/n)?
+1 tables successfully disabled
+hbase(main):112:0> 
+hbase(main):114:0* enable_all 'per.*'
+person
+Enable the above 1 tables (y/n)?
+1 tables successfully enabled
+hbase(main):115:0> 
+~~~
+
+Jednym z poleceń wymagających dezaktywacji tabeli jest usuwanie tabel które także jest dostępne w wersji usuwającej jedną tabelę i takiej które przyjmuje wyrażenie regularne
+~~~ruby
+drop 'table'
+drop_all 'regex' 
+~~~
 
 
 
 
 
 
- 
+
+
+~~~ruby
+~~~
 
 
 
 alter, 
 alter_async, 
 alter_status, 
-create,
-describe, 
-disable, 
-disable_all, 
-drop, 
-drop_all, 
-enable, 
-enable_all, 
 exists, 
 get_table, 
 is_disabled, 
 is_enabled, 
-list, 
 locate_region, 
 show_filters
 
@@ -273,7 +302,7 @@ show_filters
 
 
 
-# Skrypty w Ruby #
+# Skrypty w Ruby
 
 Uruchamianie z pliku ruby i pliku txt
 Sztuczki w ruby
@@ -281,7 +310,7 @@ Sztuczki w ruby
 
 
 
-# Konfiguracja Shella za pomocą zmiennej systemowej #
+# Konfiguracja Shella za pomocą zmiennej systemowej
 
 Jeśli chcemy by shell używałe więcej pamięci RAM lub przekazać mu inne parametry, możemy to zrobić za pomocą zmiennej systemowej HBASE_SHELL_OPTS
 
@@ -294,7 +323,8 @@ export HBASE_SHELL_OPTS="-verbose:gc -XX:+PrintGCApplicationStoppedTime -XX:+Pri
 
 # Legenda
 
-* http://hbase.apache.org/1.2/book.html#shell
+* http://hbase.apache.org
+* http://hbase.apache.org/book.html#shell
 * http://hadoop-hbase.blogspot.com/2011/12/deletion-in-hbase.html
 * https://community.hortonworks.com/articles/54761/compression-in-hbase.html
 * http://archive.cloudera.com/cdh5/cdh/5/hbase-0.98.6-cdh5.2.0/book/shell.html
