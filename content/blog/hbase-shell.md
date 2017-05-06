@@ -149,11 +149,6 @@ hbase (auth:SIMPLE)
 hbase(main):003:0> 
 ~~~
 
-Informacja na temat używania zmiennych w Shell'u (dostępne od wersji 0.96+)
-~~~ruby
-table_help
-~~~
-
 
 
 
@@ -366,6 +361,7 @@ disable 'person'; drop 'person'
 
 
 
+
 ~~~ruby
 ~~~
 
@@ -381,13 +377,42 @@ disable 'person'; drop 'person'
 
 TODO
 ~~~ruby
-get_table, 
 locate_region, 
 show_filters
 ~~~
 
 
 
+
+# Ułatwienie pracy w HBase shell
+
+Skoro językiem którym poslugujemy się w shellu jest język _Ruby_ to możemy skorzystać także z możliwości jakiej daje nam każdy język programowania, czyli zmiennych.
+
+Instrukcję na temat używania zmiennych w Shell'u możemy dostać używając polecenia
+~~~ruby
+table_help
+~~~
+
+Dzięki temu możemy tworząc tabelę przypisać ją od razu do zmiennej
+~~~ruby
+t = create 't', 'cf'
+~~~
+a potem już tylko używać w naszym skrypcie
+
+~~~ruby
+t = create 'table', 'cf'
+t.put 'r', 'cf:q', 'v'
+t.scan
+t.flush
+t.disable
+t.drop
+~~~
+
+Jeśli chcemy pracować na wcześniej utworzonej tabeli, możemy ją przypisać do zmiennej za pomocą polecenia
+
+~~~ruby
+t = get_table 'table'
+~~~
 
 
 
