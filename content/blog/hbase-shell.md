@@ -255,6 +255,12 @@ Enable the above 1 tables (y/n)?
 hbase(main):115:0> 
 ~~~
 
+Jeśli nie wiemy jaki stan ma jakaś tabela, to oprócz używania polecenia _describe_ możemy sprawdzić to poleceniami
+~~~ruby
+is_disabled 'table'
+is_enabled 'table'
+~~~
+
 Jednym z poleceń wymagających dezaktywacji tabeli jest usuwanie tabel które także jest dostępne w wersji usuwającej jedną tabelę i takiej które przyjmuje wyrażenie regularne
 ~~~ruby
 drop 'table'
@@ -278,8 +284,6 @@ alter_async,
 alter_status, 
 exists, 
 get_table, 
-is_disabled, 
-is_enabled, 
 locate_region, 
 show_filters
 
