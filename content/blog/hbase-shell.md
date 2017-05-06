@@ -347,6 +347,18 @@ alter 'person', {NAME => 'cf2'}
 alter 'person', {NAME => 'cf1', VERSIONS => 3}, {NAME => 'cf2', VERSIONS => 3}
 describe 'person'
 
+alter 'person', 'delete' => 'cf2'
+describe 'person'
+
+alter 'person', MAX_FILESIZE => '134217728'
+describe 'person'
+
+alter 'person', METHOD => 'table_att_unset', NAME => 'MAX_FILESIZE'
+describe 'person'
+
+alter 'person', { NAME => 'cf3', VERSIONS => 5}, { MAX_FILESIZE => '134217728' }, { METHOD => 'delete', NAME => 'cf1' }, OWNER => 'johndoe', METADATA => { 'mykey' => 'myvalue' }
+describe 'person'
+
 disable 'person'; drop 'person'
 ~~~
 
