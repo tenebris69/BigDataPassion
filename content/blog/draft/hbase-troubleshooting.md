@@ -10,6 +10,7 @@ linktitle = ""
 title = "Hbase troubleshooting"
 type = "post"
 
+draft = true
 +++
 
 HBase jak i sam HDFS na którym bazuje, zapewnia bardzo dobrą odporność na awarię na wielu płaszczyznach (awarie dysków, maszyn, całysz szaf rakowych, etc). Mimo to w specyficznych sytuacjach może się zdarzyć awaria która będzie wymagała od nas konkrtenych działań by umożliwiśc dalszą pracę naszego klastra obliczeniowego.

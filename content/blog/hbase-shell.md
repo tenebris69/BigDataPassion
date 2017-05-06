@@ -152,8 +152,9 @@ Nową tabelę możemy stworzyć za pomocą polecenia _create_
 ~~~ruby
 create 'person', 'cf'
 ~~~
-
 Musimy podać minimum dwa parametry, nazwę tabeli i nazwę rodziny kolumn (column family).
+
+Możemy też od razu dodać więcej niż jedną rodzinę
 ~~~ruby
 create 'person', 'cf1', 'cf2', 'cf3'
 ~~~
@@ -163,42 +164,7 @@ lub w ten sposób
 create 'person', {NAME => 'cf1'}, {NAME => 'cf2'}, {NAME => 'cf3'}
 ~~~
 
-Możemy też od razu dodać więcej niż jedną rodzinę
-
-Stworzenie tabeli z jedną rodziną kolumn i liczbą wersji równą 5
-~~~ruby
-hbase> create 'person', {NAME => 'cf', VERSIONS => 5}
-hbase> create 't1', {NAME => 'f1', VERSIONS => 1, TTL => 2592000, BLOCKCACHE => true}
-hbase> create 't1', {NAME => 'f1', CONFIGURATION => {'hbase.hstore.blockingStoreFiles' => '10'}}
-~~~
-
-Stworzenie tabeli z kilkoma rodzinami
-
-
-
-Lista istniejących tabel
-~~~ruby
-hbase(main):038:0* list
-person
-1 row(s) in 0.0290 seconds
-
-=> ["SYSTEM.CATALOG", "SYSTEM.FUNCTION", "SYSTEM.SEQUENCE", "SYSTEM.STATS", "ibm:ibmtable", "iemployee", "inventory", "java", "movies", "movies_comedy", "movies_data", "nam1:tab5", "person", "product", "ratings", "ratings_average", "sages:tabelkav2", "tabelkav", "tabv5", "tags", "test", "test:tablename", "users"]
-hbase(main):039:0> 
-~~~
-
-
-Opis tabeli
-~~~
-hbase(main):040:0* describe 'person'
-Table person is ENABLED 
-person
-COLUMN FAMILIES DESCRIPTION
-{NAME => 'cf', DATA_BLOCK_ENCODING => 'NONE', BLOOMFILTER => 'ROW', REPLICATION_SCOPE => '0', VERSIONS => '1', COMPRESSION => 'NONE', MIN_VERSIONS => '0', TTL => 'FOREVER', KEEP_DELETED_CELLS => 'FALSE', BLOCKSIZE => '65536', IN_MEMORY => 'false', BLOCKCACHE => 'true'} 
-1 row(s) in 0.0970 seconds
-hbase(main):041:0> 
-~~~
-
-Shell zwraca informację że tabela jest aktywna (ENABLED) oraz zwraca listę rodzin kolumn wraz z ich parametrami, każda w oddzielnym nawiasie klamrowym {}
+Każda rodzina może mieć przypisany zestaw parametrów które możemy zdefiniować już na poziomie polecenia _create_
 
 * NAME - nazwa rodziny
 * DATA_BLOCK_ENCODING - algorytm enkodowania kluczy głównych, do wyboru [NONE, PREFIX, DIFF, FAST_DIFF, PREFIX_TREE]
@@ -214,19 +180,37 @@ Shell zwraca informację że tabela jest aktywna (ENABLED) oraz zwraca listę ro
 * BLOCKCACHE - cache blokowy przyśpieszający odczyty popularnych (często uzywanych) danych
 
 
+Poniżej kilka przykładów stworzenia tabeli z różnymi parametrami
+~~~ruby
+create 'person', {NAME => 'cf', VERSIONS => 5}
+create 'person', {NAME => 'f1', VERSIONS => 1, TTL => 2592000, BLOCKCACHE => true}
+create 'person', {NAME => 'f1', CONFIGURATION => {'hbase.hstore.blockingStoreFiles' => '10'}}
+~~~
 
+Lista wszystkich istniejących tabel w bazie (pomija tabele systemowe bazy)
+~~~ruby
+list
+~~~
 
+Opis tabeli
+~~~ruby
+describe 'person'
+~~~
 
+przykład użycia
+~~~shell
+hbase(main):095:0* describe 'person'
+Table person is ENABLED
+person
+COLUMN FAMILIES DESCRIPTION
+{NAME => 'cf1', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE => '65536', REPLICATION_SCOPE => '0'}  
+{NAME => 'cf2', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE => '65536', REPLICATION_SCOPE => '0'}  
+{NAME => 'cf3', BLOOMFILTER => 'ROW', VERSIONS => '1', IN_MEMORY => 'false', KEEP_DELETED_CELLS => 'FALSE', DATA_BLOCK_ENCODING => 'NONE', TTL => 'FOREVER', COMPRESSION => 'NONE', MIN_VERSIONS => '0', BLOCKCACHE => 'true', BLOCKSIZE => '65536', REPLICATION_SCOPE => '0'}  
+3 row(s) in 0.0370 seconds
+hbase(main):096:0> 
+~~~
 
-
-
-
-
-
-
-
-
-
+Shell zwraca informację że tabela jest aktywna (ENABLED) oraz zwraca listę rodzin kolumn wraz z ich parametrami, każda w oddzielnym nawiasie klamrowym {}
 
 Wyjście z konsoli
 ~~~ruby
