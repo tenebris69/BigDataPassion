@@ -13,3 +13,9 @@ type = "post"
 draft = true
 +++
 
+# Polecenia zaawansowane #
+
+Tworzenie tabeli z narzuconym wstępnym podziałem regionów
+~~~ruby
+create 't1','f',SPLITS => ['10','20',30']
+~~~

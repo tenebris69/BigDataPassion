@@ -12,6 +12,7 @@ type = "post"
 
 +++
 
+Poniżej podstawy korzystania z HBase za pomocą linii komend (tak zwany Shell) oraz przegląd większośći dostępnych poleceń.
 
 # Podstawowy HBase Shell #
 
@@ -23,6 +24,12 @@ Type "exit<RETURN>" to leave the HBase Shell
 Version 1.1.2.2.5.3.0-37, rcb8c969d1089f1a34e9df11b6eeb96e69bcf878d, Tue Nov 29 18:48:22 UTC 2016
 hbase(main):001:0>  
 ~~~
+
+Wyjście z konsoli
+~~~ruby
+hbase(main):002:0> exit
+~~~
+lub Ctrl+C / Ctrl+C
 
 Pomoc dla Shell'a możemy wywołać poleceniem
 ~~~ruby
@@ -53,6 +60,10 @@ help "alter"
 ~~~
 
 Dodatkowo jesteśmy informowania o pracy z językiem _Ruby_ w którym _HBase Shell_ został stworzony i podstawach jego składni.
+
+
+
+
 
 # Podstawowe polecenia #
 
@@ -145,6 +156,8 @@ table_help
 
 
 
+
+
 # Zarządzanie schematem (DDL)
 
 
@@ -212,22 +225,49 @@ hbase(main):096:0>
 
 Shell zwraca informację że tabela jest aktywna (ENABLED) oraz zwraca listę rodzin kolumn wraz z ich parametrami, każda w oddzielnym nawiasie klamrowym {}
 
-Wyjście z konsoli
-~~~ruby
-hbase(main):002:0> exit
-~~~
-lub Ctrl+C / Ctrl+C
 
 
 
 
 
-# Polecenia zaawansowane #
 
-Tworzenie tabeli z narzuconym wstępnym podziałem regionów
-~~~ruby
-create 't1','f',SPLITS => ['10','20',30']
-~~~
+ 
+
+
+
+alter, 
+alter_async, 
+alter_status, 
+create,
+describe, 
+disable, 
+disable_all, 
+drop, 
+drop_all, 
+enable, 
+enable_all, 
+exists, 
+get_table, 
+is_disabled, 
+is_enabled, 
+list, 
+locate_region, 
+show_filters
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
