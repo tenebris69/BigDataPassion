@@ -356,7 +356,7 @@ describe 'person'
 alter 'person', METHOD => 'table_att_unset', NAME => 'MAX_FILESIZE'
 describe 'person'
 
-alter 'person', { NAME => 'cf3', VERSIONS => 5}, { MAX_FILESIZE => '134217728' }, { METHOD => 'delete', NAME => 'cf1' }, OWNER => 'johndoe', METADATA => { 'mykey' => 'myvalue' }
+alter 'person', { NAME => 'cf3', VERSIONS => 5}, { MAX_FILESIZE => '134217728' }, { METHOD => 'delete', NAME => 'cf1' }, OWNER => 'johndoe', METADATA => { 'mykey1' => 'myvalue1' }
 describe 'person'
 
 disable 'person'; drop 'person'
