@@ -16,94 +16,41 @@ type = "post"
 # Podstawowy HBase Shell #
 
 Uruchomienie
-~~~
-[sages@sandbox ~]$ hbase shell
-SLF4J: Class path contains multiple SLF4J bindings.
-SLF4J: Found binding in [jar:file:/usr/hdp/2.4.0.0-169/hadoop/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
-SLF4J: Found binding in [jar:file:/usr/hdp/2.4.0.0-169/zookeeper/lib/slf4j-log4j12-1.6.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
-SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
-SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+~~~shell
+[hbase@hadoop1 ~]$ hbase shell
 HBase Shell; enter 'help<RETURN>' for list of supported commands.
 Type "exit<RETURN>" to leave the HBase Shell
-Version 1.1.2.2.4.0.0-169, r61dfb2b344f424a11f93b3f086eab815c1eb0b6a, Wed Feb 10 07:08:51 UTC 2016
-
-hbase(main):001:0> 
+Version 1.1.2.2.5.3.0-37, rcb8c969d1089f1a34e9df11b6eeb96e69bcf878d, Tue Nov 29 18:48:22 UTC 2016
+hbase(main):001:0>  
 ~~~
 
-
-Pomoc dla Shell'a
+Pomoc dla Shell'a możemy wywołać poleceniem
 ~~~ruby
-hbase(main):053:0* help
-HBase Shell, version 1.1.2.2.4.0.0-169, r61dfb2b344f424a11f93b3f086eab815c1eb0b6a, Wed Feb 10 07:08:51 UTC 2016
-Type 'help "COMMAND"', (e.g. 'help "get"' -- the quotes are necessary) for help on a specific command.
-Commands are grouped. Type 'help "COMMAND_GROUP"', (e.g. 'help "general"') for help on a command group.
-
-COMMAND GROUPS:
-  Group name: general
-  Commands: status, table_help, version, whoami
-
-  Group name: ddl
-  Commands: alter, alter_async, alter_status, create, describe, disable, disable_all, drop, drop_all, enable, enable_all, exists, get_table, is_disabled, is_enabled, list, show_filters
-
-  Group name: namespace
-  Commands: alter_namespace, create_namespace, describe_namespace, drop_namespace, list_namespace, list_namespace_tables
-
-  Group name: dml
-  Commands: append, count, delete, deleteall, get, get_counter, get_splits, incr, put, scan, truncate, truncate_preserve
-
-  Group name: tools
-  Commands: assign, balance_switch, balancer, balancer_enabled, catalogjanitor_enabled, catalogjanitor_run, catalogjanitor_switch, close_region, compact, compact_rs, flush, major_compact, merge_region, move, normalize, normalizer_enabled, normalizer_switch, split, trace, unassign, wal_roll, zk_dump
-
-  Group name: replication
-  Commands: add_peer, append_peer_tableCFs, disable_peer, disable_table_replication, enable_peer, enable_table_replication, list_peers, list_replicated_tables, remove_peer, remove_peer_tableCFs, set_peer_tableCFs, show_peer_tableCFs
-
-  Group name: snapshots
-  Commands: clone_snapshot, delete_all_snapshot, delete_snapshot, list_snapshots, restore_snapshot, snapshot, snapshot_all, snapshot_restore
-
-  Group name: configuration
-  Commands: update_all_config, update_config
-
-  Group name: quotas
-  Commands: list_quotas, set_quota
-
-  Group name: security
-  Commands: grant, revoke, user_permission
-
-  Group name: procedures
-  Commands: abort_procedure, list_procedures
-
-  Group name: visibility labels
-  Commands: add_labels, clear_auths, get_auths, list_labels, set_auths, set_visibility
-
-SHELL USAGE:
-Quote all names in HBase Shell such as table and column names.  Commas delimit
-command parameters.  Type <RETURN> after entering a command to run it.
-Dictionaries of configuration used in the creation and alteration of tables are
-Ruby Hashes. They look like this:
-
-  {'key1' => 'value1', 'key2' => 'value2', ...}
-
-and are opened and closed with curley-braces.  Key/values are delimited by the
-'=>' character combination.  Usually keys are predefined constants such as
-NAME, VERSIONS, COMPRESSION, etc.  Constants do not need to be quoted.  Type
-'Object.constants' to see a (messy) list of all constants in the environment.
-
-If you are using binary keys or values and need to enter them in the shell, use
-double-quote'd hexadecimal representation. For example:
-
-  hbase> get 't1', "key\x03\x3f\xcd"
-  hbase> get 't1', "key\003\023\011"
-  hbase> put 't1', "test\xef\xff", 'f1:', "\x01\x33\x40"
-
-The HBase shell is the (J)Ruby IRB with the above HBase-specific commands added.
-For more on the HBase Shell, see http://hbase.apache.org/book.html
-hbase(main):054:0> 
+help
 ~~~
 
+w wyniku otrzymamy całą listę dostępnych poleceń pogrupowanych ze względu na przeznaczenie
 
+* general - status, table_help, version, whoami
+* ddl - alter, alter_async, alter_status, create, describe, disable, disable_all, drop, drop_all, enable, enable_all, exists, get_table, is_disabled, is_enabled, list, locate_region, show_filters
+* namespace - alter_namespace, create_namespace, describe_namespace, drop_namespace, list_namespace, list_namespace_tables
+* dml - append, count, delete, deleteall, get, get_counter, get_splits, incr, put, scan, truncate, truncate_preserve
+* tools - assign, balance_switch, balancer, balancer_enabled, catalogjanitor_enabled, catalogjanitor_run, catalogjanitor_switch, close_region, compact, compact_rs, flush, major_compact, merge_region, move, normalize, normalizer_enabled, normalizer_switch, split, splitormerge_enabled, splitormerge_switch, trace, unassign, wal_roll, zk_dump
+* replication - add_peer, append_peer_tableCFs, disable_peer, disable_table_replication, enable_peer, enable_table_replication, list_peers, list_replicated_tables, remove_peer, remove_peer_tableCFs, set_peer_tableCFs, show_peer_tableCFs
+* snapshots - clone_snapshot, delete_all_snapshot, delete_snapshot, list_snapshots, restore_snapshot, snapshot, snapshot_all, snapshot_restore
+* configuration - update_all_config, update_config
+* quotas - list_quotas, set_quota
+* security - grant, revoke, user_permission
+* procedures - abort_procedure, list_procedures
+* visibility labels - add_labels, clear_auths, get_auths, list_labels, set_auths, set_visibility
+* rsgroup - add_rsgroup, balance_rsgroup, get_rsgroup, get_server_rsgroup, get_table_rsgroup, list_rsgroups, move_rsgroup_servers, move_rsgroup_tables, remove_rsgroup
 
+Jeśli chcemy uzyskać pomoc dla jakiejś grupy lub polecenia wystarczy wpisać ich nazwę po słowie _help_
 
-
+~~~ruby
+help "ddl"
+help "alter"
+~~~
 
 # Podstawowe polecenia #
 
