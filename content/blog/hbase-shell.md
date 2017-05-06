@@ -153,7 +153,7 @@ hbase(main):003:0>
 
 
 
-# Zarządzanie schematem (DDL)
+# Zarządzanie schematem (Data Definition Language, DDL)
 
 
 Nową tabelę możemy stworzyć za pomocą polecenia _create_
@@ -394,6 +394,105 @@ Jeśli chcemy pracować na wcześniej utworzonej tabeli, możemy ją przypisać 
 ~~~ruby
 t = get_table 'table'
 ~~~
+
+
+
+
+
+# Manipulowanie danymi (Data Manipulation Language, DML)
+
+Jeśli chcemy dodać nowe wiersze do stworzonej tabeli należy użyć polecenia
+~~~ruby
+put 'table', 'recordId', 'columnName', 'cellValue'
+~~~
+lub
+~~~ruby
+put 'table', 'recordId', 'columnName', 'cellValue', timestamp
+~~~
+Tym samym poleceniem dokonujemy także edycji, HBase jako baza wersjonowana nie ma tak naprawdę edycji znanej z innych baz, dodajemy do bazy nowe wersje wskazanych wierszy.
+
+Aby pobrać wprowadzony wiersz do bazy należy użyć polecenia
+~~~ruby
+get 'table', 'r1'
+get 'table', 'r1', {TIMERANGE => [ts1, ts2]}
+get 'table', 'r1', {COLUMN => 'c1'}
+get 'table', 'r1', {COLUMN => ['c1', 'c2', 'c3']}
+get 'table', 'r1', {COLUMN => 'c1', TIMESTAMP => ts1}
+get 'table', 'r1', {COLUMN => 'c1', TIMERANGE => [ts1, ts2], VERSIONS => 4}
+get 'table', 'r1', {COLUMN => 'c1', TIMESTAMP => ts1, VERSIONS => 4}
+get 'table', 'r1', {FILTER => "ValueFilter(=, 'binary:abc')"}
+get 'table', 'r1', 'c1'
+get 'table', 'r1', 'c1', 'c2'
+get 'table', 'r1', ['c1', 'c2']
+~~~
+Jak widać na powyższych przykładach, polecenie get oprocz zwrócenia całego wiersza ma możliwośc szerokiej filtracji zwracanych kolumns ze wzlędu na ich nazwy (COLUMN), dat utworzenia wartości (TIMERANGE, TIMESTAMP), liczby wersji czy nawet możliwośc wskazania dodatkowego filtra.
+
+Jeśli chcemy pobrać więcej niż jeden wiersz, możemy użyć polecenia
+~~~ruby
+scan 'table',
+scan 'table', {COLUMNS => 'info:regioninfo'}
+scan 'table',, {COLUMNS => ['c1', 'c2'], LIMIT => 10, STARTROW => 'xyz'}
+scan 'table', {COLUMNS => ['c1', 'c2'], LIMIT => 10, STARTROW => 'xyz'}
+scan 'table', {COLUMNS => 'c1', TIMERANGE => [1303668804, 1303668904]}
+scan 'table', {REVERSED => true}
+scan 'table', {ROWPREFIXFILTER => 'row2', FILTER => "(QualifierFilter (>=, 'binary:xyz')) AND (TimestampsFilter ( 123, 456))"}
+scan 'table', {FILTER => org.apache.hadoop.hbase.filter.ColumnPaginationFilter.new(1, 0)}
+~~~
+
+Zliczanie wierszy
+~~~ruby
+count 'table'
+~~~
+
+Niemniej to polecenie jest jednowątkowe, w przypadku dużych tabel zdecydowanie lepiej użyć do tego MapReduc'a
+~~~shell
+hbase org.apache.hadoop.hbase.mapreduce.RowCounter <tablename>
+~~~
+
+Jeśli chcemy wyczyścić tabelę możemy użyć do tego jednego z dwóch poleceń
+~~~ruby
+truncate 'table'
+truncate_preserve 'table'
+~~~
+Powyższe polecenia tak naprawdę usuwają i tworzą na nowo tabelę, przy czym drugie zachowuje zakres regionów
+
+Jeśli chcemy usunąć wprowadzony wiersz należy użyć polecenia (fizycznie usuwamy wszystkie komórki w wierszu). Polecenie możemy ograniczyć do wybranych kolumn lub zakresów czasowych
+~~~ruby
+deleteall 'ns1:t1', 'r1'
+deleteall 't1', 'r1'
+deleteall 't1', 'r1', 'c1'
+deleteall 't1', 'r1', 'c1', ts1
+~~~
+
+Jeśli jednak chcemy usunąć tylko wybrane wartości należy skorzystać z innego polecenia (fizycznie dodajemy komórkę oznaczającą usunięcie)
+~~~ruby
+delete 't1', 'r1', 'c1', ts1
+~~~
+
+
+~~~ruby
+~~~
+
+
+~~~ruby
+~~~
+
+
+~~~ruby
+~~~
+
+
+
+incr, 
+append, 
+
+get_counter, 
+get_splits, 
+ 
+
+
+
+
 
 
 
