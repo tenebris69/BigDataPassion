@@ -154,6 +154,7 @@ scan 'person', {RAW => true, VERSIONS => 10}
 flush 'person'
 scan 'person', {RAW => true, VERSIONS => 10}
 major_compact 'person'
+scan 'person', {RAW => true, VERSIONS => 10}
 sleep 5
 scan 'person', {RAW => true, VERSIONS => 10}
 disable 'person'
