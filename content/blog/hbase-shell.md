@@ -140,22 +140,30 @@ hbase(main):003:0>
 
 Informacja na temat używania zmiennych w Shell'u (dostępne od wersji 0.96+)
 ~~~ruby
-hbase(main):058:0> table_help
+table_help
 ~~~
 
 
 
-# Zarządzanie schematem (DDL) #
+# Zarządzanie schematem (DDL)
 
 
-Tworzenie tabeli
+Nową tabelę możemy stworzyć za pomocą polecenia _create_
 ~~~ruby
-hbase(main):036:0* create 'person', 'cf'
-0 row(s) in 1.2750 seconds
-
-=> Hbase::Table - person
-hbase(main):037:0>
+create 'person', 'cf'
 ~~~
+
+Musimy podać minimum dwa parametry, nazwę tabeli i nazwę rodziny kolumn (column family).
+~~~ruby
+create 'person', 'cf1', 'cf2', 'cf3'
+~~~
+
+lub w ten sposób
+~~~ruby
+create 'person', {NAME => 'cf1'}, {NAME => 'cf2'}, {NAME => 'cf3'}
+~~~
+
+Możemy też od razu dodać więcej niż jedną rodzinę
 
 Stworzenie tabeli z jedną rodziną kolumn i liczbą wersji równą 5
 ~~~ruby
@@ -165,9 +173,7 @@ hbase> create 't1', {NAME => 'f1', CONFIGURATION => {'hbase.hstore.blockingStore
 ~~~
 
 Stworzenie tabeli z kilkoma rodzinami
-~~~ruby
-hbase> create 't1', {NAME => 'f1'}, {NAME => 'f2'}, {NAME => 'f3'}
-~~~
+
 
 
 Lista istniejących tabel
