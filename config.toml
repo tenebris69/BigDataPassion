@@ -4,7 +4,7 @@ title = "Big Data Passion"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
-disqusShortname = "shortname"
+disqusShortname = "BigDataPassion"
 googleAnalytics = "UA-97213302-1"
 
 [params]
