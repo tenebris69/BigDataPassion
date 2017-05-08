@@ -495,21 +495,17 @@ Do sprawdzenia wartości licznika można użyć polecenia
 get_counter 't1', 'r1', 'c1'
 ~~~
 
+### append
+Jeśli chcemy "dodać" coś do wartości trzymanej w komórce, czyli dopisać jakąś zawartość, możemy użyć metody
 ~~~ruby
-append, 
+append 't1', 'r1', 'c1', 'value'
 ~~~
 
+### get_splits
+Jeśli nasza tabela ma więcej niż jeden region, to możemy sprawdzić zdefiniowane 'splity' za pomocą polecenia:
 ~~~ruby
-get_splits, 
+get_splits 't1' 
 ~~~
-
-
-
-
- 
-
-
-
 
 
 

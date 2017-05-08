@@ -234,3 +234,11 @@ person.scan
 person.disable
 person.drop
 ~~~
+
+# Tworzenie tabel ze zdefiniowanym splitem (podziałem regionów)
+~~~ruby
+create 'person', 'cf', SPLITS=> ['a', 'b', 'c']
+get_splits 'person'
+scan 'hbase:meta',{FILTER=>"PrefixFilter('person')"} # alternatywny sposób sprawdzenia regionów
+disable 'person'; drop 'person'
+~~~
