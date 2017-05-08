@@ -458,7 +458,6 @@ Powyższe polecenia tak naprawdę usuwają i tworzą na nowo tabelę, przy czym 
 
 Jeśli chcemy usunąć wprowadzony wiersz należy użyć polecenia (fizycznie usuwamy wszystkie komórki w wierszu). Polecenie możemy ograniczyć do wybranych kolumn lub zakresów czasowych
 ~~~ruby
-deleteall 'ns1:t1', 'r1'
 deleteall 't1', 'r1'
 deleteall 't1', 'r1', 'c1'
 deleteall 't1', 'r1', 'c1', ts1
@@ -466,28 +465,33 @@ deleteall 't1', 'r1', 'c1', ts1
 
 Jeśli jednak chcemy usunąć tylko wybrane wartości należy skorzystać z innego polecenia (fizycznie dodajemy komórkę oznaczającą usunięcie)
 ~~~ruby
+delete 't1', 'r1', 'c1'
 delete 't1', 'r1', 'c1', ts1
 ~~~
 
-
+Jeśli chcemy zwiększyć wartość jakiejś komórki bez potrzeby wykonywania polecenia Get i Put lecz w postaci atomowej operacji, możemy skorzystać z polecenia
 ~~~ruby
+incr 't1', 'r1', 'c1'
+incr 't1', 'r1', 'c1', 1
+incr 't1', 'r1', 'c1', 10
 ~~~
 
 
 ~~~ruby
-~~~
-
-
-~~~ruby
-~~~
-
-
-
-incr, 
-append, 
-
 get_counter, 
+~~~
+
+~~~ruby
+append, 
+~~~
+
+~~~ruby
 get_splits, 
+~~~
+
+
+
+
  
 
 
@@ -511,10 +515,7 @@ echo "status 'detailed'" | hbase shell > /tmp/hbase-status-detailed.txt
 ~~~
 tutaj dodatkowo wynik polecenia przekierowaliśmy do pliku txt.
 
-TODO
 
-Uruchamianie z pliku ruby i pliku txt
-Sztuczki w ruby
 
 
 
