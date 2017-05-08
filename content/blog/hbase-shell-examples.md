@@ -2,12 +2,12 @@
 author = "Radosław Szmit"
 categories = ["HBase"]
 date = "2017-04-08T17:08:29+02:00"
-description = "Korzystanie z HBase za pomocą linii komend (część 2)"
+description = "Przykłady korzystania HBase za pomocą linii komend"
 featured = "Killer_whale_in_water.jpg"
 featuredalt = ""
 featuredpath = "/img/featured"
 linktitle = ""
-title = "Hbase shell (część 2)"
+title = "Hbase shell - przykłady"
 type = "post"
 
 +++
