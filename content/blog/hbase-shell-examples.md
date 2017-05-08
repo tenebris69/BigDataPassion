@@ -35,7 +35,7 @@ disable 'person'
 drop 'person'
 ~~~
 
-# Zwiększanie licznika
+# Zwiększanie i wyświetlanie licznika
 ~~~ruby
 create 'person', 'cf'
 put 'person', '1', 'cf:forename', 'Jan'
