@@ -35,6 +35,20 @@ disable 'person'
 drop 'person'
 ~~~
 
+# Zwiększanie licznika
+~~~ruby
+create 'person', 'cf'
+put 'person', '1', 'cf:forename', 'Jan'
+put 'person', '1', 'cf:surname', 'Nowak'
+put 'person', '1', 'cf:city', 'Warszawa'
+incr 'person', '1', 'cf:score', 1
+incr 'person', '1', 'cf:score', 10
+get 'person', '1'
+get_counter 'person', '1', 'cf:score' #powinno być 11
+disable 'person'
+drop 'person'
+~~~
+
 # Dodawanie i przeglądanie wielu wierszy
 ~~~ruby
 create 'person', 'cf'

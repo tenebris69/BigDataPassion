@@ -65,7 +65,7 @@ Dodatkowo jesteśmy informowania o pracy z językiem _Ruby_ w którym _HBase She
 
 
 
-# Podstawowe polecenia #
+# Podstawowe polecenia (general)
 
 Sprawdzenie stanu bazy danych
 ~~~ruby
@@ -456,6 +456,8 @@ truncate_preserve 'table'
 ~~~
 Powyższe polecenia tak naprawdę usuwają i tworzą na nowo tabelę, przy czym drugie zachowuje zakres regionów
 
+### deleteall
+
 Jeśli chcemy usunąć wprowadzony wiersz należy użyć polecenia (fizycznie usuwamy wszystkie komórki w wierszu). Polecenie możemy ograniczyć do wybranych kolumn lub zakresów czasowych
 ~~~ruby
 deleteall 't1', 'r1'
@@ -463,22 +465,34 @@ deleteall 't1', 'r1', 'c1'
 deleteall 't1', 'r1', 'c1', ts1
 ~~~
 
+### delete
+
 Jeśli jednak chcemy usunąć tylko wybrane wartości należy skorzystać z innego polecenia (fizycznie dodajemy komórkę oznaczającą usunięcie)
 ~~~ruby
 delete 't1', 'r1', 'c1'
 delete 't1', 'r1', 'c1', ts1
 ~~~
 
-Jeśli chcemy zwiększyć wartość jakiejś komórki bez potrzeby wykonywania polecenia Get i Put lecz w postaci atomowej operacji, możemy skorzystać z polecenia
+### incr
+
+Jeśli chcemy zwiększyć wartość jakiejś komórki bez potrzeby wykonywania polecenia Get i Put lecz w postaci atomowej operacji, możemy skorzystać z liczników. Jeśli dana kolumna nie istnieje, to zostanie automatycznie stworzona i zwiększona o wskazaną wartość (domyślnie 1)
 ~~~ruby
 incr 't1', 'r1', 'c1'
 incr 't1', 'r1', 'c1', 1
 incr 't1', 'r1', 'c1', 10
 ~~~
 
+**UWAGA** Liczniki w HBase są typu long (8 bajtów, 84 bity w JVM) zaś wpisywane w shell'u liczby to domyślnie typu int (4 bajty, 32 bity w JVM) dlatego w poniższym przypadku dostaniemy błąd "ERROR: org.apache.hadoop.hbase.DoNotRetryIOException: Attempted to increment field that isn't 64 bits wide"
+~~~shell
+put 'person', '1', 'cf:age', 24
+incr 'person', '1', 'cf:age', 3
+~~~
 
+### get_counter
+
+Do sprawdzenia wartości licznika można użyć polecenia
 ~~~ruby
-get_counter, 
+get_counter 't1', 'r1', 'c1'
 ~~~
 
 ~~~ruby
@@ -493,7 +507,6 @@ get_splits,
 
 
  
-
 
 
 
