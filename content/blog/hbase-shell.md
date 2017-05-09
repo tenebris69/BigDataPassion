@@ -111,7 +111,7 @@ Jak widać wyżej, status może być typu:
 * replication source
 * replication sink
 
-Gdy nie wybierzemy żadnego z powyższych, domyślnie jest brany status _summary_. Opcje _simple_ i _detailed_ zwracają nam więcej informacji o stanie poszczególnych usług (serwerów), zaś ostatnie 3 dotyczą replikacji bazy z inną jej instancją czemu poświęcony będzie oddzielny wpis.
+Gdy nie wybierzemy żadnego z powyższych, domyślnie jest brany status _summary_. Opcje _simple_ i _detailed_ zwracają nam więcej informacji o stanie poszczególnych usług (serwerów), zaś ostatnie 3 dotyczą replikacji bazy z inną jej instancją
 
 ~~~shell
 hbase(main):065:0* status 'simple'
@@ -147,6 +147,18 @@ hbase (auth:SIMPLE)
     groups: hadoop
 
 hbase(main):003:0> 
+~~~
+
+Włączenie trybu ‘debug’ (nie jest uwzględnione poleceniem help), domyślnie shell wyświetla tylko logi typu ERROR
+~~~shell
+hbase(main):001:0> debug
+Debug mode is ON
+hbase(main):002:0> 2016-10-11 17:44:48,978 DEBUG [main-SendThread(ip-172-31-7-233.us-west-2.compute.internal:2181)] zookeeper.ClientCnxn: Got ping response for sessionid: 0x157b56fba340009 after 0ms
+hbase(main):003:0* debug
+Debug mode is OFF
+hbase(main):004:0> 
+hbase(main):005:0* debug?
+Debug mode is OFF
 ~~~
 
 
@@ -193,6 +205,7 @@ Poniżej kilka przykładów stworzenia tabeli z różnymi parametrami
 create 'person', {NAME => 'cf', VERSIONS => 5}
 create 'person', {NAME => 'f1', VERSIONS => 1, TTL => 2592000, BLOCKCACHE => true}
 create 'person', {NAME => 'f1', CONFIGURATION => {'hbase.hstore.blockingStoreFiles' => '10'}}
+create 'person', {NAME => 'family1'}, {NAME => 'family2'}, {NAME => 'family3'}
 ~~~
 
 Lista wszystkich istniejących tabel w bazie (pomija tabele systemowe bazy)
