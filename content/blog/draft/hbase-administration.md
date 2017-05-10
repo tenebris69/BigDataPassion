@@ -80,3 +80,20 @@ cells). This option cannot be combined with requesting specific COLUMNS.
 Disabled by default.  Example:
 
   hbase> scan 't1', {RAW => true, VERSIONS => 10}
+
+
+# Snapshoty
+
+
+
+# Zmiana nazwy tabeli
+
+HBase nie ma pojedyńczego polecenia do zmiany nazwy tabeli, tą funkcjonalnością od wersji 0.94 najprościej można uzyskać za pomocą Snapshotów
+
+~~~shell
+hbase> disable 'TableToRename'
+hbase> snapshot 'TableToRename', 'NewTable'
+hbase> clone_snapshot 'NewTable', 'newTableToRename'
+hbase> delete_snapshot 'NewTable'
+hbase> drop 'TableToRename'
+---
