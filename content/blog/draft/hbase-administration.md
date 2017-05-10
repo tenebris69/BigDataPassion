@@ -90,10 +90,10 @@ Disabled by default.  Example:
 
 HBase nie ma pojedyńczego polecenia do zmiany nazwy tabeli, tą funkcjonalnością od wersji 0.94 najprościej można uzyskać za pomocą Snapshotów
 
-~~~shell
-hbase> disable 'TableToRename'
-hbase> snapshot 'TableToRename', 'NewTable'
-hbase> clone_snapshot 'NewTable', 'newTableToRename'
-hbase> delete_snapshot 'NewTable'
-hbase> drop 'TableToRename'
+~~~ruby
+disable 'TableToRename'
+snapshot 'TableToRename', 'NewTable'
+clone_snapshot 'NewTable', 'newTableToRename'
+delete_snapshot 'NewTable'
+drop 'TableToRename'
 ---
