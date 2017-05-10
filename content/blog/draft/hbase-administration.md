@@ -96,4 +96,6 @@ snapshot 'TableToRename', 'NewTable'
 clone_snapshot 'NewTable', 'newTableToRename'
 delete_snapshot 'NewTable'
 drop 'TableToRename'
----
+~~~
+
+Tego mechanizmu można także użyć do przesunięcia tabeli pomiędzy przestrzenniami nazw (namespace)
