@@ -20,6 +20,10 @@ Tworzenie tabeli z narzuconym wstępnym podziałem regionów
 create 't1','f',SPLITS => ['10','20',30']
 ~~~
 
+~~~
+scan 'hbase:meta',{FILTER=>"PrefixFilter('table_name')"}
+~~~
+
 
 # dodawanie koprocesorów
 
@@ -99,3 +103,16 @@ drop 'TableToRename'
 ~~~
 
 Tego mechanizmu można także użyć do przesunięcia tabeli pomiędzy przestrzenniami nazw (namespace)
+
+
+# Spliting
+
+~~~
+ split 'radek:ratings'
+~~~
+
+
+
+# Legenda
+
+* https://hortonworks.com/blog/apache-hbase-region-splitting-and-merging/
