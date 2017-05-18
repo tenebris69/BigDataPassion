@@ -134,6 +134,9 @@ table_name='documents'
 hdfs dfs -rm -r -skipTrash /tmp/hbase-export-$table_name-$current_date
 hdfs dfs -put /tmp/hbase-export-$table_name-$current_date /tmp
 
+echo "disable '$table_name'; drop '$table_name'" | hbase shell
+echo "create '$table_name', '$table_name'" | hbase shell
+
 hbase org.apache.hadoop.hbase.mapreduce.Import $table_name /tmp/hbase-export-$table_name-$current_date
 ~~~
 
