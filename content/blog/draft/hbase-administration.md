@@ -120,11 +120,11 @@ table_name='documents'
 
 hdfs dfs -rm -r -skipTrash /tmp/hbase-export-$table_name-$current_date
 
-time hbase org.apache.hadoop.hbase.mapreduce.Export -D mapreduce.output.fileoutputformat.compress=true -D mapreduce.output.fileoutputformat.compress.codec=org.apache.hadoop.io.compress.GzipCodec -D mapreduce.output.fileoutputformat.compress.type=BLOCK -Dhbase.client.scanner.caching=1000 -Dmapreduce.map.speculative=false -Dmapreduce.reduce.speculative=false -D hbase.mapreduce.scan.row.start=0003063bac0eb8cfd45619322b28e7ba -D hbase.mapreduce.scan.row.stop=00a81bc0f3941fc4850c589fe93a2c09 $table_name /tmp/hbase-export-$table_name-$current_date
+time hbase org.apache.hadoop.hbase.mapreduce.Export -D mapreduce.output.fileoutputformat.compress=true -D mapreduce.output.fileoutputformat.compress.codec=org.apache.hadoop.io.compress.GzipCodec -D mapreduce.output.fileoutputformat.compress.type=BLOCK -Dhbase.client.scanner.caching=1000 -Dmapreduce.map.speculative=false -Dmapreduce.reduce.speculative=false $table_name /tmp/hbase-export-$table_name-$current_date
  
 hdfs dfs -du -h -s /tmp/hbase-export-$table_name-$current_date
 
-hdfs dfs -get /tmp/hbase-export-$table_name-$current_date /tmp/
+#hdfs dfs -get /tmp/hbase-export-$table_name-$current_date /tmp/
 ~~~
 
 ~~~shell
@@ -135,9 +135,9 @@ hdfs dfs -rm -r -skipTrash /tmp/hbase-export-$table_name-$current_date
 hdfs dfs -put /tmp/hbase-export-$table_name-$current_date /tmp
 
 echo "disable '$table_name'; drop '$table_name'" | hbase shell
-echo "create '$table_name', '$table_name'" | hbase shell
+echo "create '$table_name', {NAME=>'$table_name',COMPRESSION=>'snappy'}" | hbase shell
 
-hbase org.apache.hadoop.hbase.mapreduce.Import $table_name /tmp/hbase-export-$table_name-$current_date
+time hbase org.apache.hadoop.hbase.mapreduce.Import $table_name /tmp/hbase-export-$table_name-$current_date
 ~~~
 
 
