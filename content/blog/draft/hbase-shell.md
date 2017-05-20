@@ -10,6 +10,7 @@ linktitle = ""
 title = "Hbase shell"
 type = "post"
 
+draft = true
 +++
 
 Poniżej podstawy korzystania z HBase za pomocą linii komend (tak zwany Shell) oraz przegląd większośći dostępnych poleceń.

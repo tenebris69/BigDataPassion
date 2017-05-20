@@ -10,6 +10,7 @@ linktitle = ""
 title = "Wprowadzenie do Elasticsearch"
 type = "post"
 
+draft = true
 +++
 
 

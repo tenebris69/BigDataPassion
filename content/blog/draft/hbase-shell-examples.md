@@ -10,6 +10,7 @@ linktitle = ""
 title = "Hbase shell - przykłady"
 type = "post"
 
+draft = true
 +++
 
 Kilka przykładów wyjaśniających zasadę działania bazy HBase

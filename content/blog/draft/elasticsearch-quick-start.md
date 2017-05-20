@@ -10,6 +10,7 @@ linktitle = ""
 title = "Szybki start z Elasticsearch"
 type = "post"
 
+draft = true
 +++
 
 Elasticsearch można uruchomić 

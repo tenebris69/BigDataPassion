@@ -10,6 +10,7 @@ linktitle = ""
 title = "Szybki start z Kibana"
 type = "post"
 
+draft = true
 +++
 
 Instalacja
