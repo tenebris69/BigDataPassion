@@ -23,8 +23,20 @@ for i in {1..7..1}; do ssh hdp${i} uptime; done
 for i in {1..5..1}; do ssh sages${i} uptime; done
 
 
-cssh centos@hdp-{1..7}
+cssh centos@hdp{1..7}
+cssh ec2-user@sages{1..5}
 
+~~~
+
+~~~
+# Sages Hadoop
+Host sages*
+  User ec2-user
+  IdentityFile /home/radek/Sages/pem/awshdpvirginia.pem
+
+Host hdp*
+  User centos
+  IdentityFile /home/radek/Sages/pem/awshdp.pem
 ~~~
 
 
