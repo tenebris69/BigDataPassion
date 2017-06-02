@@ -120,11 +120,13 @@ systemctl status ntpd.service
 ~~~shell
 cd /etc/yum.repos.d/
 wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.1.0/ambari.repo
-#wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari.repo
-#wget http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.4.2.0/ambari.repo
 yum install ambari-server -y
 ambari-server setup
 ~~~
+
+Starsze wersje:
+* http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari.repo
+* http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.4.2.0/ambari.repo
 
 W przypadku ambari-server setup upewniamy się, że nie ma żadnych ostrzeżeń, zaś na wszystkie pytania odpowiadamy wartościami domyślnymi klikając enter:
 
