@@ -90,6 +90,9 @@ Edytujemy plik /etc/sysconfig/selinux ustawiając SELINUX na disabled.
 
 ~~~shell
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
+
+sestatus
 ~~~
 
 # Wyłączamy zaporę ogniową
