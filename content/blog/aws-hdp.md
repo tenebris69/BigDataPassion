@@ -60,6 +60,51 @@ for i in {1..7..1}; do ssh-copy-id root@hdp{i}; done
 ~~~
 
 
+
+
+Żeby się zalogować bez hasła z konta root na inne należy wkleić od plików ~/.ssh/authorized_hosts zawartość pliku ~/.ssh/id_rsa.pub która w naszym przypadku wygląda tak:
+
+~~~
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5U26cKr+/F+e88/GFs+hryyafOTzch7Sx1WVp2h+vee9/OWpySbaAZkyqT5/iNUmlAyoZ+87JD03PR7u0I4tgX8Lj6/KkSETVtAVL5ufeT1TWrJ7XuI/gcCt6/pLjc5p7gyWKbg6LKgbyaf+aey+Pkz5iI8FbDPnt5RrR8wIGY4LOzikkIwR0ZLrJUdbr0o4Mv96yvC+mkzcdIiuZ4VfH81lWMlpMbUv+3udM6qiQyjUbRNrSw7Ej0fWxU94/IoHz5P/ozuE2QNCDPLc+Ej2i9hMJKE3i2/Cqx2/JOJnAY3AHVz97MpfuYnoOmXMFhhrP7okvi+nmugKYIintbFbx root@ip-172-31-13-225.us-west-2.compute.internal
+~~~
+
+
+~~~
+-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAuVNunCq/vxfnvPPxhbPoa8smnzk83Ie0sdVladofr3nvfzlq
+ckm2gGZMqk+f4jVJpQMqGfvOyQ9Nz0e7tCOLYF/C4+vypEhE1bQFS+bn3k9U1qye
+17iP4HArev6S43Oae4Mlim4OiyoG8mn/mnsvj5M+YiPBWwz57eUa0fMCBmOCzs4p
+JCMEdGS6yVHW69KODL/esrwvppM3HSIrmeFXx/NZVjJaTG1L/t7nTOqokMo1G0Ta
+0sOxI9H1sVPePyKB8+T/6M7hNkDQgzy3PhI9ovYTCShN4tvwqsdvyTiZwGNwB1c/
+ezKX7mJ6DplzBYYaz+6JL4vp5roCmCIp7WxW8QIDAQABAoIBAHeed42LNjqktmpK
+1oDjT8iL1sD9E+CQIzyJray2Iq+Dt+dZavCbzZVw8lkXje5XUNKWiU0+MAmsvB9n
+gKtUKfkptkShHfuVvgBl8uk8ADuI3wy1XM2Gji9il14LBUqUaokAbHG+edqvZM6B
+Rn8ytc8pTiHQTFR1urgnobkT7iGqbNi6eRSajfJOlQcB0nVVw4Q089ijdPdAY0Y6
+gk1l+p34FldV+FKAs7uoukrPiNxr9P/DVsKVWb35tNXdegp/9rtFf0PhL8fuKyo+
+gkblEj+nkSNyHPVWmLgrmbAFo0tt+0lxggVN6nqBZEGtaYHeAvQKfldFLr2mSIK1
+F0vmUgECgYEA8AXFqLxBO8uTXDS8LFfVXIf5B58d0TcChZBB+W5LRM5SjLjfWxu2
+drPYdExOwhbYZVEuq74PQKg/QTIBGNLlzhmHaA/jZAcAiB0BJ2MJtrT2Mqi/hP4C
+CHVmxRqczLLGIgQ4Q9jdf6qblBgH4tvw3l0BCHdqRqu/83a1+ec5ZiECgYEAxamS
+3EpyqYRy8K5WE5hc+isgqWAbOKZTj3sJQr8zn0zQFKQsTBanmvHg35yp2IVgregd
+LTxLpK8jaAXDfmqY1z+6F7ogEEldfp2Sqc22BvPYw7cCj2qpIPCrOHSTRaFSGZOF
+Ea6kbIjRQrILmpzAvO+QL9Az2ooWLmBbvqFlNtECgYBYXresbUtTOZuSqjPR27DJ
+daKBZNr0iV1bUYaI0EvUFGaeOv65K5XdVE/QWbvxh7m6a85UGxDAjHFljoSK4DMN
+06Zf8OGWlWFju9IN70/HPg8bDbgdvet/s8HXtfme//8kzQruJ+09MNJBDyvwIWwo
+YnOb62Nsi5WLjNxpGvGuIQKBgANgwoHBQ/RhrxUt5YqwL+aWlhhO7Cgrr4HkOGRL
+oDY4udWgeKFUQckEGTO5Ga35mY1fSiBbx28pDxHYB19Bsxr6m9OL+sBMgKyJRNhi
+C5pS0IGHvyN0Ty+g7UwpsdqexyhovP1wXp78N5dMM6aQxzpzXaNzi29QrNBeFTNM
+zs4BAoGBAIy371Md/55HGaP0KS+T9mhvZwMA/AeQfYv14MACA/aQH+D6ClzgP+Xa
+DZxFileAw+8DEA0Y3PPXZAb05af70khvxm/ab2xizvJC3fu4pcU/HgHPkSFR6Aub
+3Cf6zvHO5SQYfCV1/Gmf6eKeW8wxeV+NR1NLQGRWlft/B31JCCUa
+-----END RSA PRIVATE KEY-----
+~~~
+
+
+~~~
+vim machines.txt
+for i in `cat machines.txt`; do ssh ${i} uptime; done
+~~~
+
 Hosty:
 ~~~
 ip-172-31-13-225.us-west-2.compute.internal
@@ -70,11 +115,3 @@ ip-172-31-14-19.us-west-2.compute.internal
 ip-172-31-3-44.us-west-2.compute.internal
 ip-172-31-10-121.us-west-2.compute.internal
 ~~~
-
-Żeby się zalogować bez hasła z konta root na inne należy wkleić od plików ~/.ssh/authorized_hosts zawartość pliku ~/.ssh/id_rsa.pub która w naszym przypadku wygląda tak:
-
-~~~
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5U26cKr+/F+e88/GFs+hryyafOTzch7Sx1WVp2h+vee9/OWpySbaAZkyqT5/iNUmlAyoZ+87JD03PR7u0I4tgX8Lj6/KkSETVtAVL5ufeT1TWrJ7XuI/gcCt6/pLjc5p7gyWKbg6LKgbyaf+aey+Pkz5iI8FbDPnt5RrR8wIGY4LOzikkIwR0ZLrJUdbr0o4Mv96yvC+mkzcdIiuZ4VfH81lWMlpMbUv+3udM6qiQyjUbRNrSw7Ej0fWxU94/IoHz5P/ozuE2QNCDPLc+Ej2i9hMJKE3i2/Cqx2/JOJnAY3AHVz97MpfuYnoOmXMFhhrP7okvi+nmugKYIintbFbx root@ip-172-31-13-225.us-west-2.compute.internal
-~~~
-
-
