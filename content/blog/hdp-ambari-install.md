@@ -67,7 +67,7 @@ Status możemy sprawdzić
 hostnamectl status
 ~~~
 
-# Konfigurujemy hosty
+# Konfigurujemy hostów
 
 ~~~shell
 192.168.172.201 hadoop1 hadoop1.bigdatapassion.pl
