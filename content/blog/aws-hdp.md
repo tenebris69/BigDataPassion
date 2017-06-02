@@ -16,8 +16,12 @@ type = "post"
 # ping
 for i in {1..7..1}; do ping -c 1 hdp${i}; done
 
+for i in {1..5..1}; do ssh-keygen -f "/home/radek/.ssh/known_hosts" -R sages${i}; done
+
 # uptime
 for i in {1..7..1}; do ssh hdp${i} uptime; done
+for i in {1..5..1}; do ssh sages${i} uptime; done
+
 
 cssh centos@hdp-{1..7}
 
@@ -33,6 +37,12 @@ cssh centos@hdp-{1..7}
 54.201.192.34	ip-172-31-14-19.us-west-2.compute.internal	hdp5
 54.200.237.19	ip-172-31-3-44.us-west-2.compute.internal	hdp6
 54.191.200.16	ip-172-31-10-121.us-west-2.compute.internal	hdp7
+
+52.90.240.16    ip-172-31-18-75.ec2.internal    sages1
+54.86.15.248    ip-172-31-22-254.ec2.internal   sages2
+54.211.248.36   ip-172-31-17-129.ec2.internal   sages3
+184.73.113.151  ip-172-31-16-231.ec2.internal   sages4
+52.90.25.164    ip-172-31-23-198.ec2.internal   sages5
 ~~~
 
 ~~~
