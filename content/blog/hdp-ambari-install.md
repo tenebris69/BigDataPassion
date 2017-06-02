@@ -42,6 +42,7 @@ yum install -y wget
 
 ~~~shell
 wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm
+#wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 rpm -ivh epel-release-7-9.noarch.rpm
 yum update -y
 yum repolist
