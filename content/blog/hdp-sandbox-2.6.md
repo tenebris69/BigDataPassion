@@ -74,3 +74,11 @@ yum -y groupinstall "Server with GUI"
 yum groupinfo "GNOME Desktop"
 yum -y groupinstall "GNOME Desktop"
 ~~~
+
+Pamiętajmy by ustawić hostname
+
+hostnamectl set-hostname hadoop1.bigdatapassion.pl --static
+plik /etc/hosts
+
+hostname
+hostname -f
