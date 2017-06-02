@@ -44,3 +44,33 @@ passwd sages
 
 startx
 ~~~
+
+Inne centos 6
+~~~shell
+
+yum groupinfo "X Window System"
+yum groupinfo "Desktop"
+yum groupinfo "General Purpose Desktop"
+yum groupinfo "Desktop Platform"
+yum groupinfo "Graphical Administration Tools"
+yum groupinfo "Fonts"
+yum groupinfo "Internet Browser"
+
+yum -y groupinstall "X Window System"
+yum -y groupinstall "Desktop"
+yum -y groupinstall "General Purpose Desktop"
+yum -y groupinstall "Desktop Platform"
+yum -y groupinstall "Graphical Administration Tools"
+yum -y groupinstall "Fonts"
+yum -y groupinstall "Internet Browser"
+~~~
+
+centos 7
+~~~shell
+yum groupinfo "Server with GUI"
+yum -y groupinstall "Server with GUI"
+
+
+yum groupinfo "GNOME Desktop"
+yum -y groupinstall "GNOME Desktop"
+~~~
