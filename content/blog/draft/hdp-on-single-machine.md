@@ -1,6 +1,7 @@
 
 
-yum update -y
+yum -y update
+yum -y upgrade
 
 yum install -y wget
 
@@ -9,7 +10,7 @@ rpm -ivh epel-release-7-9.noarch.rpm
 yum update -y
 yum repolist
 
-yum install -y vim htop ntp openssh-server openssh-clients nano bash-completion
+yum install -y vim wget htop ntp openssh-server openssh-clients nano bash-completion
 
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
@@ -22,6 +23,8 @@ systemctl disable chrony.service
 
 systemctl enable ntpd.service
 systemctl is-enabled ntpd.service
-
 systemctl start ntpd.service
 systemctl status ntpd.service
+
+echo umask 022 >> ~/.bash_profile
+echo umask 022 >> /etc/profile
