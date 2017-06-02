@@ -115,3 +115,13 @@ ip-172-31-14-19.us-west-2.compute.internal
 ip-172-31-3-44.us-west-2.compute.internal
 ip-172-31-10-121.us-west-2.compute.internal
 ~~~
+
+cat .ssh/id_rsa.pub | ssh b@B 'cat >> .ssh/authorized_keys'
+
+
+
+# Legenda
+* https://alestic.com/2014/01/ec2-ssh-username/
+* https://aws.amazon.com/marketplace/pp/B00O7WM7QW
+* https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.1.0/bk_ambari-installation/content/download_the_ambari_repo_lnx7.html
+
