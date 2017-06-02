@@ -257,5 +257,6 @@ Gdyby w trakcie instalacji wystąpiły jakieś błędy podczas uruchamiania usł
 # Legenda
 * https://hortonworks.com/products/data-center/hdp/
 * https://ambari.apache.org/
+* https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.1.0/bk_ambari-installation/content/download_the_ambari_repo_lnx7.html
 * https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ambari_repositories.html
 * https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.5.0
