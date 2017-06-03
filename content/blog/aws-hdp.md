@@ -141,6 +141,10 @@ ip-172-31-10-121.us-west-2.compute.internal
 cat .ssh/id_rsa.pub | ssh b@B 'cat >> .ssh/authorized_keys'
 
 
+vim /etc/ssh/sshd_config
+PasswordAuthentication yes
+service sshd restart
+
 
 # Legenda
 * https://alestic.com/2014/01/ec2-ssh-username/
