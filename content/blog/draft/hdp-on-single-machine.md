@@ -26,5 +26,7 @@ systemctl is-enabled ntpd.service
 systemctl start ntpd.service
 systemctl status ntpd.service
 
+chkconfig ntpd on
+
 echo umask 022 >> ~/.bash_profile
 echo umask 022 >> /etc/profile
