@@ -146,6 +146,10 @@ PasswordAuthentication yes
 service sshd restart
 
 
+adduser username
+echo password | passwd username --stdin
+
+
 # Legenda
 * https://alestic.com/2014/01/ec2-ssh-username/
 * https://aws.amazon.com/marketplace/pp/B00O7WM7QW
