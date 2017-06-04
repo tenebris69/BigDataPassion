@@ -30,3 +30,17 @@ chkconfig ntpd on
 
 echo umask 022 >> ~/.bash_profile
 echo umask 022 >> /etc/profile
+
+
+
+
+
+
+hostnamectl set-hostname hadoop.sages.com.pl
+hostnamectl set-hostname hadoop.sages.com.pl --static
+hostnamectl set-hostname hadoop.sages.com.pl --pretty
+hostnamectl set-hostname hadoop.sages.com.pl --transient
+
+hostnamectl status
+hostname
+hostname -f
