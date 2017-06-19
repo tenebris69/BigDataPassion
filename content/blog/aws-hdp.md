@@ -150,6 +150,12 @@ adduser username
 echo password | passwd username --stdin
 
 
+
+for i in `cat users.txt`; do adduser ${i} ; done
+for i in `cat users.txt`; do echo ${i} | passwd ${i} --stdin ; done
+
+
+
 # Legenda
 * https://alestic.com/2014/01/ec2-ssh-username/
 * https://aws.amazon.com/marketplace/pp/B00O7WM7QW
