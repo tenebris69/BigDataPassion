@@ -10,6 +10,7 @@ linktitle = ""
 title = "hdp sandbox 2.6"
 type = "post"
 
+draft = true
 +++
 
 # Pobranie Sandbox'a 2.6

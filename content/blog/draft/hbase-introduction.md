@@ -10,6 +10,7 @@ linktitle = ""
 title = "hbase introduction"
 type = "post"
 
+draft = true
 +++
 
 

@@ -1,4 +1,17 @@
++++
+author = "Radosław Szmit"
+categories = ["HBase","Administracja"]
+date = "2017-05-01T17:04:17+02:00"
+description = "Rozwiązywanie problemów z bazą HBase"
+featured = ""
+featuredalt = ""
+featuredpath = ""
+linktitle = ""
+title = "Hbase troubleshooting"
+type = "post"
 
+draft = true
++++
 
 yum -y update
 yum -y upgrade

@@ -7,7 +7,7 @@ featured = "pic02.jpg"
 featuredalt = ""
 featuredpath = "/img/featured"
 linktitle = ""
-title = "Testowy klaster obliczeniowy (VirtualBox 5 i CentOS 7)"
+title = "Testowy klaster obliczeniowy - VirtualBox 5 i CentOS 7"
 type = "post"
 
 +++

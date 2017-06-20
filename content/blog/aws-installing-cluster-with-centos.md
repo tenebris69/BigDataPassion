@@ -1,13 +1,13 @@
 +++
-author = ""
-categories = []
-date = "2017-06-02T13:29:58+02:00"
-description = ""
-featured = ""
+author = "Radosław Szmit"
+categories = ["AWS","CentOS","Administracja"]
+date = "2017-06-20T12:59:11+02:00"
+description = "Stworzenie klastra kilku maszyn w oparciu o Amazon Web Services i system CentOS 7"
+featured = "AmazonWebservices_Logo.svg.png"
 featuredalt = ""
-featuredpath = ""
+featuredpath = "/img/featured"
 linktitle = ""
-title = "aws hdp"
+title = "Testowy klaster obliczeniowy - Amazon Web Services i CentOS 7"
 type = "post"
 
 +++

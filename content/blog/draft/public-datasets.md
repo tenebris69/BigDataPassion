@@ -10,6 +10,7 @@ linktitle = ""
 title = "public datasets"
 type = "post"
 
+draft = true
 +++
 
 https://danepubliczne.gov.pl/
