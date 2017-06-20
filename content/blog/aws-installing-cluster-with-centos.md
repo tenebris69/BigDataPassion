@@ -26,6 +26,26 @@ Amazon udostępnia możliwość tworzenia maszyn na życzenie (on demand) za kt�
 
 # Tworzenie maszyn
 
+![](/img/aws-installing-cluster-with-centos/aws-after-launch.png)
+![](/img/aws-installing-cluster-with-centos/aws-before-start-oregon.png)
+![](/img/aws-installing-cluster-with-centos/aws-centos.png)
+![](/img/aws-installing-cluster-with-centos/aws-clustername.png)
+![](/img/aws-installing-cluster-with-centos/aws-confirm-hosts.png)
+![](/img/aws-installing-cluster-with-centos/aws-instance-details.png)
+![](/img/aws-installing-cluster-with-centos/aws-instances.png)
+![](/img/aws-installing-cluster-with-centos/aws-instance-type.png)
+![](/img/aws-installing-cluster-with-centos/aws-keypair.png)
+![](/img/aws-installing-cluster-with-centos/aws-launch.png)
+![](/img/aws-installing-cluster-with-centos/aws-machine-image.png)
+![](/img/aws-installing-cluster-with-centos/aws-magnetic.png)
+![](/img/aws-installing-cluster-with-centos/aws-marketplace.png)
+![](/img/aws-installing-cluster-with-centos/aws-marketplace2.png)
+![](/img/aws-installing-cluster-with-centos/aws-review.png)
+![](/img/aws-installing-cluster-with-centos/aws-security.png)
+![](/img/aws-installing-cluster-with-centos/aws-selectversion.png)
+![](/img/aws-installing-cluster-with-centos/aws-storage.png)
+![](/img/aws-installing-cluster-with-centos/aws-storage2.png)
+![](/img/aws-installing-cluster-with-centos/aws-tags.png)
 
 
 
