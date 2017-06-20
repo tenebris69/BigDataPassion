@@ -12,6 +12,24 @@ type = "post"
 
 +++
 
+Publiczne chmury obliczeniowe cieszą się coraz większym zainteresowaniem. Jedną z najbardziej popularnych rozwiązań tego typu jest zdecydowanie Amazon Web Services. W poniższym krótkim tutorialu pokażę jak szybko zbudować mini klaster testowy do zastosowań Big Data, na którym będziemy mogli wdrożyć na przykład platformę HDP (instalacji poświęcony został inny tutorial).
+
+# Założenie konta
+
+Nasz proces musimy zacząć od założenia konta w serwisie (https://aws.amazon.com/console/) wybierając opcję "Sign in to the Console" a następnie wybranie opcji "I am a new user" i wypełnienie formularza.
+
+Rejestracja jest dość prosta, jedynym utrudnieniem może się okazać konieczność podania karty kredytowej z której będą dokonywane płatności za comiesięczny rachunek około trzeciego dnia następnego miesiąca. Dodatkowo w momencie rejestracji, w celu potwierdzenia karty kredytowej, zostanie pobrana opłata w wysokości jednego dolara.
+
+# Planowanie kosztów
+
+Amazon udostępnia możliwość tworzenia maszyn na życzenie (on demand) za które płacimy zgodnie z wykorzystaniem (płatność za godzinę użycia). Aktualny cennik możemy znaleźć pod adresem: https://aws.amazon.com/ec2/pricing/on-demand/. Należy zwrócić uwagę, że ceny zależą od lokalizacji w której będziemy tworzyć maszyny (najtaniej jest w USA, np. Oregon lub Virginia) oraz dostępność wersji maszyn także zależy od kolokacji. Dla przykładu za maszynę m4.xlarge (4 CPU, 16 GB RAM) w Oregon zapłacimy 0.2 $ za godzinę użycia (włącozna maszyna). Dodatkowo naliczane są ceny za wykorzystane powierzchnie dyskowe. Całość naszego wdrożenia, najlepiej sprawdzić za pomocą kalkulatora: https://calculator.s3.amazonaws.com/index.html wybierając w zakładce EC2 odpowiednie maszyny, ich ilość i planowane wykorzystanie przestrzeni dyskowej.
+
+# Tworzenie maszyn
+
+
+
+
+
 ~~~shell
 # ping
 for i in {1..7..1}; do ping -c 1 hdp${i}; done
