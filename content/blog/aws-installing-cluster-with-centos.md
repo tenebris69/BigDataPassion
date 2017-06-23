@@ -29,7 +29,6 @@ Amazon udostępnia możliwość tworzenia maszyn na życzenie (on demand) za kt�
 Poniżej kolejne kroki w celu uzyskania kompletnego klastra obliczeniowego na Amazon Web Services.
 
 Całość zaczynamy od wejścia na stronę: https://console.aws.amazon.com/console/ a następnie z menu usług wybieramy "EC2". Powinniśmy zobaczyć ekran jak niżej:
-
 ![](/img/aws-installing-cluster-with-centos/aws-ec2.png)
 
 Na górze widzimy podsumowanie statusu w ramach aktualnie wybranej lokalizacji którą możemy zmienić w prawym górnych rogu (w moim przypadku jest to Virginia w USA).
@@ -37,9 +36,12 @@ Na górze widzimy podsumowanie statusu w ramach aktualnie wybranej lokalizacji k
 Jeśli klikniemy menu "Running Instances" zobaczymy listę maszyn dostępnych w tej lokalizacji (w tym przypadku pustą).
 ![](/img/aws-installing-cluster-with-centos/aws-before-start-oregon.png)
 
-Aby stworzyć nowe maszyny klikamy "Launch Instances"
+Aby stworzyć nowe maszyny klikamy "Launch Instances". W wyniku dostajemy listę obrazów systemów do załadowania.
+![](/img/aws-installing-cluster-with-centos/aws-machine-image.png)
 
-
+W prezentowanej liście brakuje systemu CentOS którego chcemy użyć, dlatego skorzystamy z marketu (AWS Marketplace w menu po lewej) i wbudowanej wyszukiwarki. Wybieramy interesującą nas wersję i klikamy "Select"
+![](/img/aws-installing-cluster-with-centos/aws-marketplace.png)
+  
 
 
 ![](/img/aws-installing-cluster-with-centos/aws-after-launch.png)
@@ -51,9 +53,7 @@ Aby stworzyć nowe maszyny klikamy "Launch Instances"
 ![](/img/aws-installing-cluster-with-centos/aws-instance-type.png)
 ![](/img/aws-installing-cluster-with-centos/aws-keypair.png)
 ![](/img/aws-installing-cluster-with-centos/aws-launch.png)
-![](/img/aws-installing-cluster-with-centos/aws-machine-image.png)
 ![](/img/aws-installing-cluster-with-centos/aws-magnetic.png)
-![](/img/aws-installing-cluster-with-centos/aws-marketplace.png)
 ![](/img/aws-installing-cluster-with-centos/aws-marketplace2.png)
 ![](/img/aws-installing-cluster-with-centos/aws-review.png)
 ![](/img/aws-installing-cluster-with-centos/aws-security.png)
