@@ -47,11 +47,11 @@ Host hdp*
 54.200.237.19	ip-172-31-3-44.us-west-2.compute.internal	hdp6
 54.191.200.16	ip-172-31-10-121.us-west-2.compute.internal	hdp7
 
-52.90.240.16    ip-172-31-18-75.ec2.internal    sages1
-54.86.15.248    ip-172-31-22-254.ec2.internal   sages2
-54.211.248.36   ip-172-31-17-129.ec2.internal   sages3
-184.73.113.151  ip-172-31-16-231.ec2.internal   sages4
-52.90.25.164    ip-172-31-23-198.ec2.internal   sages5
+54.145.74.146	ip-172-31-56-98.ec2.internal	sages1
+54.210.97.239	ip-172-31-52-199.ec2.internal	sages2
+54.243.15.191	ip-172-31-56-122.ec2.internal	sages3
+52.70.114.61	ip-172-31-50-178.ec2.internal	sages4
+54.210.104.197	ip-172-31-49-73.ec2.internal	sages5
 ~~~
 
 ~~~
@@ -62,6 +62,12 @@ Host hdp*
 172.31.14.19	hdp5
 172.31.3.44     hdp6
 172.31.10.121	hdp7
+
+54.145.74.146	sages1
+54.210.97.239	sages2
+54.243.15.191	sages3
+52.70.114.61	sages4
+54.210.104.197	sages5
 ~~~
 
 ~~~
@@ -72,6 +78,12 @@ ip-172-31-12-137.us-west-2.compute.internal	hdp4
 ip-172-31-14-19.us-west-2.compute.internal	hdp5
 ip-172-31-3-44.us-west-2.compute.internal	hdp6
 ip-172-31-10-121.us-west-2.compute.internal	hdp7
+
+ip-172-31-56-98.ec2.internal
+ip-172-31-52-199.ec2.internal
+ip-172-31-56-122.ec2.internal
+ip-172-31-50-178.ec2.internal
+ip-172-31-49-73.ec2.internal
 ~~~
 
 ~~~shell
