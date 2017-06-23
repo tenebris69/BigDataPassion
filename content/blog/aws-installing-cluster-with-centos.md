@@ -24,10 +24,25 @@ Rejestracja jest dość prosta, jedynym utrudnieniem może się okazać konieczn
 
 Amazon udostępnia możliwość tworzenia maszyn na życzenie (on demand) za które płacimy zgodnie z wykorzystaniem (płatność za godzinę użycia). Aktualny cennik możemy znaleźć pod adresem: https://aws.amazon.com/ec2/pricing/on-demand/. Należy zwrócić uwagę, że ceny zależą od lokalizacji w której będziemy tworzyć maszyny (najtaniej jest w USA, np. Oregon lub Virginia) oraz dostępność wersji maszyn także zależy od kolokacji. Dla przykładu za maszynę m4.xlarge (4 CPU, 16 GB RAM) w Oregon zapłacimy 0.2 $ za godzinę użycia (włącozna maszyna). Dodatkowo naliczane są ceny za wykorzystane powierzchnie dyskowe. Całość naszego wdrożenia, najlepiej sprawdzić za pomocą kalkulatora: https://calculator.s3.amazonaws.com/index.html wybierając w zakładce EC2 odpowiednie maszyny, ich ilość i planowane wykorzystanie przestrzeni dyskowej.
 
-# Tworzenie maszyn
+# Tworzenie klastra maszyn na AWS
+
+Poniżej kolejne kroki w celu uzyskania kompletnego klastra obliczeniowego na Amazon Web Services.
+
+Całość zaczynamy od wejścia na stronę: https://console.aws.amazon.com/console/ a następnie z menu usług wybieramy "EC2". Powinniśmy zobaczyć ekran jak niżej:
+
+![](/img/aws-installing-cluster-with-centos/aws-ec2.png)
+
+Na górze widzimy podsumowanie statusu w ramach aktualnie wybranej lokalizacji którą możemy zmienić w prawym górnych rogu (w moim przypadku jest to Virginia w USA).
+
+Jeśli klikniemy menu "Running Instances" zobaczymy listę maszyn dostępnych w tej lokalizacji (w tym przypadku pustą).
+![](/img/aws-installing-cluster-with-centos/aws-before-start-oregon.png)
+
+Aby stworzyć nowe maszyny klikamy "Launch Instances"
+
+
+
 
 ![](/img/aws-installing-cluster-with-centos/aws-after-launch.png)
-![](/img/aws-installing-cluster-with-centos/aws-before-start-oregon.png)
 ![](/img/aws-installing-cluster-with-centos/aws-centos.png)
 ![](/img/aws-installing-cluster-with-centos/aws-clustername.png)
 ![](/img/aws-installing-cluster-with-centos/aws-confirm-hosts.png)
