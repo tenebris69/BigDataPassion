@@ -41,26 +41,44 @@ Aby stworzyć nowe maszyny klikamy "Launch Instances". W wyniku dostajemy listę
 
 W prezentowanej liście brakuje systemu CentOS którego chcemy użyć, dlatego skorzystamy z marketu (AWS Marketplace w menu po lewej) i wbudowanej wyszukiwarki. Wybieramy interesującą nas wersję i klikamy "Select"
 ![](/img/aws-installing-cluster-with-centos/aws-marketplace.png)
-  
+![](/img/aws-installing-cluster-with-centos/aws-marketplace2.png)
+
+Po wybraniu odpowiedniego obrazu otrzymujemy jego podsumowanie. Warto przejrzeć zawarte tam informacje, gdyż możemy się dowiedzieć na przykład jak będzie się nazywał domyślny użytkownik na którego mamy się połączyć po SSH oraz czy obraz jest płatny
+![](/img/aws-installing-cluster-with-centos/aws-centos.png)
+
+Następnie przechodzimy do wybrania typu maszyny. Do naszego klastra testowego skorzystamy z maszyn typu "m4.xlarge" (4 CPU, 16GB RAM)
+![](/img/aws-installing-cluster-with-centos/aws-instance-type.png)
+
+W kolejnym oknie możemy zdefiniować liczbę maszyn wybranego typu oraz ustawić dodatkowe opcj. Ustawiam 7 maszyn
+![](/img/aws-installing-cluster-with-centos/aws-instance-details.png)
+
+W następnym oknie definiujemy przestrzeń dyskową dla naszych maszyn. W poniższym przykładzie wybrałem dyski magnetyczne o pojemności 100 GB
+![](/img/aws-installing-cluster-with-centos/aws-storage.png)
+![](/img/aws-installing-cluster-with-centos/aws-storage2.png)
+
+Kolejny krok możemy pominąć, umożliwia on dodanie dodatkowych tagów do maszyn
+![](/img/aws-installing-cluster-with-centos/aws-tags.png)
+
+AWS promuje wykorzystanie droższych dysków SSD, więc musimy potwierdzić swój wybór dysków HDD (lub wybrać jednak dyski SSD)
+![](/img/aws-installing-cluster-with-centos/aws-magnetic.png)
+
+W kolejnym kroku definiujemy konfigurację zabezpieczeń (firewall) poprzez stworzenie nowej grupy. Z racji tworzenia klastra testowego otworzę cały ruch do tych maszyn (uwaga, w żadnym wypadku nie należy tego robić produkcyjnie, gdyż każdy będzie miał dostęp do naszych maszyn i usług na wszystkich portach)
+![](/img/aws-installing-cluster-with-centos/aws-security.png)
+
+Domyślny użytkownik systemów na AWS nie ma możliwości logowania się hasłem, dlatego w kolejnym kroku jesteśmy proszeni o stworzenie odpowiedniego klucza który posłuży nam do zalogowania się na niego. Ten klucz musimy zapisać na swoim komputerze oraz nikomu go nie udostępniać.
+![](/img/aws-installing-cluster-with-centos/aws-keypair.png)
+
+W ostatnim kroku dostajemy podsumowanie naszej stworzonej konfiguracji wraz z ostrzeżeniem że nasza konfiguracja będzie płatna (przez pierwszy rok korzystania z AWS dostajemy tak zwany "free tier" czyli pewien limit użycia za który nie musimy płacić)
+![](/img/aws-installing-cluster-with-centos/aws-review.png)
+
 
 
 ![](/img/aws-installing-cluster-with-centos/aws-after-launch.png)
-![](/img/aws-installing-cluster-with-centos/aws-centos.png)
 ![](/img/aws-installing-cluster-with-centos/aws-clustername.png)
 ![](/img/aws-installing-cluster-with-centos/aws-confirm-hosts.png)
-![](/img/aws-installing-cluster-with-centos/aws-instance-details.png)
 ![](/img/aws-installing-cluster-with-centos/aws-instances.png)
-![](/img/aws-installing-cluster-with-centos/aws-instance-type.png)
-![](/img/aws-installing-cluster-with-centos/aws-keypair.png)
 ![](/img/aws-installing-cluster-with-centos/aws-launch.png)
-![](/img/aws-installing-cluster-with-centos/aws-magnetic.png)
-![](/img/aws-installing-cluster-with-centos/aws-marketplace2.png)
-![](/img/aws-installing-cluster-with-centos/aws-review.png)
-![](/img/aws-installing-cluster-with-centos/aws-security.png)
 ![](/img/aws-installing-cluster-with-centos/aws-selectversion.png)
-![](/img/aws-installing-cluster-with-centos/aws-storage.png)
-![](/img/aws-installing-cluster-with-centos/aws-storage2.png)
-![](/img/aws-installing-cluster-with-centos/aws-tags.png)
 
 
 
