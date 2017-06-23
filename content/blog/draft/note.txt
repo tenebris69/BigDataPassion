@@ -9,7 +9,10 @@ inne
 ~~~shell
 # ping
 for i in {1..7..1}; do ping -c 1 hdp${i}; done
+for i in {1..5..1}; do ping -c 1 sages{i}; done
 
+# usunięcie wpisów
+for i in {1..7..1}; do ssh-keygen -f "/home/radek/.ssh/known_hosts" -R hdp${i}; done
 for i in {1..5..1}; do ssh-keygen -f "/home/radek/.ssh/known_hosts" -R sages${i}; done
 
 # uptime
