@@ -68,12 +68,15 @@ W kolejnym kroku definiujemy konfigurację zabezpieczeń (firewall) poprzez stwo
 Domyślny użytkownik systemów na AWS nie ma możliwości logowania się hasłem, dlatego w kolejnym kroku jesteśmy proszeni o stworzenie odpowiedniego klucza który posłuży nam do zalogowania się na niego. Ten klucz musimy zapisać na swoim komputerze oraz nikomu go nie udostępniać.
 ![](/img/aws-installing-cluster-with-centos/aws-keypair.png)
 
-W ostatnim kroku dostajemy podsumowanie naszej stworzonej konfiguracji wraz z ostrzeżeniem że nasza konfiguracja będzie płatna (przez pierwszy rok korzystania z AWS dostajemy tak zwany "free tier" czyli pewien limit użycia za który nie musimy płacić)
+W ostatnim kroku dostajemy podsumowanie naszej stworzonej konfiguracji wraz z ostrzeżeniem że nasza konfiguracja będzie płatna (przez pierwszy rok korzystania z AWS dostajemy tak zwany "free tier" czyli pewien limit użycia za który nie musimy płacić). Klikamy "Launch" by potwierdzić naszą konfigurację.
 ![](/img/aws-installing-cluster-with-centos/aws-review.png)
 
-
-
+Ostatecznie 
 ![](/img/aws-installing-cluster-with-centos/aws-after-launch.png)
+
+
+
+
 ![](/img/aws-installing-cluster-with-centos/aws-clustername.png)
 ![](/img/aws-installing-cluster-with-centos/aws-confirm-hosts.png)
 ![](/img/aws-installing-cluster-with-centos/aws-instances.png)
