@@ -178,3 +178,19 @@ ssh ip-172-31-52-199.ec2.internal uptime
 ssh ip-172-31-56-122.ec2.internal uptime
 ssh ip-172-31-50-178.ec2.internal uptime
 ssh ip-172-31-49-73.ec2.internal uptime
+
+
+
+
+
+
+
+
+hostnamectl
+rpm --query centos-release
+lsb_release -d
+cat /etc/centos-release
+cat /etc/os-release
+
+
+https://linuxconfig.org/how-to-check-centos-version
