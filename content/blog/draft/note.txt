@@ -169,17 +169,18 @@ for i in `cat users.txt`; do echo ${i} | passwd ${i} --stdin ; done
 
 
 
+ip-172-31-0-52.ec2.internal
+ip-172-31-0-239.ec2.internal
+ip-172-31-1-147.ec2.internal
+ip-172-31-4-113.ec2.internal
+ip-172-31-10-48.ec2.internal
 
 
-
-
-ssh ip-172-31-56-98.ec2.internal uptime
-ssh ip-172-31-52-199.ec2.internal uptime
-ssh ip-172-31-56-122.ec2.internal uptime
-ssh ip-172-31-50-178.ec2.internal uptime
-ssh ip-172-31-49-73.ec2.internal uptime
-
-
+ssh ip-172-31-0-52.ec2.internal uptime
+ssh ip-172-31-0-239.ec2.internal uptime
+ssh ip-172-31-1-147.ec2.internal uptime
+ssh ip-172-31-4-113.ec2.internal uptime
+ssh ip-172-31-10-48.ec2.internal uptime
 
 
 
