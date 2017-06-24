@@ -21,7 +21,7 @@ for i in {1..5..1}; do ssh sages${i} uptime; done
 
 
 cssh centos@hdp{1..7}
-cssh ec2-user@sages{1..5}
+cssh centos@sages{1..5}
 
 ~~~
 
@@ -162,3 +162,19 @@ echo password | passwd username --stdin
 
 for i in `cat users.txt`; do adduser ${i} ; done
 for i in `cat users.txt`; do echo ${i} | passwd ${i} --stdin ; done
+
+
+
+
+
+
+
+
+
+
+
+ssh ip-172-31-56-98.ec2.internal uptime
+ssh ip-172-31-52-199.ec2.internal uptime
+ssh ip-172-31-56-122.ec2.internal uptime
+ssh ip-172-31-50-178.ec2.internal uptime
+ssh ip-172-31-49-73.ec2.internal uptime
