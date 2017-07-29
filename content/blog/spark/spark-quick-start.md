@@ -84,9 +84,36 @@ Parametr "master" pozwala nam zdefiniować w ilu wątkach będzie uruchomiony Sp
 
 Po uruchomieniu Spark'a (także w trybie interaktywnym) możemy wejść na jego interfejs graficzny dostępny pod adresem http://localhost:4040.
 
+# Idea Sparka
+
+Spark od początku istnienia opiera się na idei *Resilient Distributed Dataset* (RDD) która została po raz pierwszy przedstawiona w publikacji naukowej *Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing* autorstwa twórcy narzędzia Matei Zaharia w 2012 roku (https://cs.stanford.edu/~matei/papers/2012/nsdi_spark.pdf).
+
+RDD to tak naprawdę niezmienna (brak edycji) rozproszona kolekcja danych, przechowywana przez węzły klastra obliczeniowego. RDD mogą być przetwarzane w spósób rozproszony i wielowątkowy, zaś podstawowymi operacjami na RDD są akcje i transformacje.
+
+Wraz z rozwojem Spark'a oraz wzostem jego popularności, twórcy chcieli udostępnić narzędzie szerszemu gronu użytkowników poprzez rozszerzenie API. Na wzór "data frames" dostępnych w języku R oraz Python (Pandas) twórcy Apache Spark stworzyli nowy typ zwany *DataFrame*. Podobnie do RDD, DataFrame to rozproszona kolekcja danych, jednakże dane są zorganizowane w nazwane kolumny, analogicznie jak to ma miejsce w bazach danych czy narzędziach typu Apache Hive. Dodatkowo DataFrame posiadają wiele optymalizacji (Catalyst optimizer) i udogodnień w API (domain-specific language). Także podobnie do RDD wszelkie operacje są buforowane i wykonywane dopiero gdy to niezbędne (lazy), przez co Spark może zastosować wiele optymalizacji.
+
+W wersji 1.6 Apache Spark zostało wprowadzone trzecie API zwane Dataset. W przeciwieństwie do DataFrame, nowe Api jest silnie typowane (type-safe) oraz zorientowane obiektowo (object-oriented programming interface). Dodatkowo posiada jeszcze więcej optymalizacji (Catalyst Optimizer i Tungsten project). Użytkowo API jest bardzo zbliżone do RDD, przez co Dataset stał się optymalnym rozwiązaniem łączącym zalety zarówno DataFrame jak i RDD, przy dużo większej wydajności i mniejszym użyciu pamięci RAM niż RDD.
+
+Wraz z pojawieniem się wersji 2.0 Spark'a, API dla DataFrame i Dataset zostało zunifikowane w pewnym stopniu, dzięki czemu korzystanie z nich stało się znacznie prostsze. Ze względu na specyfikę danego języka, nie każde API jest dostępne dla każdego języka, co przedstawia tabela:
+
+Język  | Dostępne API
+------------- | -------------
+Scala | Dataset[T] & DataFrame (alias, DataFrame = Dataset[Row])
+Java | Dataset[T]
+Python* | DataFrame
+R* | DataFrame
 
 
+# Pierwsze kroki
 
+Zacznijmy od wczytania jakiegoś pliku z lokalnego dysku:
+
+~~~shell
+scala> val textFile = spark.read.textFile("README.md")
+textFile: org.apache.spark.sql.Dataset[String] = [value: string]
+~~~
+
+w wyniku shell informuje nas o stworzeniu wartości (val) typu Dataset (org.apache.spark.sql.Dataset[String]) i nazwie "textFile". Na takim obiekcie możemy wykonywać wiele operacji
 
 
 
@@ -94,8 +121,12 @@ Po uruchomieniu Spark'a (także w trybie interaktywnym) możemy wejść na jego 
 
 
 # Legenda
-* http://spark.apache.org
-* http://spark.apache.org/downloads.html
-* https://spark.apache.org/docs/latest/submitting-applications.html
-* https://spark.apache.org/docs/latest/submitting-applications.html#master-urls
+* Strona projektu http://spark.apache.org
+* Strona pobierania http://spark.apache.org/downloads.html
+* Dokumentacja https://spark.apache.org/docs/latest/
+* Wysyłanie zadania https://spark.apache.org/docs/latest/submitting-applications.html
+* Parametry dla trybu interaktywnego https://spark.apache.org/docs/latest/submitting-applications.html#master-urls
+* DataFrame https://databricks.com/blog/2015/02/17/introducing-dataframes-in-spark-for-large-scale-data-science.html
+* Dataset https://databricks.com/blog/2016/01/04/introducing-apache-spark-datasets.html
+* RDD vs Dataframe vs Dataset https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html
 

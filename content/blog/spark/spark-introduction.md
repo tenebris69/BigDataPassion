@@ -24,9 +24,9 @@ Dane można wczytywać z lokalnego dysku lub rozproszonych systemów składowani
 
 Apache Spark został napisany w języku Scala, jednak udostępnia wsparcie (tak zwane API) dla języka *Scala*, *Java*, *Python* oraz *R*, jednakże API dla języka Scala udostępnia najwięcej możliwości.
 
-Legenda:
+# Legenda:
 * Uniwersytet Berkeley http://www.berkeley.edu/
 * Uniwersytet Stanforda https://www.stanford.edu/
 * Strona domowa Matei Zaharia http://cs.stanford.edu/~matei/
-* https://cs.stanford.edu/~matei/papers/2012/nsdi_spark.pdf
-* http://spark.apache.org
+* Publikacja na temat RDD https://cs.stanford.edu/~matei/papers/2012/nsdi_spark.pdf
+* Strona domowa projektu http://spark.apache.org
