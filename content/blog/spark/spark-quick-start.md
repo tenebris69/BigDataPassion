@@ -116,26 +116,29 @@ scala> val textFile = spark.read.textFile("README.md")
 textFile: org.apache.spark.sql.Dataset[String] = [value: string]
 ~~~
 
-w wyniku shell informuje nas o stworzeniu wartości (val) typu Dataset (org.apache.spark.sql.Dataset[String]) i nazwie "textFile". Na takim obiekcie możemy wykonywać wiele operacji, np:
+w wyniku Shell języka Scala informuje nas o stworzeniu wartości (val) typu Dataset (org.apache.spark.sql.Dataset[String]) i nazwie "textFile".
 
+Na takim obiekcie możemy wykonywać wiele operacji, np:
 ~~~Java
 val textFile = spark.read.textFile("README.md")
 textFile.count()
 textFile.first()
 val linesWithSpark = textFile.filter(line => line.contains("Spark"))
-textFile.filter(line => line.contains("Spark")).count()
+linesWithSpark.count()
+linesWithSpark.first()
 ~~~
+W powyższym programie po wczytaniu pliku "README.md" (który znajduje się w bieżącej lokalizacji, czyli w rozpakowanym katalogu Apache Spark) zliczyliśmy liczbę wierszy za pomocą funkcji *count* oraz zwróciliśmy pierwszy element kolekcji, czyli w naszym przypadku pierwszą linijkę. Następnie stworzoliśmy nowy *Dataset* za pomocą funkcji *filter* którą wybraliśmy tylko te wiersze które zawierają słowo "Spark". Z racji że funkcja *filter* zwraca kolejny Dataset, na nim także można wywołać funkcje takie jak *first* oraz *count*
 
-to samo bardzo łatwo możemy zrobić używając języka Python:
+Te same operacje bardzo łatwo możemy wykonać używając języka Python:
 ~~~Python
 textFile = spark.read.text("README.md")
 textFile.count()
 textFile.first()
 linesWithSpark = textFile.filter(textFile.value.contains("Spark"))
-textFile.filter(textFile.value.contains("Spark")).count()
+linesWithSpark.count()
+linesWithSpark.first()
 ~~~
-
-
+W przypadku języka Python kod wygląda prawie identycznie, z tym wyjątkiem, że w tym przypadku używany jest oczywiście typ DataFrame. Także sam shell nie zwraca informacji o stworzonych obiektach, jak to się dzieje w przypadku shell'a dla języka Scala.
 
 
 
