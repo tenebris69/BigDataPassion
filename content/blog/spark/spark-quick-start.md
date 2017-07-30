@@ -140,8 +140,9 @@ linesWithSpark.first()
 ~~~
 W przypadku języka Python kod wygląda prawie identycznie, z tym wyjątkiem, że w tym przypadku używany jest oczywiście typ DataFrame. Także sam shell nie zwraca informacji o stworzonych obiektach, jak to się dzieje w przypadku shell'a dla języka Scala.
 
+# Podsumowanie
 
-
+Jeśli udało Ci się zainstalować i uruchomić Apache Spark na swoim komputerze, jesteś na dobrej drodze do poznania tego narzędzia. W kolejnych postach przedtawię znacznie więcej informacji Apache Spark, w tym informacje o architekturze, zasadzie działania, instalacji na klastrze i programowaniu.
 
 # Legenda
 * Strona projektu http://spark.apache.org
