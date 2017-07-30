@@ -103,7 +103,7 @@ Java | Dataset[T]
 Python | DataFrame
 R | DataFrame
 
-Jak widać silnie typowany język Java obsługuje Datset, zaś przeciwny jemu Python i R powinien korzystać z DataFrame. W języku Scala możemy korzystać z obydwu API, jednak DataFrame to tak naprawdę alias dla typu Dataset[Row].
+Jak widać silnie typowany język Java obsługuje Datset, zaś przeciwny jemu Python i R powinien korzystać z DataFrame. W języku Scala możemy korzystać z obydwu API. Trzeba zauważyć, że wraz z unifikacją API typ DataFrame to tak naprawdę alias dla typu Dataset[Row].
 
 Podsumowując, jeśli korzystamy ze Sparka, twórcy zalecają korzystanie z Dataset lub DataFrame ze względu na optymalizacje i wygodniejsze API. Jeśli jednak potrzebujemy API niższego poziomu i możemy pominąć optymalizacje wykorzystane w Dataset lub DataFrame, możemy nadal korzystać z klasycznych RDD.
 
@@ -116,7 +116,24 @@ scala> val textFile = spark.read.textFile("README.md")
 textFile: org.apache.spark.sql.Dataset[String] = [value: string]
 ~~~
 
-w wyniku shell informuje nas o stworzeniu wartości (val) typu Dataset (org.apache.spark.sql.Dataset[String]) i nazwie "textFile". Na takim obiekcie możemy wykonywać wiele operacji
+w wyniku shell informuje nas o stworzeniu wartości (val) typu Dataset (org.apache.spark.sql.Dataset[String]) i nazwie "textFile". Na takim obiekcie możemy wykonywać wiele operacji, np:
+
+~~~Java
+val textFile = spark.read.textFile("README.md")
+textFile.count()
+textFile.first()
+val linesWithSpark = textFile.filter(line => line.contains("Spark"))
+textFile.filter(line => line.contains("Spark")).count()
+~~~
+
+to samo bardzo łatwo możemy zrobić używając języka Python:
+~~~Python
+textFile = spark.read.text("README.md")
+textFile.count()
+textFile.first()
+linesWithSpark = textFile.filter(textFile.value.contains("Spark"))
+textFile.filter(textFile.value.contains("Spark")).count()
+~~~
 
 
 
@@ -129,6 +146,10 @@ w wyniku shell informuje nas o stworzeniu wartości (val) typu Dataset (org.apac
 * Dokumentacja https://spark.apache.org/docs/latest/
 * Wysyłanie zadania https://spark.apache.org/docs/latest/submitting-applications.html
 * Parametry dla trybu interaktywnego https://spark.apache.org/docs/latest/submitting-applications.html#master-urls
+* API dla języka Scala https://spark.apache.org/docs/latest/api/scala/index.html
+* API dla języka Java https://spark.apache.org/docs/latest/api/java/index.html
+* API dla języka Python https://spark.apache.org/docs/latest/api/python/index.html
+* API dla języka R https://spark.apache.org/docs/latest/api/R/index.html
 * DataFrame https://databricks.com/blog/2015/02/17/introducing-dataframes-in-spark-for-large-scale-data-science.html
 * Dataset https://databricks.com/blog/2016/01/04/introducing-apache-spark-datasets.html
 * RDD vs Dataframe vs Dataset https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html
