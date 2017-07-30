@@ -94,15 +94,18 @@ Wraz z rozwojem Spark'a oraz wzostem jego popularności, twórcy chcieli udostę
 
 W wersji 1.6 Apache Spark zostało wprowadzone trzecie API zwane Dataset. W przeciwieństwie do DataFrame, nowe Api jest silnie typowane (type-safe) oraz zorientowane obiektowo (object-oriented programming interface). Dodatkowo posiada jeszcze więcej optymalizacji (Catalyst Optimizer i Tungsten project). Użytkowo API jest bardzo zbliżone do RDD, przez co Dataset stał się optymalnym rozwiązaniem łączącym zalety zarówno DataFrame jak i RDD, przy dużo większej wydajności i mniejszym użyciu pamięci RAM niż RDD.
 
-Wraz z pojawieniem się wersji 2.0 Spark'a, API dla DataFrame i Dataset zostało zunifikowane w pewnym stopniu, dzięki czemu korzystanie z nich stało się znacznie prostsze. Ze względu na specyfikę danego języka, nie każde API jest dostępne dla każdego języka, co przedstawia tabela:
+Wraz z pojawieniem się wersji 2.0 Spark'a, API dla DataFrame i Dataset zostało zunifikowane w pewnym stopniu, dzięki czemu korzystanie z nich stało się znacznie prostsze. Niestety względu na specyfikę języków programowania, nie każde API jest dostępne dla każdego języka, co przedstawia tabela:
 
 Język  | Dostępne API
 ------------- | -------------
 Scala | Dataset[T] & DataFrame (alias, DataFrame = Dataset[Row])
 Java | Dataset[T]
-Python* | DataFrame
-R* | DataFrame
+Python | DataFrame
+R | DataFrame
 
+Jak widać silnie typowany język Java obsługuje Datset, zaś przeciwny jemu Python i R powinien korzystać z DataFrame. W języku Scala możemy korzystać z obydwu API, jednak DataFrame to tak naprawdę alias dla typu Dataset[Row].
+
+Podsumowując, jeśli korzystamy ze Sparka, twórcy zalecają korzystanie z Dataset lub DataFrame ze względu na optymalizacje i wygodniejsze API. Jeśli jednak potrzebujemy API niższego poziomu i możemy pominąć optymalizacje wykorzystane w Dataset lub DataFrame, możemy nadal korzystać z klasycznych RDD.
 
 # Pierwsze kroki
 
