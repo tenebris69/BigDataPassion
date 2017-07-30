@@ -1,6 +1,6 @@
 +++
 author = "Radosław Szmit"
-categories = ["Dystrybucje Big Data","Hortonworks Data Platform (HDP)","Administracja"]
+categories = ["Dystrybucje Big Data","Hortonworks Data Platform (HDP)","Administracja Big Data"]
 date = "2017-05-05T19:24:48+02:00"
 description = "Instalacja HDP 2.6 za pomocą Ambari 2.5"
 featured = "picture-of-elephant.jpg"

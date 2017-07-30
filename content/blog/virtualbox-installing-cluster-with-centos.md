@@ -1,6 +1,6 @@
 +++
 author = "Radosław Szmit"
-categories = ["Virtualbox","CentOS","Administracja"]
+categories = ["Virtualbox","CentOS","Administracja Big Data"]
 date = "2017-05-04T12:59:11+02:00"
 description = "Stworzenie klastra 3 maszyn w oparciu o Virtualbox'a 5 i system CentOS 7"
 featured = "pic02.jpg"

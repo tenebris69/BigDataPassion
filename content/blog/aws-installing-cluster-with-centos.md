@@ -1,6 +1,6 @@
 +++
 author = "Radosław Szmit"
-categories = ["AWS","CentOS","Administracja"]
+categories = ["AWS","CentOS","Administracja Big Data"]
 date = "2017-06-20T12:59:11+02:00"
 description = "Stworzenie klastra kilku maszyn w oparciu o Amazon Web Services i system CentOS 7"
 featured = "AmazonWebservices_Logo.svg.png"
