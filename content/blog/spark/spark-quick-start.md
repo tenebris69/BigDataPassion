@@ -7,7 +7,7 @@ featured = "Apache_Spark_logo.svg.png"
 featuredalt = ""
 featuredpath = "/img/featured"
 linktitle = ""
-title = "Apache Spark - Szybki start"
+title = "Szybki start z Apache Spark"
 type = "post"
 
 +++
