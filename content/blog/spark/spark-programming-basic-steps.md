@@ -20,7 +20,7 @@ W tym poście skupimy się na podstawach programowania w języku Scala, Java i P
 
 # Podstawowe operacje Apache Spark czyli zliczanie słów
 
-Jednymy z podstawowych funkcji Apache Spark są funkcje *map* i *reduce*, dobrze znane programistom języków funkcyjnych czy użytkownikom Apache Hadoop oraz innych narzędzi jak MongoDB, Cassandra implementujących paradygmant MapReduce. Typowym i najbardziej znanym przykładem implementacji algorytmów MapReduce jest proglem zliczania liczby słów w dużym zbiorze danych. Spróbujmy zobaczyć jak wygląda rozwiązanie tego problemu w Apache Spark.
+Jednymy z podstawowych funkcji Apache Spark są funkcje *map* i *reduce*, dobrze znane programistom języków funkcyjnych czy użytkownikom Apache Hadoop oraz innych narzędzi jak MongoDB, Cassandra implementujących paradygmant MapReduce.
 
 Funkcja *map* służy do transformacji jednego bytu w coś innego, np możemy zmienić linijki w liczbę oznaczającą liczbę słów w tej linii:
 ~~~Java
@@ -62,14 +62,58 @@ val textFile = spark.read.textFile("README.md")
 val lineSizeDataset = textFile.map(line => line.split(" ").size)
 val textFileWordCount = lineSizeDataset.reduce((a, b) => a + b)
 ~~~
+Po uruchomieniu programu otrzymaliśmy wynik w postaci:
+~~~
+scala> val textFile = spark.read.textFile("README.md")
+textFile: org.apache.spark.sql.Dataset[String] = [value: string]
 
+scala> val lineSizeDataset = textFile.map(line => line.split(" ").size)
+lineSizeDataset: org.apache.spark.sql.Dataset[Int] = [value: int]
+
+scala> val textFileWordCount = lineSizeDataset.reduce((a, b) => a + b)
+textFileWordCount: Int = 566
+~~~
+czyli cały tekst ma 566 słów.
+
+Jednakże Ci z Was co znają paradygmat MapReduce i korzystali z projektu Apache Hadoop, wiedzą, że swoistym "Witaj Świecie" dla aplikacji typu MapReduce jest przypadek zliczania ilości wystąpień każdego ze słów a nie wszystkich razem. Taki przypadek także bardzo łatwo uzyskać za pomocą Apache Spark korzystając z funkcji *flatMap* oraz *groupByKey*:
 ~~~Java
 val textFile = spark.read.textFile("README.md")
 val wordCounts = textFile.flatMap(line => line.split(" ")).groupByKey(identity).count()
 wordCounts.show(10)
 ~~~
+Pierwszą różnicą w stosunku do poprzedniego przypadku jest użycie *flatMap* zamiast *map*. Robimy to dlatego że w pierwszym przypadku mapowaliśmy linie tekstu na ilość słów w tej linii, czyli dla każdego elementu wejściowego zbioru produkowaliśmy dokładnie jeden element wynikowy. W drugim przypadku dla jednej linijki tekstu produkujemy listę słów, czyli ostatecznie mamy Dataset złożony z tablicy obiektów co można zauważyć na poniższym fragmencie kodu:
+~~~Java
+val textFile = spark.read.textFile("README.md")
+val wordsDataset = textFile.map(line => line.split(" "))
+wordsDataset.show(10)
+~~~
+~~~
+scala> val textFile = spark.read.textFile("README.md")
+textFile: org.apache.spark.sql.Dataset[String] = [value: string]
 
+scala> val wordsDataset = textFile.map(line => line.split(" "))
+wordsDataset: org.apache.spark.sql.Dataset[Array[String]] = [value: array<string>]
 
+scala> wordsDataset.show(10)
++--------------------+
+|               value|
++--------------------+
+|  [#, Apache, Spark]|
+|                  []|
+|[Spark, is, a, fa...|
+|[high-level, APIs...|
+|[supports, genera...|
+|[rich, set, of, h...|
+|[MLlib, for, mach...|
+|[and, Spark, Stre...|
+|                  []|
+|[<http://spark.ap...|
++--------------------+
+only showing top 10 rows
+~~~
+Z racji tego że chcemy ostatecznie mieć Dataset zawierający wszystkie słowa a nie tablice słów, musimy go niejako "spłaszczyć", czyli z angielskiego "to flat".
+
+Podobnie jest w przypadku funkcji *reduce* i *groupByKey*. Pierwsza funkcja pozwala nam zredukować Dataset do pojedynczeń wartości, zaś druga użyta w tym przypadku funkcja robi dokładnie to co silnik MapReduce, czyli grupuje nam wszystkie identyczne elementy z wejściowego Dataset w jeden podzbiór, gdzie dla każdego wykonujemy funkcję *count* zwracającą nam jego liczność.
 
 
 
