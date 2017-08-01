@@ -30,7 +30,7 @@ lineSizeDataset.show(10)
 ~~~
 
 w wyniku czego otrzymamy w konsoli następujący rezultat:
-~~~
+~~~shell
 scala> val textFile = spark.read.textFile("README.md")
 textFile: org.apache.spark.sql.Dataset[String] = [value: string]
 
@@ -63,7 +63,7 @@ val lineSizeDataset = textFile.map(line => line.split(" ").size)
 val textFileWordCount = lineSizeDataset.reduce((a, b) => a + b)
 ~~~
 Po uruchomieniu programu otrzymaliśmy wynik w postaci:
-~~~
+~~~shell
 scala> val textFile = spark.read.textFile("README.md")
 textFile: org.apache.spark.sql.Dataset[String] = [value: string]
 
@@ -88,7 +88,7 @@ val textFile = spark.read.textFile("README.md")
 val wordsDataset = textFile.map(line => line.split(" "))
 wordsDataset.show(10)
 ~~~
-~~~
+~~~shell
 scala> val textFile = spark.read.textFile("README.md")
 textFile: org.apache.spark.sql.Dataset[String] = [value: string]
 
