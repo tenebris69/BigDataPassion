@@ -75,7 +75,52 @@ textFileWordCount: Int = 566
 ~~~
 czyli cały tekst ma 566 słów.
 
-Jednakże Ci z Was co znają paradygmat MapReduce i korzystali z projektu Apache Hadoop, wiedzą, że swoistym "Witaj Świecie" dla aplikacji typu MapReduce jest przypadek zliczania ilości wystąpień każdego ze słów a nie wszystkich razem. Taki przypadek także bardzo łatwo uzyskać za pomocą Apache Spark korzystając z funkcji *flatMap* oraz *groupByKey*:
+Ten sam przykład w języku Python:
+~~~Python
+textFile = spark.read.text("README.md")
+from pyspark.sql.functions import *
+
+lineSizeDataset = textFile.select(size(split(textFile.value, "\s")).name("numWords"))
+lineSizeDataset.show(10)
+
+textFileWordCount = lineSizeDataset.agg(sum(col("numWords")).name("result")).collect()[0][0]
+textFileWordCount
+~~~
+wynik:
+~~~shell
+>>> textFile = spark.read.text("README.md")
+>>> from pyspark.sql.functions import *
+>>> 
+>>> lineSizeDataset = textFile.select(size(split(textFile.value, "\s")).name("numWords"))
+>>> lineSizeDataset.show(10)
++--------+
+|numWords|
++--------+
+|       3|
+|       1|
+|      14|
+|      13|
+|      11|
+|      12|
+|       8|
+|       6|
+|       1|
+|       1|
++--------+
+only showing top 10 rows
+
+>>> 
+>>> textFileWordCount = lineSizeDataset.agg(sum(col("numWords")).name("result")).collect()[0][0]
+>>> textFileWordCount
+~~~
+
+Api dla DataFrame jest trochę inne niż w języku Scala, tutaj nie użyliśmy funkcji *map* tylko *select*, zaś zamiast *reduce* użyliśmy funkcji *agg*. Dodatkowo skorzystaliśmy z wbudowanych w język Python fukcji.
+
+
+
+# Apache Spark i MapReduce
+
+Osoby które znają paradygmat MapReduce i korzystali z projektu Apache Hadoop, wiedzą, że swoistym "Witaj Świecie" dla aplikacji typu MapReduce jest przypadek zliczania ilości wystąpień każdego ze słów a nie wszystkich razem. Taki przypadek także bardzo łatwo uzyskać za pomocą Apache Spark korzystając z funkcji *flatMap* oraz *groupByKey*:
 ~~~Java
 val textFile = spark.read.textFile("README.md")
 val wordCounts = textFile.flatMap(line => line.split(" ")).groupByKey(identity).count()
