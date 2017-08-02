@@ -187,6 +187,38 @@ Z racji tego że chcemy ostatecznie mieć Dataset zawierający wszystkie słowa 
 
 Podobnie jest w przypadku funkcji *reduce* i *groupByKey*. Pierwsza funkcja pozwala nam zredukować Dataset do pojedynczej wartości, zaś druga użyta w tym przypadku funkcja robi dokładnie to co silnik MapReduce, czyli grupuje nam wszystkie identyczne elementy z wejściowego Dataset w jeden podzbiór, gdzie dla każdego wykonujemy funkcję *count* zwracającą nam jego liczność.
 
+W przypadku języka Python powyższy algorytm MapReduce mógłby wyglądać tak:
+~~~Python
+textFile = spark.read.text("README.md")
+from pyspark.sql.functions import *
+wordCounts = textFile.select(explode(split(textFile.value, "\s")).name("word")).groupBy("word").count()
+wordCounts.sort("count",ascending=False).show(10)
+~~~
+wynik:
+~~~shell
+>>> textFile = spark.read.text("README.md")
+>>> from pyspark.sql.functions import *
+>>> wordCounts = textFile.select(explode(split(textFile.value, "\s")).name("word")).groupBy("word").count()
+>>> wordCounts.sort("count",ascending=False).show(10)
++-----+-----+
+| word|count|
++-----+-----+
+|     |   71|
+|  the|   24|
+|   to|   17|
+|Spark|   16|
+|  for|   12|
+|   ##|    9|
+|  and|    9|
+|    a|    8|
+|   on|    7|
+|  run|    7|
++-----+-----+
+only showing top 10 rows
+~~~
+
+Jak widać, nasz rezultat jest identyczny jak w przypadku języka Scala. Tutaj także skorzystaliśmy z funkcji *select* w kombinacji z *explode* zamiast z *flatMap* oraz funkcji *groupBy* zamiast *groupByKey*.
+
 # Legenda
 * Strona projektu http://spark.apache.org
 * Dokumentacja https://spark.apache.org/docs/latest/
