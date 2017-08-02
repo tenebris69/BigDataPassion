@@ -81,6 +81,30 @@ val textFile = spark.read.textFile("README.md")
 val wordCounts = textFile.flatMap(line => line.split(" ")).groupByKey(identity).count()
 wordCounts.show(10)
 ~~~
+~~~shell
+scala> val textFile = spark.read.textFile("README.md")
+textFile: org.apache.spark.sql.Dataset[String] = [value: string]
+
+scala> val wordCounts = textFile.flatMap(line => line.split(" ")).groupByKey(identity).count()
+wordCounts: org.apache.spark.sql.Dataset[(String, Long)] = [value: string, count(1): bigint]
+
+scala> wordCounts.show(10)
++-------------+--------+
+|        value|count(1)|
++-------------+--------+
+|       online|       1|
+|       graphs|       1|
+|   ["Parallel|       1|
+|   ["Building|       1|
+|       thread|       1|
+|documentation|       3|
+|     command,|       2|
+|  abbreviated|       1|
+|     overview|       1|
+|         rich|       1|
++-------------+--------+
+only showing top 10 rows
+~~~
 
 Pierwszą różnicą w stosunku do poprzedniego przypadku jest użycie *flatMap* zamiast *map*. Robimy to dlatego że w pierwszym przypadku mapowaliśmy linie tekstu na ilość słów w tej linii, czyli dla każdego elementu wejściowego zbioru produkowaliśmy dokładnie jeden element wynikowy. W drugim przypadku dla jednej linijki tekstu produkujemy listę słów, czyli ostatecznie mamy Dataset złożony z tablicy obiektów co można zauważyć na poniższym fragmencie kodu:
 ~~~Java
