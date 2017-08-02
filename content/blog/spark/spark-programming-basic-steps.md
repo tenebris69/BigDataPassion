@@ -79,8 +79,9 @@ Jednakże Ci z Was co znają paradygmat MapReduce i korzystali z projektu Apache
 ~~~Java
 val textFile = spark.read.textFile("README.md")
 val wordCounts = textFile.flatMap(line => line.split(" ")).groupByKey(identity).count()
-wordCounts.show(10)
+wordCounts.sort($"count(1)".desc).show(10)
 ~~~
+w wyniku otrzymujemy:
 ~~~shell
 scala> val textFile = spark.read.textFile("README.md")
 textFile: org.apache.spark.sql.Dataset[String] = [value: string]
@@ -88,21 +89,21 @@ textFile: org.apache.spark.sql.Dataset[String] = [value: string]
 scala> val wordCounts = textFile.flatMap(line => line.split(" ")).groupByKey(identity).count()
 wordCounts: org.apache.spark.sql.Dataset[(String, Long)] = [value: string, count(1): bigint]
 
-scala> wordCounts.show(10)
-+-------------+--------+
-|        value|count(1)|
-+-------------+--------+
-|       online|       1|
-|       graphs|       1|
-|   ["Parallel|       1|
-|   ["Building|       1|
-|       thread|       1|
-|documentation|       3|
-|     command,|       2|
-|  abbreviated|       1|
-|     overview|       1|
-|         rich|       1|
-+-------------+--------+
+scala> wordCounts.sort($"count(1)".desc).show(10)
++-----+--------+
+|value|count(1)|
++-----+--------+
+|     |      71|
+|  the|      24|
+|   to|      17|
+|Spark|      16|
+|  for|      12|
+|   ##|       9|
+|  and|       9|
+|    a|       8|
+|   on|       7|
+|  run|       7|
++-----+--------+
 only showing top 10 rows
 ~~~
 
@@ -112,6 +113,7 @@ val textFile = spark.read.textFile("README.md")
 val wordsDataset = textFile.map(line => line.split(" "))
 wordsDataset.show(10)
 ~~~
+w wyniku otrzymujemy:
 ~~~shell
 scala> val textFile = spark.read.textFile("README.md")
 textFile: org.apache.spark.sql.Dataset[String] = [value: string]
