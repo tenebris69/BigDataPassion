@@ -43,3 +43,18 @@ sparkLines = lines.filter(lambda line: "Spark" in line)
 sparkLines.count()
 sparkLines.first()
 ~~~
+
+RDD ofertują transformacje i akcje
+
+Filtracja:
+~~~Java
+val lines = sc.parallelize(List("pizza", "hamburger", "lasagne"))
+lines.count()
+lines.first()
+~~~
+
+~~~Python
+lines = sc.parallelize(["pizza", "hamburger", "lasagne"])
+lines.count()
+lines.first()
+~~~
