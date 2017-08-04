@@ -48,15 +48,34 @@ ssh sandbox.bigdatapassion.pl
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 
+setenforce 0
+
 7. 
 
 service iptables stop
 chkconfig iptables off
 
+/etc/init.d/iptables stop
+
 8.
 
-yum -y install ntp
+yum install -y ntp
 chkconfig ntpd on
 
 9.
 
+umask 0022
+echo umask 0022 >> /etc/profile
+
+10.
+
+cd /etc/yum.repos.d/
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.5.1.0/ambari.repo
+yum install ambari-server -y
+ambari-server setup
+
+
+
+
+
+https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.1.0/bk_ambari-installation/content/ambari_repositories.html
