@@ -37,7 +37,7 @@ yum install epel-release
 
 5.
 
-yum install -y vim htop ntp openssh-server openssh-clients nano bash-completion
+yum install -y wget vim htop ntp openssh-server openssh-clients nano bash-completion
 
 ssh-keygen
 ssh-copy-id sandbox.bigdatapassion.pl
@@ -71,10 +71,12 @@ echo umask 0022 >> /etc/profile
 
 cd /etc/yum.repos.d/
 wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.5.1.0/ambari.repo
+
 yum install ambari-server -y
+
 ambari-server setup
 
-
+ambari-server start
 
 
 
