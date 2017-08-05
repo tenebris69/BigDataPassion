@@ -7,7 +7,7 @@ featured = "Apache_Spark_logo.svg.png"
 featuredalt = ""
 featuredpath = "/img/featured"
 linktitle = ""
-title = "Apache Spark - Szybki start"
+title = "Szybki start z Apache Spark"
 type = "post"
 
 +++
@@ -88,9 +88,9 @@ Po uruchomieniu Spark'a (także w trybie interaktywnym) możemy wejść na jego 
 
 Spark od początku istnienia opiera się na idei *Resilient Distributed Dataset* (RDD) która została po raz pierwszy przedstawiona w publikacji naukowej *Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing* autorstwa twórcy narzędzia Matei Zaharia w 2012 roku (https://cs.stanford.edu/~matei/papers/2012/nsdi_spark.pdf).
 
-RDD to tak naprawdę niezmienna (brak edycji) rozproszona kolekcja danych, przechowywana przez węzły klastra obliczeniowego. RDD mogą być przetwarzane w spósób rozproszony i wielowątkowy, zaś podstawowymi operacjami na RDD są akcje i transformacje.
+RDD to tak naprawdę niezmienna (brak edycji) rozproszona kolekcja danych, przechowywana przez węzły klastra obliczeniowego. RDD mogą być przetwarzane w sposób rozproszony i wielowątkowy, zaś podstawowymi operacjami na RDD są akcje i transformacje.
 
-Wraz z rozwojem Spark'a oraz wzostem jego popularności, twórcy chcieli udostępnić narzędzie szerszemu gronu użytkowników poprzez rozszerzenie API. Na wzór "data frames" dostępnych w języku R oraz Python (Pandas) twórcy Apache Spark stworzyli nowy typ zwany *DataFrame*. Podobnie do RDD, DataFrame to rozproszona kolekcja danych, jednakże dane są zorganizowane w nazwane kolumny, analogicznie jak to ma miejsce w bazach danych czy narzędziach typu Apache Hive. Dodatkowo DataFrame posiadają wiele optymalizacji (Catalyst optimizer) i udogodnień w API (domain-specific language). Także podobnie do RDD wszelkie operacje są buforowane i wykonywane dopiero gdy to niezbędne (lazy), przez co Spark może zastosować wiele optymalizacji.
+Wraz z rozwojem Spark'a oraz wzrostem jego popularności, twórcy chcieli udostępnić narzędzie szerszemu gronu użytkowników poprzez rozszerzenie API. Na wzór "data frames" dostępnych w języku R oraz Python (Pandas) twórcy Apache Spark stworzyli nowy typ zwany *DataFrame*. Podobnie do RDD, DataFrame to rozproszona kolekcja danych, jednakże dane są zorganizowane w nazwane kolumny, analogicznie jak to ma miejsce w bazach danych czy narzędziach typu Apache Hive. Dodatkowo DataFrame posiadają wiele optymalizacji (Catalyst optimizer) i udogodnień w API (domain-specific language). Także podobnie do RDD wszelkie operacje są buforowane i wykonywane dopiero gdy to niezbędne (lazy), przez co Spark może zastosować wiele optymalizacji.
 
 W wersji 1.6 Apache Spark zostało wprowadzone trzecie API zwane Dataset. W przeciwieństwie do DataFrame, nowe Api jest silnie typowane (type-safe) oraz zorientowane obiektowo (object-oriented programming interface). Dodatkowo posiada jeszcze więcej optymalizacji (Catalyst Optimizer i Tungsten project). Użytkowo API jest bardzo zbliżone do RDD, przez co Dataset stał się optymalnym rozwiązaniem łączącym zalety zarówno DataFrame jak i RDD, przy dużo większej wydajności i mniejszym użyciu pamięci RAM niż RDD.
 
@@ -127,7 +127,7 @@ val linesWithSpark = textFile.filter(line => line.contains("Spark"))
 linesWithSpark.count()
 linesWithSpark.first()
 ~~~
-W powyższym programie po wczytaniu pliku "README.md" (który znajduje się w bieżącej lokalizacji, czyli w rozpakowanym katalogu Apache Spark) zliczyliśmy liczbę wierszy za pomocą funkcji *count* oraz zwróciliśmy pierwszy element kolekcji, czyli w naszym przypadku pierwszą linijkę. Następnie stworzoliśmy nowy *Dataset* za pomocą funkcji *filter* którą wybraliśmy tylko te wiersze które zawierają słowo "Spark". Z racji że funkcja *filter* zwraca kolejny Dataset, na nim także można wywołać funkcje takie jak *first* oraz *count*
+W powyższym programie po wczytaniu pliku "README.md" (który znajduje się w bieżącej lokalizacji, czyli w rozpakowanym katalogu Apache Spark) zliczyliśmy liczbę wierszy za pomocą funkcji *count* oraz zwróciliśmy pierwszy element kolekcji, czyli w naszym przypadku pierwszą linijkę. Następnie stworzyliśmy nowy *Dataset* za pomocą funkcji *filter* którą wybraliśmy tylko te wiersze które zawierają słowo "Spark". Z racji że funkcja *filter* zwraca kolejny Dataset, na nim także można wywołać funkcje takie jak *first* oraz *count*
 
 Te same operacje bardzo łatwo możemy wykonać używając języka Python:
 ~~~Python
@@ -142,7 +142,7 @@ W przypadku języka Python kod wygląda prawie identycznie, z tym wyjątkiem, ż
 
 # Podsumowanie
 
-Jeśli udało Ci się zainstalować i uruchomić Apache Spark na swoim komputerze, jesteś na dobrej drodze do poznania tego narzędzia. W kolejnych postach przedtawię znacznie więcej informacji Apache Spark, w tym informacje o architekturze, zasadzie działania, instalacji na klastrze i programowaniu.
+Jeśli udało Ci się zainstalować i uruchomić Apache Spark na swoim komputerze, jesteś na dobrej drodze do poznania tego narzędzia. W kolejnych postach przedstawię znacznie więcej informacji Apache Spark, w tym informacje o architekturze, zasadzie działania, instalacji na klastrze i programowaniu.
 
 # Legenda
 * Strona projektu http://spark.apache.org
