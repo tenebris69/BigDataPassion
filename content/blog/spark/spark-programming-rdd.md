@@ -34,20 +34,7 @@ Aplikacja składa się z programu sterownika i klastra obliczeniowego, tam mamy 
 SparkContext reprezentuje połączenie z klastrem, od niego wszystko się zaczyna
 
 
-Filtracja:
-~~~Java
-val lines = sc.textFile("README.md")
-val sparkLines = lines.filter(line => line.contains("Spark"))
-sparkLines.count()
-sparkLines.first()
-~~~
 
-~~~Python
-lines = sc.textFile("README.md")
-sparkLines = lines.filter(lambda line: "Spark" in line)
-sparkLines.count()
-sparkLines.first()
-~~~
 
 RDD ofertują transformacje i akcje
 
@@ -69,6 +56,8 @@ lines.first()
 TODO
 
 # Transformacje
+
+## Mapowanie wartości
 
 Jedną z najpopularnieszych tranformacji jest *map* pozwalająca na zmianę obiektów jednego RDD na zupełnie inne obiekty w wynikowym RDD. Typ obiektu wejściowego i wynikowego mogą się różnić, np. liczby możemy zmienić na stałe napisowe.
 
@@ -113,11 +102,32 @@ for result in results:
     print result
 ~~~
 
+## Filtrowanie wartośći
+
+Drugą bardzo popularną transformacją jest funkcja *filter* zwracająca nowe RDD z elementami które spełniły wskazany warunek.
+
+Scala:
+~~~Java
+val lines = sc.textFile("README.md")
+val sparkLines = lines.filter(line => line.contains("Spark"))
+sparkLines.count()
+sparkLines.first()
+~~~
+
+~~~Python
+lines = sc.textFile("README.md")
+sparkLines = lines.filter(lambda line: "Spark" in line)
+sparkLines.count()
+sparkLines.first()
+~~~
+
+## Operacje na wielu zbiorach
+
+Transformacje mogą dotyczyć także wielu zbiorów
 
 
 
 
-- inna liczność? -> filter (bo lazy)
 
 
 
