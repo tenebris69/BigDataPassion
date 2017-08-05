@@ -243,6 +243,35 @@ sum = nums.fold(0, lambda x, y: x + y)
 print(sum)
 ~~~
 
+Jeśli dodatkowo chcemy zmienić typ zwracanej wartości, musimy skorzystać z jeszcze innej funkcji o nazwie *aggregate* która także przyjmuje wartość startową. W poniższym przykładzie zwrócimy krotkę (tuple) zawierającą zarówno sumę jak i liczbę obiektów.
+
+Scala:
+~~~Java
+val nums = sc.parallelize(List(1,2,3,4,5))
+val sum = nums.fold(0)((x, y) => x + y)
+println(sum)
+~~~
+
+Python:
+~~~Python
+nums = sc.parallelize([1,2,3,4,5])
+sum = nums.fold(0, lambda x, y: x + y)
+print(sum)
+~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Scala:
