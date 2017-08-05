@@ -71,9 +71,8 @@ setenforce 0
 7. 
 
 service iptables stop
-chkconfig iptables off
-
 /etc/init.d/iptables stop
+chkconfig iptables off
 
 8.
 
@@ -97,5 +96,5 @@ ambari-server setup
 ambari-server start
 
 
-
-https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.1.0/bk_ambari-installation/content/ambari_repositories.html
+# Legenda
+* https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.1.0/bk_ambari-installation/content/ambari_repositories.html

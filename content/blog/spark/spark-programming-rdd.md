@@ -165,7 +165,6 @@ cartesian = rdd1.cartesian(rdd2)
 print(cartesian.collect())
 ~~~
 
-
 Trzeba jednak pamiętać, że w projektach Big Data takie operacje na dużych zbiorach bywają niezwykle kosztowne obliczeniowo a czasami nawet nie możliwe do przeprowadzenia, np. iloczyn kartezjański dwóch bardzo licznych zbiorów może wygenerować tak duży zbiór wynikowy, którego nie będziemy w stanie zapisać ani w pamięci RAM ani także na naszym dysku. Dodatkowo operacje na zbiorach rozproszonych często mogą spowodować bardzo dużo połączeń i przesunięc danych z jednego serwera na drugi, co także znacząco spowolni nasze obliczenia (nie bazujemy tutaj na tak zwanej lokalności danych).
 
 
