@@ -79,7 +79,7 @@ Scala:
 val nums = sc.parallelize(List(1,2,3,4,5))
 val squared = nums.map(x => x * x)
 val result = squared.collect()
-println(result.mkString(","))
+println(result.mkString("\n"))
 ~~~
 
 Python:
@@ -98,7 +98,10 @@ Jeśli chcemy by nowe RDD miało więcej obiektów, możemy zwrócić RDD zawier
 
 Scala:
 ~~~Java
-
+val lines = sc.parallelize(List("Ala ma kota", "Witaj świecie", "Dwadzieścia tysięcy mil podmorskiej żeglugi"))
+val words = lines.flatMap(line => line.split(" "))
+val result = words.collect()
+println(result.mkString("\n"))
 ~~~
 
 Python:
