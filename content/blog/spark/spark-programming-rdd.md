@@ -123,10 +123,36 @@ sparkLines.first()
 
 ## Operacje na wielu zbiorach
 
-Transformacje mogą dotyczyć także wielu zbiorów
+Transformacje nie muszą pracować na jednym RDD ale mogą także operować na wielu zbiorach. Podstawowymi transformacjami działającymi na wielu RDD są:
+* union - łączenie dwóch RDD
+* intersection - zwraca część wspólną obydwu RDD (bez duplikatów)
+* subtract - różnica dwóch zbiorów
+* cartesian - iloczyn kartezjański, zwraca połączenie każdego elementu pierwszego zbioru z każdym elementem drugiego zbioru
+
+Scala:
+~~~Java
+val rdd1 = sc.parallelize(List(1,2,3,4,5))
+val rdd2 = sc.parallelize(List(4,5,6,7))
+
+val union = rdd1.union(rdd2)
+println(union.collect().mkString(", "))
+
+val intersection = rdd1.intersection(rdd2)
+println(intersection.collect().mkString(", "))
+
+val subtract = rdd1.subtract(rdd2)
+println(subtract.collect().mkString(", "))
+
+val cartesian = rdd1.cartesian(rdd2)
+println(cartesian.collect().mkString(", "))
+~~~
+
+Python:
+~~~Python
+~~~
 
 
-
+Trzeba jednak pamiętać, że w projektach Big Data takie operacje na dużych zbiorach bywają niezwykle kosztowne obliczeniowo a czasami nawet nie możliwe do przeprowadzenia, np. iloczyn kartezjański dwóch bardzo licznych zbiorów może wygenerować tak duży zbiór wynikowy, którego nie będziemy w stanie zapisać ani w pamięci RAM ani także na naszym dysku. Dodatkowo operacje na zbiorach rozproszonych często mogą spowodować bardzo dużo połączeń i przesunięc danych z jednego serwera na drugi, co także znacząco spowolni nasze obliczenia (nie bazujemy tutaj na tak zwanej lokalności danych).
 
 
 
