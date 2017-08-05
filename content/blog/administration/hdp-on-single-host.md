@@ -51,11 +51,13 @@ and then
 
 4. epel release
 
-yum install epel-release
+yum -y install epel-release
 
 5.
 
 yum install -y wget vim htop ntp openssh-server openssh-clients nano bash-completion
+
+5.
 
 ssh-keygen
 ssh-copy-id sandbox.bigdatapassion.pl
