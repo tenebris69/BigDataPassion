@@ -53,7 +53,17 @@ lines.first()
 
 # Tworzenie RDD
 
-TODO
+W realnych zastosowaniach RDD tworzy się poprzez wczytanie danych z rozproszonych zasobów sieciowych takich jak na przykład HDFS, Cassandra, MongoDB, Amazon S3 i wielu innych. Mając doczynienia z dużo mniejszymi zbiorami, możemy je zaczytać w programie sterownika i przekształcić programowo w rozproszony zbiór RDD. Pomoże nam w tym funkcja *parallelize* na obiekcie SparkContext (domyślnie dostępny w Shell dla języka Scala i Python). Poniżej przykłady utworzenia takiego zbioru RDD z utworzonej kolekcji w programie sterownika.
+
+Scala:
+~~~Java
+val lines = sc.parallelize(List("pizza", "hamburger", "lasagne"))
+~~~
+
+Python:
+~~~Python
+lines = sc.parallelize(["pizza", "hamburger", "lasagne"])
+~~~
 
 # Transformacje
 
