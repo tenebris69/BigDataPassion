@@ -1,13 +1,13 @@
 +++
-author = ""
-categories = []
+author = "Radosław Szmit"
+categories = ["Apache Spark"]
 date = "2017-08-03T02:00:34+02:00"
-description = ""
-featured = ""
+description = "Wprowadzenie do programowania Apache Spark z wykorzystaniem RDD"
+featured = "Apache_Spark_logo.svg.png"
 featuredalt = ""
-featuredpath = ""
+featuredpath = "/img/featured"
 linktitle = ""
-title = "spark programming rdd"
+title = "Spark programming - Resilient Distributed Datasets"
 type = "post"
 
 +++
@@ -57,4 +57,47 @@ lines.first()
 lines = sc.parallelize(["pizza", "hamburger", "lasagne"])
 lines.count()
 lines.first()
+~~~
+
+Dwie najpopularniejsze tranformacje to filter i map
+
+Map 
+- mapujemy coś w coś innego
+- może być innego typu
+- inna liczność? -> filter (bo lazy)
+
+Scala:
+~~~Java
+val nums = sc.parallelize(List(1,2,3,4,5))
+val squared = nums.map(x => x * x)
+val result = squared.collect()
+println(result.mkString(","))
+~~~
+
+Python:
+~~~Python
+nums = sc.parallelize([1,2,3,4,5])
+squared = nums.map(lambda x: x * x)
+result = squared.collect()
+for num in result:
+    print "%i " % (num)
+~~~
+
+
+
+
+
+
+
+
+
+
+
+
+Scala:
+~~~Java
+~~~
+
+Python:
+~~~Python
 ~~~
