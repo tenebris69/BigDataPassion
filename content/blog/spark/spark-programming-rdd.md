@@ -243,19 +243,26 @@ sum = nums.fold(0, lambda x, y: x + y)
 print(sum)
 ~~~
 
-Jeśli dodatkowo chcemy zmienić typ zwracanej wartości, musimy skorzystać z jeszcze innej funkcji o nazwie *aggregate* która także przyjmuje wartość startową. W poniższym przykładzie zwrócimy krotkę (tuple) zawierającą zarówno sumę jak i liczbę obiektów.
+Jeśli dodatkowo chcemy zmienić typ zwracanej wartości, musimy skorzystać z jeszcze innej funkcji o nazwie *aggregate* która także przyjmuje wartość startową. Do *aggregate* musimy przekazać dwie funkcje, pierwsza służy do redukcji w ramach partycji (danych zgromadzonych fizycznie razem na jednej maszynie) a następnie drugiej funkcji która łączy ze sobą wyniki z poprzedniego kroku.
+
+W poniższym przykładzie zwrócimy krotkę (tuple) zawierającą zarówno sumę jak i liczbę obiektów, co wykorzystamy do wyliczenia średniej.
 
 Scala:
 ~~~Java
-val nums = sc.parallelize(List(1,2,3,4,5))
-val sum = nums.fold(0)((x, y) => x + y)
-println(sum)
+val nums = sc.parallelize(List(1,2,3,4,5,6))
+val sumCount = nums.aggregate((0, 0))(
+    (acc, value) => (acc._1 + value, acc._2 + 1),
+    (acc1, acc2) => (acc1._1 + acc2._1, acc1._2 + acc2._2)
+)
+println(sumCount)
+val avg = sumCount._1.toDouble / sumCount._2.toDouble
+println(avg)
 ~~~
 
 Python:
 ~~~Python
-nums = sc.parallelize([1,2,3,4,5])
-sum = nums.fold(0, lambda x, y: x + y)
+nums = sc.parallelize([1,2,3,4,5,6])
+sumCount = nums.fold(0, lambda x, y: x + y)
 print(sum)
 ~~~
 
