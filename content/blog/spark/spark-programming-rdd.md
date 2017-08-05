@@ -121,6 +121,24 @@ sparkLines.count()
 sparkLines.first()
 ~~~
 
+## Pomijanie duplikatów
+
+Jeśli chcemy pominąć duplikaty w naszym rozproszonym RDD możemy skorzystać z funkcji *distinct*.
+
+Scala:
+~~~Java
+val nums = sc.parallelize(List(1,2,2,3,4,4,5))
+val distinct = nums.distinct()
+println(distinct.collect().mkString(", "))
+~~~
+
+Python:
+~~~Python
+nums = sc.parallelize([1,2,2,3,4,4,5])
+distinct = nums.distinct()
+print(distinct.collect())
+~~~
+
 ## Operacje na wielu zbiorach
 
 Transformacje nie muszą pracować na jednym RDD ale mogą także operować na wielu zbiorach. Podstawowymi transformacjami działającymi na wielu RDD są:
