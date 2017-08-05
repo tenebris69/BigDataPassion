@@ -209,6 +209,8 @@ Trzeba jednak pamiętać, że w projektach Big Data takie operacje na dużych zb
 
 # Akcje
 
+## Redukcja RDD
+
 Jedną z najpopularniejszych akcji używanych w Apache Spark jest *reduce* pozwalająca na zredukowanie całego RDD do pojedynczego obiektu tego samego typu co elementy RDD.
 
 Scala:
@@ -225,8 +227,21 @@ sum = nums.reduce(lambda x, y: x + y)
 print(sum)
 ~~~
 
+Podobnie działa funkcja *fold* umożliwiająca redukcję z wartością startową (wartość ta nie powinna wpływać na wynik, np. pusta lista lub wartość zero dla sumy).
 
+Scala:
+~~~Java
+val nums = sc.parallelize(List(1,2,3,4,5))
+val sum = nums.fold(0)((x, y) => x + y)
+println(sum)
+~~~
 
+Python:
+~~~Python
+nums = sc.parallelize([1,2,3,4,5])
+sum = nums.fold(0, lambda x, y: x + y)
+print(sum)
+~~~
 
 
 
