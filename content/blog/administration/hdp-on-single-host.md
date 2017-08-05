@@ -15,7 +15,25 @@ type = "post"
 CentOS 6.9
 
 1. automatyczne dhcp
+
+dhclient -v
+
+/etc/sysconfig/network-scripts/ifcfg-eth0
+(ONBOOT=yes)
+
 2. logowanie roota po haśle
+
+/etc/ssh/sshd_config
+PerminRootLogin yes
+
+## Mapowanie portów NAT
+
+## Logowanie po SSH
+
+ssh-copy-id root@localhost -p 2222
+ssh root@localhost -p 2222
+ 
+
 3. hostname
 
 vi /etc/sysconfig/network
