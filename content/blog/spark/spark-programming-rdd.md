@@ -149,6 +149,20 @@ println(cartesian.collect().mkString(", "))
 
 Python:
 ~~~Python
+rdd1 = sc.parallelize([1,2,3,4,5])
+rdd2 = sc.parallelize([4,5,6,7])
+
+union = rdd1.union(rdd2)
+print(union.collect())
+
+intersection = rdd1.intersection(rdd2)
+print(intersection.collect())
+
+subtract = rdd1.subtract(rdd2)
+print(subtract.collect())
+
+cartesian = rdd1.cartesian(rdd2)
+print(cartesian.collect())
 ~~~
 
 
