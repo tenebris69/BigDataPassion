@@ -139,6 +139,26 @@ distinct = nums.distinct()
 print(distinct.collect())
 ~~~
 
+## Próbkowanie
+
+Czasami chcemy przetestować nasz algorytm na mniejszej, czy nawet znacznie mniejszej próbce danych. Idealnie nadaje się do tego funkcja *sample* która pozwala zwrócić nam tylko część naszego RDD.
+
+Scala:
+~~~Java
+val nums = sc.parallelize(List(1,2,3,4,5))
+val sample = nums.sample(false, 0.5)
+println(sample.collect().mkString(", "))
+~~~
+
+Python:
+~~~Python
+nums = sc.parallelize([1,2,2,3,4,4,5])
+sample = nums.sample(False, 0.5)
+print(sample.collect())
+~~~
+
+Trzeba pamiętać, że algorytm jest niederteministyczny, co oznacza, że każde wywołanie programu zwraca nam zupełnie inny wynik.
+
 ## Operacje na wielu zbiorach
 
 Transformacje nie muszą pracować na jednym RDD ale mogą także operować na wielu zbiorach. Podstawowymi transformacjami działającymi na wielu RDD są:
