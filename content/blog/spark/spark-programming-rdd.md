@@ -152,7 +152,7 @@ println(sample.collect().mkString(", "))
 
 Python:
 ~~~Python
-nums = sc.parallelize([1,2,2,3,4,4,5])
+nums = sc.parallelize([1,2,3,4,5])
 sample = nums.sample(False, 0.5)
 print(sample.collect())
 ~~~
@@ -204,6 +204,27 @@ print(cartesian.collect())
 ~~~
 
 Trzeba jednak pamiętać, że w projektach Big Data takie operacje na dużych zbiorach bywają niezwykle kosztowne obliczeniowo a czasami nawet nie możliwe do przeprowadzenia, np. iloczyn kartezjański dwóch bardzo licznych zbiorów może wygenerować tak duży zbiór wynikowy, którego nie będziemy w stanie zapisać ani w pamięci RAM ani także na naszym dysku. Dodatkowo operacje na zbiorach rozproszonych często mogą spowodować bardzo dużo połączeń i przesunięc danych z jednego serwera na drugi, co także znacząco spowolni nasze obliczenia (nie bazujemy tutaj na tak zwanej lokalności danych).
+
+
+
+# Akcje
+
+Jedną z najpopularniejszych akcji używanych w Apache Spark jest *reduce* pozwalająca na zredukowanie całego RDD do pojedynczego obiektu tego samego typu co elementy RDD.
+
+Scala:
+~~~Java
+val nums = sc.parallelize(List(1,2,3,4,5))
+val sum = nums.reduce( (x, y) => x + y)
+println(sum)
+~~~
+
+Python:
+~~~Python
+nums = sc.parallelize([1,2,3,4,5])
+sum = nums.reduce(lambda x, y: x + y)
+print(sum)
+~~~
+
 
 
 
