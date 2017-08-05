@@ -281,9 +281,13 @@ avg = float(sumCount[0]) / float(sumCount[1])
 print(avg)
 ~~~
 
+ ## Pobieranie danych do programu sterownika
 
+Jeśli po przetworzeniu nasze RDD jest na tyle małe, że może nam się zmieścić w pamięci RAM maszyny na której uruchomiliśmy nasz program sterownik, możemy skorzystać z możliwości ściągnięcia ich na tą maszynę i tam zapisanie lub dalsze przetworzenie.
 
+Najprostrzym sposobem na to jest używana we wcześniejszych przykładach funkcja *collect* zwracająca RDD jako zwykła kolekcja obiektów.
 
+W sytuacji gdy nie potrzebujemy pobierać całego RDD na lokalną maszynę możemy użyć funkcji *take(n)* zwracająca n dowolnych elementów, *top(n)* zwracająca najwyższe elementy, *takeOrdered* analogiczna do top ale umożliwiająca przekazanie własnej funkcji porównującej oraz *takeSample(withReplacement, n, seed)* zwracająca n elementów w losowy sposób.
 
 
 
