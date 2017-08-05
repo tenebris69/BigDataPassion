@@ -281,7 +281,7 @@ avg = float(sumCount[0]) / float(sumCount[1])
 print(avg)
 ~~~
 
- ## Pobieranie danych do programu sterownika
+## Pobieranie danych do programu sterownika
 
 Jeśli po przetworzeniu nasze RDD jest na tyle małe, że może nam się zmieścić w pamięci RAM maszyny na której uruchomiliśmy nasz program sterownik, możemy skorzystać z możliwości ściągnięcia ich na tą maszynę i tam zapisanie lub dalsze przetworzenie.
 
@@ -289,7 +289,15 @@ Najprostrzym sposobem na to jest używana we wcześniejszych przykładach funkcj
 
 W sytuacji gdy nie potrzebujemy pobierać całego RDD na lokalną maszynę możemy użyć funkcji *take(n)* zwracająca n dowolnych elementów, *top(n)* zwracająca najwyższe elementy, *takeOrdered* analogiczna do top ale umożliwiająca przekazanie własnej funkcji porównującej oraz *takeSample(withReplacement, n, seed)* zwracająca n elementów w losowy sposób.
 
+Jeszcze inną przydatną funkcją jest *first* zwracająca pierwszy element RDD.
 
+## Zliczanie ilości
+
+Jeśli chcemy sprawdzić ile elementów zawiera nasz RDD możemy skorzystać z funkcji *count* oraz *countByValue* zwracająca ilość unikalnych elementów w postaci mapy element -> liczność.
+
+## Wykonywanie operacji na każdym elemencie
+
+Jeśli zajdzie nam potrzeba wykonania jakiejś operacji na każdym elemencie w sposób rozproszony bez konieczności zwracania jej wyniku, możemy skorzystać z funkcji *foreach*.
 
 
 
