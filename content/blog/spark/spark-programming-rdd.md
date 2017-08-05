@@ -12,6 +12,11 @@ type = "post"
 
 +++
 
+# Wprowadzenie
+
+TODO
+
+
 ~~~Java
 val lines = sc.textFile("README.md")
 lines.count()
@@ -59,12 +64,15 @@ lines.count()
 lines.first()
 ~~~
 
-Dwie najpopularniejsze tranformacje to filter i map
+# Tworzenie RDD
 
-Map 
-- mapujemy coś w coś innego
-- może być innego typu
-- inna liczność? -> filter (bo lazy)
+TODO
+
+# Transformacje
+
+Jedną z najpopularnieszych tranformacji jest *map* pozwalająca na zmianę obiektów jednego RDD na zupełnie inne obiekty w wynikowym RDD. Typ obiektu wejściowego i wynikowego mogą się różnić, np. liczby możemy zmienić na stałe napisowe.
+
+Poniżej przykład mapowania RDD zawierającego liczby na nowe RDD z ich kwadratami.
 
 Scala:
 ~~~Java
@@ -78,18 +86,35 @@ Python:
 ~~~Python
 nums = sc.parallelize([1,2,3,4,5])
 squared = nums.map(lambda x: x * x)
-result = squared.collect()
-for num in result:
-    print "%i " % (num)
+results = squared.collect()
+for result in results:
+    print result
+~~~
+
+UWAGA
+Do wyświetlenia wynikowego RDD użyliśmy funkcji *collect* która zwróciła tablicę wszystkich elementów w RDD. Przy bardzo dużych RDD ściągnięcie wszystkich wartości do programu sterownika może wygenerować błąd braku wystarczającej ilości pamięci RAM.
+
+Jeśli chcemy by nowe RDD miało więcej obiektów, możemy zwrócić RDD zawierające kolekcje (jeden obiekt wejściowy mapujemy w oddzielną kolekcję) lub użyć metody *flatMap* zwracającą nowe RDD mające wszystkie nasze nowe obiekty.
+
+Scala:
+~~~Java
+
+~~~
+
+Python:
+~~~Python
+lines = sc.parallelize(["Ala ma kota", "Witaj świecie", "Dwadzieścia tysięcy mil podmorskiej żeglugi"])
+words = lines.flatMap(lambda line: line.split(" "))
+results = words.collect()
+for result in results:
+    print result
 ~~~
 
 
 
 
 
-
-
-
+- inna liczność? -> filter (bo lazy)
 
 
 
