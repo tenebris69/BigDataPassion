@@ -323,7 +323,7 @@ UWAGA W przypadku języka Python dostępne są jedynie poziomy: MEMORY_ONLY, MEM
  
 Gdy wywołamy funkcję *persist* bez parametrów zostanie użyty domyślny poziom zapisu, czyli MEMORY_ONLY. Na RDD mamy jeszcze funkcję *cache* która tak naprawdę po wywołaniu wykorzystuje funkcję *persist* bez parametrów, co oznacza że powinniśmy ją traktować jedynie jako alias dla metody *persist* bez parametrów.
 
-Gdy zaczyna brakować pamięci RAM, Spark czyści swój cache zgodnie z algorytmem LRU (least-recently-used), czyli usuwane są dane najdłużej ostatnio nieużywane. Istnieje także możliwość ręcznego usunięcia za pomocą metody *unpersist*.
+Gdy zaczyna brakować pamięci RAM, Spark czyści swój cache zgodnie z algorytmem LRU (least-recently-used), czyli usuwane są dane najdłużej ostatnio nieużywane. Istnieje także możliwość ręcznego zwolnienia pamięci za pomocą metody *unpersist*.
 
 
 
