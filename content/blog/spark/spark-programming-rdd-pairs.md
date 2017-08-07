@@ -50,23 +50,31 @@ pairs = lines.map(lambda line : (line, len(line.split(" "))))
 pairs.take(10)
 ~~~
 
-W przypadku RDD par możemy także skorzystać z metody *map* mapując całą krotkę na inny obiekt lub inną krotkę, ale możemy także skorzystać z funkcji *mapValues* oraz *flatMapValues* które to mapują nam same wartości z naszej krotki, oraz w drugim przypadku dokonują także "spłaszczenia" listy tablic na jedną listę wszystkich obiektów, w tym przypadku RDD. W poniższym przypadku mapujemy RDD zawierające linie tekstu i jej długość na RDD zawierające długość tekstu i liczbę 1 oznaczającą ile razy ta długość wystąpiła.
+W przypadku RDD par możemy także skorzystać z metody *map* mapując całą krotkę na inny obiekt lub inną krotkę, ale możemy także skorzystać z funkcji *mapValues* oraz *flatMapValues* które to mapują nam same wartości z naszej krotki bez zmiany klucza, oraz w drugim przypadku dokonują także "spłaszczenia" listy tablic na jedną listę wszystkich obiektów, w tym przypadku RDD.
 
 Scala:
 ~~~Java
-val lines = sc.textFile("README.md")
-val pairs = lines.map(line => (line, line.split(" ").size))
-val counts = pairs.mapValues(count => (count, 1))
-counts.take(10).foreach(println)
+val values = List(("Ala",3), ("Tomek", 4), ("Kasia", 5), ("Ala",5), ("Tomek", 3), ("Kasia", 4))
+val valueRdd = sc.parallelize(values)
+val countRdd = valueRdd.mapValues( v => (v, 1))
+countRdd.take(10).foreach(println)
 ~~~
 
 Python:
 ~~~Python
-lines = sc.textFile("README.md")
-pairs = lines.map(lambda line : (line, len(line.split(" "))))
-pairs.first()
+values = [("Ala",3), ("Tomek", 4), ("Kasia", 5), ("Ala",5), ("Tomek", 3), ("Kasia", 4)]
+valueRdd = sc.parallelize(values)
+countRdd = valueRdd.mapValues(lambda v : (v, 1))
+countRdd.collect()
 ~~~
 
+## Redukcja wartości
+
+Oprócz mapowania drugą bardzo popularną operacją jest agregacja której możemy dokonać za pomocą funkcji *reduceByKey*, *combineByKey* oraz *groupByKey*.
+
+Funkcja *groupByKey* umożliwia nam zgrupowaniu wszystkich wartości występujących pod wspólnym kluczem i zwraca nowe RDD.
+
+Funkcja *reduceByKey* pozwala dodatkowo wskazać funkcję która zredukuje zgrupowane wartości do pojedynczego elementu:
 
 
 
