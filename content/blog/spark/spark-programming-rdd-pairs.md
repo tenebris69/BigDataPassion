@@ -12,7 +12,20 @@ type = "post"
 
 +++
 
-# Tworzenie RDD par
+# TWorzenie RDD par w programie sterownika
+
+Scala:
+~~~Java
+val lines = Map((1,"Ala ma kota"), (2,"Witaj świecie"), (3,"Dwadzieścia tysięcy mil podmorskiej żeglugi"))
+val rddPair = sc.parallelize(lines.toSeq)
+rddPair.first
+~~~
+
+Python:
+~~~Python
+~~~
+
+# Tworzenie RDD par z innego RDD
 
 Scala:
 ~~~Java
