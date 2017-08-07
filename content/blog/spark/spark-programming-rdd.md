@@ -7,7 +7,7 @@ featured = "Apache_Spark_logo.svg.png"
 featuredalt = ""
 featuredpath = "/img/featured"
 linktitle = ""
-title = "Wprowadzenie do programowania Apache Spark z wykorzystaniem RDD"
+title = "Resilient Distributed Dataset w Apache Spark"
 type = "post"
 
 +++

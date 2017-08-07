@@ -17,6 +17,6 @@ Poniżej lista artykułów dotyczących Apache Spark
 * [Wprowadzenie do Apache Spark](/blog/spark/spark-introduction)
 * [Szybki start z Apache Spark](/blog/spark/spark-quick-start)
 * [Podstawy programowania Apache Spark](/blog/spark/spark-programming-basic-steps)
-* [Wprowadzenie do programowania Apache Spark z wykorzystaniem RDD](/blog/spark/spark-programming-rdd)
-* [Wprowadzenie do programowania Apache Spark z wykorzystaniem RDD par](/blog/spark/spark-programming-rdd-pairs)
+* [Resilient Distributed Dataset w Apache Spark](/blog/spark/spark-programming-rdd)
+* [Przetwarzanie RDD par w Apache Spark](/blog/spark/spark-programming-rdd-pairs)
 * [Zaawansowane aspekty wykorzystania RDD w Apache Spark](/blog/spark/spark-programming-rdd-advanced)
