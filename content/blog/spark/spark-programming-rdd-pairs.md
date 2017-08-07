@@ -94,13 +94,21 @@ avgRdd = valueRdd.mapValues(lambda v : (v, 1)).reduceByKey(lambda x,y: (x[0] + y
 avgRdd.collect()
 ~~~
 
-
+## MapReduce w RDD
 
 
 Scala:
 ~~~Java
+val lines = sc.textFile("README.md")
+val wordsRdd = lines.flatMap(line => line.split(" "))
+val wordCount = wordsRdd.map(x => (x,1)).reduceByKey( (x,y) => x + y)
+wordCount.sortByKey().take(10).foreach(println)
 ~~~
 
 Python:
 ~~~Python
+lines = sc.textFile("README.md")
+wordsRdd = lines.flatMap(lambda line : line.split(" "))
+wordCount = wordsRdd.map(lambda w: (w,1) ).reduceByKey(lambda x, y: x + y )
+wordCount.sortByKey().take(10)
 ~~~
