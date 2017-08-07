@@ -80,18 +80,18 @@ Scala:
 ~~~Java
 val values = List(("Ala",3), ("Tomek", 4), ("Kasia", 5), ("Ala",5), ("Tomek", 3), ("Kasia", 4))
 val valueRdd = sc.parallelize(values)
-val countRdd = valueRdd.mapValues( v => (v, 1)).
+val avgRdd = valueRdd.mapValues( v => (v, 1)).
     reduceByKey( (x,y) => (x._1 + y._1, x._2 + y._2) ).
     mapValues( x => (x._1.toDouble / x._2.toDouble) )
-countRdd.take(10).foreach(println)
+avgRdd.take(10).foreach(println)
 ~~~
 
 Python:
 ~~~Python
 values = [("Ala",3), ("Tomek", 4), ("Kasia", 5), ("Ala",5), ("Tomek", 3), ("Kasia", 4)]
 valueRdd = sc.parallelize(values)
-countRdd = valueRdd.mapValues(lambda v : (v, 1))
-countRdd.collect()
+avgRdd = valueRdd.mapValues(lambda v : (v, 1)).reduceByKey(lambda x,y: (x[0] + y[0], x[1] + y[1]) ).mapValues(lambda x: ( float(x[0]) / float(x[1]) ) )
+avgRdd.collect()
 ~~~
 
 
