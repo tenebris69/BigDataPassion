@@ -23,6 +23,9 @@ rddPair.first
 
 Python:
 ~~~Python
+lines = [(1,"Ala ma kota"), (2,"Witaj świecie"), (3,"Dwadzieścia tysięcy mil podmorskiej żeglugi")]
+rddPair = sc.parallelize(lines)
+rddPair.first()
 ~~~
 
 # Tworzenie RDD par z innego RDD
