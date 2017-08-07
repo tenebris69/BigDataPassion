@@ -3,13 +3,14 @@ author = "Radosław Szmit"
 categories = ["Apache Spark"]
 date = "2017-07-29T13:18:32+02:00"
 description = "Instalacja HDP 2.6 na pojedynczej maszynie z wykorzystaniem CentoOS 6.9 i Virtualbox 5.1"
-featured = "Apache_Spark_logo.svg.png"
+featured = ""
 featuredalt = ""
-featuredpath = "/img/featured"
+featuredpath = ""
 linktitle = ""
 title = "Instalacja HDP 2.6 na pojedynczej maszynie"
 type = "post"
 
+draft = true
 +++
 
 CentOS 6.9
