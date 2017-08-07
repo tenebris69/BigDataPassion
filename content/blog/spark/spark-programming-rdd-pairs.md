@@ -12,3 +12,40 @@ type = "post"
 
 +++
 
+# Tworzenie RDD par
+
+Scala:
+~~~Java
+val lines = sc.textFile("README.md")
+val pairs = lines.map(line => (line, line.split(" ").size))
+pairs.first()
+~~~
+
+Python:
+~~~Python
+lines = sc.textFile("README.md")
+pairs = lines.map(lambda line : (line, len(line.split(" "))))
+pairs.first()
+~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Scala:
+~~~Java
+~~~
+
+Python:
+~~~Python
+~~~

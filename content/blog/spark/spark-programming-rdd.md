@@ -299,21 +299,10 @@ Jeśli chcemy sprawdzić ile elementów zawiera nasz RDD możemy skorzystać z f
 
 Jeśli zajdzie nam potrzeba wykonania jakiejś operacji na każdym elemencie w sposób rozproszony bez konieczności zwracania jej wyniku, możemy skorzystać z funkcji *foreach*.
 
-
-
-
-
-
-Scala:
-~~~Java
-~~~
-
-Python:
-~~~Python
-~~~
-
-
-
-
 # Legenda
-* https://docs.python.org/2/library/pickle.html
+* Strona projektu http://spark.apache.org
+* Dokumentacja https://spark.apache.org/docs/latest/
+* API dla języka Scala https://spark.apache.org/docs/latest/api/scala/index.html
+* API dla języka Java https://spark.apache.org/docs/latest/api/java/index.html
+* API dla języka Python https://spark.apache.org/docs/latest/api/python/index.html
+* Biblioteka Pickle dla Pythona https://docs.python.org/2/library/pickle.html
