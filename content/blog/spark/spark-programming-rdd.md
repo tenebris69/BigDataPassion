@@ -295,9 +295,21 @@ Jeszcze inną przydatną funkcją jest *first* zwracająca pierwszy element RDD.
 
 Jeśli chcemy sprawdzić ile elementów zawiera nasz RDD możemy skorzystać z funkcji *count* oraz *countByValue* zwracająca ilość unikalnych elementów w postaci mapy element -> liczność.
 
+nums = sc.parallelize([1,1,3,3,5])
+count = nums.count()
+print(count)
+countByValue = nums.countByValue()
+print(countByValue)
+
 ## Wykonywanie operacji na każdym elemencie
 
 Jeśli zajdzie nam potrzeba wykonania jakiejś operacji na każdym elemencie w sposób rozproszony bez konieczności zwracania jej wyniku, możemy skorzystać z funkcji *foreach*.
+
+nums = sc.parallelize([1,1,3,3,5])
+def f(x): print(x)
+
+nums.foreach(f)
+
 
 # Legenda
 * Strona projektu http://spark.apache.org

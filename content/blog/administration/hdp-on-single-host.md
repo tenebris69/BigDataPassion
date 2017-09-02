@@ -61,7 +61,13 @@ yum install -y wget vim htop ntp openssh-server openssh-clients nano bash-comple
 5.
 
 ssh-keygen
+
+
+
 ssh-copy-id sandbox.bigdatapassion.pl
+
+
+
 ssh sandbox.bigdatapassion.pl
 
 6.

@@ -74,6 +74,14 @@ Oprócz mapowania drugą bardzo popularną operacją jest agregacja której moż
 
 Funkcja *groupByKey* umożliwia nam zgrupowaniu wszystkich wartości występujących pod wspólnym kluczem i zwraca nowe RDD.
 
+Python:
+~~~Python
+values = [("Ala",3), ("Tomek", 4), ("Kasia", 5), ("Ala",5), ("Tomek", 3), ("Kasia", 4)]
+valueRdd = sc.parallelize(values)
+group = valueRdd.groupByKey()
+group.mapValues(list).collect()
+~~~
+
 Funkcja *reduceByKey* pozwala dodatkowo wskazać funkcję która zredukuje zgrupowane wartości do pojedynczego elementu:
 
 Scala:
@@ -128,3 +136,49 @@ wordsRdd = lines.flatMap(lambda line : line.split(" "))
 wordCount = wordsRdd.countByValue()
 print(wordCount)
 ~~~
+
+
+
+
+
+
+Python:
+~~~Python
+values = [("Ala",3), ("Tomek", 4), ("Kasia", 5), ("Ala",5), ("Tomek", 3), ("Kasia", 4)]
+valueRdd = sc.parallelize(values)
+sort = valueRdd.sortByKey()
+sort.collect()
+~~~
+
+
+Python:
+~~~Python
+values = [("Ala",3), ("Tomek", 4), ("Kasia", 5), ("Ala",5), ("Tomek", 3), ("Kasia", 4)]
+valueRdd = sc.parallelize(values)
+count = valueRdd.countByKey()
+print(count)
+~~~
+
+
+x = sc.parallelize([("a", 1), ("b", 4)])
+y = sc.parallelize([("a", 2), ("a", 3)])
+sorted(x.join(y).collect())
+
+
+
+x = sc.parallelize([("a", 1), ("b", 4)])
+y = sc.parallelize([("a", 2)])
+x.cogroup(y).collect()
+
+
+
+
+movies = sc.textFile("/user/sages/dane/ml-10M100K/movies.dat");
+genres1 = movies.map(lambda m: m.split("::")[2] )
+genres2 = genres1.flatMap(lambda g: g.split("|") )
+result = genres2.map(lambda g: (g,1) ).reduceByKey(lambda x,y: x+y)
+result.collect()
+result.saveAsTextFile("/user/sages/wyniki/spark/genres")
+
+
+//genres2.map(lambda g: (g,1) ).countByKey()
