@@ -1,0 +1,33 @@
+
+# YouTube
+https://www.youtube.com/user/Hortonworks/playlists
+https://www.youtube.com/user/TheApacheSpark
+
+# Mastering Apache Spark
+https://jaceklaskowski.gitbooks.io/mastering-apache-spark/
+https://jaceklaskowski.gitbooks.io/mastering-apache-spark/spark-architecture.html
+
+# Dokumentacja
+http://spark.apache.org/docs/latest/
+http://spark.apache.org/docs/latest/quick-start.html
+http://spark.apache.org/docs/latest/rdd-programming-guide.html
+https://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-persistence
+http://spark.apache.org/docs/latest/cluster-overview.html
+http://spark.apache.org/docs/latest/submitting-applications.html
+https://spark.apache.org/docs/latest/configuration.html
+https://spark.apache.org/docs/latest/monitoring.html
+https://spark.apache.org/docs/latest/tuning.html
+https://spark.apache.org/docs/latest/job-scheduling.html
+https://spark.apache.org/docs/latest/security.html
+https://spark.apache.org/docs/latest/hardware-provisioning.html
+http://spark.apache.org/third-party-projects.html
+
+# Scala documentation
+https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.RDD
+https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.PairRDDFunctions
+
+
+# Java documentation
+https://spark.apache.org/docs/latest/api/python/index.html
+
+# Python documentation
