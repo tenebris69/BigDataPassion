@@ -31,3 +31,10 @@ https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.P
 https://spark.apache.org/docs/latest/api/python/index.html
 
 # Python documentation
+
+
+
+
+# Databrics
+
+https://databricks.com/blog/2015/06/22/understanding-your-spark-application-through-visualization.html
