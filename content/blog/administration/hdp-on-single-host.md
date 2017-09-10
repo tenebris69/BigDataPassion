@@ -107,7 +107,7 @@ yum -y install epel-release
 ### Instalacja przydatnych narzędzi
 
 ~~~shell
-yum install -y wget vim htop ntp openssh-server openssh-clients nano bash-completion
+yum -y install wget vim htop ntp openssh-server openssh-clients nano bash-completion
 ~~~
 
 ### Konfiguracja kluczy publicznego i prywatnego

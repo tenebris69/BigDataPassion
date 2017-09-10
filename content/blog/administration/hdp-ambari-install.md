@@ -50,7 +50,7 @@ yum repolist
 # Instalacja kolejnych przydatnych narzędzi
 
 ~~~shell
-yum install -y vim htop ntp openssh-server openssh-clients nano bash-completion
+yum -y install wget vim htop ntp openssh-server openssh-clients nano bash-completion
 ~~~
 
 # Zmieniamy hostname
