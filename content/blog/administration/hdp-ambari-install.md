@@ -101,6 +101,10 @@ sestatus
 systemctl disable firewalld
 systemctl stop firewalld
 systemctl status firewalld
+
+systemctl disable firewalld.service
+systemctl stop firewalld.service
+systemctl status firewalld.service
 ~~~
 
 # Włączenie serwera synchronizacji czasu
@@ -110,7 +114,6 @@ systemctl disable chrony.service
 
 systemctl enable ntpd.service
 systemctl is-enabled ntpd.service
-
 systemctl start ntpd.service
 systemctl status ntpd.service
 ~~~
@@ -130,12 +133,6 @@ wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.1.0
 yum install ambari-server -y
 ambari-server setup
 ~~~
-
-Starsze wersje:
-* http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.1.0/ambari.repo
-* http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari.repo
-* http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.4.3.0/ambari.repo
-* http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.4.2.0/ambari.repo
 
 W przypadku ambari-server setup upewniamy się, że nie ma żadnych ostrzeżeń, zaś na wszystkie pytania odpowiadamy wartościami domyślnymi klikając enter:
 
