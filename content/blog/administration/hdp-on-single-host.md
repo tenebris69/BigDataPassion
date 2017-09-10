@@ -24,18 +24,24 @@ TODO
 
 # Przygotowanie systemu operacyjnego CentOS 6.9
 
+1. Włączamy automatyczne DHCP
+
+Aby włączyć ręcznie dhcp należy wykonać:
+
+~~~shell
+dhclient -v
+~~~
+
+W celu skonfigurowania tego na stałe warto zmienić wartość w pliku /etc/sysconfig/network-scripts/ifcfg-eth0
+
+~~~shell
+(ONBOOT=yes)
+~~~
+
 
 
 # Instalacja dystrybucji Hortonworks
 
-CentOS 6.9
-
-1. automatyczne dhcp
-
-dhclient -v
-
-/etc/sysconfig/network-scripts/ifcfg-eth0
-(ONBOOT=yes)
 
 2. logowanie roota po haśle
 
