@@ -181,7 +181,7 @@ ambari-server setup
 ambari-server start
 ~~~
 
-
+Po tej operacji można zrestartować maszynę. Przed kontynuacją ustawmy naszej maszynie przynajmniej 4 rdzenie oraz przynajmniej 8GB RAM.
 
 
 # Instalacja dystrybucji Hortonworks
