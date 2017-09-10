@@ -188,9 +188,49 @@ Po tej operacji można zrestartować maszynę. Przed kontynuacją ustawmy naszej
 
 Jeśli wszystko poszło jak trzeba, możemy zalogować się do Ambari we własnej przeglądarce pod adresem: http://localhost:8080/
 
+TODO
 
 
 
+# Instalacja środowiska graficznego
+
+### Instalacja pakietów i narzędzi
+~~~shell
+yum -y groupinstall "X Window System"
+yum -y groupinstall "Desktop"
+yum -y groupinstall "General Purpose Desktop"
+yum -y groupinstall "Desktop Platform"
+yum -y groupinstall "Graphical Administration Tools"
+yum -y groupinstall "Fonts"
+yum -y groupinstall "Internet Browser"
+~~~
+
+### Instalacja przydatnych narzędzi
+
+~~~shell
+yum -y install gnome-system-monitor firefox htop git vim mc gedit 
+~~~
+
+### Instalacja dodatków dla Virtualbox Guest
+
+~~~shell
+yum -y install kernel*
+yum -y install gcc kernel-devel kernel-headers dkms make bzip2 perl
+~~~
+
+### Dodawanie użytkownika
+
+~~~shell
+adduser sages
+passwd sages
+~~~
+
+Restartujemy maszynę
+
+### Uruchomienie trybu graficznego
+~~~shell
+startx
+~~~
 
 
 
