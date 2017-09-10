@@ -12,6 +12,22 @@ type = "post"
 
 +++
 
+W tym poście pokażę jak przygotować sobie jedną wirtualną maszynę z zainstalowaną dystrybucją Hortonworks. Taką maszynę, zwaną sandbox'em możemy wykorzystywać do celów testowych i developerskich.
+
+# Stworzenie maszyny wirtualbox
+
+TODO
+
+# Instalacja systemu operacyjnego CentOS 6.9
+
+TODO
+
+# Przygotowanie systemu operacyjnego CentOS 6.9
+
+
+
+# Instalacja dystrybucji Hortonworks
+
 CentOS 6.9
 
 1. automatyczne dhcp
