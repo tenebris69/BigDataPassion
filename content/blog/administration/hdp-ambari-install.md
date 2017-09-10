@@ -115,6 +115,13 @@ systemctl start ntpd.service
 systemctl status ntpd.service
 ~~~
 
+# Umask
+
+~~~shell
+echo umask 022 >> ~/.bash_profile
+echo umask 022 >> /etc/profile
+~~~
+
 # Instalacja Apache Ambari
 
 ~~~shell
