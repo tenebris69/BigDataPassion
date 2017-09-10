@@ -106,7 +106,9 @@ yum -y install epel-release
 
 ### Instalacja przydatnych narzędzi
 
+~~~shell
 yum install -y wget vim htop ntp openssh-server openssh-clients nano bash-completion
+~~~
 
 ### Konfiguracja kluczy publicznego i prywatnego
 
@@ -118,7 +120,7 @@ ssh-copy-id sandbox.bigdatapassion.pl
 ssh sandbox.bigdatapassion.pl
 ~~~
 
-6.
+### Wyłączamy SELINUX
 
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
