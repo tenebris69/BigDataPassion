@@ -24,7 +24,13 @@ TODO
 
 # Przygotowanie systemu operacyjnego CentOS 6.9
 
-1. Włączamy automatyczne DHCP
+### Instalacja Vim
+
+~~~shell
+yum -y install vim
+~~~
+
+### Włączamy automatyczne DHCP
 
 Aby włączyć ręcznie dhcp należy wykonać:
 
@@ -32,21 +38,34 @@ Aby włączyć ręcznie dhcp należy wykonać:
 dhclient -v
 ~~~
 
-W celu skonfigurowania tego na stałe warto zmienić wartość w pliku /etc/sysconfig/network-scripts/ifcfg-eth0
+W celu skonfigurowania tego na stałe warto zmienić wartość (ONBOOT=yes) w pliku /etc/sysconfig/network-scripts/ifcfg-eth0
 
 ~~~shell
-(ONBOOT=yes)
+vim /etc/sysconfig/network-scripts/ifcfg-eth0
 ~~~
+
+### logowanie roota po haśle
+
+Ustawiamy parametr (PerminRootLogin yes) w pliku /etc/ssh/sshd_config
+
+~~~shell
+vim /etc/ssh/sshd_config
+~~~
+
+
+
+
+
+
+
+
 
 
 
 # Instalacja dystrybucji Hortonworks
 
 
-2. logowanie roota po haśle
 
-/etc/ssh/sshd_config
-PerminRootLogin yes
 
 ## Mapowanie portów NAT
 
