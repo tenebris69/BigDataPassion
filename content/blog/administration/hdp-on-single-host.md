@@ -159,14 +159,40 @@ Na koniec restartujemy maszynę.
 
 # Instalacja dystrybucji Hortonworks
 
+### Dodajemy repozytorium Ambari
+~~~shell
 cd /etc/yum.repos.d/
 wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.5.1.0/ambari.repo
+~~~
 
+### Instalujemy Ambari
+~~~shell
 yum install ambari-server -y
+~~~
 
+### Konfigurujemy Ambari
+~~~shell
 ambari-server setup
+~~~
 
+### Restartujemy Ambari
+~~~shell
 ambari-server start
+~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Legenda
