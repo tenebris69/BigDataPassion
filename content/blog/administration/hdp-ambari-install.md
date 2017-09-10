@@ -128,8 +128,7 @@ echo umask 022 >> /etc/profile
 # Instalacja Apache Ambari
 
 ~~~shell
-cd /etc/yum.repos.d/
-wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.1.0/ambari.repo
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
 yum install ambari-server -y
 ambari-server setup
 ~~~
