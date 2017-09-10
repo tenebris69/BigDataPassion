@@ -54,7 +54,46 @@ vim /etc/ssh/sshd_config
 
 (UWAGA nigdy tego nie róbmy na produkcyjnych serwerach, NIGDY!)
 
+### Mapowanie portów NAT
 
+TODO
+
+### Logowanie po SSH
+
+Jeśli korzystamy z systemów Linux/Mac wygodnym rozwiązaniem może okazać się konfiguracja dostępu z swojego komputer i swojej konsoli. Żeby nie musieć podawać przy logowaniu ciągle hasła, warto wrzucić na maszynę wirtualną swój klucz publiczny by logować się bez hasła.
+
+ssh-copy-id root@localhost -p 2222
+ssh root@localhost -p 2222
+
+
+### Zmieniamy hostname
+
+Jeśli podczas instalacji nie ustawiliśmy adresu naszej maszyny możemy zrobić to teraz:
+
+~~~shell
+vim /etc/sysconfig/network
+~~~
+
+wartosć pliku:
+~~~
+NETWORKING=yes
+HOSTNAME=sandbox.bigdatapassion.pl
+~~~
+
+Warto też ustawić to samo w pliku hosts:
+
+~~~shell
+vim /etc/hosts 
+~~~
+
+wartość pliku:
+~~~
+127.0.0.1   sandbox sandbox.bigdatapassion.pl
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+~~~
+
+Po tej operacji warto zrestartować system.
 
 
 
@@ -67,28 +106,10 @@ vim /etc/ssh/sshd_config
 
 
 
-## Mapowanie portów NAT
 
-## Logowanie po SSH
-
-ssh-copy-id root@localhost -p 2222
-ssh root@localhost -p 2222
  
 
-3. hostname
 
-vi /etc/sysconfig/network
-NETWORKING=yes
-HOSTNAME=newHostName
-and: a good idea if you have any applications that need to resolve the IP of the hostname)
-
-vi /etc/hosts 
-127.0.0.1 newHostName
-127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
-::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-and then
-
- rebooting the system
 
 4. epel release
 
