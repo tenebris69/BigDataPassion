@@ -170,6 +170,7 @@ yum install ambari-server -y
 ~~~
 
 ### Konfigurujemy Ambari
+(W każdym pytaniu wybieramy odpowiedź domyślną klikając klawisz *Enter* za każdrym razem)
 ~~~shell
 ambari-server setup
 ~~~
