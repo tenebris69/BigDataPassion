@@ -114,6 +114,7 @@ yum install -y wget vim htop ntp openssh-server openssh-clients nano bash-comple
 
 Hadoop do działania wymaga by użytkownik systemowy mógł logować się do innych maszyn bez hasła za pomocą infrastruktury klucza prywatnego i publicznego, dlatego wykonujemy poniższe polecenia:
 
+(przy pierwszym naciskamy klawisz *Enter* kilka razy, przy drugim wybieramy *yes* i wpisujemy hasło użytkownika *root*)
 ~~~shell
 ssh-keygen
 ssh-copy-id sandbox.bigdatapassion.pl
@@ -122,28 +123,36 @@ ssh sandbox.bigdatapassion.pl
 
 ### Wyłączamy SELINUX
 
+~~~shell
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 
 setenforce 0
+~~~
 
-7. 
+### Wyłączamy Firewall'a
 
+~~~shell
 service iptables stop
 /etc/init.d/iptables stop
 chkconfig iptables off
+~~~
 
-8.
+### Włączamy serwer czasu NTP
 
+~~~shell
 yum install -y ntp
 chkconfig ntpd on
+~~~
 
-9.
+### Ustawiamy zalecany domyślny umask
 
+~~~shell
 umask 0022
 echo umask 0022 >> /etc/profile
+~~~
 
-
+Na koniec restartujemy maszynę.
 
 
 
