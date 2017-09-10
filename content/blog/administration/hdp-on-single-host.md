@@ -161,8 +161,7 @@ Na koniec restartujemy maszynę.
 
 ### Dodajemy repozytorium Ambari
 ~~~shell
-cd /etc/yum.repos.d/
-wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.5.1.0/ambari.repo
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.5.2.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
 ~~~
 
 ### Instalujemy Ambari
