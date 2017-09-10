@@ -96,40 +96,27 @@ wartość pliku:
 Po tej operacji warto zrestartować system.
 
 
+### Konfiguracja epel release
 
+Dodajemy repozytorium dodatkowych narzędzi systemowych
 
-
-
-
-# Instalacja dystrybucji Hortonworks
-
-
-
-
-
- 
-
-
-
-4. epel release
-
+~~~shell
 yum -y install epel-release
+~~~
 
-5.
+### Instalacja przydatnych narzędzi
 
 yum install -y wget vim htop ntp openssh-server openssh-clients nano bash-completion
 
-5.
+### Konfiguracja kluczy publicznego i prywatnego
 
+Hadoop do działania wymaga by użytkownik systemowy mógł logować się do innych maszyn bez hasła za pomocą infrastruktury klucza prywatnego i publicznego, dlatego wykonujemy poniższe polecenia:
+
+~~~shell
 ssh-keygen
-
-
-
 ssh-copy-id sandbox.bigdatapassion.pl
-
-
-
 ssh sandbox.bigdatapassion.pl
+~~~
 
 6.
 
@@ -154,7 +141,12 @@ chkconfig ntpd on
 umask 0022
 echo umask 0022 >> /etc/profile
 
-10.
+
+
+
+
+
+# Instalacja dystrybucji Hortonworks
 
 cd /etc/yum.repos.d/
 wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.5.1.0/ambari.repo
