@@ -44,7 +44,7 @@ W celu skonfigurowania tego na stałe warto zmienić wartość (ONBOOT=yes) w pl
 vim /etc/sysconfig/network-scripts/ifcfg-eth0
 ~~~
 
-### logowanie roota po haśle
+### Włączamy logowanie root'a po haśle
 
 Ustawiamy parametr (PerminRootLogin yes) w pliku /etc/ssh/sshd_config
 
@@ -52,7 +52,7 @@ Ustawiamy parametr (PerminRootLogin yes) w pliku /etc/ssh/sshd_config
 vim /etc/ssh/sshd_config
 ~~~
 
-
+(UWAGA nigdy tego nie róbmy na produkcyjnych serwerach, NIGDY!)
 
 
 
