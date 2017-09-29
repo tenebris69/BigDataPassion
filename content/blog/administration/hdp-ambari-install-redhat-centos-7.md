@@ -2,7 +2,7 @@
 author = "Radosław Szmit"
 categories = ["Dystrybucje Big Data","Hortonworks Data Platform (HDP)","Administracja Big Data"]
 date = "2017-05-05T19:24:48+02:00"
-description = "Instalacja HDP 2.6 za pomocą Ambari 2.5 na systemie Red Hat 7 / CentOS 7"
+description = "Instalacja HDP 2.6 za pomocą Ambari 2.5 na systemie Red Hat 7.3 lub CentOS 7.3"
 featured = "hortonworks-logo.png"
 featuredalt = ""
 featuredpath = "/img/administration"
@@ -12,7 +12,7 @@ type = "post"
 
 +++
 
-Instrukcja instalacji dystrybucji Hortonworks Data Platform 2.6 na maszynach z systemem Red Hat 7 / CentOS 7. Do instalacji zostanie użyte Apache Ambari w wersji 2.5.
+Instrukcja instalacji dystrybucji Hortonworks Data Platform 2.6 na maszynach z systemem Red Hat 7.3 lub CentOS 7.3. Do instalacji zostanie użyte Apache Ambari w wersji 2.5.
 
 # Klaster ssh
 
@@ -95,7 +95,7 @@ sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 sestatus
 ~~~
 
-# Wyłączamy zaporę ogniową
+### Wyłączamy Firewall'a
 
 ~~~shell
 systemctl disable firewalld
@@ -107,7 +107,7 @@ systemctl stop firewalld.service
 systemctl status firewalld.service
 ~~~
 
-# Włączenie serwera synchronizacji czasu
+### Włączamy serwer czasu NTP
 
 ~~~shell
 systemctl disable chrony.service

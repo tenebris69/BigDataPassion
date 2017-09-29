@@ -2,7 +2,7 @@
 author = "Radosław Szmit"
 categories = ["Dystrybucje Big Data","Hortonworks Data Platform (HDP)","Administracja Big Data"]
 date = "2017-05-05T19:24:48+02:00"
-description = "Instalacja HDP 2.6 za pomocą Ambari 2.5 na systemie Red Hat 6 / CentOS 6"
+description = "Instalacja HDP 2.6 za pomocą Ambari 2.5 na systemie Red Hat 6.9 lub CentOS 6.9"
 featured = "hortonworks-logo.png"
 featuredalt = ""
 featuredpath = "/img/administration"
@@ -12,7 +12,7 @@ type = "post"
 
 +++
 
-Instrukcja instalacji dystrybucji Hortonworks Data Platform 2.6 na maszynach z systemem Red Hat 6 / CentOS 6. Do instalacji zostanie użyte Apache Ambari w wersji 2.5.
+Instrukcja instalacji dystrybucji Hortonworks Data Platform 2.6 na maszynach z systemem Red Hat 6.9 lub CentOS 6.9. Do instalacji zostanie użyte Apache Ambari w wersji 2.5.
 
 # Klaster ssh
 
@@ -42,8 +42,8 @@ yum install -y wget
 
 ~~~shell
 cd /tmp
-wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-yum install -y epel-release-latest-7.noarch.rpm
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+yum install -y epel-release-latest-6.noarch.rpm
 yum repolist
 ~~~
 
@@ -55,17 +55,7 @@ yum -y install wget vim htop ntp openssh-server openssh-clients nano bash-comple
 
 # Zmieniamy hostname
 
-Na każdej z maszyn ustawiamy inny hostname, na przykład:
-~~~shell
-hostnamectl set-hostname hadoop1.bigdatapassion.pl --static
-hostnamectl set-hostname hadoop2.bigdatapassion.pl --static
-hostnamectl set-hostname hadoop3.bigdatapassion.pl --static
-~~~
-
-Status możemy sprawdzić
-~~~shell
-hostnamectl status
-~~~
+TODO
 
 # Konfigurujemy hostów
 
@@ -95,27 +85,19 @@ sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 sestatus
 ~~~
 
-# Wyłączamy zaporę ogniową
+### Wyłączamy Firewall'a
 
 ~~~shell
-systemctl disable firewalld
-systemctl stop firewalld
-systemctl status firewalld
-
-systemctl disable firewalld.service
-systemctl stop firewalld.service
-systemctl status firewalld.service
+service iptables stop
+/etc/init.d/iptables stop
+chkconfig iptables off
 ~~~
 
-# Włączenie serwera synchronizacji czasu
+### Włączamy serwer czasu NTP
 
 ~~~shell
-systemctl disable chrony.service
-
-systemctl enable ntpd.service
-systemctl is-enabled ntpd.service
-systemctl start ntpd.service
-systemctl status ntpd.service
+yum install -y ntp
+chkconfig ntpd on
 ~~~
 
 # Umask
@@ -128,7 +110,7 @@ echo umask 022 >> /etc/profile
 # Instalacja Apache Ambari
 
 ~~~shell
-wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.5.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
 yum install ambari-server -y
 ambari-server setup
 ~~~
