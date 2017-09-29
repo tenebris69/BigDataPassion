@@ -2,7 +2,7 @@
 author = "Radosław Szmit"
 categories = ["Dystrybucje Big Data","Hortonworks Data Platform (HDP)","Administracja Big Data"]
 date = "2017-05-05T19:24:48+02:00"
-description = "Instalacja HDP 2.6 za pomocą Ambari 2.5"
+description = "Instalacja HDP 2.6 za pomocą Ambari 2.5 na systemie Red Hat 6 / CentOS 6"
 featured = "hortonworks-logo.png"
 featuredalt = ""
 featuredpath = "/img/administration"
@@ -12,7 +12,7 @@ type = "post"
 
 +++
 
-Instrukcja instalacji dystrybucji Hortonworks na maszynach z systemem CentOS 7. Do instalacji zostanie użyte Apache Ambari.
+Instrukcja instalacji dystrybucji Hortonworks Data Platform 2.6 na maszynach z systemem Red Hat 6 / CentOS 6. Do instalacji zostanie użyte Apache Ambari w wersji 2.5.
 
 # Klaster ssh
 
@@ -43,7 +43,7 @@ yum install -y wget
 ~~~shell
 cd /tmp
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-yum install epel-release-latest-7.noarch.rpm
+yum install -y epel-release-latest-7.noarch.rpm
 yum repolist
 ~~~
 
