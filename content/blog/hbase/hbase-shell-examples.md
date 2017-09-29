@@ -114,6 +114,40 @@ disable 'person'
 drop 'person'
 ~~~
 
+
+
+# Usuwanie danych
+~~~ruby
+create 'person', {NAME => 'cf', VERSIONS => 5}
+for i in 1..5 # wiersze
+   for j in 1..3 # wersje
+      put 'person', i, 'cf:forename', "Imie #{i}.#{j}", j
+      put 'person', i, 'cf:surname', "Nazwisko #{i}.#{j}", j
+   end
+end
+
+deleteall 'person', 1 # usuwa cały wiersz (rodzinę)
+deleteall 'person', 2, 'cf:forename' # usuwa całą kolumnę
+deleteall 'person', 3, 'cf:forename', 4 # usuwa starsze wersje w kolumnie
+
+delete 'person', 4, 'cf:forename' # usuwa całą kolumnę
+delete 'person', 5, 'cf:forename', 4 # usuwa starsze wersje w kolumnie
+
+scan 'person'
+scan 'person', {VERSIONS => 10}
+scan 'person', {RAW => true, VERSIONS => 10}
+
+disable 'person'
+drop 'person'
+~~~
+
+
+
+
+
+
+
+
 # Zabawa z wersjami (delete version)
 ~~~ruby
 create 'person', {NAME => 'cf', VERSIONS => 5}
@@ -197,7 +231,7 @@ drop 'person'
 
 # Zabawa z wersjami (TTL)
 ~~~ruby
-create 'person', {NAME => 'cf', VERSIONS => 5, TTL => 5}
+create 'person', {NAME => 'cf', VERSIONS => 5, TTL => 5, MIN_VERSIONS => 2}
 for i in 1..7
    put 'person', 1, 'cf:forename', "Wersja #{i}"
 end
