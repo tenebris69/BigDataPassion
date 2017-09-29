@@ -1,3 +1,30 @@
 
 
 sudo yum install ftp://mirror.switch.ch/pool/4/mirror/centos/7.3.1611/os/x86_64/Packages/libtirpc-devel-0.2.4-0.8.el7.x86_64.rpm
+
+
+wget http://mirror.centos.org/centos/6/os/x86_64/Packages/libtirpc-0.2.1-13.el6.x86_64.rpm
+wget http://mirror.centos.org/centos/6/os/x86_64/Packages/libtirpc-devel-0.2.1-13.el6.x86_64.rpm
+yum localinstall --nogpgcheck libtirpc-0.2.1-13.el6.x86_64.rpm
+yum localinstall --nogpgcheck libtirpc-devel-0.2.1-13.el6.x86_64.rpm
+
+
+wget ftp://mirror.switch.ch/pool/4/mirror/centos/6.9/os/x86_64/Packages/libtirpc-devel-0.2.1-13.el6.x86_64.rpm
+yum localinstall --nogpgcheck libtirpc-devel-0.2.1-13.el6.x86_64.rpm
+
+
+
+yum info libtirpc
+yum info libtirpc-devel
+
+
+
+libtirpc-devel
+
+
+
+wget ftp://fr2.rpmfind.net/linux/centos/6.9/updates/x86_64/Packages/libtirpc-devel-0.2.1-13.el6_9.x86_64.rpm
+yum localinstall --nogpgcheck libtirpc-devel-0.2.1-13.el6_9.x86_64.rpm
+
+
+https://www.rpmfind.net/linux/RPM/centos/updates/6.9/x86_64/Packages/libtirpc-devel-0.2.1-13.el6_9.x86_64.html
