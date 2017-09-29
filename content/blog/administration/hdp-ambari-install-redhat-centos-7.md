@@ -12,7 +12,7 @@ type = "post"
 
 +++
 
-Instrukcja instalacji dystrybucji Hortonworks na maszynach z systemem CentOS 7. Do instalacji zostanie użyte Apache Ambari.
+Instrukcja instalacji dystrybucji Hortonworks Data Platform 2.6 na maszynach z systemem Red Hat 7 / CentOS 7. Do instalacji zostanie użyte Apache Ambari w wersji 2.5.
 
 # Klaster ssh
 
