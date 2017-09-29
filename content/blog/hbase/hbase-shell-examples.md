@@ -231,7 +231,7 @@ drop 'person'
 
 # Zabawa z wersjami (TTL)
 ~~~ruby
-create 'person', {NAME => 'cf', VERSIONS => 5, TTL => 5, MIN_VERSIONS => 2}
+create 'person', {NAME => 'cf', VERSIONS => 5, TTL => 5}
 for i in 1..7
    put 'person', 1, 'cf:forename', "Wersja #{i}"
 end
