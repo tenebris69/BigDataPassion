@@ -58,16 +58,28 @@ bigDecimal + bigInt.toDouble
 bigDecimal + BigDecimal(bigInt)
 ~~~
 
+# Operatory
 ~~~Scala
++ - * / %
 ~~~
 
 ~~~Scala
+++ --
 ~~~
 
 ~~~Scala
++= i -= *= /=
 ~~~
 
+# Importowanie klas
 ~~~Scala
+import scala.math._
+abs(-8)
+cbrt(8)
+ceil(8.12)
+round(8.12)
+round(8.89)
+floor(8.89)
 ~~~
 
 ~~~Scala
@@ -142,3 +154,4 @@ bigDecimal + BigDecimal(bigInt)
 * https://www.scala-lang.org
 * http://www.scala-lang.org/api/current/
 * http://www.scala-lang.org/api/current/scala/math/BigDecimal.html
+* http://www.scala-lang.org/api/current/scala/math/
