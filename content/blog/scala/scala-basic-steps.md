@@ -12,3 +12,133 @@ type = "post"
 
 +++
 
+# Podstawy
+
+### Operacje matematyczne
+
+~~~Scala
+15 + 3 * 2 / 2 -7
+
+"To jest przykładowy tekst"
+~~~
+
+## Zmienne i wartości
+
+~~~Scala
+var variable = 5
+variable = 7
+variable
+~~~
+
+~~~Scala
+val value = 5
+value = 7
+value
+~~~
+
+## Komentarze
+
+~~~Scala
+// Some comment
+
+/*
+Other comment
+*/
+~~~
+
+## Liczby
+~~~Scala
+val bigInt = BigInt("821735918723912749821723948572334280704")
+bigInt + 1
+
+val bigDecimal = BigDecimal("25.09102349571921928308213601287562173888012")
+bigDecimal + 0.00000000000000000000000001
+
+bigDecimal + bigInt.toDouble
+bigDecimal + BigDecimal(bigInt)
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+~~~Scala
+~~~
+
+
+
+
+
+
+# Legenda
+* https://www.scala-lang.org
+* http://www.scala-lang.org/api/current/
+* http://www.scala-lang.org/api/current/scala/math/BigDecimal.html
