@@ -76,10 +76,18 @@ bigDecimal + BigDecimal(bigInt)
 import scala.math._
 abs(-8)
 cbrt(8)
+
 ceil(8.12)
 round(8.12)
 round(8.89)
 floor(8.89)
+
+pow(2,2)
+sqrt(4)
+
+exp(0.6931471805599453)
+log(2)
+log10(10)
 ~~~
 
 ~~~Scala
