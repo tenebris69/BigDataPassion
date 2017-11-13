@@ -14,6 +14,11 @@ type = "post"
 
 # Podstawy
 
+* Operator to funkcja
+* Funkcje bezparametrowe można wykonywać bez nawiasów
+* Nie trzeba średnika
+* Funkcje z jednym parametrem możemy zapisać jak język naturalny
+
 ### Operacje matematyczne
 
 ~~~Scala
@@ -88,18 +93,28 @@ sqrt(4)
 exp(0.6931471805599453)
 log(2)
 log10(10)
+
+min(9,89)
+max(9,89)
 ~~~
 
 ~~~Scala
+random
+~~~
+
+# Instrukcje warunkowe
+~~~Scala
+++ != > < >= <=
+~~~
+
+# Logiczne
+~~~Scala
+&& || ! (and, or, not)
 ~~~
 
 ~~~Scala
-~~~
+val = 9
 
-~~~Scala
-~~~
-
-~~~Scala
 ~~~
 
 ~~~Scala
