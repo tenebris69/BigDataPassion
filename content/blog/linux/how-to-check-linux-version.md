@@ -10,6 +10,7 @@ linktitle = ""
 title = "Jak sprawdzić jakiej wersji Linux'a używamy"
 type = "post"
 
+draft = true
 +++
 
 # Debian

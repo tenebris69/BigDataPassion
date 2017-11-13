@@ -10,6 +10,7 @@ linktitle = ""
 title = "Jak sprawdzić wydajność dysków twardych"
 type = "post"
 
+draft = true
 +++
 
 # iotop

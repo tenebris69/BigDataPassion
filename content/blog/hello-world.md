@@ -16,7 +16,7 @@ Big Data Passion to strona dla pasjonatów szeroko rozumianego Big Data. Treści
 
 * Języki programowania (Java, Scala, Kotlin)
 * Przetwarzanie danych (MapReduce, Spark, Flink, Storm, Apex)
-* Analizę danych, Data Science, NLP, Machine Learning (Mahout, Spark MLlib, Spark GraphX)
+* Analizę danych, Data Science, NLP, Machine Learning, Deep Learning, Szutczna Inteligencja (Mahout, Spark MLlib, Spark GraphX)
 * NoSQL i składowanie danych (HDFS, HBase, Cassandra, Mongo, Redis, Hazelcast, Kudu)
 * Przesyłanie danych (Kafka, ActiveMQ, Flume, NiFi, Logstash)
 * Biblioteki i narzędzia (Vert.x, Netty, Akka, Spring framework, Spring Data, Spring Integration, Spring XD)
