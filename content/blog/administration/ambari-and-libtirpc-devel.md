@@ -1,13 +1,13 @@
 +++
-author = ""
-categories = []
+author = "Radosław Szmit"
+categories = ["Administracja", "Linux", "CentOS"]
 date = "2017-11-17T19:09:57+01:00"
 description = ""
-featured = ""
+featured = "hortonworks-logo.png"
 featuredalt = ""
-featuredpath = ""
+featuredpath = "/img/administration"
 linktitle = ""
-title = "ambari and libtirpc devel"
+title = "Ambari i biblioteka libtirpc-devel"
 type = "post"
 
 +++
