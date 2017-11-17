@@ -10,6 +10,7 @@ linktitle = ""
 title = "Instalacja HDP 2.6 na pojedynczej maszynie"
 type = "post"
 
+draft = true
 +++
 
 W tym poście pokażę jak przygotować sobie jedną wirtualną maszynę z zainstalowaną dystrybucją Hortonworks. Taką maszynę, zwaną sandbox'em możemy wykorzystywać do celów testowych i developerskich.
