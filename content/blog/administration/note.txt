@@ -1,6 +1,6 @@
 
 
-sudo yum install ftp://mirror.switch.ch/pool/4/mirror/centos/7.3.1611/os/x86_64/Packages/libtirpc-devel-0.2.4-0.8.el7.x86_64.rpm
+sudo yum install ftp://mirror.switch.ch/pool/4/mirror/centos/7/os/x86_64/Packages/libtirpc-devel-0.2.4-0.8.el7.x86_64.rpm
 
 
 wget http://mirror.centos.org/centos/6/os/x86_64/Packages/libtirpc-0.2.1-13.el6.x86_64.rpm
