@@ -166,6 +166,10 @@ echo umask 022 >> ~/.bash_profile
 echo umask 022 >> /etc/profile
 ~~~
 
+# Restart maszyn
+
+Teraz warto wykonać restart wszystkich maszyn poleceniem *reboot*
+
 # Instalacja Apache Ambari
 
 UWAGA: Od teraz wszystkie operacje wykonujemy tylko na maszynie *hdp1*
