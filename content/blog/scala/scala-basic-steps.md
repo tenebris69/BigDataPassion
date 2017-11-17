@@ -10,6 +10,7 @@ linktitle = ""
 title = "scala basic steps"
 type = "post"
 
+draft = true
 +++
 
 # Podstawy
