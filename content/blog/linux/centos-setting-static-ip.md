@@ -1,6 +1,6 @@
 +++
 author = "Radosław Szmit"
-categories = ["CentOS","Administracja Big Data"]
+categories = ["Administracja", "Linux", "CentOS"]
 date = "2017-04-02T21:34:44+02:00"
 description = ""
 featured = "centos-logo.png"
