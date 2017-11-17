@@ -12,7 +12,7 @@ type = "post"
 
 +++
 
-Instrukcja instalacji dystrybucji Hortonworks Data Platform HDP-2.6.2.0 na maszynach z systemem Red Hat 6.9 lub CentOS 6.9. Do instalacji zostanie użyte Apache Ambari w wersji 2.5.1.0.
+Instrukcja instalacji dystrybucji Hortonworks Data Platform HDP-2.6.3.0 na maszynach z systemem Red Hat 6.9 lub CentOS 6.9. Do instalacji zostanie użyte Apache Ambari w wersji 2.5.1.0.
 
 # Klaster ssh
 
