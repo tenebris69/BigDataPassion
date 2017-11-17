@@ -168,6 +168,8 @@ echo umask 022 >> /etc/profile
 
 # Instalacja Apache Ambari
 
+UWAGA: Od teraz wszystkie operacje wykonujemy tylko na maszynie *hdp1*
+
 ~~~shell
 wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.5.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
 yum install ambari-server -y
