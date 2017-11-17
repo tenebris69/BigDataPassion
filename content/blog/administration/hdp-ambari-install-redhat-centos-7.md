@@ -77,11 +77,16 @@ hostnamectl status
 
 # Konfigurujemy hostów
 
+Żeby maszyny się "widziały" musimy każdej ustawić odpowiedni hostname:
+
 ~~~shell
 192.168.172.201 hdp1 hdp1.hortonworks.com
 192.168.172.202 hdp2 hdp2.hortonworks.com
 192.168.172.203 hdp3 hdp3.hortonworks.com
 ~~~
+
+Oczywiście lista zależy od liczby maszyn (w tym przypadku 3) oraz adresach ip które można sprawdzić za pomocą polecenia "ip a". Trzeba także pamiętać że "swój" hostname dodaliśmy w korku poprzednim, więc musimy go pominąć.
+
 
 # Konfigurujemy logowanie SSH bez hasła
 
