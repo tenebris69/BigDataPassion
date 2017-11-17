@@ -28,3 +28,12 @@ yum localinstall --nogpgcheck libtirpc-devel-0.2.1-13.el6_9.x86_64.rpm
 
 
 https://www.rpmfind.net/linux/RPM/centos/updates/6.9/x86_64/Packages/libtirpc-devel-0.2.1-13.el6_9.x86_64.html
+
+
+
+for i in {1..5..1}; do ssh-keygen -f "/home/radek/.ssh/known_hosts" -R hdp${i}; done
+
+
+for i in {1..5..1}; do ssh root@hdp${i} uptime; done
+
+cssh root@hdp{1..5}

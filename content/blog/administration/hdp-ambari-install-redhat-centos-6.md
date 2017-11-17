@@ -12,18 +12,18 @@ type = "post"
 
 +++
 
-Instrukcja instalacji dystrybucji Hortonworks Data Platform 2.6 na maszynach z systemem Red Hat 6.9 lub CentOS 6.9. Do instalacji zostanie użyte Apache Ambari w wersji 2.5.
+Instrukcja instalacji dystrybucji Hortonworks Data Platform HDP-2.6.2.0 na maszynach z systemem Red Hat 6.9 lub CentOS 6.9. Do instalacji zostanie użyte Apache Ambari w wersji 2.5.1.0.
 
 # Klaster ssh
 
 Jeśli chcemy wykonywać wybrane polecenia jednocześnie na wszystkich maszynach możemy użyć polecenia _cssh_.
 ~~~shell
-cssh root@hadoop1 root@hadoop2 root@hadoop3
+cssh root@hdp1 root@hdp2 root@hdp3
 ~~~
 
 Jeśli wolimy klasyczne ssh, logujemy się na każdą maszynę oddzielnie:
 ~~~shell
-ssh root@hadoop1
+ssh root@hdp1
 ~~~
 
 # Aktualizacja systemu
@@ -40,6 +40,12 @@ yum install -y wget
 
 # Instalacja epel release
 
+CentOS:
+~~~shell
+yum install -y epel-release
+~~~
+
+Red Hat:
 ~~~shell
 cd /tmp
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
@@ -50,28 +56,32 @@ yum repolist
 # Instalacja kolejnych przydatnych narzędzi
 
 ~~~shell
-yum -y install wget vim htop ntp openssh-server openssh-clients nano bash-completion
+yum -y install wget vim htop ntp openssh-server openssh-clients nano bash-completion tree
 ~~~
 
-# Zmieniamy hostname
+# Zmieniamy hostname (opcjonalnie)
+
+Ten krok wykonujemy jeśli chcemy zmienić hostname w systemie.
+
+Obecny hostname możemy sprawdzić za pomocą
 
 TODO
 
 # Konfigurujemy hostów
 
 ~~~shell
-192.168.172.201 hadoop1 hadoop1.bigdatapassion.pl
-192.168.172.202 hadoop2 hadoop2.bigdatapassion.pl
-192.168.172.203 hadoop3 hadoop3.bigdatapassion.pl
+192.168.172.201 hdp1 hdp1.bigdatapassion.pl
+192.168.172.202 hdp2 hdp2.bigdatapassion.pl
+192.168.172.203 hdp3 hdp3.bigdatapassion.pl
 ~~~
 
 # Konfigurujemy logowanie SSH bez hasła
 
 ~~~shell
 ssh-keygen
-ssh-copy-id root@hadoop1
-ssh-copy-id root@hadoop2
-ssh-copy-id root@hadoop3
+ssh-copy-id root@hdp1
+ssh-copy-id root@hdp2
+ssh-copy-id root@hdp3
 ~~~
 
 # Wyłączamy selinux
@@ -118,7 +128,7 @@ ambari-server setup
 W przypadku ambari-server setup upewniamy się, że nie ma żadnych ostrzeżeń, zaś na wszystkie pytania odpowiadamy wartościami domyślnymi klikając enter:
 
 ~~~shell
-[root@hadoop1 ~]# ambari-server setup
+[root@hdp1 ~]# ambari-server setup
 Using python  /usr/bin/python
 Setup ambari-server
 Checking SELinux...
@@ -177,7 +187,7 @@ ambari-server start
 
 # Konfiguracja klastra HDP
 
-Następnie wchodzimy na adres: http://hadoop1:8080 i całą instalację kontynuujemy w trybie graficznym. Logujemy się jako admin / admin.
+Następnie wchodzimy na adres: http://hdp1:8080 i całą instalację kontynuujemy w trybie graficznym. Logujemy się jako admin / admin.
 
 Następnie klikamy przycisk _Launch Install Wizard_
 
@@ -194,9 +204,9 @@ Wybieramy wersję dystrybucji którą chcemy zainstalować
 W kolejnym ekranie w polu _Target Hosts_ wskazujemy pełne adresy wybranych maszyn na których chcemy postawić dystrybucję
 
 ~~~shell
-hadoop1.bigdatapassion.pl
-hadoop2.bigdatapassion.pl
-hadoop3.bigdatapassion.pl
+hdp1.bigdatapassion.pl
+hdp2.bigdatapassion.pl
+hdp3.bigdatapassion.pl
 ~~~
 
 oraz wklejamy zawartość pliku /root/.ssh/id_rsa maszyny na której zainstalowaliśmy Ambari
