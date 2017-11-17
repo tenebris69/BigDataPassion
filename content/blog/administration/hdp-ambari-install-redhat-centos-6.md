@@ -113,11 +113,24 @@ Oczywiście lista zależy od liczby maszyn (w tym przypadku 3) oraz adresach ip 
 
 # Konfigurujemy logowanie SSH bez hasła
 
+Na każdem maszynie generujemy zestaw kluczy:
 ~~~shell
 ssh-keygen
-ssh-copy-id root@hdp1
-ssh-copy-id root@hdp2
-ssh-copy-id root@hdp3
+~~~
+
+Na maszynie hdp1 wyświetlamy sobie klucz publiczny:
+~~~shell
+cat .ssh/id_rsa.pub
+~~~
+
+Pobrany klucz maszyny *hdp1* wklejami na każdej maszynie (także *hdp1*) do pliku:
+~~~shell
+vim .ssh/authorized_keys
+~~~
+
+Jeśli wszystko poszło jak trzeba z maszyny *hdp1* możemy teraz zalogować się po SSH do każdej innej maszyny:
+~~~shell
+ssh hdp3
 ~~~
 
 # Wyłączamy selinux
