@@ -26,6 +26,8 @@ Jeśli wolimy klasyczne ssh, logujemy się na każdą maszynę oddzielnie:
 ssh root@hdp1
 ~~~
 
+UWAGA: Wszystkie dalesze polecenia wykonujemy zalogowani jako użytkownik *root*
+
 # Aktualizacja systemu
 
 ~~~shell
@@ -63,9 +65,39 @@ yum -y install wget vim htop ntp openssh-server openssh-clients nano bash-comple
 
 Ten krok wykonujemy jeśli chcemy zmienić hostname w systemie.
 
-Obecny hostname możemy sprawdzić za pomocą
+Obecny hostname możemy sprawdzić za pomocą:
+~~~shell
+hostname
+hostname -f
+# lub hostname --fqdn
+~~~
+Pierwsze polecenie pokazuje krótszą wartość, drugie pełną nazwę.
 
-TODO
+W celu zmiany edytujemy plik:
+~~~shell
+vim /etc/sysconfig/network
+~~~
+
+Zmieniamy wartość linijki (odpowiednio na każdej maszynie):
+~~~
+HOSTNAME=hdp1.hortonworks.com
+~~~
+
+Pdobnie wpisujemy "swój" hostname w pliku /etc/hosts
+~~~shell
+vim /etc/hosts
+~~~
+
+na odpowiednią wartość:
+~~~
+127.0.0.1 hdp1.hortonworks.com
+~~~
+
+Na koniec wykonujemy:
+~~~shell
+/etc/init.d/network restart
+~~~
+lub najlepiej restart całego systemu :)
 
 # Konfigurujemy hostów
 

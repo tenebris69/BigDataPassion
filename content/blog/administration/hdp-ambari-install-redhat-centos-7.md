@@ -26,6 +26,8 @@ Jeśli wolimy klasyczne ssh, logujemy się na każdą maszynę oddzielnie:
 ssh root@hdp1
 ~~~
 
+UWAGA: Wszystkie dalesze polecenia wykonujemy zalogowani jako użytkownik *root*
+
 # Aktualizacja systemu
 
 ~~~shell
@@ -63,9 +65,9 @@ yum -y install wget vim htop ntp openssh-server openssh-clients nano bash-comple
 
 Na każdej z maszyn ustawiamy inny hostname, na przykład:
 ~~~shell
-hostnamectl set-hostname hdp1.bigdatapassion.pl --static
-hostnamectl set-hostname hdp2.bigdatapassion.pl --static
-hostnamectl set-hostname hdp3.bigdatapassion.pl --static
+hostnamectl set-hostname hdp1.hortonworks.com --static
+hostnamectl set-hostname hdp2.hortonworks.com --static
+hostnamectl set-hostname hdp3.hortonworks.com --static
 ~~~
 
 Status możemy sprawdzić
@@ -76,9 +78,9 @@ hostnamectl status
 # Konfigurujemy hostów
 
 ~~~shell
-192.168.172.201 hdp1 hdp1.bigdatapassion.pl
-192.168.172.202 hdp2 hdp2.bigdatapassion.pl
-192.168.172.203 hdp3 hdp3.bigdatapassion.pl
+192.168.172.201 hdp1 hdp1.hortonworks.com
+192.168.172.202 hdp2 hdp2.hortonworks.com
+192.168.172.203 hdp3 hdp3.hortonworks.com
 ~~~
 
 # Konfigurujemy logowanie SSH bez hasła
@@ -218,9 +220,9 @@ Wybieramy wersję dystrybucji którą chcemy zainstalować
 W kolejnym ekranie w polu _Target Hosts_ wskazujemy pełne adresy wybranych maszyn na których chcemy postawić dystrybucję
 
 ~~~shell
-hdp1.bigdatapassion.pl
-hdp2.bigdatapassion.pl
-hdp3.bigdatapassion.pl
+hdp1.hortonworks.com
+hdp2.hortonworks.com
+hdp3.hortonworks.com
 ~~~
 
 oraz wklejamy zawartość pliku /root/.ssh/id_rsa maszyny na której zainstalowaliśmy Ambari
