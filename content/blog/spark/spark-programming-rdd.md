@@ -14,42 +14,9 @@ type = "post"
 
 # Wprowadzenie
 
-TODO
+RDD (Resilient Distributed Datasets) są podstawowym typem danych wykorzystywanym przez Spark aktualnie będącymi częścią tak zwanego Spark Core czyli bazowego modułu Apache Spark.
 
-
-~~~Java
-val lines = sc.textFile("README.md")
-lines.count()
-lines.first()
-~~~
-
-~~~Python
-lines = sc.textFile("README.md")
-lines.count()
-lines.first()
-~~~
-
-Aplikacja składa się z programu sterownika i klastra obliczeniowego, tam mamy węzły wykonawcze
-
-SparkContext reprezentuje połączenie z klastrem, od niego wszystko się zaczyna
-
-
-
-
-RDD ofertują transformacje i akcje
-
-Filtracja:
-~~~Java
-val lines = sc.parallelize(List("pizza", "hamburger", "lasagne"))
-lines.count()
-lines.first()
-~~~
-
-~~~Python
-lines = sc.parallelize(["pizza", "hamburger", "lasagne"])
-lines.count()
-lines.first()
-~~~
+Na RDD będziemy wykonywać różne metody które dzielimy na *transformacje* i *akcje*. Transformacje przekształcają nam RDD w inne RDD, zaś akcje generują z RDD wynik który może być zwrócony do sterownika bądź zapisany w HDFS'ie lub innym obsługiwanym źródle danych.
 
 # Tworzenie RDD
 
@@ -63,6 +30,18 @@ val lines = sc.parallelize(List("pizza", "hamburger", "lasagne"))
 Python:
 ~~~Python
 lines = sc.parallelize(["pizza", "hamburger", "lasagne"])
+~~~
+
+Do wczytania pliku tekstowego możemy skorzystać z funkcji *textFile*:
+
+Scala:
+~~~Java
+val lines = sc.textFile("README.md")
+~~~
+
+Python:
+~~~Python
+lines = sc.textFile("README.md")
 ~~~
 
 # Transformacje
@@ -295,21 +274,27 @@ Jeszcze inną przydatną funkcją jest *first* zwracająca pierwszy element RDD.
 
 Jeśli chcemy sprawdzić ile elementów zawiera nasz RDD możemy skorzystać z funkcji *count* oraz *countByValue* zwracająca ilość unikalnych elementów w postaci mapy element -> liczność.
 
+Python:
+~~~Python
 nums = sc.parallelize([1,1,3,3,5])
 count = nums.count()
 print(count)
+
 countByValue = nums.countByValue()
 print(countByValue)
+~~~
 
 ## Wykonywanie operacji na każdym elemencie
 
 Jeśli zajdzie nam potrzeba wykonania jakiejś operacji na każdym elemencie w sposób rozproszony bez konieczności zwracania jej wyniku, możemy skorzystać z funkcji *foreach*.
 
+Python:
+~~~Python
 nums = sc.parallelize([1,1,3,3,5])
 def f(x): print(x)
 
 nums.foreach(f)
-
+~~~
 
 # Legenda
 * Strona projektu http://spark.apache.org
