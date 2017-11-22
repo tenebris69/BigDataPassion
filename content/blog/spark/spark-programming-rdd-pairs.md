@@ -137,10 +137,7 @@ wordCount = wordsRdd.countByValue()
 print(wordCount)
 ~~~
 
-
-
-
-
+## Sortowanie po kluczu
 
 Python:
 ~~~Python
@@ -150,6 +147,7 @@ sort = valueRdd.sortByKey()
 sort.collect()
 ~~~
 
+## Zliczanie po kluczu
 
 Python:
 ~~~Python
@@ -158,27 +156,3 @@ valueRdd = sc.parallelize(values)
 count = valueRdd.countByKey()
 print(count)
 ~~~
-
-
-x = sc.parallelize([("a", 1), ("b", 4)])
-y = sc.parallelize([("a", 2), ("a", 3)])
-sorted(x.join(y).collect())
-
-
-
-x = sc.parallelize([("a", 1), ("b", 4)])
-y = sc.parallelize([("a", 2)])
-x.cogroup(y).collect()
-
-
-
-
-movies = sc.textFile("/user/sages/dane/ml-10M100K/movies.dat");
-genres1 = movies.map(lambda m: m.split("::")[2] )
-genres2 = genres1.flatMap(lambda g: g.split("|") )
-result = genres2.map(lambda g: (g,1) ).reduceByKey(lambda x,y: x+y)
-result.collect()
-result.saveAsTextFile("/user/sages/wyniki/spark/genres")
-
-
-//genres2.map(lambda g: (g,1) ).countByKey()
