@@ -2,7 +2,7 @@
 author = "Radosław Szmit"
 categories = ["Dystrybucje Big Data","Hortonworks Data Platform (HDP)","Administracja Big Data"]
 date = "2018-03-04"
-description = "Instalacja HDP 2.6 na pojedynczej maszynie z wykorzystaniem CentoOS 7 i Virtualbox"
+description = "Instalacja HDP 2.6 na pojedynczej maszynie z wykorzystaniem CentoOS 6 i Virtualbox"
 featured = "hortonworks-logo.png"
 featuredalt = ""
 featuredpath = "/img/administration"
@@ -14,11 +14,11 @@ type = "post"
 
 W tym poście pokażę jak przygotować sobie jedną wirtualną maszynę z zainstalowaną dystrybucją Hortonworks. Taką maszynę, zwaną sandbox'em możemy wykorzystywać do celów testowych i developerskich.
 
-# Stworzenie maszyny wirtualbox i instalacja systemu operacyjnego CentOS 7
+# Stworzenie maszyny wirtualbox i instalacja systemu operacyjnego CentOS 6
 
-Zaczniemy od stworzenia maszyny wirtualnej i instalacji na niej systemu CentOS 7. Opis jak to zrobić można znaleźć [tutaj](/blog/virtualbox-installing-cluster-with-centos)
+Zaczniemy od stworzenia maszyny wirtualnej i instalacji na niej systemu CentOS 6. Opis jak to zrobić można znaleźć [tutaj](/blog/virtualbox-installing-cluster-with-centos)
 
-# Przygotowanie systemu operacyjnego CentOS 7
+# Przygotowanie systemu operacyjnego CentOS 6
 
 ## Aktualizacja systemu
 
@@ -45,7 +45,7 @@ dhclient -v
 W celu skonfigurowania tego na stałe warto zmienić wartość (ONBOOT=yes) w pliku /etc/sysconfig/network-scripts/ifcfg-eth0
 
 ~~~shell
-vim /etc/sysconfig/network-scripts/ifcfg-enp0s3
+vim /etc/sysconfig/network-scripts/ifcfg-eth0
 ~~~
 
 ### Włączamy logowanie root'a po haśle
@@ -57,10 +57,6 @@ vim /etc/ssh/sshd_config
 ~~~
 
 (UWAGA nigdy tego nie róbmy na produkcyjnych serwerach, NIGDY!)
-
-## Mapowanie portów NAT
-
-TODO
 
 ## Logowanie po SSH
 
@@ -74,11 +70,15 @@ ssh root@localhost -p 2222
 
 Jeśli podczas instalacji nie ustawiliśmy adresu naszej maszyny możemy zrobić to teraz:
 
+Do pliku /etc/sysconfig/network dodajemy wpis:
+~~~
+NETWORKING=yes
+HOSTNAME=sandbox.hortonworks.com
+~~~
+
+Sprawdzamy za pomocą:
+
 ~~~shell
-hostnamectl set-hostname sandbox.hortonworks.com
-
-hostnamectl status
-
 hostname
 hostname -f
 ~~~
@@ -139,9 +139,8 @@ sestatus
 ## Wyłączamy Firewall'a
 
 ~~~shell
-systemctl disable firewalld
-systemctl stop firewalld
-systemctl status firewalld
+chkconfig iptables off
+/etc/init.d/iptables stop
 ~~~
 
 ## Włączamy serwer czasu NTP
@@ -149,9 +148,8 @@ systemctl status firewalld
 ~~~shell
 yum install -y ntp
 
-systemctl enable ntpd
-systemctl start ntpd
-systemctl status ntpd
+chkconfig ntpd on
+service ntpd start
 ~~~
 
 ## Ustawiamy zalecany domyślny umask

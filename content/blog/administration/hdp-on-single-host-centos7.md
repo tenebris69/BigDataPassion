@@ -58,10 +58,6 @@ vim /etc/ssh/sshd_config
 
 (UWAGA nigdy tego nie róbmy na produkcyjnych serwerach, NIGDY!)
 
-## Mapowanie portów NAT
-
-TODO
-
 ## Logowanie po SSH
 
 Jeśli korzystamy z systemów Linux/Mac wygodnym rozwiązaniem może okazać się konfiguracja dostępu z swojego komputer i swojej konsoli. Żeby nie musieć podawać przy logowaniu ciągle hasła, warto wrzucić na maszynę wirtualną swój klucz publiczny by logować się bez hasła.
