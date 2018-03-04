@@ -179,6 +179,7 @@ yum localinstall mysql57-community-release-el7-11.noarch.rpm
 yum update
 ~~~
 
+Gdybyśmy mieli problemy możemy skorzystać z
 ~~~shell
 yum clean all
 yum clean dbcache
