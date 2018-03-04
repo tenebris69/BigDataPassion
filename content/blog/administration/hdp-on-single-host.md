@@ -169,10 +169,22 @@ Aktualnie większość systemów Linux dostarcza domyślnie pakiety dla MariaDB 
 
 ~~~shell
 wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
-sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm
+rpm -Uvh mysql57-community-release-el7-11.noarch.rpm
+yum update
+~~~
+lub
+~~~shell
+wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+yum localinstall mysql57-community-release-el7-11.noarch.rpm
+yum update
 ~~~
 
-
+~~~shell
+yum clean all
+yum clean dbcache
+yum clean metadata
+yum makecache
+~~~
 
 
 
@@ -220,7 +232,7 @@ TODO
 
 # Instalacja środowiska graficznego
 
-### Instalacja pakietów i narzędzi
+## Instalacja pakietów i narzędzi
 ~~~shell
 yum -y groupinstall "X Window System"
 yum -y groupinstall "Desktop"
@@ -231,20 +243,20 @@ yum -y groupinstall "Fonts"
 yum -y groupinstall "Internet Browser"
 ~~~
 
-### Instalacja przydatnych narzędzi
+## Instalacja przydatnych narzędzi
 
 ~~~shell
-yum -y install gnome-system-monitor firefox htop git vim mc gedit 
+yum -y install gnome-system-monitor firefox htop git vim mc gedit wget
 ~~~
 
-### Instalacja dodatków dla Virtualbox Guest
+## Instalacja dodatków dla Virtualbox Guest
 
 ~~~shell
 yum -y install kernel*
 yum -y install gcc kernel-devel kernel-headers dkms make bzip2 perl
 ~~~
 
-### Dodawanie użytkownika
+## Dodawanie użytkownika
 
 ~~~shell
 adduser sages
@@ -253,7 +265,7 @@ passwd sages
 
 Restartujemy maszynę
 
-### Uruchomienie trybu graficznego
+## Uruchomienie trybu graficznego
 ~~~shell
 startx
 ~~~

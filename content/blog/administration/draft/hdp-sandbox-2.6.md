@@ -28,7 +28,7 @@ http://hortonworks.com/products/hortonworks-sandbox/#install
 
 ### Przydatne narzędzia
 ~~~shell
-yum -y install gnome-system-monitor firefox htop git vim mc gedit wget
+
 ~~~
 
 ### Pulpit graficzny
