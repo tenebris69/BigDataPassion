@@ -90,7 +90,7 @@ vim /etc/hosts
 
 na odpowiednią wartość:
 ~~~
-127.0.0.1 hdp1.hortonworks.com
+127.0.0.1 hdp1 hdp1.hortonworks.com
 ~~~
 
 Na koniec wykonujemy:
