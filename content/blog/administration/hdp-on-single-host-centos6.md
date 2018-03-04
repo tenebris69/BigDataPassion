@@ -202,7 +202,14 @@ Po tej operacji można zrestartować maszynę. Przed kontynuacją ustawmy naszej
 
 Jeśli wszystko poszło jak trzeba, możemy zalogować się do Ambari we własnej przeglądarce pod adresem: http://localhost:8080/
 
-TODO
+# Instalacja sterownika JDBC
+
+~~~shell
+yum -y install mysql-connector-java*
+ls -al /usr/share/java/mysql-connector-java.jar
+cd /var/lib/ambari-server/resources/
+ln -s /usr/share/java/mysql-connector-java.jar mysql-connector-java.jar
+~~~
 
 
 
