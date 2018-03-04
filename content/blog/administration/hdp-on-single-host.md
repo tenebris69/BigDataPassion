@@ -155,38 +155,42 @@ echo umask 0022 >> /etc/profile
 
 Na koniec restartujemy maszynę.
 
+
+
+
 # Instalacja Apache Ambari
 
-### Dodajemy repozytorium Ambari
+## Dodajemy repozytorium Ambari
 ~~~shell
-wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.5.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.1.3/ambari.repo -O /etc/yum.repos.d/ambari.repo
 ~~~
-(UWAGA w momencie tworzenia tego artykułu wersja 2.5.2.0 miała bug'a i nie dało się jej skonfigurować na Centos 6.9)
 
-### Instalujemy Ambari
+## Instalujemy Ambari
 ~~~shell
 yum install ambari-server -y
 ~~~
 
-### Konfigurujemy Ambari
+## Konfigurujemy Ambari
 (W każdym pytaniu wybieramy odpowiedź domyślną klikając klawisz *Enter* za każdrym razem)
 ~~~shell
 ambari-server setup
 ~~~
 
-### Restartujemy Ambari
+## Restartujemy Ambari
 ~~~shell
 ambari-server start
 ~~~
 
 Po tej operacji można zrestartować maszynę. Przed kontynuacją ustawmy naszej maszynie przynajmniej 4 rdzenie oraz przynajmniej 8GB RAM.
 
-
 # Instalacja dystrybucji Hortonworks
 
 Jeśli wszystko poszło jak trzeba, możemy zalogować się do Ambari we własnej przeglądarce pod adresem: http://localhost:8080/
 
 TODO
+
+
+
 
 
 
