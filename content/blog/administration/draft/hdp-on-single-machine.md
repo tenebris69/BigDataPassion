@@ -23,7 +23,7 @@ rpm -ivh epel-release-7-9.noarch.rpm
 yum update -y
 yum repolist
 
-yum install -y vim wget htop ntp openssh-server openssh-clients nano bash-completion
+
 
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config

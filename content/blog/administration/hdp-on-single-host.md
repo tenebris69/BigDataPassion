@@ -100,21 +100,21 @@ Dodajemy repozytorium dodatkowych narzędzi systemowych
 yum -y install epel-release
 ~~~
 
-### Instalacja przydatnych narzędzi
+## Instalacja przydatnych narzędzi
 
 ~~~shell
-yum -y install wget vim htop ntp openssh-server openssh-clients nano bash-completion
+yum -y install wget vim htop ntp openssh-server openssh-clients nano bash-completion tree
 ~~~
 
-### Konfiguracja kluczy publicznego i prywatnego
+## Konfiguracja kluczy publicznego i prywatnego
 
 Hadoop do działania wymaga by użytkownik systemowy mógł logować się do innych maszyn bez hasła za pomocą infrastruktury klucza prywatnego i publicznego, dlatego wykonujemy poniższe polecenia:
-
 (przy pierwszym naciskamy klawisz *Enter* kilka razy, przy drugim wybieramy *yes* i wpisujemy hasło użytkownika *root*)
+
 ~~~shell
 ssh-keygen
-ssh-copy-id sandbox.bigdatapassion.pl
-ssh sandbox.bigdatapassion.pl
+ssh-copy-id sandbox.hortonworks.com
+ssh sandbox.hortonworks.com
 ~~~
 
 ### Wyłączamy SELINUX
@@ -124,6 +124,8 @@ sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 
 setenforce 0
+
+sestatus
 ~~~
 
 ### Wyłączamy Firewall'a
