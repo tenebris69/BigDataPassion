@@ -195,3 +195,15 @@ cat /etc/os-release
 
 
 https://linuxconfig.org/how-to-check-centos-version
+
+
+
+
+radek@radek ~ $ ssh root@hadoop2
+Warning: the ECDSA host key for 'hadoop2' differs from the key for the IP address '192.168.172.181'
+Offending key for IP in /home/radek/.ssh/known_hosts:216
+Matching host key in /home/radek/.ssh/known_hosts:210
+radek@radek ~ $
+radek@radek ~ $
+radek@radek ~ $ sed -i '216d' /home/radek/.ssh/known_hosts
+

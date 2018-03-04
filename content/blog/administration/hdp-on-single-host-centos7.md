@@ -2,7 +2,7 @@
 author = "Radosław Szmit"
 categories = ["Dystrybucje Big Data","Hortonworks Data Platform (HDP)","Administracja Big Data"]
 date = "2018-03-04"
-description = "Instalacja HDP 2.6 na pojedynczej maszynie z wykorzystaniem CentoOS 7 i Virtualbox"
+description = "Instalacja HDP 2.6.4.0 na pojedynczej maszynie z wykorzystaniem CentoOS 7 i Virtualbox"
 featured = "hortonworks-logo.png"
 featuredalt = ""
 featuredpath = "/img/administration"
