@@ -188,6 +188,10 @@ yum makecache
 
 
 
+
+
+
+
 # Instalacja Apache Ambari
 
 ## Dodajemy repozytorium Ambari

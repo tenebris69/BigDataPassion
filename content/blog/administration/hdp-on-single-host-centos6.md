@@ -161,29 +161,8 @@ echo umask 0022 >> /etc/profile
 
 Na koniec restartujemy maszynę.
 
-## Instalacja repozytorium MySQL
 
-Aktualnie większość systemów Linux dostarcza domyślnie pakiety dla MariaDB a nie MySQL'a z którego korzysta Ambari, dlatego musimy pobrać najnowszą wersję ze strony: https://dev.mysql.com/downloads/repo/yum/
 
-~~~shell
-wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
-rpm -Uvh mysql57-community-release-el7-11.noarch.rpm
-yum update
-~~~
-lub
-~~~shell
-wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
-yum localinstall mysql57-community-release-el7-11.noarch.rpm
-yum update
-~~~
-
-Gdybyśmy mieli problemy możemy skorzystać z
-~~~shell
-yum clean all
-yum clean dbcache
-yum clean metadata
-yum makecache
-~~~
 
 
 
@@ -194,8 +173,8 @@ yum makecache
 
 ## Dodajemy repozytorium Ambari
 ~~~shell
-wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.1.3/ambari.repo -O /etc/yum.repos.d/ambari.repo
-wget -nv http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.4.0/hdp.repo -O /etc/yum.repos.d/hdp.repo
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.6.1.3/ambari.repo -O /etc/yum.repos.d/ambari.repo
+wget -nv http://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.6.4.0/hdp.repo -O /etc/yum.repos.d/hdp.repo
 yum repolist
 yum update
 ~~~
