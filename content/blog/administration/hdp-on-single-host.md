@@ -168,7 +168,8 @@ Na koniec restartujemy maszynę.
 Aktualnie większość systemów Linux dostarcza domyślnie pakiety dla MariaDB a nie MySQL'a z którego korzysta Ambari, dlatego musimy pobrać najnowszą wersję ze strony: https://dev.mysql.com/downloads/repo/yum/
 
 ~~~shell
-wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
+wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+sudo rpm -ivh mysql57-community-release-el7-11.noarch.rpm
 ~~~
 
 
