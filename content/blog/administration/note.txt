@@ -1,5 +1,9 @@
 
 
+
+
+
+
 sudo yum install ftp://mirror.switch.ch/pool/4/mirror/centos/7/os/x86_64/Packages/libtirpc-devel-0.2.4-0.8.el7.x86_64.rpm
 
 
@@ -31,12 +35,10 @@ https://www.rpmfind.net/linux/RPM/centos/updates/6.9/x86_64/Packages/libtirpc-de
 
 
 
-for i in {1..5..1}; do ssh-keygen -f "/home/radek/.ssh/known_hosts" -R hdp${i}; done
-for i in {1..5..1}; do ssh-keygen -f "/home/radek/.ssh/known_hosts" -R aws${i}; done
 
 
-for i in {1..5..1}; do ssh root@hdp${i} uptime; done
-for i in {1..5..1}; do ssh aws${i} uptime; done
+
+
 
 cssh root@hdp{1..5}
 cssh aws{1..5}
