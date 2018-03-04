@@ -2,7 +2,7 @@
 author = "Radosław Szmit"
 categories = ["Dystrybucje Big Data","Hortonworks Data Platform (HDP)","Administracja Big Data"]
 date = "2017-07-29T13:18:32+02:00"
-description = "Instalacja HDP 2.6 na pojedynczej maszynie z wykorzystaniem CentoOS 6.9 i Virtualbox 5.1"
+description = "Instalacja HDP 2.6 na pojedynczej maszynie z wykorzystaniem CentoOS 7 i Virtualbox"
 featured = "hortonworks-logo.png"
 featuredalt = ""
 featuredpath = "/img/administration"
@@ -67,14 +67,15 @@ ssh root@localhost -p 2222
 Jeśli podczas instalacji nie ustawiliśmy adresu naszej maszyny możemy zrobić to teraz:
 
 ~~~shell
-vim /etc/sysconfig/network
+hostnamectl set-hostname sandbox.hortonworks.com
+
+hostnamectl status
+
+hostname
+hostname -f
 ~~~
 
-wartosć pliku:
-~~~
-NETWORKING=yes
-HOSTNAME=sandbox.bigdatapassion.pl
-~~~
+Polecenie hostname i hostname -f powinny zwracać tą samą wartość.
 
 Warto też ustawić to samo w pliku hosts:
 
@@ -84,15 +85,14 @@ vim /etc/hosts
 
 wartość pliku:
 ~~~
-127.0.0.1   sandbox sandbox.bigdatapassion.pl
+127.0.0.1   sandbox sandbox.hortonworks.com
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 ~~~
 
 Po tej operacji warto zrestartować system.
 
-
-### Konfiguracja epel release
+## Konfiguracja epel release
 
 Dodajemy repozytorium dodatkowych narzędzi systemowych
 
