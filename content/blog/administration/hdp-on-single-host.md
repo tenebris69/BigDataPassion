@@ -20,6 +20,13 @@ Zaczniemy od stworzenia maszyny wirtualnej i instalacji na niej systemu CentOS 7
 
 # Przygotowanie systemu operacyjnego CentOS 7
 
+## Aktualizacja systemu
+
+Żeby pracować na najnowszej wersji systemu należy go zaktualizować
+~~~
+yum -y upgrade
+~~~
+
 ## Instalacja Vim
 
 ~~~shell
