@@ -1,7 +1,7 @@
 +++
 author = "Radosław Szmit"
 categories = ["Dystrybucje Big Data","Hortonworks Data Platform (HDP)","Administracja Big Data"]
-date = "2017-07-29T13:18:32+02:00"
+date = "2018-03-04"
 description = "Instalacja HDP 2.6 na pojedynczej maszynie z wykorzystaniem CentoOS 7 i Virtualbox"
 featured = "hortonworks-logo.png"
 featuredalt = ""
@@ -117,7 +117,7 @@ ssh-copy-id sandbox.hortonworks.com
 ssh sandbox.hortonworks.com
 ~~~
 
-### Wyłączamy SELINUX
+## Wyłączamy SELINUX
 
 ~~~shell
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
@@ -128,22 +128,25 @@ setenforce 0
 sestatus
 ~~~
 
-### Wyłączamy Firewall'a
+## Wyłączamy Firewall'a
 
 ~~~shell
-service iptables stop
-/etc/init.d/iptables stop
-chkconfig iptables off
+systemctl disable firewalld
+systemctl stop firewalld
+systemctl status firewalld
 ~~~
 
-### Włączamy serwer czasu NTP
+## Włączamy serwer czasu NTP
 
 ~~~shell
 yum install -y ntp
-chkconfig ntpd on
+
+systemctl enable ntpd
+systemctl start ntpd
+systemctl status ntpd
 ~~~
 
-### Ustawiamy zalecany domyślny umask
+## Ustawiamy zalecany domyślny umask
 
 ~~~shell
 umask 0022
@@ -151,9 +154,6 @@ echo umask 0022 >> /etc/profile
 ~~~
 
 Na koniec restartujemy maszynę.
-
-
-
 
 # Instalacja Apache Ambari
 
