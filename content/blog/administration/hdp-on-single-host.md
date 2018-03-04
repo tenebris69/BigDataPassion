@@ -24,6 +24,7 @@ Zaczniemy od stworzenia maszyny wirtualnej i instalacji na niej systemu CentOS 7
 
 Żeby pracować na najnowszej wersji systemu należy go zaktualizować
 ~~~
+yum -y update
 yum -y upgrade
 ~~~
 

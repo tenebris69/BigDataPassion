@@ -13,8 +13,7 @@ type = "post"
 draft = true
 +++
 
-yum -y update
-yum -y upgrade
+
 
 yum install -y wget
 
