@@ -25,3 +25,10 @@ for i in {1..5..1}; do ssh aws${i} uptime; done
 for i in {1..5..1}; do ssh-keygen -f "/home/radek/.ssh/known_hosts" -R hdp${i}; done
 for i in {1..5..1}; do ssh-keygen -f "/home/radek/.ssh/known_hosts" -R aws${i}; done
 ~~~
+
+# Połączenie się do maszyn
+
+~~~shell
+cssh hdp{1..5}
+cssh aws{1..5}
+~~~

@@ -33,12 +33,3 @@ yum localinstall --nogpgcheck libtirpc-devel-0.2.1-13.el6_9.x86_64.rpm
 
 https://www.rpmfind.net/linux/RPM/centos/updates/6.9/x86_64/Packages/libtirpc-devel-0.2.1-13.el6_9.x86_64.html
 
-
-
-
-
-
-
-
-cssh root@hdp{1..5}
-cssh aws{1..5}
