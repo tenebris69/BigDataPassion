@@ -10,28 +10,23 @@ linktitle = ""
 title = "Instalacja HDP 2.6 na pojedynczej maszynie"
 type = "post"
 
-draft = true
 +++
 
 W tym poście pokażę jak przygotować sobie jedną wirtualną maszynę z zainstalowaną dystrybucją Hortonworks. Taką maszynę, zwaną sandbox'em możemy wykorzystywać do celów testowych i developerskich.
 
-# Stworzenie maszyny wirtualbox
+# Stworzenie maszyny wirtualbox i instalacja systemu operacyjnego CentOS 7
 
-TODO
+Zaczniemy od stworzenia maszyny wirtualnej i instalacji na niej systemu CentOS 7. Opis jak to zrobić można znaleźć [tutaj](/blog/virtualbox-installing-cluster-with-centos)
 
-# Instalacja systemu operacyjnego CentOS 6.9
+# Przygotowanie systemu operacyjnego CentOS 7
 
-TODO
-
-# Przygotowanie systemu operacyjnego CentOS 6.9
-
-### Instalacja Vim
+## Instalacja Vim
 
 ~~~shell
 yum -y install vim
 ~~~
 
-### Włączamy automatyczne DHCP
+## Włączamy automatyczne DHCP
 
 Aby włączyć ręcznie dhcp należy wykonać:
 
@@ -42,12 +37,12 @@ dhclient -v
 W celu skonfigurowania tego na stałe warto zmienić wartość (ONBOOT=yes) w pliku /etc/sysconfig/network-scripts/ifcfg-eth0
 
 ~~~shell
-vim /etc/sysconfig/network-scripts/ifcfg-eth0
+vim /etc/sysconfig/network-scripts/ifcfg-enp0s3
 ~~~
 
 ### Włączamy logowanie root'a po haśle
 
-Ustawiamy parametr (PerminRootLogin yes) w pliku /etc/ssh/sshd_config
+Ustawiamy parametr (PermitRootLogin yes) w pliku /etc/ssh/sshd_config
 
 ~~~shell
 vim /etc/ssh/sshd_config
@@ -55,11 +50,11 @@ vim /etc/ssh/sshd_config
 
 (UWAGA nigdy tego nie róbmy na produkcyjnych serwerach, NIGDY!)
 
-### Mapowanie portów NAT
+## Mapowanie portów NAT
 
 TODO
 
-### Logowanie po SSH
+## Logowanie po SSH
 
 Jeśli korzystamy z systemów Linux/Mac wygodnym rozwiązaniem może okazać się konfiguracja dostępu z swojego komputer i swojej konsoli. Żeby nie musieć podawać przy logowaniu ciągle hasła, warto wrzucić na maszynę wirtualną swój klucz publiczny by logować się bez hasła.
 
@@ -67,7 +62,7 @@ ssh-copy-id root@localhost -p 2222
 ssh root@localhost -p 2222
 
 
-### Zmieniamy hostname
+## Zmieniamy hostname
 
 Jeśli podczas instalacji nie ustawiliśmy adresu naszej maszyny możemy zrobić to teraz:
 
