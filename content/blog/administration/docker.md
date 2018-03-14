@@ -28,6 +28,12 @@ docker ps -a
 # Usunięcie kontenerów
 docker rm `docker ps -aq`
 
+# Podgląd
+docker inspect centos
+
 # Uruchomienie
 docker run [--name=NAZWA] OBRAZ [POLECENIE]
 docker run centos echo "Witaj świeci"
+
+# Logi
+docker logs [nazwa]
