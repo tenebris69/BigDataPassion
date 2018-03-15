@@ -37,3 +37,6 @@ docker run centos echo "Witaj świeci"
 
 # Logi
 docker logs [nazwa]
+
+# Bash
+docker exec -it NAZWA_URUCHOMIONEGO_KONTENERA bash
