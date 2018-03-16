@@ -40,3 +40,6 @@ docker logs [nazwa]
 
 # Bash
 docker exec -it NAZWA_URUCHOMIONEGO_KONTENERA bash
+
+# Networking
+docker network rm `docker network ls -q`
