@@ -41,7 +41,11 @@ apt install -y vim-addon-manager
 apt install -y wget
 ~~~
 
-
+W przypadku git'a warto od razu dodać podstawową konfigurację:
+~~~shell
+git config --global user.name "Imię Nazwisko"
+git config --global user.email "naszEmail@host.com"
+~~~
 
 
 
