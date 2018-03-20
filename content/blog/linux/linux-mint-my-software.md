@@ -18,18 +18,25 @@ Do pracy, zwłaszcza tej komfortowej, potrzebujemy odpowiedniego oprogramowania 
 
 ~~~shell
 apt install -y alacarte
+apt install -y bmon
 apt install -y byobu
+apt install -y clusterssh
 apt install -y gedit
 apt install -y git
 apt install -y gource
 apt install -y htop
+apt install -y iptraf
 apt install -y keepassx
 apt install -y konsole
+apt install -y meld
 apt install -y multitail
 apt install -y ncdu
 apt install -y openssh-server
+apt install -y openvpn
+apt install -y ssh
 apt install -y tree
 apt install -y vim
+apt install -y vim-addon-manager
 apt install -y wget
 ~~~
 
