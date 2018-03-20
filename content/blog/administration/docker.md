@@ -27,7 +27,9 @@ docker ps
 docker ps -a
 
 # Usunięcie kontenerów
+~~~shell
 docker rm `docker ps -aq`
+~~~
 
 # Podgląd
 docker inspect centos
