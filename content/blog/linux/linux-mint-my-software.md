@@ -29,6 +29,7 @@ apt install -y htop
 apt install -y iptraf
 apt install -y keepassx
 apt install -y konsole
+apt install -y mc
 apt install -y meld
 apt install -y multitail
 apt install -y ncdu
