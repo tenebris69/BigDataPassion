@@ -12,7 +12,13 @@ type = "post"
 
 +++
 
-# Debian
+W tym poście zbiór poleceń pozwalających sprawdzić jakiej wersji systemu używamy. Przydatne gdy chcemy doinstalować dodatkowe oprogramowanie.
+
+# Debian / Ubuntu / Mint
+
+Zaczynamy od najpopularniejszej według https://distrowatch.com/ gałęzi systemów opartych o dystrybucję Debian:
+
+![](https://upload.wikimedia.org/wikipedia/commons/d/d8/Debian_family_tree_11-06.png)
 
 ~~~shell
 cat /etc/debian_version
@@ -54,5 +60,3 @@ wersję Ubuntu dostaniemy:
 cat /etc/upstream-release/lsb-release
 ~~~
 
-# CentOS
-# RedHat
