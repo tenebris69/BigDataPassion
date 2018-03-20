@@ -37,6 +37,7 @@ cat /etc/linuxmint/info
 uname -a
 lsb_release -a
 lsb_release -cs
+lsb_release -d
 ~~~
 
 # Red Hat / CentOS / Fedora
@@ -44,3 +45,18 @@ lsb_release -cs
 Teraz kolej na dystrybucje z rodziny Red Hat'a
 
 ![](https://upload.wikimedia.org/wikipedia/commons/a/a3/Redhat_family_tree_11-06.png)
+
+~~~shell
+cat /etc/centos-release
+cat /etc/os-release
+cat /etc/redhat-release
+cat /etc/system-release
+
+hostnamectl
+rpm --query centos-release
+
+uname -a
+lsb_release -a
+lsb_release -cs
+lsb_release -d
+~~~
