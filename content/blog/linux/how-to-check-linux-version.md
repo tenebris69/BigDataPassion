@@ -36,6 +36,7 @@ cat /etc/linuxmint/info
 
 uname -a
 lsb_release -a
+lsb_release -cs
 ~~~
 
 # Red Hat / CentOS / Fedora
