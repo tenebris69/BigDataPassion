@@ -69,6 +69,15 @@ apt-get update
 apt-get install google-chrome-stable
 ~~~
 
+# Slack
+~~~shell
+echo "deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main" > /etc/apt/sources.list.d/slack.list
+wget -O - https://packagecloud.io/slacktechnologies/slack/gpgkey  | sudo apt-key add -
+
+apt-get update
+apt-get install slack-desktop
+~~~
+
 
 
 
