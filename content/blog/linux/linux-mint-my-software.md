@@ -101,11 +101,13 @@ apt-get install \
     software-properties-common
     
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 
 # apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
 echo "deb [arch=amd64] https://apt.dockerproject.org/repo ubuntu-xenial main" > /etc/apt/sources.list.d/docker.list
-apt update
 
+apt update
+apt-get install docker-ce
 ~~~
 
 
