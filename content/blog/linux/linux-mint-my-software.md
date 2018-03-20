@@ -40,6 +40,10 @@ apt install -y vim-addon-manager
 apt install -y wget
 ~~~
 
+
+
+
+
 # Dropbox
 ~~~shell
 apt install -y dropbox
@@ -49,6 +53,16 @@ apt install -y dropbox
 ~~~shell
 apt install -y nextcloud-client
 ~~~
+
+# Spotify
+~~~shell
+echo "deb [arch=amd64] http://repository.spotify.com stable non-free" > /etc/apt/sources.list.d/spotify.list
+apt install spotify-client
+~~~
+
+
+
+
 
 # Aktualizacja systemu
 ~~~shell
