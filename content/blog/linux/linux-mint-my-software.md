@@ -89,6 +89,23 @@ apt-get update
 apt-get install virtualbox-5.2
 ~~~
 
+# Docker
+~~~shell
+#apt-get remove docker docker-engine docker.io
+
+apt-get update
+apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+    
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+apt update
+
+~~~
 
 
 # Aktualizacja systemu
