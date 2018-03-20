@@ -78,6 +78,16 @@ apt-get update
 apt-get install slack-desktop
 ~~~
 
+# Virtualbox
+~~~shell
+echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian xenial contrib" > /etc/apt/sources.list.d/virtualbox.list
+wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+
+apt-get update
+apt-get install virtualbox-5.2
+~~~
 
 
 
