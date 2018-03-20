@@ -1,7 +1,7 @@
 +++
 author = "Radosław Szmit"
-categories = ["Linux"]
-date = "2017-10-14T07:14:15+02:00"
+categories = ["Administracja", "Linux"]
+date = "2018-03-20T21:27:14+01:00"
 description = ""
 featured = ""
 featuredalt = ""
@@ -10,7 +10,6 @@ linktitle = ""
 title = "Jak sprawdzić jakiej wersji Linux'a używamy"
 type = "post"
 
-draft = true
 +++
 
 # Debian

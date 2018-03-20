@@ -1,0 +1,11 @@
+
+# Dodawanie nowego wpisu
+hugo new blog/folder/article-name.md
+
+# Uruchomienie serwera
+
+rm -rf public/*; hugo server
+
+# Adres serwera
+
+http://localhost:1313/
