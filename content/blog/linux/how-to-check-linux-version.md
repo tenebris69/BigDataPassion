@@ -20,44 +20,22 @@ Zaczynamy od najpopularniejszej według https://distrowatch.com/ gałęzi system
 
 ![](https://upload.wikimedia.org/wikipedia/commons/d/d8/Debian_family_tree_11-06.png)
 
+* Wydania Debiana: https://wiki.debian.org/DebianReleases
+* Wydania Ubuntu: https://wiki.ubuntu.com/Releases
+* Wydania Mint'a: https://linuxmint.com/download_all.php
+
 ~~~shell
 cat /etc/debian_version
-~~~
-
-~~~shell
-uname -a
-~~~
-
-https://wiki.debian.org/DebianReleases
-
-# Ubuntu
-
-Jak w Debian oraz dodatkowo:
-
-~~~shell
 cat /etc/issue
-~~~
 
-~~~shell
-lsb_release -a
-~~~
-
-~~~shell
-cat /etc/*release
 cat /etc/lsb-release
-~~~
+cat /etc/os-release
 
-# Linux Mint
-
-Jak w Debian i Ubuntu oraz dodatkowo:
-
-~~~shell
-cat /etc/linuxmint/info
-~~~
-
-wersję Ubuntu dostaniemy:
-~~~shell
 cat /etc/upstream-release/lsb-release
+cat /etc/linuxmint/info
+
+uname -a
+lsb_release -a
 ~~~
 
 # Red Hat / CentOS / Fedora
