@@ -17,22 +17,20 @@ Do pracy, zwłaszcza tej komfortowej, potrzebujemy odpowiedniego oprogramowania 
 # Podstawowe pakiety
 
 ~~~shell
-apt install -y htop
-apt install -y tree
-apt install -y konsole
-apt install -y wget
-
-apt install -y vim
-apt install -y gedit
-apt install -y multitail
-
-apt install -y git
 apt install -y alacarte
-apt install -y gource
 apt install -y byobu
+apt install -y gedit
+apt install -y git
+apt install -y gource
+apt install -y htop
 apt install -y keepassx
-apt install -y openssh-server
+apt install -y konsole
+apt install -y multitail
 apt install -y ncdu
+apt install -y openssh-server
+apt install -y tree
+apt install -y vim
+apt install -y wget
 ~~~
 
 # Dropbox
