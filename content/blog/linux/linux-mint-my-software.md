@@ -102,6 +102,7 @@ apt-get install \
     
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
+echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian xenial contrib" > /etc/apt/sources.list.d/virtualbox.list
 apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
 apt update
 
