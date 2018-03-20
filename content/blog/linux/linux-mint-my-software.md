@@ -21,6 +21,7 @@ apt install -y alacarte
 apt install -y bmon
 apt install -y byobu
 apt install -y clusterssh
+apt install -y filezilla
 apt install -y gedit
 apt install -y git
 apt install -y gource
