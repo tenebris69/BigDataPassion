@@ -60,3 +60,8 @@ wersję Ubuntu dostaniemy:
 cat /etc/upstream-release/lsb-release
 ~~~
 
+# Red Hat / CentOS / Fedora
+
+Teraz kolej na dystrybucje z rodziny Red Hat'a
+
+![](https://upload.wikimedia.org/wikipedia/commons/a/a3/Redhat_family_tree_11-06.png)
