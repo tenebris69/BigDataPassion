@@ -19,8 +19,9 @@ docker --version
 
 # Obrazy
 docker images
-docker rmi `docker images -q`
 docker rmi centos
+docker rmi `docker images -q`
+docker rmi -f `docker images -q`
 
 # Kontenery
 docker ps
