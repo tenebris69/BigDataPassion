@@ -19,6 +19,7 @@ docker --version
 
 # Obrazy
 docker images
+docker rmi `docker images -q`
 docker rmi centos
 
 # Kontenery
@@ -27,6 +28,7 @@ docker ps -a
 
 # Usunięcie kontenerów
 docker rm `docker ps -aq`
+docker rm -f `docker ps -aq`
 
 # Podgląd
 docker inspect centos
