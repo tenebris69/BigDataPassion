@@ -1,7 +1,7 @@
 +++
 author = ""
-categories = []
-date = "2017-06-01T21:43:17+02:00"
+categories = ["Administracja", "Docker"]
+date = "2018-03-21T21:43:17+02:00"
 description = ""
 featured = ""
 featuredalt = ""
@@ -10,8 +10,10 @@ linktitle = ""
 title = "Docker wprowadzenie"
 type = "post"
 
-draft = true
+draft=true
 +++
+
+Docker jest obecnie jednym z najpopularniejszych systemów konteneryzacji. O kontenerze możemy myśleć jak o czymś pomiędzy maszyną wirtualną która jest w pełni odizolowanym środowiskiem a aplikacjami instalowanymi w jednym wspólnym serwerze. 
 
 # Info
 docker info
@@ -28,8 +30,10 @@ docker ps
 docker ps -a
 
 # Usunięcie kontenerów
+~~~shell
 docker rm `docker ps -aq`
 docker rm -f `docker ps -aq`
+~~~
 
 # Podgląd
 docker inspect centos
