@@ -35,18 +35,18 @@ cssh aws{1..5}
 
 # Lista użytkowników
 ~~~shell
-for i in `cat users.txt`; do echo ${i}; done
+for i in `cat /tmp/users.txt`; do echo ${i}; done
 ~~~
 
 # Tworzenie użytkownika
 ~~~shell
-for i in `cat users.txt`; do adduser ${i} ; done
-for i in `cat users.txt`; do echo "${i}:${i}" | chpasswd ; done
+for i in `cat /tmp/users.txt`; do adduser ${i} ; done
+for i in `cat /tmp/users.txt`; do echo "${i}:${i}" | chpasswd ; done
 ~~~
 
 # Usuwanie użytkowników
 ~~~shell
-for i in `cat users.txt`; do userdel -r  ${i} ; done
+for i in `cat /tmp/users.txt`; do userdel -r  ${i} ; done
 ~~~
 
 # HDFS
