@@ -38,7 +38,7 @@ Język Java dzięki wielu optymalizacjom jest także jednym z wydajniejszych ję
 
 
 # Wirtualna Maszyna Java
-Trzeba także pamiętać, że Java to tak naprawdę nie tylko język Java, to cały ekosystem technologii i języków programowania zorientowanych wokół tak zwanej *Wirtualnej Maszyny Java*
+Trzeba także pamiętać, że Java to tak naprawdę nie tylko język Java, to cały ekosystem technologii i języków programowania zorientowanych wokół tak zwanej *Wirtualnej Maszyny Java* (Java Virtual Machine, w skrócie JVM), czyli środowiska które musimy zainstalować w naszym systemie operacyjnym (np. Windows, Linux, macOS) lub innym dowolnym urządzeniu. Dzięki takiej maszynie wirtualnej raz napisany program może być uruchomiony na dowolnym urządzeniu które ma w sobie Wirtualną Maszynę Java.
 
 
 
