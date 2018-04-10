@@ -30,6 +30,12 @@ TODO zrzut ekranu z instalacji
 
 ## Zintegrowane środowisko programistyczne
 
+Gdy mamy już wirtualną maszynę Java
+
+# Programowanie
+
+Programowanie to tak naprawdę pisanie odpowiednich instraukcji które zrozumie komputer
+
 
 
 # A na koniec coś na poprawę humoru :)
