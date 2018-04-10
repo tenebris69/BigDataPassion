@@ -29,3 +29,5 @@ Poniżej film nagrany przez Krzysztofa Gonciarza, jednego z najpopularniejszych 
 Jeśli podobały się Wam powyższe filmy i chcielibyście dowiedzieć się na czym polega właśnie to *programowanie*, chcielibyśmy rzucić Wam WYZWANIE do nauki programowania. W ciągu najbliższych kilku tygodni będziemy zamieszczać na naszym profilu tak zwane *wyzwania programistyczne*, których celem będzie zachęcenie Was do nauki programowania w języku Java. Każde takie wyzwanie będzie zawierać odnośnik do materiałów, gdzie znajdziecie odpowiednią wiedzę oraz zadanie do wykonania. Po każdym wyzwaniu liczymy na informację zwrotną czy się udało lub o problemach które napotkaliście, byśmy mogli Wam pomóc je rozwiązać.
 
 Do udziału zachęcamy wszystkich, którzy nigdy nie programowali i chcą zobaczyć na czym to polega, jak i te osoby, które już zaczęły swoją przygodę z programowaniem, ale z innym językiem programowania niż Java lub chcą uzupełnić swoją wiedzę.
+
+Link do wydarzenia na FB: https://www.facebook.com/events/1023545817795715/
