@@ -12,18 +12,23 @@ type = "post"
 
 +++
 
-Jak już wiecie, chcemy Was zachęcić i zmotywować do nauki programowania! Do rozpoczęcia tej przygody potrzebny będzie nam komputer, dostęp do internetu i dużo, dużo wytrwałości :) 
+Jak już wiecie, chcemy Was zachęcić i zmotywować do nauki programowania! Do rozpoczęcia tej przygody potrzebny będzie nam komputer, dostęp do internetu i dużo, dużo chęci i wytrwałości :) 
 
-Naszym pierwszym wyzwaniem będzie napisanie swojego pierwszego programu w Javie!
+Naszym pierwszym wyzwaniem będzie **napisanie swojego pierwszego programu w Javie!**
 
+# Przygotujmy się
 
+Zanim zaczniemy cokolwiek programować musimy przygotować nasz komputer do pracy. Będziemy potrzebować na początek **wirtualnej maszyny Java** (ang. Java Virtual Machine, w skrócie JVM) oraz środowiska dla programistów, tak zwane **zintegrowane środowisko programistyczne** (ang. integrated development environment, w skrócie IDE).
 
-# Wirtualna Maszyna Java
-Trzeba także pamiętać, że Java to tak naprawdę nie tylko język Java, to cały ekosystem technologii i języków programowania zorientowanych wokół tak zwanej *Wirtualnej Maszyny Java* (Java Virtual Machine, w skrócie JVM), czyli środowiska które musimy zainstalować w naszym systemie operacyjnym (np. Windows, Linux, macOS) lub innym dowolnym urządzeniu. Dzięki takiej maszynie wirtualnej raz napisany program może być uruchomiony na dowolnym urządzeniu które ma w sobie Wirtualną Maszynę Java.
+## Wirtualna Maszyna Java
+
+Java to jeden z najpopularniejszych języków programowania na świecie. Jednak  Java, to nie tylko język programowania, to także cały ekosystem technologii i języków programowania zorientowanych wokół tak zwanej wirtualnej maszyny Java, czyli środowiska uruchomieniowego które musimy zainstalować w naszym systemie operacyjnym (np. Windows, Linux, macOS) lub innym dowolnym urządzeniu na którym chcemy wykonywać nasze programy. Taką maszynę wirtualną znajdziemy na wielu komputerach na świecie, telefonach z systemem Android czy odtwarzaczu Blu-ray.
 
 Dlatego zanim zaczniemy cokolwiek robić w Javie, potrzebujemy zainstalować sobie wirtualną maszynę Java korzystając np. ze strony: https://www.java.com/pl/download/.
 
+TODO zrzut ekranu z instalacji
 
+## Zintegrowane środowisko programistyczne
 
 
 
