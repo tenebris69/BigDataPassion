@@ -57,3 +57,7 @@ Podstaw programowania można uczyć się samodzielnie wykorzystując intenretowe
 
 Więcej podobnych stron można znaleźć pod adresem: https://alternativeto.net/software/pluralsight/
 
+
+
+# A na koniec coś na poprawę humoru :)
+{{< youtube id="kLO1djacsfg" >}}

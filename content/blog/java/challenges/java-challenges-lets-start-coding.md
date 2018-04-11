@@ -1,7 +1,7 @@
 +++
 author = "Radosław Szmit"
 categories = ["Java", "Wyzwania"]
-date = "2018-04-16"
+date = "2018-04-11"
 description = ""
 featured = "java-kodolamacz.jpg"
 featuredalt = ""
@@ -20,23 +20,28 @@ Naszym pierwszym wyzwaniem będzie **napisanie swojego pierwszego programu w Jav
 
 Zanim zaczniemy cokolwiek programować musimy przygotować nasz komputer do pracy. Będziemy potrzebować na początek **wirtualnej maszyny Java** (ang. Java Virtual Machine, w skrócie JVM) oraz środowiska dla programistów, tak zwane **zintegrowane środowisko programistyczne** (ang. integrated development environment, w skrócie IDE).
 
-## Wirtualna Maszyna Java
 
-Java to jeden z najpopularniejszych języków programowania na świecie. Jednak  Java, to nie tylko język programowania, to także cały ekosystem technologii i języków programowania zorientowanych wokół tak zwanej wirtualnej maszyny Java, czyli środowiska uruchomieniowego które musimy zainstalować w naszym systemie operacyjnym (np. Windows, Linux, macOS) lub innym dowolnym urządzeniu na którym chcemy wykonywać nasze programy. Taką maszynę wirtualną znajdziemy na wielu komputerach na świecie, telefonach z systemem Android czy odtwarzaczu Blu-ray.
+
+### Wirtualna Maszyna Java
+
+Java to jeden z najpopularniejszych języków programowania na świecie. Jednak  Java, to nie tylko język programowania, to także cały ekosystem technologii i języków programowania zorientowanych wokół tak zwanej wirtualnej maszyny Java, czyli środowiska uruchomieniowego które musimy zainstalować w naszym systemie operacyjnym (np. Windows, Linux, macOS) lub innym dowolnym urządzeniu na którym chcemy wykonywać nasze programy. Taką maszynę wirtualną znajdziemy na większości komputerach na świecie, telefonach z systemem Android czy nawet na odtwarzaczach Blu-ray; według strony https://go.java/ obecnie już około 15 miliardów urządzeń korzysta z Javy.
 
 Dlatego zanim zaczniemy cokolwiek robić w Javie, potrzebujemy zainstalować sobie wirtualną maszynę Java korzystając np. ze strony: https://www.java.com/pl/download/.
 
 TODO zrzut ekranu z instalacji
 
-## Zintegrowane środowisko programistyczne
-
-Gdy mamy już wirtualną maszynę Java
-
-# Programowanie
-
-Programowanie to tak naprawdę pisanie odpowiednich instraukcji które zrozumie komputer
 
 
 
-# A na koniec coś na poprawę humoru :)
-{{< youtube id="kLO1djacsfg" >}}
+### Zintegrowane środowisko programistyczne
+
+Programowanie w srkócie to tak naprawdę pisanie odpowiednich poleceń w wybranym języku programowania które to polecenia są następnie tłumaczone na instrukcje rozumiane przez komputer, tak zwany kod maszynowy. Tak naprawdę nasz kod, czyli zestaw tych poleceń, możemy pisać w dowolnym narzędziu, począwszy od notatnika. Takie pisanie niestety wymaga od nas dużo większego wysiłku, dlatego z pomocą przychodzą właśnie zintegrowane środowiska programistyczne które zawierają szereg ułatwień jak podpowiadanie składki, sprawdzanie poprawności naszego programu czy łatwiejsze testowanie.
+
+Najpopularniejszymi IDE dla Javy są:
+
+* IntelliJ IDEA https://www.jetbrains.com/idea/
+* Eclipse http://www.eclipse.org
+* NetBeans https://netbeans.org
+
+
+
