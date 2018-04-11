@@ -26,7 +26,10 @@ Zanim zaczniemy cokolwiek programować musimy przygotować nasz komputer do prac
 
 Java to jeden z najpopularniejszych języków programowania na świecie. Jednak  Java, to nie tylko język programowania, to także cały ekosystem technologii i języków programowania zorientowanych wokół tak zwanej wirtualnej maszyny Java, czyli środowiska uruchomieniowego które musimy zainstalować w naszym systemie operacyjnym (np. Windows, Linux, macOS) lub innym dowolnym urządzeniu na którym chcemy wykonywać nasze programy. Taką maszynę wirtualną znajdziemy na większości komputerach na świecie, telefonach z systemem Android czy nawet na odtwarzaczach Blu-ray; według strony https://go.java/ obecnie już około 15 miliardów urządzeń korzysta z Javy.
 
-Dlatego zanim zaczniemy cokolwiek robić w Javie, potrzebujemy zainstalować sobie wirtualną maszynę Java korzystając np. ze strony: https://www.java.com/pl/download/.
+Dlatego zanim zaczniemy cokolwiek robić w Javie, potrzebujemy zainstalować sobie wirtualną maszynę Java która jest udostępniana w dwóch wersjach; Java Runtime Environment (JRE) która zawiera podstawową instalację maszyny wirtualnej wraz z dodatkowymi bibliotekami i komponentami służącą przede wszystkim do uruchamiania programów oraz Java Development Kit (JDK) zawierającej wszystko co ma JRE plus dodatkowe narzędzia dla programistów. My oczywiście będziemy potrzebować JDK które możemy ściągnąć ze strony: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+
+
 
 TODO zrzut ekranu z instalacji
 
@@ -44,4 +47,12 @@ Najpopularniejszymi IDE dla Javy są:
 * NetBeans https://netbeans.org
 
 To które środowisko wybierzemy zależy tak naprawdę od nas czyli naszych predyspozycji. Z naszej strony polecamy wybranie IntelliJ IDEA i z tego narzędzia będziemy korzystali w przykładach. Oczywiście wystarczy nam darmowa wersja Community.
+
+
+
+TODO zrzut ekranu z instalacji
+
+
+
+# Pierwszy program
 
