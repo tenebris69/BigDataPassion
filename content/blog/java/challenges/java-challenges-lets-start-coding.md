@@ -43,5 +43,5 @@ Najpopularniejszymi IDE dla Javy są:
 * Eclipse http://www.eclipse.org
 * NetBeans https://netbeans.org
 
-
+To które środowisko wybierzemy zależy tak naprawdę od nas czyli naszych predyspozycji. Z naszej strony polecamy wybranie IntelliJ IDEA i z tego narzędzia będziemy korzystali w przykładach. Oczywiście wystarczy nam darmowa wersja Community.
 
