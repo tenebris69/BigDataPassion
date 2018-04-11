@@ -56,3 +56,37 @@ TODO zrzut ekranu z instalacji
 
 # Pierwszy program
 
+Mając już JDK i wybrane IDE możemy przystąpić do napisania swojego pierwszego programu w języku Java. Po uruchomieniu IDEI powinniśmy zobaczyć poniższe okno:
+
+![](/img/java/idea-start.png)
+
+Wybieramy opcję "Create New Project".
+
+W nowo otwartym oknie musimy wskazać IDEI lokalizację naszego SDK, klikamy "New" i wybieramy miejsce instalacji SDK w naszym systemie (w przypadku systemu Windows będzie to ... TODO). Następnie klikamy dwukrotnie "Next".
+
+![](/img/java/idea-new-project.png)
+![](/img/java/idea-sdk.png)
+
+W kolejnym oknie musimy wpisać nazwę naszego projektu, podajemy "kodolamacz-pierwszy-program" i klikamy "Finish".
+
+![](/img/java/idea-project-name.png)
+
+Otworzyło nam się główne okno IDEI z naszym projektem.
+
+![](/img/java/idea-new-project-created.png)
+
+To jednak tylko pusty projekt. Teraz musimy napisać swój pierwszy kawałek kodu. W tym celu rozwijamy drzewo z lewej strony z nazwą naszego projektu i na katalogu "src" klikamy lewym przyciskiem myszy i wybieramy opcję "New" a następnie "Java Class". W nowo otwartym oknie jako nazwę wpisujemy "pl.com.kodolamacz.MojPierwszyProgram" i klikamy "Ok"
+
+![](/img/java/idea-new-class.png)
+
+W rezultacie dostajemy poniższy kod:
+
+~~~java
+package pl.com.kodolamacz;
+
+public class MojPierwszyProgram {
+}
+~~~
+
+TODO trochę więcej kodu dodać
+TODO uruchomienie
