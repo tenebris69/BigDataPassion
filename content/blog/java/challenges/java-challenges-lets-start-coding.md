@@ -89,7 +89,7 @@ Pojawia nam się okno startowe:
 
 Wybieramy opcję "Create New Project".
 
-W nowo otwartym oknie musimy wskazać IDEI lokalizację naszego SDK, klikamy "New" i wybieramy miejsce instalacji SDK w naszym systemie (w przypadku systemu Windows będzie to ... TODO). Następnie klikamy dwukrotnie "Next".
+W nowo otwartym oknie musimy wskazać IDEI lokalizację naszego SDK, klikamy "New" i wybieramy miejsce instalacji SDK w naszym systemie (w przypadku systemu Windows będzie to C:\Program Files\Java\jdk-10). Następnie klikamy dwukrotnie "Next".
 
 ![](/img/java/idea-new-project.png)
 ![](/img/java/idea-sdk.png)
@@ -102,18 +102,53 @@ Otworzyło nam się główne okno IDEI z naszym projektem.
 
 ![](/img/java/idea-new-project-created.png)
 
-To jednak tylko pusty projekt. Teraz musimy napisać swój pierwszy kawałek kodu. W tym celu rozwijamy drzewo z lewej strony z nazwą naszego projektu i na katalogu "src" klikamy lewym przyciskiem myszy i wybieramy opcję "New" a następnie "Java Class". W nowo otwartym oknie jako nazwę wpisujemy "pl.com.kodolamacz.MojPierwszyProgram" i klikamy "Ok"
+To jednak tylko pusty projekt. Teraz musimy napisać swój pierwszy kawałek kodu. W tym celu rozwijamy drzewo z lewej strony z nazwą naszego projektu i na katalogu "src" klikamy lewym przyciskiem myszy i wybieramy opcję "New" a następnie "Java Class". W nowo otwartym oknie jako nazwę wpisujemy "pl.kodolamacz.MyFirstJavaApplication" i klikamy "Ok"
 
 ![](/img/java/idea-new-class.png)
 
 W rezultacie dostajemy poniższy kod:
 
 ~~~java
-package pl.com.kodolamacz;
+package pl.kodolamacz;
 
-public class MojPierwszyProgram {
+public class MyFirstJavaApplication {
 }
 ~~~
 
-TODO trochę więcej kodu dodać
-TODO uruchomienie
+Czym są klasy Java dowiemy się później, na razie potraktujmy je jako sposób organizacji kodu, czyli naszych poleceń, w świecie Java. Klasy będą się znajdować w plikach z rozszerzeniem *.java*.
+
+W aktualnej wersji nasz kod jeszcze nic nie robi, to tylko szablon. Najprostrszą operacją jaką możemy kazać wykonać komputerowi jest wyświetlenie napisu. By tego dokonać należy najpierw dodać tak zwaną metodę **main** którą można uruchomić, czyli coś w rodzaju punktu startowego naszego programu. Nasz kod powinien wyglądać tak:
+
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+        
+    }
+    
+}
+~~~
+
+Teraz możemy skorzystać z funkcji **println** która wyświetla dowolny ciąg znaków, czyli nasz napis:
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+        System.out.println("Witaj świecie!");
+    }
+
+}
+~~~
+
+Teraz czas najwyższy by uruchomić nasz program! Klikamy w dowolnym miejscu naszego kodu prawym przyciskiem myszki i wybieramy opcję "Run 'MyFirstJavaApplication....main()'" lub naciskamy kombinację klawiszy Ctrl+Shift+F10. Na dole ekranu powinniśmy zobaczyć wynik wykonania naszego programu, czyli oczekiwany napis:
+~~~shell
+Witaj świecie!
+
+Process finished with exit code 0
+~~~
+
+Gratulacje! Udało Ci się napisać i uruchomić swój pierwszy
