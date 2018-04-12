@@ -69,7 +69,21 @@ Poniżej proces instalacji IntelliJ IDEA na systemie Windows:
 
 # Pierwszy program
 
-Mając już JDK i wybrane IDE możemy przystąpić do napisania swojego pierwszego programu w języku Java. Po uruchomieniu IDEI powinniśmy zobaczyć poniższe okno:
+Mając już JDK i wybrane IDE możemy przystąpić do napisania swojego pierwszego programu w języku Java. 
+
+Po pierwszym uruchomieniu IDEI powinniśmy zobaczyć okno z wyborem kolorystyki. Wybór według własnych preferencji.
+
+![](/img/java/idea-start2.png)
+
+W następnym okienku możemy wybrać różne ustawienia i dodatki - zostawmy te domyślne.
+
+![](/img/java/idea-start3.png)
+
+Tutaj również zostawiamy ustawienia domyślne i klikamy "Start using IntelliJ IDEA".
+
+![](/img/java/idea-start4.png)
+
+Pojawia nam się okno startowe:
 
 ![](/img/java/idea-start.png)
 
@@ -80,7 +94,7 @@ W nowo otwartym oknie musimy wskazać IDEI lokalizację naszego SDK, klikamy "Ne
 ![](/img/java/idea-new-project.png)
 ![](/img/java/idea-sdk.png)
 
-W kolejnym oknie musimy wpisać nazwę naszego projektu, podajemy "kodolamacz-pierwszy-program" i klikamy "Finish".
+W kolejnym oknie musimy wpisać nazwę naszego projektu, podajemy "kodolamacz-first-challenge" i klikamy "Finish".
 
 ![](/img/java/idea-project-name.png)
 
