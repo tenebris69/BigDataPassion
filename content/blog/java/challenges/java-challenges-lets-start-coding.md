@@ -151,4 +151,4 @@ Witaj świecie!
 Process finished with exit code 0
 ~~~
 
-Gratulacje! Udało Ci się napisać i uruchomić swój pierwszy
+Gratulacje! Udało Ci się napisać i uruchomić swój pierwszy program w języku Java. Jest to tak zwany "Hello world" (https://pl.wikipedia.org/wiki/Hello_world) czyli program wyświetlający napis "Witaj świecie" i najczęściej właśnie od takiego programu zaczynamy naukę nowego lub nawet pierwszego języka programowania lub biblioteki.
