@@ -24,21 +24,26 @@ Zanim zaczniemy cokolwiek programować musimy przygotować nasz komputer do prac
 
 ### Wirtualna Maszyna Java
 
-Java to jeden z najpopularniejszych języków programowania na świecie. Jednak  Java, to nie tylko język programowania, to także cały ekosystem technologii i języków programowania zorientowanych wokół tak zwanej wirtualnej maszyny Java, czyli środowiska uruchomieniowego które musimy zainstalować w naszym systemie operacyjnym (np. Windows, Linux, macOS) lub innym dowolnym urządzeniu na którym chcemy wykonywać nasze programy. Taką maszynę wirtualną znajdziemy na większości komputerach na świecie, telefonach z systemem Android czy nawet na odtwarzaczach Blu-ray; według strony https://go.java/ obecnie już około 15 miliardów urządzeń korzysta z Javy.
+Java to jeden z najpopularniejszych języków programowania na świecie. Jednak  Java, to nie tylko język programowania, to także cały ekosystem technologii i języków programowania zorientowanych wokół tak zwanej wirtualnej maszyny Java, czyli środowiska uruchomieniowego, które musimy zainstalować w naszym systemie operacyjnym (np. Windows, Linux, macOS) lub innym dowolnym urządzeniu, na którym chcemy wykonywać nasze programy. Taką maszynę wirtualną znajdziemy na większości komputerach na świecie, telefonach z systemem Android czy nawet na odtwarzaczach Blu-ray. Według strony https://go.java/ obecnie już około 15 miliardów urządzeń korzysta z Javy.
 
 Dlatego zanim zaczniemy cokolwiek robić w Javie, potrzebujemy zainstalować sobie wirtualną maszynę Java która jest udostępniana w dwóch wersjach; Java Runtime Environment (JRE) która zawiera podstawową instalację maszyny wirtualnej wraz z dodatkowymi bibliotekami i komponentami służącą przede wszystkim do uruchamiania programów oraz Java Development Kit (JDK) zawierającej wszystko co ma JRE plus dodatkowe narzędzia dla programistów. My oczywiście będziemy potrzebować JDK które możemy ściągnąć ze strony: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 
 
+Poniżej proces instalacji jdk wersji 10 na systemie Windows:
 
-TODO zrzut ekranu z instalacji
-
+![](/img/java/jdk-setup.png)
+![](/img/java/jdk-setup2.png)
+![](/img/java/jdk-setup3.png)
+![](/img/java/jdk-setup4.png)
+![](/img/java/jdk-setup5.png)
+![](/img/java/jdk-setup6.png)
 
 
 
 ### Zintegrowane środowisko programistyczne
 
-Programowanie w srkócie to tak naprawdę pisanie odpowiednich poleceń w wybranym języku programowania które to polecenia są następnie tłumaczone na instrukcje rozumiane przez komputer, tak zwany kod maszynowy. Tak naprawdę nasz kod, czyli zestaw tych poleceń, możemy pisać w dowolnym narzędziu, począwszy od notatnika. Takie pisanie niestety wymaga od nas dużo większego wysiłku, dlatego z pomocą przychodzą właśnie zintegrowane środowiska programistyczne które zawierają szereg ułatwień jak podpowiadanie składki, sprawdzanie poprawności naszego programu czy łatwiejsze testowanie.
+Programowanie w skrócie to tak naprawdę pisanie odpowiednich poleceń w wybranym języku programowania które to polecenia są następnie tłumaczone na instrukcje rozumiane przez komputer, tak zwany kod maszynowy. Tak naprawdę nasz kod, czyli zestaw tych poleceń, możemy pisać w dowolnym narzędziu, począwszy od notatnika. Takie pisanie niestety wymaga od nas dużo większego wysiłku, dlatego z pomocą przychodzą właśnie zintegrowane środowiska programistyczne, które zawierają szereg ułatwień jak podpowiadanie składki, sprawdzanie poprawności naszego programu czy łatwiejsze testowanie.
 
 Najpopularniejszymi IDE dla Javy są:
 
@@ -46,11 +51,19 @@ Najpopularniejszymi IDE dla Javy są:
 * Eclipse http://www.eclipse.org
 * NetBeans https://netbeans.org
 
-To które środowisko wybierzemy zależy tak naprawdę od nas czyli naszych predyspozycji. Z naszej strony polecamy wybranie IntelliJ IDEA i z tego narzędzia będziemy korzystali w przykładach. Oczywiście wystarczy nam darmowa wersja Community.
+To które środowisko wybierzemy zależy tak naprawdę od nas, czyli naszych predyspozycji. Z naszej strony polecamy wybranie IntelliJ IDEA i z tego narzędzia będziemy korzystali w przykładach. Oczywiście wystarczy nam darmowa wersja Community.
 
 
 
-TODO zrzut ekranu z instalacji
+Poniżej proces instalacji IntelliJ IDEA na systemie Windows:
+
+![](/img/java/idea-install.png)
+![](/img/java/idea-install2.png)
+![](/img/java/idea-install3.png)
+![](/img/java/idea-install4.png)
+![](/img/java/idea-install5.png)
+![](/img/java/idea-install6.png)
+
 
 
 
