@@ -44,17 +44,26 @@ for i in `cat /tmp/users.txt`; do adduser ${i} ; done
 for i in `cat /tmp/users.txt`; do echo "${i}:${i}" | chpasswd ; done
 ~~~
 
-# Usuwanie użytkowników
-~~~shell
-for i in `cat /tmp/users.txt`; do userdel -r  ${i} ; done
-~~~
-
-# HDFS
+# HDFS - create
 ~~~shell
 for i in `cat /tmp/users.txt`; do hdfs dfs -mkdir /user/${i}; done
 for i in `cat /tmp/users.txt`; do hdfs dfs -chown ${i} /user/${i}; done
+~~~
 
+# HDFS - snapshot
+~~~shell
 for i in `cat /tmp/users.txt`; do hdfs dfsadmin -allowsnapshot /user/${i}/snap; done
+~~~
 
+
+
+
+# HDFS - delete
+~~~shell
 for i in `cat /tmp/users.txt`; do hdfs dfs -rm -r -skipTrash /user/${i}; done
+~~~
+
+# Usuwanie użytkowników
+~~~shell
+for i in `cat /tmp/users.txt`; do userdel -r  ${i} ; done
 ~~~
