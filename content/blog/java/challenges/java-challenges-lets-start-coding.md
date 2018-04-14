@@ -1,7 +1,7 @@
 +++
 author = "Radosław Szmit"
 categories = ["Java", "Wyzwania"]
-date = "2018-04-11"
+date = "2018-04-12"
 description = ""
 featured = "java-kodolamacz.jpg"
 featuredalt = ""
@@ -24,21 +24,26 @@ Zanim zaczniemy cokolwiek programować musimy przygotować nasz komputer do prac
 
 ### Wirtualna Maszyna Java
 
-Java to jeden z najpopularniejszych języków programowania na świecie. Jednak  Java, to nie tylko język programowania, to także cały ekosystem technologii i języków programowania zorientowanych wokół tak zwanej wirtualnej maszyny Java, czyli środowiska uruchomieniowego które musimy zainstalować w naszym systemie operacyjnym (np. Windows, Linux, macOS) lub innym dowolnym urządzeniu na którym chcemy wykonywać nasze programy. Taką maszynę wirtualną znajdziemy na większości komputerach na świecie, telefonach z systemem Android czy nawet na odtwarzaczach Blu-ray; według strony https://go.java/ obecnie już około 15 miliardów urządzeń korzysta z Javy.
+Java to jeden z najpopularniejszych języków programowania na świecie. Jednak  Java, to nie tylko język programowania, to także cały ekosystem technologii i języków programowania zorientowanych wokół tak zwanej wirtualnej maszyny Java, czyli środowiska uruchomieniowego, które musimy zainstalować w naszym systemie operacyjnym (np. Windows, Linux, macOS) lub innym dowolnym urządzeniu, na którym chcemy wykonywać nasze programy. Taką maszynę wirtualną znajdziemy na większości komputerach na świecie, telefonach z systemem Android czy nawet na odtwarzaczach Blu-ray. Według strony https://go.java/ obecnie już około 15 miliardów urządzeń korzysta z Javy.
 
 Dlatego zanim zaczniemy cokolwiek robić w Javie, potrzebujemy zainstalować sobie wirtualną maszynę Java która jest udostępniana w dwóch wersjach; Java Runtime Environment (JRE) która zawiera podstawową instalację maszyny wirtualnej wraz z dodatkowymi bibliotekami i komponentami służącą przede wszystkim do uruchamiania programów oraz Java Development Kit (JDK) zawierającej wszystko co ma JRE plus dodatkowe narzędzia dla programistów. My oczywiście będziemy potrzebować JDK które możemy ściągnąć ze strony: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 
 
+Poniżej proces instalacji jdk wersji 10 na systemie Windows:
 
-TODO zrzut ekranu z instalacji
-
+![](/img/java/jdk-setup.png)
+![](/img/java/jdk-setup2.png)
+![](/img/java/jdk-setup3.png)
+![](/img/java/jdk-setup4.png)
+![](/img/java/jdk-setup5.png)
+![](/img/java/jdk-setup6.png)
 
 
 
 ### Zintegrowane środowisko programistyczne
 
-Programowanie w srkócie to tak naprawdę pisanie odpowiednich poleceń w wybranym języku programowania które to polecenia są następnie tłumaczone na instrukcje rozumiane przez komputer, tak zwany kod maszynowy. Tak naprawdę nasz kod, czyli zestaw tych poleceń, możemy pisać w dowolnym narzędziu, począwszy od notatnika. Takie pisanie niestety wymaga od nas dużo większego wysiłku, dlatego z pomocą przychodzą właśnie zintegrowane środowiska programistyczne które zawierają szereg ułatwień jak podpowiadanie składki, sprawdzanie poprawności naszego programu czy łatwiejsze testowanie.
+Programowanie w skrócie to tak naprawdę pisanie odpowiednich poleceń w wybranym języku programowania które to polecenia są następnie tłumaczone na instrukcje rozumiane przez komputer, tak zwany kod maszynowy. Tak naprawdę nasz kod, czyli zestaw tych poleceń, możemy pisać w dowolnym narzędziu, począwszy od notatnika. Takie pisanie niestety wymaga od nas dużo większego wysiłku, dlatego z pomocą przychodzą właśnie zintegrowane środowiska programistyczne, które zawierają szereg ułatwień jak podpowiadanie składki, sprawdzanie poprawności naszego programu czy łatwiejsze testowanie.
 
 Najpopularniejszymi IDE dla Javy są:
 
@@ -46,28 +51,50 @@ Najpopularniejszymi IDE dla Javy są:
 * Eclipse http://www.eclipse.org
 * NetBeans https://netbeans.org
 
-To które środowisko wybierzemy zależy tak naprawdę od nas czyli naszych predyspozycji. Z naszej strony polecamy wybranie IntelliJ IDEA i z tego narzędzia będziemy korzystali w przykładach. Oczywiście wystarczy nam darmowa wersja Community.
+To które środowisko wybierzemy zależy tak naprawdę od nas, czyli naszych predyspozycji. Z naszej strony polecamy wybranie IntelliJ IDEA i z tego narzędzia będziemy korzystali w przykładach. Oczywiście wystarczy nam darmowa wersja Community.
 
 
 
-TODO zrzut ekranu z instalacji
+Poniżej proces instalacji IntelliJ IDEA na systemie Windows:
+
+![](/img/java/idea-install.png)
+![](/img/java/idea-install2.png)
+![](/img/java/idea-install3.png)
+![](/img/java/idea-install4.png)
+![](/img/java/idea-install5.png)
+![](/img/java/idea-install6.png)
+
 
 
 
 # Pierwszy program
 
-Mając już JDK i wybrane IDE możemy przystąpić do napisania swojego pierwszego programu w języku Java. Po uruchomieniu IDEI powinniśmy zobaczyć poniższe okno:
+Mając już JDK i wybrane IDE możemy przystąpić do napisania swojego pierwszego programu w języku Java. 
+
+Po pierwszym uruchomieniu IDEI powinniśmy zobaczyć okno z wyborem kolorystyki. Wybór według własnych preferencji.
+
+![](/img/java/idea-start2.png)
+
+W następnym okienku możemy wybrać różne ustawienia i dodatki - zostawmy te domyślne.
+
+![](/img/java/idea-start3.png)
+
+Tutaj również zostawiamy ustawienia domyślne i klikamy "Start using IntelliJ IDEA".
+
+![](/img/java/idea-start4.png)
+
+Pojawia nam się okno startowe:
 
 ![](/img/java/idea-start.png)
 
 Wybieramy opcję "Create New Project".
 
-W nowo otwartym oknie musimy wskazać IDEI lokalizację naszego SDK, klikamy "New" i wybieramy miejsce instalacji SDK w naszym systemie (w przypadku systemu Windows będzie to ... TODO). Następnie klikamy dwukrotnie "Next".
+W nowo otwartym oknie musimy wskazać IDEI lokalizację naszego SDK, klikamy "New" i wybieramy miejsce instalacji SDK w naszym systemie (w przypadku systemu Windows będzie to C:\Program Files\Java\jdk-10). Następnie klikamy dwukrotnie "Next".
 
 ![](/img/java/idea-new-project.png)
 ![](/img/java/idea-sdk.png)
 
-W kolejnym oknie musimy wpisać nazwę naszego projektu, podajemy "kodolamacz-pierwszy-program" i klikamy "Finish".
+W kolejnym oknie musimy wpisać nazwę naszego projektu, podajemy "kodolamacz-first-challenge" i klikamy "Finish".
 
 ![](/img/java/idea-project-name.png)
 
@@ -75,18 +102,53 @@ Otworzyło nam się główne okno IDEI z naszym projektem.
 
 ![](/img/java/idea-new-project-created.png)
 
-To jednak tylko pusty projekt. Teraz musimy napisać swój pierwszy kawałek kodu. W tym celu rozwijamy drzewo z lewej strony z nazwą naszego projektu i na katalogu "src" klikamy lewym przyciskiem myszy i wybieramy opcję "New" a następnie "Java Class". W nowo otwartym oknie jako nazwę wpisujemy "pl.com.kodolamacz.MojPierwszyProgram" i klikamy "Ok"
+To jednak tylko pusty projekt. Teraz musimy napisać swój pierwszy kawałek kodu. W tym celu rozwijamy drzewo z lewej strony z nazwą naszego projektu i na katalogu "src" klikamy lewym przyciskiem myszy i wybieramy opcję "New" a następnie "Java Class". W nowo otwartym oknie jako nazwę wpisujemy "pl.kodolamacz.MyFirstJavaApplication" i klikamy "Ok"
 
 ![](/img/java/idea-new-class.png)
 
 W rezultacie dostajemy poniższy kod:
 
 ~~~java
-package pl.com.kodolamacz;
+package pl.kodolamacz;
 
-public class MojPierwszyProgram {
+public class MyFirstJavaApplication {
 }
 ~~~
 
-TODO trochę więcej kodu dodać
-TODO uruchomienie
+Czym są klasy Java dowiemy się później, na razie potraktujmy je jako sposób organizacji kodu, czyli naszych poleceń, w świecie Java. Klasy będą się znajdować w plikach z rozszerzeniem *.java*.
+
+W aktualnej wersji nasz kod jeszcze nic nie robi, to tylko szablon. Najprostrszą operacją jaką możemy kazać wykonać komputerowi jest wyświetlenie napisu. By tego dokonać należy najpierw dodać tak zwaną metodę **main** którą można uruchomić, czyli coś w rodzaju punktu startowego naszego programu. Nasz kod powinien wyglądać tak:
+
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+        
+    }
+    
+}
+~~~
+
+Teraz możemy skorzystać z funkcji **println** która wyświetla dowolny ciąg znaków, czyli nasz napis:
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+        System.out.println("Witaj świecie!");
+    }
+
+}
+~~~
+
+Teraz czas najwyższy by uruchomić nasz program! Klikamy w dowolnym miejscu naszego kodu prawym przyciskiem myszki i wybieramy opcję "Run 'MyFirstJavaApplication....main()'" lub naciskamy kombinację klawiszy Ctrl+Shift+F10. Na dole ekranu powinniśmy zobaczyć wynik wykonania naszego programu, czyli oczekiwany napis:
+~~~shell
+Witaj świecie!
+
+Process finished with exit code 0
+~~~
+
+Gratulacje! Udało Ci się napisać i uruchomić swój pierwszy program w języku Java. Jest to tak zwany "Hello world" (https://pl.wikipedia.org/wiki/Hello_world) czyli program wyświetlający napis "Witaj świecie" i najczęściej właśnie od takiego programu zaczynamy naukę nowego lub nawet pierwszego języka programowania lub biblioteki.
