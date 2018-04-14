@@ -26,7 +26,7 @@ Zanim zaczniemy cokolwiek programować musimy przygotować nasz komputer do prac
 
 Java to jeden z najpopularniejszych języków programowania na świecie. Jednak  Java, to nie tylko język programowania, to także cały ekosystem technologii i języków programowania zorientowanych wokół tak zwanej wirtualnej maszyny Java, czyli środowiska uruchomieniowego, które musimy zainstalować w naszym systemie operacyjnym (np. Windows, Linux, macOS) lub innym dowolnym urządzeniu, na którym chcemy wykonywać nasze programy. Taką maszynę wirtualną znajdziemy na większości komputerach na świecie, telefonach z systemem Android czy nawet na odtwarzaczach Blu-ray. Według strony https://go.java/ obecnie już około 15 miliardów urządzeń korzysta z Javy.
 
-Dlatego zanim zaczniemy cokolwiek robić w Javie, potrzebujemy zainstalować sobie wirtualną maszynę Java która jest udostępniana w dwóch wersjach; Java Runtime Environment (JRE) która zawiera podstawową instalację maszyny wirtualnej wraz z dodatkowymi bibliotekami i komponentami służącą przede wszystkim do uruchamiania programów oraz Java Development Kit (JDK) zawierającej wszystko co ma JRE plus dodatkowe narzędzia dla programistów. My oczywiście będziemy potrzebować JDK które możemy ściągnąć ze strony: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+Dlatego zanim zaczniemy cokolwiek robić w Javie, potrzebujemy zainstalować sobie wirtualną maszynę Java, która jest udostępniana w dwóch wersjach; Java Runtime Environment (JRE) zawierająca podstawową instalację maszyny wirtualnej wraz z dodatkowymi bibliotekami i komponentami, służącą przede wszystkim do uruchamiania programów oraz Java Development Kit (JDK) zawierająca wszystko co ma JRE plus dodatkowe narzędzia dla programistów. My oczywiście będziemy potrzebować JDK, które możemy ściągnąć ze strony: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 
 
@@ -92,7 +92,6 @@ Wybieramy opcję "Create New Project".
 W nowo otwartym oknie musimy wskazać IDEI lokalizację naszego SDK, klikamy "New" i wybieramy miejsce instalacji SDK w naszym systemie (w przypadku systemu Windows będzie to C:\Program Files\Java\jdk-10). Następnie klikamy dwukrotnie "Next".
 
 ![](/img/java/idea-new-project.png)
-![](/img/java/idea-sdk.png)
 
 W kolejnym oknie musimy wpisać nazwę naszego projektu, podajemy "kodolamacz-first-challenge" i klikamy "Finish".
 
@@ -102,7 +101,7 @@ Otworzyło nam się główne okno IDEI z naszym projektem.
 
 ![](/img/java/idea-new-project-created.png)
 
-To jednak tylko pusty projekt. Teraz musimy napisać swój pierwszy kawałek kodu. W tym celu rozwijamy drzewo z lewej strony z nazwą naszego projektu i na katalogu "src" klikamy lewym przyciskiem myszy i wybieramy opcję "New" a następnie "Java Class". W nowo otwartym oknie jako nazwę wpisujemy "pl.kodolamacz.MyFirstJavaApplication" i klikamy "Ok"
+To jednak tylko pusty projekt. Teraz musimy napisać swój pierwszy kawałek kodu. W tym celu rozwijamy drzewo z lewej strony z nazwą naszego projektu i na katalogu "src" klikamy prawym przyciskiem myszy i wybieramy opcję "New" a następnie "Java Class". W nowo otwartym oknie jako nazwę wpisujemy "pl.kodolamacz.MyFirstJavaApplication" i klikamy "Ok"
 
 ![](/img/java/idea-new-class.png)
 
@@ -150,5 +149,7 @@ Witaj świecie!
 
 Process finished with exit code 0
 ~~~
+
+Jeśli napis się nie wyświetlił, trzeba sprawdzić czy wszystkie nawiasy i średniki są na swoim miejscu.
 
 Gratulacje! Udało Ci się napisać i uruchomić swój pierwszy program w języku Java. Jest to tak zwany "Hello world" (https://pl.wikipedia.org/wiki/Hello_world) czyli program wyświetlający napis "Witaj świecie" i najczęściej właśnie od takiego programu zaczynamy naukę nowego lub nawet pierwszego języka programowania lub biblioteki.
