@@ -130,7 +130,7 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
-Teraz możemy skorzystać z funkcji **println** która wyświetla dowolny ciąg znaków, czyli nasz napis:
+Teraz możemy skorzystać z funkcji **println**:
 ~~~java
 package pl.kodolamacz;
 
@@ -142,6 +142,8 @@ public class MyFirstJavaApplication {
 
 }
 ~~~
+
+Funkcja **println** wyświetla dowolny ciąg znaków na tak zwanym standardowym wyjściu. Jest to jeden z możliwych sposobów komunikacji z naszym programem. Więcej o strumieniach możemy przeczytać na Wikipedii: https://pl.wikipedia.org/wiki/Standardowe_strumienie. Żeby skorzystać ze standardowego wyjścia musimy skorzystać z klasy **System** służącą między innymi do obsługi standardowych strumieni w Javie. W tej klasie możemy skorzystać z pola **out** gdzie mamy dostępną funkcję **println**. Temat pól w klasach (ang. field) także zostanie szczegółowo omówiony w kolejnych naszych wydarzeniach.
 
 Teraz czas najwyższy by uruchomić nasz program! Klikamy w dowolnym miejscu naszego kodu prawym przyciskiem myszki i wybieramy opcję "Run 'MyFirstJavaApplication....main()'" lub naciskamy kombinację klawiszy Ctrl+Shift+F10. Na dole ekranu powinniśmy zobaczyć wynik wykonania naszego programu, czyli oczekiwany napis:
 ~~~shell
