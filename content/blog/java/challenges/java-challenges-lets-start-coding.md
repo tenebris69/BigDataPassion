@@ -155,3 +155,47 @@ Process finished with exit code 0
 Jeśli napis się nie wyświetlił, trzeba sprawdzić czy wszystkie nawiasy i średniki są na swoim miejscu.
 
 Gratulacje! Udało Ci się napisać i uruchomić swój pierwszy program w języku Java. Jest to tak zwany "Hello world" (https://pl.wikipedia.org/wiki/Hello_world) czyli program wyświetlający napis "Witaj świecie" i najczęściej właśnie od takiego programu zaczynamy naukę nowego lub nawet pierwszego języka programowania lub biblioteki.
+
+Jednak na tym nie skończymy. Do wyświetlenia napisu "Witaj świecie" użyliśmy standardowego wyjści. Teraz użyjemy standardowego wejścia, żeby pobrać od użytkownika jakiś napis:
+~~~java
+package pl.kodolamacz;
+
+import java.util.Scanner;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+        System.out.println("Witaj świecie!");
+
+        Scanner scanner = new Scanner(System.in);
+        String userString = scanner.nextLine();
+        scanner.close();
+
+        System.out.println("Twój napis to: " + userString);
+    }
+
+}
+~~~
+
+Wykorzystaliśmy do tego klasę **Scanner** przekazując do niej standardowe wejście (System.in). W klasie Scanner mamy metodę **nextLine()** która pozwala nam odczytać linijkę tekstu wpisanego przez użytkownika. Następnie przypisujemy tą linijkę do zmiennej **userString** i wyświetlamy na standardowym wyjściu. Zmienym poświęcimy następne wyzwania, na ten moment załóżmy że jest to jakiś pojemnik na dane tekstowe które w świecie Javy oznaczamy jako **String**.
+
+Gdy uruchomimy nasz program i wpiszemy jakąś linię tekstu (pod napisem Witaj świecie) potwierdzając to klawiszem Enter, program powinien wyświetlić nam wpisaną linijkę tekstu jak poniżej:
+~~~shell
+Witaj świecie!
+Witaj
+Twój napis to: Witaj
+
+Process finished with exit code 0
+~~~
+
+# Wyzwanie
+
+Teraz zadanie dla Was! Korzystając ze standardowych strumieni w Javie i zdobytej wiedzy napiszcie program który wyświetla prośbę o podanie imienia a następnie nazwiska, pobiera te dwa napisy od użytkownika a następnie wyświetla obydwa jak w przykładzie poniżej:
+~~~shell
+Proszę podaj swoje imię:
+Jan
+Proszę podaj swoje nazwisko:
+Kowalski
+
+Witaj Jan Kowalski
+~~~
