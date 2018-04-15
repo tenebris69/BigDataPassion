@@ -196,6 +196,5 @@ Proszę podaj swoje imię:
 Jan
 Proszę podaj swoje nazwisko:
 Kowalski
-
 Witaj Jan Kowalski
 ~~~
