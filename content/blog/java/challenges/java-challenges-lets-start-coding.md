@@ -179,7 +179,7 @@ public class MyFirstJavaApplication {
 
 Wykorzystaliśmy do tego klasę **Scanner** przekazując do niej standardowe wejście (System.in). W klasie Scanner mamy metodę **nextLine()** która pozwala nam odczytać linijkę tekstu wpisanego przez użytkownika. Następnie przypisujemy tą linijkę do zmiennej **userString** i wyświetlamy na standardowym wyjściu. Zmiennym poświęcimy następne wyzwania, na ten moment załóżmy, że jest to jakiś pojemnik na dane tekstowe, które w świecie Javy oznaczamy jako **String**.
 
-Gdy uruchomimy nasz program i wpiszemy jakąś linię tekstu (pod napisem Witaj świecie) potwierdzając to klawiszem Enter, program powinien wyświetlić nam wpisaną linijkę tekstu jak poniżej:
+Gdy uruchomimy nasz program i wpiszemy jakąś linię tekstu (pod napisem Witaj świecie, np. odpowiedź "Witaj") potwierdzając to klawiszem Enter, program powinien wyświetlić nam wpisaną linijkę tekstu jak poniżej:
 ~~~shell
 Witaj świecie!
 Witaj
