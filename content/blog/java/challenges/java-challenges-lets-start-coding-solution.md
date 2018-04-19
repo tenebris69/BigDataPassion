@@ -1,7 +1,7 @@
 +++
 author = "Radosław Szmit"
 categories = ["Java", "Wyzwania"]
-date = "2018-04-16"
+date = "2018-04-20"
 description = ""
 featured = "java-kodolamacz.jpg"
 featuredalt = ""
