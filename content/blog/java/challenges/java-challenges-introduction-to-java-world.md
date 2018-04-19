@@ -92,7 +92,7 @@ Język Java, maszyna wirtualna Java oraz platformy Java, także są tworzone prz
 
 ## Oracle Java vs Microsoft .NET
 
-Niewiarygodny sukces platformy Java TODO
+Niewiarygodny sukces platformy Java przyczynił się także do powstania w 2002 roku konkurencyjnej platformy autorstwa firmy Microsoft zwanej platformą .NET (pełna nazwa .NET Framework). Początkowo twórcy zaimplementowali własną wersję języka Java z lekkimi modyfikacjami pod nazwą J++, zaś później stworzyli swój własny język konkurencyjny do języka Java którego nazwali C#. Platforma firmy Microsoft była początkowo rozwijana tylko na systemy firmy Microsoft, jednak w 27 czerwca 2016 roku została wydana zupełnie nowa wersja platformy .NET pod nazwą .NET Core która w odróżnieniu od .NET Framework jest multiplatformowa (Windows, Linux, MacOS) oraz otwartoźródłowa.
 
 
 
@@ -103,7 +103,7 @@ Niewiarygodny sukces platformy Java TODO
 {{< youtube id="kLO1djacsfg" >}}
 
 
-Legenda:
+# Legenda:
 
 * https://www.javaworld.com/article/2077265/core-java/so-why-did-they-decide-to-call-it-java-.html
 * https://pl.wikipedia.org/wiki/Java_(kawa)
