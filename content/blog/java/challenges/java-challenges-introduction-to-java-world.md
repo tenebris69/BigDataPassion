@@ -22,7 +22,13 @@ W tym poście spróbuję odpowiedzieć dość szeroko na obydwa z tych pytań :)
 
 Programowanie to tak naprawdę rozmowa z komputerem, przekazywanie mu naszych poleceń które on będzie wykonywać. Jednak do tego potrzebny jest odpowiedni język który maszyna, czytaj komputer, zrozumie. Takich języków powstało naprawdę wiele, niektóre są proste i łatwe inne znowu wyrafinowane i zarazem skomplikowane. Każdy z języków ma swoje zalety i wady, stąd jest ich tak wiele by można było wybrać taki który najbardziej będzie się nadawał do naszego zadania lub taki który będzie dla nas bardziej przyjazny.
 
+Trzeba też pamiętać, że nie każdy język programowania służy do tego samego. Języki takie jak HTML, CSS czy JavaScript (nie mylić z Javą!) służą przede wszystkim do tworzenia stron internetowych i są zrozumiałe dla przeglądarek internetowych takich jak Firefox, Chrome czy Edge. Z drugiej strony bardzo popularny język SQL (ang. Structured Query Language) jest językiem służącym do komunikacji z bazami danych, czyli narzędziami służącymi do przechowywania informacji zgodnie z określonymi regułami. Język PHP jest bardzo popularny w zastosowaniach serwerowych służących do generowania dynamicznie naszych stron internetowych (w przeciwieństwie do HTML, CSS i Javascript nie działa po stronie przeglądarki internetowej tylko serwera). Języki takie jak C, C++ czy C# bardzo często używane są do tworzenia aplikacji okienkowych, najprawdopodobniej większość waszych aplikacji zainstalowanych w komputerze jest stworzona w oparciu o te języki programowania. Oczywiście to tylko przykłady, języków programowania jest dużo więcej oraz ich zastosowania bywają szersze niż wskazane powyżej.
+
 My zachęcamy Was do rozpoczęcia swojej przygody w językiem Java. Jest to obecnie jeden z popularniejszych języków programowania, bardzo wszechstronny i zarazem wydajny.
+
+# Język Java
+
+## Popularność
 
 W internecie bardzo łatwo znaleźć serwisy które za pomocą wielu różnych metod próbują oszacować popularność języków programowania. Do najpopularniejszych należą:
 
