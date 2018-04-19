@@ -10,6 +10,7 @@ linktitle = ""
 title = "Wyzwanie programistyczne nr 1: Zacznijmy programować w Javie!"
 type = "post"
 
+draft = true
 +++
 
 Wiele początkujących osób zadanie głównie dwa pytania:
