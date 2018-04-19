@@ -37,5 +37,3 @@ Więcej podobnych stron można znaleźć pod adresem: https://alternativeto.net/
 
 
 
-# A na koniec coś na poprawę humoru :)
-{{< youtube id="kLO1djacsfg" >}}

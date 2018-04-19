@@ -28,6 +28,8 @@ Trzeba też pamiętać, że nie każdy język programowania służy do tego same
 
 My zachęcamy Was do rozpoczęcia swojej przygody w językiem Java. Jest to obecnie jeden z popularniejszych języków programowania, bardzo wszechstronny i zarazem wydajny.
 
+## Historia
+
 ## Popularność
 
 W internecie bardzo łatwo znaleźć serwisy które za pomocą wielu różnych metod próbują oszacować popularność języków programowania. Do najpopularniejszych należą:
@@ -39,10 +41,35 @@ W internecie bardzo łatwo znaleźć serwisy które za pomocą wielu różnych m
 
 Jak widać z powyższych statystyk, Java jest czołowym językiem programowania wykorzystywanym od lat.
 
-# Zastosowania
+## Zastosowania
 
 O popularności języka Javy zdecydowała w dużej mierze jego wszechstronność. Możemy z jego pomocą tworzyć aplikacje okienkowe, serwerowe, mobilne (np. na systemie Android) a nawet spotkamy programy napisane w tym języku także w urządzeniach jak telewizory, odtwarzacze Blu-Ray czy karty chipowe.
 
-# Wydajność
+## Wydajność
 
 Język Java dzięki wielu optymalizacjom jest także jednym z wydajniejszych języków programowania o czym możemy się przekonać analizując wyniki testów zamieszczonych na stronie: https://benchmarksgame.alioth.debian.org/.
+
+# Możliwości
+
+Język Java oferuje także wiele możliwości swoim użytkownikom. Jest przede wszystkim językiem obiektowym, ale od wersji 8 języka Java możemy także programować w nim funkcyjnie. O obiektowości i funkcyjności języka Java będziemy mówić w oddzielnych wyzwaniach.
+
+# Biblioteki i narzędzie
+
+TODO
+
+# Writualna maszyna Java
+
+TODO
+Java to ni
+
+# Platoformy Java
+
+TODO
+
+
+
+
+
+# A na koniec coś na poprawę humoru :)
+
+{{< youtube id="kLO1djacsfg" >}}
