@@ -1,7 +1,7 @@
 +++
 author = "Radosław Szmit"
 categories = ["Java", "Wyzwania"]
-date = "2018-04-12"
+date = "2018-04-16"
 description = ""
 featured = "java-kodolamacz.jpg"
 featuredalt = ""
@@ -130,7 +130,7 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
-Teraz możemy skorzystać z funkcji **println** która wyświetla dowolny ciąg znaków, czyli nasz napis:
+Teraz możemy skorzystać z funkcji **println**:
 ~~~java
 package pl.kodolamacz;
 
@@ -143,6 +143,8 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
+Funkcja **println** wyświetla dowolny ciąg znaków na tak zwanym standardowym wyjściu. Jest to jeden z możliwych sposobów komunikacji z naszym programem. Więcej o strumieniach możemy przeczytać na Wikipedii: https://pl.wikipedia.org/wiki/Standardowe_strumienie. Żeby skorzystać ze standardowego wyjścia musimy skorzystać z klasy **System** służącą między innymi do obsługi standardowych strumieni w Javie. W tej klasie możemy skorzystać z pola **out** gdzie mamy dostępną funkcję **println**. Temat pól w klasach (ang. field) także zostanie szczegółowo omówiony w kolejnych naszych wydarzeniach.
+
 Teraz czas najwyższy by uruchomić nasz program! Klikamy w dowolnym miejscu naszego kodu prawym przyciskiem myszki i wybieramy opcję "Run 'MyFirstJavaApplication....main()'" lub naciskamy kombinację klawiszy Ctrl+Shift+F10. Na dole ekranu powinniśmy zobaczyć wynik wykonania naszego programu, czyli oczekiwany napis:
 ~~~shell
 Witaj świecie!
@@ -153,3 +155,46 @@ Process finished with exit code 0
 Jeśli napis się nie wyświetlił, trzeba sprawdzić czy wszystkie nawiasy i średniki są na swoim miejscu.
 
 Gratulacje! Udało Ci się napisać i uruchomić swój pierwszy program w języku Java. Jest to tak zwany "Hello world" (https://pl.wikipedia.org/wiki/Hello_world) czyli program wyświetlający napis "Witaj świecie" i najczęściej właśnie od takiego programu zaczynamy naukę nowego lub nawet pierwszego języka programowania lub biblioteki.
+
+Jednak na tym nie skończymy. Do wyświetlenia napisu "Witaj świecie" użyliśmy standardowego wyjścia. Teraz użyjemy standardowego wejścia, żeby pobrać od użytkownika jakiś napis:
+~~~java
+package pl.kodolamacz;
+
+import java.util.Scanner;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+        System.out.println("Witaj świecie!");
+
+        Scanner scanner = new Scanner(System.in);
+        String userString = scanner.nextLine();
+        scanner.close();
+
+        System.out.println("Twój napis to: " + userString);
+    }
+
+}
+~~~
+
+Wykorzystaliśmy do tego klasę **Scanner** przekazując do niej standardowe wejście (System.in). W klasie Scanner mamy metodę **nextLine()** która pozwala nam odczytać linijkę tekstu wpisanego przez użytkownika. Następnie przypisujemy tą linijkę do zmiennej **userString** i wyświetlamy na standardowym wyjściu. Zmiennym poświęcimy następne wyzwania, na ten moment załóżmy, że jest to jakiś pojemnik na dane tekstowe, które w świecie Javy oznaczamy jako **String**.
+
+Gdy uruchomimy nasz program i wpiszemy jakąś linię tekstu (pod napisem Witaj świecie, np. odpowiedź "Witaj") potwierdzając to klawiszem Enter, program powinien wyświetlić nam wpisaną linijkę tekstu jak poniżej:
+~~~shell
+Witaj świecie!
+Witaj
+Twój napis to: Witaj
+
+Process finished with exit code 0
+~~~
+
+# Wyzwanie
+
+Teraz zadanie dla Was! Korzystając ze standardowych strumieni w Javie i zdobytej wiedzy napiszcie program, który wyświetla prośbę o podanie imienia i następnie nazwiska, pobiera te dwa napisy od użytkownika, a następnie wyświetla obydwa jak w przykładzie poniżej:
+~~~shell
+Proszę podaj swoje imię:
+Jan
+Proszę podaj swoje nazwisko:
+Kowalski
+Witaj Jan Kowalski
+~~~
