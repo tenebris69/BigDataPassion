@@ -92,7 +92,7 @@ Język Java, maszyna wirtualna Java oraz platformy Java, także są tworzone prz
 
 ## Oracle Java vs Microsoft .NET
 
-Niewiarygodny sukces platformy Java TODO
+Niewiarygodny sukces platformy Java przyczynił się także do powstania konkurencyjnej platformy autorstwa firmy Microsoft zwanej platformą .NET. Początkowo twórcy zaimplementowali własną wersję języka Java z lekkimi modyfikacjami pod nazwą J++, zaś później stworzyli swój własny język konkurencyjny do języka Java którego nazwali C#.
 
 
 
