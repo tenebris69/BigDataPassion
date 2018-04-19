@@ -67,18 +67,33 @@ Język Java dzięki wielu optymalizacjom jest także jednym z wydajniejszych ję
 
 Język Java oferuje także wiele możliwości swoim użytkownikom. Jest przede wszystkim językiem obiektowym, ale od wersji 8 języka Java możemy także programować w nim funkcyjnie. O obiektowości i funkcyjności języka Java będziemy mówić w oddzielnych wyzwaniach. Java jest też językiem wielowątkowym, czyli takim który umożliwia wykonywanie wielu poleceń na raz (równolegle na wielu rdzeniach procesora).
 
+## Wirtualna maszyna Java
+
+Java to język programowani. To już wiemy. Ale to nie wszystko. Java to także *wirtualna maszyna Java* (ang. Java Virtual Machine, w skrócie JVM) na której możemy uruchamiać programy napisane w języku Java i nie tylko w tym języku! Obecnie na JVM można uruchamiać wiele innych języków, do najpopularniejszych z nich należą: Scala, Kotlin, Groovy, Clojure oraz także języki które nie powstały z myślą pracy w wirtualnej maszynie Java, lecz zostały później zaadaptowane jak np. Ruby (JRuby) oraz Python (Jython).
+
+## Platforma Java
+
+Oprócz języków programowania i maszyny wirtualnej, często mówimy także o "platformach" dostępnych dla środowiska Java. Do tych platform należą:
+* Java Standard Edition (Java SE) - aplikacje uruchamiane w konsoli lub aplikacje okienkowe
+* Java Enterprise Edition (Java EE) - aplikacje serwerowe
+* Java Micro Edition (Java ME) - aplikacje mobilne lub działające na urządzeniach o niskiej wydajności
+* Java FX - aplikacje RIA (rich internet applications) oraz aplikacje okienkowe
+* Java Card - mikro aplikacje uruchamiane na kartach elektronicznych
+
+Platforma Java to tak naprawdę zbiór bibliotek i narzędzi umożliwiających lub ułatwiających tworzenie oprogramowania dla konkretnych zastosowań, np. aplikacje serwerowe w Java EE.
+
 ## Biblioteki i narzędzie
 
 TODO
 
 ## Społeczność
 
-## Writualna maszyna Java
+
 
 TODO
 Java to ni
 
-## Platoformy Java
+
 
 TODO
 
@@ -105,3 +120,4 @@ Legenda:
 * http://oracle.com.edgesuite.net/timeline/java/
 * https://www.pwc.com/gx/en/industries/technology/publications/global-100-software-leaders/explore-the-data.html
 * https://benchmarksgame.alioth.debian.org/
+* https://docs.oracle.com/cd/E19798-01/821-1770/gcrkk/index.html
