@@ -57,15 +57,15 @@ Jak widać z powyższych statystyk, Java jest czołowym językiem programowania 
 
 ## Zastosowania
 
-O popularności języka Javy zdecydowała w dużej mierze jego wszechstronność. Możemy z jego pomocą tworzyć aplikacje okienkowe, serwerowe, mobilne (np. na systemie Android), a nawet spotkać programy napisane w tym języku także w urządzeniach takich jak telewizory, odtwarzacze Blu-Ray czy karty chipowe.
+O popularności języka Javy zdecydowała w dużej mierze jego wszechstronność. Możemy z jego pomocą tworzyć aplikacje okienkowe, serwerowe, mobilne (np. na systemie Android), a nawet spotkać programy napisane w tym języku w urządzeniach takich jak telewizory, odtwarzacze Blu-Ray czy karty chipowe.
 
 ## Wydajność
 
-Język Java dzięki wielu optymalizacjom jest także jednym z wydajniejszych języków programowania o czym możemy się przekonać analizując wyniki testów zamieszczonych na stronie: https://benchmarksgame.alioth.debian.org/.
+Język Java dzięki wielu optymalizacjom jest jednym z wydajniejszych języków programowania o czym możemy się przekonać analizując wyniki testów zamieszczonych na stronie: https://benchmarksgame.alioth.debian.org/.
 
 ## Możliwości
 
-Język Java oferuje także wiele możliwości swoim użytkownikom. Jest przede wszystkim językiem obiektowym, ale od wersji 8 języka Java możemy także programować w nim funkcyjnie. O obiektowości i funkcyjności języka Java będziemy mówić w oddzielnych wyzwaniach. Java jest też językiem wielowątkowym, czyli takim który umożliwia wykonywanie wielu poleceń na raz (równolegle na wielu rdzeniach procesora).
+Język Java oferuje wiele możliwości swoim użytkownikom. Jest przede wszystkim językiem obiektowym, ale od wersji 8 języka Java możemy także programować w nim funkcyjnie. O obiektowości i funkcyjności języka Java będziemy mówić w oddzielnych wyzwaniach. Java jest też językiem wielowątkowym, czyli takim który umożliwia wykonywanie wielu poleceń na raz (równolegle na wielu rdzeniach procesora).
 
 ## Wirtualna maszyna Java
 
@@ -74,6 +74,7 @@ Java to język programowania. To już wiemy. Ale to nie wszystko. Java to także
 ## Platforma Java
 
 Oprócz języków programowania i maszyny wirtualnej, często mówimy także o "platformach" dostępnych dla środowiska Java. Do tych platform należą:
+
 * Java Standard Edition (Java SE) - aplikacje uruchamiane w konsoli lub aplikacje okienkowe
 * Java Enterprise Edition (Java EE) - aplikacje serwerowe
 * Java Micro Edition (Java ME) - aplikacje mobilne lub działające na urządzeniach o niskiej wydajności
