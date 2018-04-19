@@ -38,11 +38,11 @@ Za powstaniem języka Java stoi firma Sun Microsystems (skrót od Stanford Unive
 
 ## Cechy języka Java
 
-Składnia języka Java bazuje na jednym z najpopularniejszych w tamtych czasach języku programowania jakim był C++, dzięki czemu była bardzo łatwa do nauki dla dużego grona programistów, oraz była od razu językiem obiektowym. Jednak w przeciwieństwie do języka C++, Java miała być dużo łatwiejsza do tworzenia oprogramowania, przez co miała skrócić czas niezbędny na napisanie programu. Osiągnięto to przede wszystkim przez wprowadzenie automatycznego zarządzania pamięcią, zwłaszcza jej oczyszczanie, czyli wprowadzono tak zwany Garbage Collector.
+Składnia języka Java bazuje na jednym z najpopularniejszych w tamtych czasach języku programowania jakim był C++, dzięki czemu była bardzo łatwa do nauki dla dużego grona programistów, oraz była od razu językiem obiektowym. Jednak w przeciwieństwie do języka C++, Java miała być dużo łatwiejsza do tworzenia oprogramowania, przez co miała skrócić czas niezbędny na napisanie programu. Osiągnięto to przede wszystkim przez wprowadzenie prostszego i automatycznego zarządzania pamięcią. Programiści nie muszą już samodzielnie zwalniać pamięci dzięki wprowadzniu narzędzia zwanego *Garbage Collector* oraz nie ma możliwości korzystania ze wskaźników do pamięci operacyjnej który sprzyjał nadpisywaniu trzymanych tam informacji a tym samym awariom programu czy utratą danych. W języku Java wprowadzono także wiele uproszczeń w składni względem języka C++. Celem twórców było stworzenie języka który miał być prostszą wersją języka C++ z zachowaniem wszystkich zalet języka takich jak np. bardzo duża wydajność.
 
 Początkowo miała być wykorzystywana do tworzenia oprogramowania dla urządzeń telewizyjnych, gdzie wcześniej używany był język C++. Niestety korzystanie z tego języka wymagało często tworzenie dedykowanego kodu na każde urządzenie, dlatego główną ideą która przyświecała twórcom Javy była "Write Once, Run Anywhere" czyli napisz raz swój program i uruchamiaj gdziekolwiek. Tak powstała maszyna wirtualna Java umożliwiająca uruchamianie wszędzie tego samego kodu napisanego w języku Java. Możliwość uruchamiania programów napisanych w Javie na wielu systemach i urządzeniach nazywamy także multiplatformowością.
 
-Trzecią ważną ideą która przyświecała twórcą języka Java poza automatycznym czyszczeniem pamięci oraz uruchamianiem tego samego programu na wielu platformach, miała być uniwersalność języka. Java miała się stać językiem wszechstronnym w którym można pisać aplikacje okienkowe, serwerowe, internetowe, mobilne oraz w dalszym ciągu umożliwiać tworzenie oprogramowania dla urządzeń, tak zwanych systemów wbudowanych (https://pl.wikipedia.org/wiki/System_wbudowany).
+Trzecią ważną ideą która przyświecała twórcą języka Java poza automatycznym czyszczeniem pamięci oraz uruchamianiem tego samego programu na wielu platformach, miała być uniwersalność języka. Java miała się stać językiem wszechstronnym w którym można pisać aplikacje okienkowe, serwerowe, internetowe, mobilne oraz w dalszym ciągu umożliwiać tworzenie oprogramowania dla urządzeń, tak zwanych systemów wbudowanych (https://pl.wikipedia.org/wiki/System_wbudowany). Java też jest językiem który sprzyja wykorzystaniu go w warunkach sieciowych dzięki dużemu bezpieczeństwu i wbudowanym mechanizmom obsługi komunikacji sieciowej.
 
 ## Popularność
 
@@ -65,7 +65,7 @@ Język Java dzięki wielu optymalizacjom jest także jednym z wydajniejszych ję
 
 ## Możliwości
 
-Język Java oferuje także wiele możliwości swoim użytkownikom. Jest przede wszystkim językiem obiektowym, ale od wersji 8 języka Java możemy także programować w nim funkcyjnie. O obiektowości i funkcyjności języka Java będziemy mówić w oddzielnych wyzwaniach.
+Język Java oferuje także wiele możliwości swoim użytkownikom. Jest przede wszystkim językiem obiektowym, ale od wersji 8 języka Java możemy także programować w nim funkcyjnie. O obiektowości i funkcyjności języka Java będziemy mówić w oddzielnych wyzwaniach. Java jest też językiem wielowątkowym, czyli takim który umożliwia wykonywanie wielu poleceń na raz (równolegle na wielu rdzeniach procesora).
 
 ## Biblioteki i narzędzie
 
@@ -104,7 +104,4 @@ Legenda:
 * http://www.oracle.com/technetwork/java/javase/overview/javahistory-index-198355.html
 * http://oracle.com.edgesuite.net/timeline/java/
 * https://www.pwc.com/gx/en/industries/technology/publications/global-100-software-leaders/explore-the-data.html
-
-https://en.wikipedia.org/wiki/Java_(software_platform)#History
-https://en.wikipedia.org/wiki/List_of_JVM_languages
-https://en.wikipedia.org/wiki/Java_(programming_language)
+* https://benchmarksgame.alioth.debian.org/
