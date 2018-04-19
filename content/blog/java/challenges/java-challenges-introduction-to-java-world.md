@@ -82,26 +82,18 @@ Oprócz języków programowania i maszyny wirtualnej, często mówimy także o "
 
 Platforma Java to tak naprawdę zbiór bibliotek i narzędzi umożliwiających lub ułatwiających tworzenie oprogramowania dla konkretnych zastosowań, np. aplikacje serwerowe w Java EE.
 
-## Biblioteki i narzędzie
-
-TODO
+Java oraz Kotlin są także językami używany do pisania aplikacji mobilnych na systemie Android tworzonego przez firmę Google (https://developer.android.com/samples/index.html).
 
 ## Społeczność
 
+Java to także, a może przede wszystkim, olbrzymia społeczność programistów z całego świata który nie tylko pomagają sobie wzajemnie, ale także dzielą się swoim oprogramowaniem na zasadach Open Source czyli otwartego kodu. Najpopularniejsze biblioteki i narzędzia tworzone są przez fundację Apache (http://www.apache.org/). Wiele też firm tworzy swoje oprogramowanie i udostępnia je innym firmom i programistom za darmo lub na podstawie płatnych licencji. Jednym z najpopularniejszych portali gdzie możemy znaleźć ogromną ilość oprogramowania i bibliotek napisanych w języku Java (oraz innych używanych na JVM) dostępnych na zasadach otwartego kodu źródłowego możemy znaleźć na portalu GitHub (https://github.com/).
 
-
-TODO
-Java to ni
-
-
-
-TODO
+Język Java, maszyna wirtualna Java oraz platformy Java, także są tworzone przez społeczność. Właścicielem praw do języka Java jest firma Oracle, mimo to, sam proces wprowadzania nowych zmian i funkcjonalności realizowany jest przez społeczność programistów i firm z całego świata w ramach procesu zwanego *Java Community Process, JCP* (https://jcp.org). Listę zaangażowanych firm można znaleźć pod adresem: https://jcp.org/en/participation/members/. Wśród nich możemy odnaleźć takie firmy jak Google, Hewlett Packard Enterprise, Intel Corp, Twitter, Red Hat, IBM, Fujitsu Limited oraz wiele, wiele innych. Zmiany wprowadzane są w postaci tak zwanych *Java Specification Requests, JSR* które podlegają ocenie i głosowaniu. Cały proces opisany jest pod adresem: https://jcp.org/en/procedures/overview.
 
 ## Oracle Java vs Microsoft .NET
 
-TODO
+Niewiarygodny sukces platformy Java TODO
 
-## Czym zajmują się programiści Java?
 
 
 
@@ -121,3 +113,6 @@ Legenda:
 * https://www.pwc.com/gx/en/industries/technology/publications/global-100-software-leaders/explore-the-data.html
 * https://benchmarksgame.alioth.debian.org/
 * https://docs.oracle.com/cd/E19798-01/821-1770/gcrkk/index.html
+* http://www.apache.org/
+* https://jcp.org/en/procedures/overview
+* https://jcp.org/en/participation/members/
