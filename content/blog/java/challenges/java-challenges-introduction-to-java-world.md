@@ -30,6 +30,8 @@ My zachęcamy Was do rozpoczęcia swojej przygody w językiem Java. Jest to obec
 
 ## Historia
 
+Prace nad stworzeniem języka Java rozpoczęły się już w 1991 roku. Autorami projektu byli James Gosling, Mike Sheridan, i Patrick Naughton. Początkowo język nazywał się *Oak* po drzewie o tej samej nazwie, co w języku polskim oznacza Dąb. Inspiracja pochodziła od drzewa które rosło obok gabinetu James'a Gosling'a uznawanego obecnie za ojca języka Java. Następnie z powodu zastrzeżenia nazwy przez Oak Technologies język został przemianowany na *Green* aż w 1994 język został ostatecznie zyskał nazwę **Java** pochodzącą od kawy z wyspy Jawa w Indonezji (ang. Java coffee).
+
 ## Popularność
 
 W internecie bardzo łatwo znaleźć serwisy które za pomocą wielu różnych metod próbują oszacować popularność języków programowania. Do najpopularniejszych należą:
@@ -68,8 +70,15 @@ TODO
 
 # Oracle Java vs Microsoft .NET
 
-
+TODO
 
 # A na koniec coś na poprawę humoru :)
 
 {{< youtube id="kLO1djacsfg" >}}
+
+
+Legenda:
+
+* https://www.javaworld.com/article/2077265/core-java/so-why-did-they-decide-to-call-it-java-.html
+* https://pl.wikipedia.org/wiki/Java_(kawa)
+* https://en.wikipedia.org/wiki/Coffee_production_in_Indonesia#Java
