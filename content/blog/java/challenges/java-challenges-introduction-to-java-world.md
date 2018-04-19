@@ -12,11 +12,11 @@ type = "post"
 
 +++
 
-Wiele początkujących osób zadaje głównie dwa pytania:
-1. Jaki język programowania wybrać na początek i dlaczego
-1. Jak się uczyć programować
+Wiele początkujących osób zadaje sobie pytanie:
 
-W tym poście spróbuję odpowiedzieć dość szeroko na obydwa z tych pytań :)
+**Jaki język programowania wybrać na początek i dlaczego?**
+
+W tym poście spróbuję odpowiedzieć dość szeroko na to pytanie :)
 
 # Języki programowania
 
@@ -92,7 +92,7 @@ Język Java, maszyna wirtualna Java oraz platformy Java, także są tworzone prz
 
 ## Oracle Java vs Microsoft .NET
 
-Niewiarygodny sukces platformy Java przyczynił się także do powstania w 2002 roku konkurencyjnej platformy autorstwa firmy Microsoft zwanej platformą .NET (pełna nazwa .NET Framework). Początkowo twórcy zaimplementowali własną wersję języka Java z lekkimi modyfikacjami pod nazwą J++, zaś później stworzyli swój własny język konkurencyjny do języka Java którego nazwali C#. Platforma firmy Microsoft była początkowo rozwijana tylko na systemy firmy Microsoft, jednak w 27 czerwca 2016 roku została wydana zupełnie nowa wersja platformy .NET pod nazwą .NET Core która w odróżnieniu od .NET Framework jest multiplatformowa (Windows, Linux, MacOS) oraz otwartoźródłowa.
+Niewiarygodny sukces platformy Java przyczynił się także do powstania w 2002 roku konkurencyjnej platformy autorstwa firmy Microsoft zwanej platformą .NET (pełna nazwa .NET Framework). Początkowo twórcy zaimplementowali własną wersję języka Java z lekkimi modyfikacjami pod nazwą J++, zaś później stworzyli swój własny język, konkurencyjny do języka Java, który nazwali C#. Platforma firmy Microsoft była początkowo rozwijana tylko na systemy firmy Microsoft, jednak 27 czerwca 2016 roku została wydana zupełnie nowa wersja platformy .NET pod nazwą .NET Core, która w odróżnieniu od .NET Framework jest multiplatformowa (Windows, Linux, MacOS) oraz otwartoźródłowa.
 
 
 
