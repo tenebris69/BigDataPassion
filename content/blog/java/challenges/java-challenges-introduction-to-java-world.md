@@ -32,6 +32,8 @@ My zachęcamy Was do rozpoczęcia swojej przygody w językiem Java. Jest to obec
 
 Prace nad stworzeniem języka Java rozpoczęły się już w 1991 roku. Autorami projektu byli James Gosling, Mike Sheridan, i Patrick Naughton. Początkowo język nazywał się *Oak* po drzewie o tej samej nazwie, co w języku polskim oznacza Dąb. Inspiracja pochodziła od drzewa które rosło obok gabinetu James'a Gosling'a uznawanego obecnie za ojca języka Java. Następnie z powodu zastrzeżenia nazwy przez Oak Technologies język został przemianowany na *Green* aż w 1994 język został ostatecznie zyskał nazwę **Java** pochodzącą od kawy z wyspy Jawa w Indonezji (ang. Java coffee).
 
+Składnia języka Java bazuje na jednym z najpopularniejszych w tamtych czasach języku programowania jakim był C++, dzięki czemu była bardzo łatwa do nauki dla dużego grona programistów, oraz była od razu językiem obiektowym. Początkowo miała być wykorzystywana do tworzenia oprogramowania dla urządzeń telewizyjnych, gdzie wcześniej używany był język C++. Niestety korzystanie z tego języka wymagało często tworzenie dedykowanego kodu na każde urządzenie, dlatego główną ideą która przyświecała twórcom Javy była "Write Once, Run Anywhere" czyli napisz raz swój program i uruchamiaj gdziekolwiek. Tak powstała maszyna wirtualna Java umożliwiająca uruchamianie wszędzie tego samego kodu napisanego w języku Java.
+
 ## Popularność
 
 W internecie bardzo łatwo znaleźć serwisy które za pomocą wielu różnych metod próbują oszacować popularność języków programowania. Do najpopularniejszych należą:
@@ -82,3 +84,7 @@ Legenda:
 * https://www.javaworld.com/article/2077265/core-java/so-why-did-they-decide-to-call-it-java-.html
 * https://pl.wikipedia.org/wiki/Java_(kawa)
 * https://en.wikipedia.org/wiki/Coffee_production_in_Indonesia#Java
+
+https://en.wikipedia.org/wiki/Java_(software_platform)#History
+https://en.wikipedia.org/wiki/List_of_JVM_languages
+https://en.wikipedia.org/wiki/Java_(programming_language)
