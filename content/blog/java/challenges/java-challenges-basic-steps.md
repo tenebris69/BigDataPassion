@@ -405,8 +405,6 @@ Pętla **while**
 
 
 TODO:
-- pętle
-- warunki
 - String
 - rzutowanie
 - %
