@@ -68,4 +68,30 @@ Dodatkowo nie można stosować w nazwach symboli taki jak "+", spacji oraz słó
 
 Więcej o "zwyczajach" stosowanych w języku Java, czyli tak zwanych *konwencjach*, możemy przeczytać tutaj: http://www.oracle.com/technetwork/java/codeconventions-150003.pdf. Oczywiście nie ma obowiązku ich przestrzegania, jest to jednak mocno zalecane i ułatwia współpracę w innymi programistami. Zdarza się także, że różne firmy tworzą własne reguły pisania kodu, gdybyśmy chcieli zobaczyć jak robi to firma Google wystarczy zajrzeć na stronę: https://google.github.io/styleguide/javaguide.html.
 
+# Typy danych
 
+Java jest językiem o **ścisłej kontroli typów** (https://pl.wikipedia.org/wiki/Typowanie_statyczne). Oznacza to, że każda zmienna ma z góry określony typ, czyli informację o tym co można do takiej zmiennej zapisać. Typy dzielimy na proste (ang. primitive) oraz złożone, czyli obiekty o których powiemy sobie więcej w kolejnych wyzwaniach.
+
+Do typów prostych zaliczamy:
+
+* byte - przechowuje liczby całkowite z zakresu od -128 do 127
+* short - przechowuje liczby całkowite z zakresu od -32 768 do 32 767
+* int - przechowuje liczby całkowite z zakresu -2<sup>31</sup> do 2<sup>31</sup>-1
+* long - przechowuje liczby całkowite z zakresu -2<sup>63</sup> do 2<sup>63</sup>-1
+* float - przechowuje liczby zmiennoprzecinkowe 32 bitowe zgodne ze standardem IEEE 754
+* double - przechowuje liczby zmiennoprzecinkowe 64 bitowe zgodne ze standardem IEEE 754
+* boolean - przechowuje wartość logiczną (prawda / fałsz, ang. true / false)
+* char - przechowuje znak Unicode (16-bit, 0-65,535)
+
+Więcej informacji o typach możemy znaleźć pod adresem: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+
+
+
+
+
+
+
+# Legenda
+* https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
+* https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+* http://www.oracle.com/technetwork/java/codeconventions-150003.pdf
