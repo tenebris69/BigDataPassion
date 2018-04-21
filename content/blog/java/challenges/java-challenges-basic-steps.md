@@ -285,7 +285,7 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
-Ostatnimi podstawowymi i często używanymi operatorami są operator równości "==" i nierówności "!=", pozwalające sprawdzić czy wartości dwóch zmiennych są równe lub nie. Operatory te zwracają prawdę (true) lub fałsz (false) czyli zmienną typu boolean. Poniżej przykład użycia tych operatorów:
+Ostatnimi podstawowymi i często używanymi operatorami są operator równości "==", operator nierówności "!=" i dwa cztery operatory większości ">", "<", ">=", "<=", pozwalające sprawdzić czy wartości dwóch zmiennych są równe lub nie, oraz która wartość jest większa. Operatory te zwracają prawdę (true) lub fałsz (false) czyli zmienną typu boolean. Poniżej przykład użycia tych operatorów:
 
 ~~~java
 package pl.kodolamacz;
@@ -294,14 +294,16 @@ public class MyFirstJavaApplication {
 
     public static void main(String[] args) {
         double x = 10;
-        double y = 10;
-        
-        boolean result = x == y;
-        System.out.println(result);
+        double y = 5;
 
-        y = 5;
-        result = x == y;
-        System.out.println(result);
+        System.out.println(x == y); // czy x jest równe y
+        System.out.println(x != y); // czy x jest różne od y
+
+        System.out.println(x > y); // czy x jest większe od y
+        System.out.println(x >= y); // czy x jest większe lub równe y
+
+        System.out.println(x < y); // czy x jest mniejsze od y
+        System.out.println(x <= y); // czy x jest mniejsze lub równe y
     }
 
 }
@@ -310,7 +312,84 @@ Operatory te są używane przede wszystkim w instrukcjach sterujących (patrz da
 
 Więcej operatorów możemy znaleźć pod adresem: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html. Zamieszczona tam tabela nie tylko pokazuje wszystkie dostępne operatory w języku Java, ale także odzwierciedla kolejność wykonywania operacji gdy w jednej linijce kodu użyjemy kilku operatorów, podobnie jak w szkole podstawowej na lekcjach matematyki słuchaliśmy o kolejności wykonywania działań matematycznych. Tak samo jak na matematyce, w Javie także można się wspomagać nawiasami, gdy domyślna kolejność nam nie odpowiada.
 
-# Instrukcje sterujące
+# Instrukcje warunkowe
+
+W Javie, podobnie jak w większości językach programowania, wykonaniem naszego programu sterujemy instrukcjami warunkowymi. Do budowania tych instrukcji korzystamy ze słówka kluczowego **if** oraz **else**.
+
+W najprostszej postaci instrukcja warunkowa wygląda tak:
+~~~java
+if (warunek) polecenie;
+~~~
+
+Jeśli chcemy dla danego warunku wykonać kilka instrukcji musimy użyć nawiasów {}:
+~~~java
+if (warunek) {
+    instrukcja 1;
+    instrukcja 2;
+}
+~~~
+
+Gotowy kod Java może więc wyglądać tak:
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+        double x = 10;
+        double y = 5;
+
+        if(x > y){
+            System.out.println("x jest większe od y");
+        }
+    }
+
+}
+~~~
+Funkcja *println* zostanie wykonana tylko i wyłącznie wtedy gdy wartość zmiennej x będzie większa od y (co w tym przypadku jest prawdą).
+
+Jeśli chcemy wykonać jakąś akcję gdy warunek nie zostanie spełniony możemy użyć słowa kluczowego **else**:
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+        double x = 10;
+        double y = 5;
+
+        if(x > y){
+            System.out.println("x jest większe od y");
+        } else {
+            System.out.println("x nie jest większe od y");
+        }
+    }
+
+}
+~~~
+
+Instrukcję **if** można łączyć ze sobą robiąc kaskadę warunków:
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+        double x = 10;
+        double y = 5;
+
+        if(x > y){
+            System.out.println("x jest większe od y");
+        } else if (x < y) {
+            System.out.println("x jest mniejsze od y");
+        } else {
+            System.out.println("x jest równe y");
+        }
+    }
+
+}
+~~~
+
 
 # Legenda
 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
@@ -325,3 +404,4 @@ TODO:
 - String
 - rzutowanie
 - %
+- komentarze
