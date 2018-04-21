@@ -395,7 +395,39 @@ public class MyFirstJavaApplication {
 
 Innym mechanizmem sterowania pracą naszego programu są pętle. Pozwalają one na wykonanie wielokrotnie jakiejś operacji. W składni języka mamy dostępne trzy rodzaje pętli: **while**, **do-while** oraz **for** która jest dostępna w dwóch wariantach.
 
-Pętla **while**
+Pętla **while** służy do wykonywania jakiejś instrukcji dopóki spełniony jest warunek:
+~~~java
+while (warunek) instrukcja
+~~~
+Tak samo jak w przypadku instrukcji warunkowych możemy w pętli wykonywać całe bloki kodu dzięki nawiasom {}.
+
+Poniższy program pobiera od użytkownika liczbę dopóki jej wartość nie będzie większa od 100:
+~~~java
+package pl.kodolamacz;
+
+import java.util.Scanner;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Podaj proszę liczbę większą od 100:");
+        double number = scanner.nextDouble();
+
+        while (number <= 100) {
+            System.out.println("Liczba nie jest większa od 100, podaj jeszcze raz:");
+            number = scanner.nextDouble();
+        }
+
+        scanner.close();
+
+        System.out.println("Dziękuję! Podałeś liczbę: " + number);
+    }
+
+}
+~~~
 
 # Legenda
 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
