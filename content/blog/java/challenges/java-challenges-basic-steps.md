@@ -228,7 +228,7 @@ public class MyFirstJavaApplication {
 
 }
 ~~~
-Zauważmy, że w obydwu przypadkach przy każdym działaniu zmieniamy wartość zmiennej "x" dlatego wyniki będą inne niż gdy korzystaliśmy ze zmiennej "result".
+Zauważmy, że w obydwu przypadkach przy każdym działaniu zmieniamy wartość zmiennej "x", dlatego wyniki będą inne, niż gdy korzystaliśmy ze zmiennej "result".
 
 Innymi przydatnymi i często używanymi operatorami są operatory inkrementacji "++" i dekrementacji "--" czyli zwiększenia i zmniejszenia zmiennej o wartość równą jeden. Poniżej krótki przykład użycia tych operatorów:
 ~~~java
@@ -268,7 +268,7 @@ public class MyFirstJavaApplication {
 
 }
 ~~~
-Niestety po uruchomieniu powyższego programu wyniki które zobaczymy w terminalu mogą się różnić od tych których byśmy się spodziewali. Dzieje się tak dlatego, że nasze zmienne zostaną najpierw przekazane do funkcji *println* i wyświetlone a dopiero potem zostaną zastosowane operatory "++" i "--". Gdybyśmy chcieli najpierw wykonać operacje inkrementacji i dekrementacji powinniśmy użyć tych operatorów z lewej strony zmiennej, co będzie oznaczało dla kompilatora "najpierw zwiększ, potem wyślij do funkcji println". Poniżej przykład:
+Niestety po uruchomieniu powyższego programu wyniki które zobaczymy w terminalu mogą się różnić od tych, których byśmy się spodziewali. Dzieje się tak dlatego, że nasze zmienne zostaną najpierw przekazane do funkcji *println* i wyświetlone, a dopiero potem zostaną zastosowane operatory "++" i "--". Gdybyśmy chcieli najpierw wykonać operacje inkrementacji i dekrementacji powinniśmy użyć tych operatorów z lewej strony zmiennej, co będzie oznaczało dla kompilatora "najpierw zwiększ, potem wyślij do funkcji println". Poniżej przykład:
 ~~~java
 package pl.kodolamacz;
 
