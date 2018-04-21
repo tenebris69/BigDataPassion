@@ -133,7 +133,44 @@ final int days = 5;
 days = 10;
 ~~~
 
+# Operatory
+
+Na zmiennych możemy wykonywać różne operacje, np. arytmetyczne. Robimy to za pomocą operatorów.
+
+Podstawowymi operatorami są znaki "+", "-", "*" oraz "/" oznaczające operację odpowiednio dodawania, odejmowania, mnożenia oraz dzielenia. Także znak "=" jest tak zwanym operatorem przypisania. Poniżej przykład użycia tych operatorów:
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+
+        double x = 10;
+        double y = 2;
+
+        double result = x + y;
+        System.out.println(result);
+
+        result = x - y;
+        System.out.println(result);
+
+        result = x * y;
+        System.out.println(result);
+
+        result = x / y;
+        System.out.println(result);
+    }
+
+}
+~~~
+
+
+
+
+Więcej operatorów możemy znaleźć pod adresem: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
+
 # Legenda
 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
-* https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
 * http://www.oracle.com/technetwork/java/codeconventions-150003.pdf
+* https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+* https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
