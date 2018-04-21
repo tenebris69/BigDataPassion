@@ -164,8 +164,71 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
+Czasami chcemy zwiększyć wartość naszej zmiennej bez konieczności zapisywania wyniku w innej zmiennej jak poniżej:
+~~~java
+int x = 2;
+int y = x + 5;
+~~~
 
+Wolimy wtedy napisać:
+~~~java
+int x = 2;
+x = x + 5;
+~~~
 
+Można to jednak jeszcze bardziej uprościć używając operatorów "+=", "-=", "*=", "/=". Dzięki nim zamiast pisać:
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+
+        double x = 10;
+        double y = 2;
+
+        x = x + y;
+        System.out.println(x);
+
+        x = x - y;
+        System.out.println(x);
+
+        x = x * y;
+        System.out.println(x);
+
+        x = x / y;
+        System.out.println(x);
+    }
+
+}
+~~~
+możemy napisać zwięźlej:
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+
+        double x = 10;
+        double y = 2;
+
+        x += y;
+        System.out.println(x);
+
+        x -= y;
+        System.out.println(x);
+
+        x *= y;
+        System.out.println(x);
+
+        x /= y;
+        System.out.println(x);
+    }
+
+}
+~~~
+Zauważmy, że w obydwu przypadkach przy każdym działaniu zmieniamy wartość zmiennej "x" dlatego wyniki będą inne niż gdy korzystaliśmy ze zmiennej "result".
 
 Więcej operatorów możemy znaleźć pod adresem: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
 
