@@ -3,12 +3,12 @@ Java wyzwania program: http://kodolamacz.pl/kurs-java/
 
 Wyzwania programistyczne (poniedziałki):
 * Pierwszy program
-* Podstawowe operacje, zmienne, pętlę, funkcje
-* Tablice
+* Podstawowe operacje, zmienne, pętle, funkcje
+* Wstęp do programowania obiektowego + funkcje
+* Wstęp do programowania funkcyjnego
+* Tablice i kolekcje
 * Operacje wejście wyjścia, strumienie
 * Operacje matematyczne, na tekstach  i na datach
-* Wstęp do programowania obiektowego
-* Kolekcje
 
 Tematy dodatkowe (piątki):
 * Jaki język wybrać, historia i świat Java
@@ -29,3 +29,5 @@ TODO:
 - rzutowanie
 - %
 - więcej o pętlach...
+- var
+- poprawić typy danych
