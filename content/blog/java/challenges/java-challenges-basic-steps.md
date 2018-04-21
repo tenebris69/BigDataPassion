@@ -285,7 +285,7 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
-Ostatnimi podstawowymi i często używanymi operatorami są operator równości "==", operator nierówności "!=" i dwa cztery operatory większości ">", "<", ">=", "<=", pozwalające sprawdzić czy wartości dwóch zmiennych są równe czy nie, oraz która wartość jest większa. Operatory te zwracają prawdę (true) lub fałsz (false) czyli zmienną typu boolean. Poniżej przykład użycia tych operatorów:
+Ostatnimi podstawowymi i często używanymi operatorami są operator równości "==", operator nierówności "!=" i cztery operatory większości ">", "<", ">=", "<=", pozwalające sprawdzić czy wartości dwóch zmiennych są równe czy nie, oraz która wartość jest większa. Operatory te zwracają prawdę (true) lub fałsz (false) czyli zmienną typu boolean. Poniżej przykład użycia tych operatorów:
 
 ~~~java
 package pl.kodolamacz;
@@ -314,7 +314,7 @@ Więcej operatorów możemy znaleźć pod adresem: https://docs.oracle.com/javas
 
 # Instrukcje warunkowe
 
-W Javie, podobnie jak w większości językach programowania, wykonaniem naszego programu sterujemy instrukcjami warunkowymi. Do budowania tych instrukcji korzystamy ze słówka kluczowego **if** oraz **else**.
+W Javie, podobnie jak w większości języków programowania, działaniem naszego programu sterujemy za pomocą instrukcji warunkowych. Do budowania tych instrukcji korzystamy ze słówka kluczowego **if** oraz **else**.
 
 W najprostszej postaci instrukcja warunkowa wygląda tak:
 ~~~java
@@ -347,7 +347,7 @@ public class MyFirstJavaApplication {
 
 }
 ~~~
-Funkcja *println* zostanie wykonana tylko i wyłącznie wtedy gdy wartość zmiennej x będzie większa od y (co w tym przypadku jest prawdą).
+Funkcja *println* zostanie wykonana tylko i wyłącznie wtedy, gdy wartość zmiennej x będzie większa od y (co w tym przypadku jest prawdą).
 
 Jeśli chcemy wykonać jakąś akcję gdy warunek nie zostanie spełniony możemy użyć słowa kluczowego **else**:
 ~~~java
@@ -393,7 +393,7 @@ public class MyFirstJavaApplication {
 
 # Pętle
 
-Innym mechanizmem sterowania pracą naszego programu są pętle. Pozwalają one na wykonanie wielokrotnie jakiejś operacji. W składni języka mamy dostępne trzy rodzaje pętli: **while**, **do-while** oraz **for** która jest dostępna w dwóch wariantach.
+Innym mechanizmem sterowania pracą naszego programu są pętle. Pozwalają one na wykonanie wielokrotnie jakiejś operacji. W składni języka mamy dostępne trzy rodzaje pętli: **while**, **do-while** oraz **for**, która jest dostępna w dwóch wariantach.
 
 Pętla **while**
 
