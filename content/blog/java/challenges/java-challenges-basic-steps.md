@@ -24,7 +24,7 @@ Przed nami takie rzeczy jak:
 
 Zaczynamy!
 
-# Zmienne i ich typy
+# Zmienne
 
 W poprzednim programie wczytywaliśmy od użytkownika jego imię i nazwisko a następnie wyświetlaliśmy te informacje. Nasz program wyglądał mniej więcej tak:
 ~~~java
@@ -65,5 +65,7 @@ Nazwa zmiennej musi się zaczynać literą oraz składać się z liter i cyfr. Z
 W nazwach zmiennych możemy używać zarówno dużych i małych liter, trzeba jednak pamiętać, że wielkość liter ma znaczenie i zmienna *forename*, *Forename* czy *foreName* to zupełnie inne zmienne. Przyjęto, że w Javie stosujemy notację **camelCase** (https://pl.wikipedia.org/wiki/CamelCase), czyli nazwy zmiennych zaczynamy zawsze małą literą, zaś w przypadku nazw będących złożeniem kilku słów, każde kolejne słowo zaczyna się dużą literą, np. *myDogName*.
 
 Dodatkowo nie można stosować w nazwach symboli taki jak "+", spacji oraz słów zarezerwowanych (https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html).
+
+Więcej o "zwyczajach" stosowanych w języku Java, czyli tak zwanych *konwencjach*, możemy przeczytać tutaj: http://www.oracle.com/technetwork/java/codeconventions-150003.pdf. Oczywiście nie ma obowiązku ich przestrzegania, jest to jednak mocno zalecane i ułatwia współpracę w innymi programistami. Zdarza się także, że różne firmy tworzą własne reguły pisania kodu, gdybyśmy chcieli zobaczyć jak robi to firma Google wystarczy zajrzeć na stronę: https://google.github.io/styleguide/javaguide.html.
 
 
