@@ -429,6 +429,21 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
+
+
+# Wyzwanie
+
+Nasze drugie wyzwanie będzie bardziej wymagające od poprzedniego. Chcemy byście napisali uproszczoną wersję kalkulatora! Uproszczoną dlatego, że nie będziemy mieć okienka z przyciskami, liczby jak i polecenia będziemy podawać w terminalu, np. tak:
+~~~shell
+Proszę podaj w oddzielnych linijkach jakąś liczbę, operację matematyczną +,-,*,/,%, a następnie kolejną liczbę:
+12
++
+3
+Twój wynik to: 15
+Chcesz wykonać kolejne działanie? Wpisz literę t lub n.
+~~~
+
+
 # Legenda
 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
 * http://www.oracle.com/technetwork/java/codeconventions-150003.pdf
