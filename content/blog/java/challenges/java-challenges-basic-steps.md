@@ -268,7 +268,7 @@ public class MyFirstJavaApplication {
 
 }
 ~~~
-Niestety po uruchomieniu powyższego programu wyniki które zobaczymy w terminalu mogą się różnić od tych, których byśmy się spodziewali. Dzieje się tak dlatego, że nasze zmienne zostaną najpierw przekazane do funkcji *println* i wyświetlone, a dopiero potem zostaną zastosowane operatory "++" i "--". Gdybyśmy chcieli najpierw wykonać operacje inkrementacji i dekrementacji powinniśmy użyć tych operatorów z lewej strony zmiennej, co będzie oznaczało dla kompilatora "najpierw zwiększ, potem wyślij do funkcji println". Poniżej przykład:
+Niestety po uruchomieniu powyższego programu wyniki, które zobaczymy w terminalu mogą się różnić od tych, których byśmy się spodziewali. Dzieje się tak dlatego, że nasze zmienne zostaną najpierw przekazane do funkcji *println* i wyświetlone, a dopiero potem zostaną zastosowane operatory "++" i "--". Gdybyśmy chcieli najpierw wykonać operacje inkrementacji i dekrementacji powinniśmy użyć tych operatorów z lewej strony zmiennej, co będzie oznaczało dla kompilatora "najpierw zwiększ, potem wyślij do funkcji println". Poniżej przykład:
 ~~~java
 package pl.kodolamacz;
 
@@ -285,7 +285,7 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
-Ostatnimi podstawowymi i często używanymi operatorami są operator równości "==" i nierówności "!=", pozwalające sprawdzić czy wartości dwóch zmiennych są równe lub nie. Operatory te zwracają prawdę (true) lub fałsz (false) czyli zmienną typu boolean. Poniżej przykład użycia tych operatorów:
+Ostatnimi podstawowymi i często używanymi operatorami są operator równości "==" i nierówności "!=", pozwalające sprawdzić czy wartości dwóch zmiennych są równe, czy nie. Operatory te zwracają prawdę (true) lub fałsz (false), czyli zmienną typu boolean. Poniżej przykład użycia tych operatorów:
 
 ~~~java
 package pl.kodolamacz;
