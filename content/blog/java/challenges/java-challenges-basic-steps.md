@@ -452,6 +452,6 @@ Chcesz wykonać kolejne działanie? Wpisz literę t lub n.
 
 
 TODO:
-- String
+- String + char
 - rzutowanie
 - %
