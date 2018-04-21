@@ -443,7 +443,7 @@ public class MyFirstJavaApplication {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Podaj proszę liczbę większą od 100:");
-        double number = scanner.nextDouble();
+        var number = scanner.nextDouble();
 
         while (number <= 100) {
             System.out.println("Liczba nie jest większa od 100, podaj jeszcze raz:");
@@ -499,7 +499,7 @@ public class MyFirstJavaApplication {
 
     public static void main(String[] args) {
 
-        int i = 1;
+        var i = 1;
         while (i <= 10) {
             System.out.println(i++);
         }
@@ -515,7 +515,7 @@ public class MyFirstJavaApplication {
 
     public static void main(String[] args) {
 
-        for (int i = 1; i <= 10; i++) {
+        for (var i = 1; i <= 10; i++) {
             System.out.println(i);
         }
     }
