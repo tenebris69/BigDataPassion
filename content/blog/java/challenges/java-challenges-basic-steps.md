@@ -85,10 +85,33 @@ Do typów prostych zaliczamy:
 
 Więcej informacji o typach możemy znaleźć pod adresem: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
 
+## Deklaracja
 
+Zmienne w języku Java trzeba *deklarować*, czyli podaniu nazwy typu oraz nazwy zmiennej, np:
+~~~java
+double money;
+int days;
+boolean success;
+~~~
 
+Możemy też zadeklarować kilka zmiennych razem, gdy są tego samego typu:
+~~~java
+int days, months;
+~~~
+ale nie jest to zalecane, gdyż utrudnia czytanie programów.
 
+## Inicjalizacja
 
+Zmiennych które są tylko zadeklarowane nie możemy użyć, dlatego trzeba najpierw je *zainicjalizować*, czyli przypisać im jakąś wartość początkową:
+~~~java
+days = 5;
+~~~
+
+Najlepiej jest jednak deklarować zmienne i je inicjalizować w tej samej linijce jak poniżej:
+~~~java
+int days = 5;
+~~~
+Jeśli nie jest to możliwe, należy deklarację napisać jak najbliżej w kodzie miejsca inicjalizacji, kod będzie łatwiejszy do analizowania.
 
 
 # Legenda
