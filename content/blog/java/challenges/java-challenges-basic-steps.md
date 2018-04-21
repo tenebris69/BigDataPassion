@@ -24,6 +24,9 @@ Przed nami takie rzeczy jak:
 
 Zaczynamy!
 
+
+
+
 # Zmienne
 
 W poprzednim programie wczytywaliśmy od użytkownika jego imię i nazwisko, a następnie wyświetlaliśmy te informacje. Nasz program wyglądał mniej więcej tak:
@@ -67,6 +70,9 @@ W nazwach zmiennych możemy używać zarówno dużych i małych liter, trzeba je
 Dodatkowo nie można stosować w nazwach symboli taki jak "+", spacji oraz słów zarezerwowanych (https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html).
 
 Więcej o "zwyczajach" stosowanych w języku Java, czyli tak zwanych *konwencjach*, możemy przeczytać tutaj: http://www.oracle.com/technetwork/java/codeconventions-150003.pdf. Oczywiście nie ma obowiązku ich przestrzegania, jest to jednak mocno zalecane i ułatwia współpracę z innymi programistami. Zdarza się także, że różne firmy tworzą własne reguły pisania kodu, gdybyśmy chcieli zobaczyć jak robi to firma Google wystarczy zajrzeć na stronę: https://google.github.io/styleguide/javaguide.html.
+
+
+
 
 # Typy danych
 
@@ -117,6 +123,17 @@ Jeśli nie jest to możliwe, należy deklarację napisać jak najbliżej w kodzi
 
 W powyższym przykładzie powiedzieliśmy kompilatorowi, że nasza zmienna *days* ma mieć na początku wartość równą 5, zaś *money* wartość równą 50.6. Liczbę 5 oraz 50.6 w tym przypadku nazywamy *literałem* (ang. literal), czyli konkretną wartością zapisaną w naszym kodzie. Więcej przykładów takich literałów możemy znaleźć w dokumentacji na stronie: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
 
+## Słowo var
+
+W starszych wersjach języka Java zawsze musieliśmy podawać typ zmiennej. Od wersji 10 języka nie musimy tego robić, możemy pozwolić by kompilator domyślił się tego za nas. Korzystamy wtedy ze słówka **var** będącego skrótem słowa *variable* czyli *zmienna*. Powyższy fragment kodu możemy w takim razie zapisać jako:
+~~~java
+var days = 5;
+var money = 50.6;
+~~~
+
+
+
+
 # Stałe
 
 Wartość przechowywaną w zmiennej w każdej chwili możemy zmienić na inną (stąd też nazwa zmienna). Jednak czasami potrzebujemy powiedzieć kompilatorowi oraz innym programistom, że coś ma być "stałe". Wtedy warto skorzystać ze słówka *final*.
@@ -132,6 +149,9 @@ zaś poniższy już nie:
 final int days = 5;
 days = 10;
 ~~~
+
+
+
 
 # Operatory
 
@@ -312,6 +332,11 @@ Operatory te są używane przede wszystkim w instrukcjach sterujących (patrz da
 
 Więcej operatorów możemy znaleźć pod adresem: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html. Zamieszczona tam tabela nie tylko pokazuje wszystkie dostępne operatory w języku Java, ale także odzwierciedla kolejność wykonywania operacji gdy w jednej linijce kodu użyjemy kilku operatorów, podobnie jak w szkole podstawowej na lekcjach matematyki słuchaliśmy o kolejności wykonywania działań matematycznych. Tak samo jak na matematyce, w Javie także można się wspomagać nawiasami, gdy domyślna kolejność nam nie odpowiada.
 
+
+
+
+
+
 # Instrukcje warunkowe
 
 W Javie, podobnie jak w większości języków programowania, działaniem naszego programu sterujemy za pomocą instrukcji warunkowych. Do budowania tych instrukcji korzystamy ze słówka kluczowego **if** oraz **else**.
@@ -390,6 +415,10 @@ public class MyFirstJavaApplication {
 
 }
 ~~~
+
+
+
+
 
 # Pętle
 
@@ -495,6 +524,10 @@ public class MyFirstJavaApplication {
 ~~~
 Jak widać na dwóch powyższych przykładach, obydwu pętli można stosować zamiennie w zależności od tego, której w danym momencie jest nam łatwiej użyć!
 
+
+
+
+
 # Wyzwanie
 
 Nasze drugie wyzwanie będzie bardziej wymagające od poprzedniego. Chcemy byście napisali uproszczoną wersję kalkulatora! Uproszczoną dlatego, że nie będziemy mieć okienka z przyciskami, liczby jak i polecenia będziemy podawać w terminalu, np. tak:
@@ -506,6 +539,9 @@ Proszę podaj w oddzielnych linijkach jakąś liczbę, operację matematyczną +
 Twój wynik to: 15
 Chcesz wykonać kolejne działanie? Wpisz literę t lub n.
 ~~~
+
+
+
 
 
 # Legenda

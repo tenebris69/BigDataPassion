@@ -25,6 +25,7 @@ Tematy dodatkowe (piątki):
 
 
 TODO:
+-- komentarze
 - String + char
 - rzutowanie
 - %
