@@ -328,6 +328,7 @@ if (warunek) {
     instrukcja 2;
 }
 ~~~
+Instrukcje wewnątrz nawiasów {} nazywamy *blokiem* instrukcji.
 
 Gotowy kod Java może więc wyglądać tak:
 ~~~java
@@ -390,6 +391,11 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
+# Pętle
+
+Innym mechanizmem sterowania pracą naszego programu są pętle. Pozwalają one na wykonanie wielokrotnie jakiejś operacji. W składni języka mamy dostępne trzy rodzaje pętli: **while**, **do-while** oraz **for** która jest dostępna w dwóch wariantach.
+
+Pętla **while**
 
 # Legenda
 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
@@ -399,8 +405,6 @@ public class MyFirstJavaApplication {
 
 
 TODO:
-- pętle
-- warunki
 - String
 - rzutowanie
 - %
