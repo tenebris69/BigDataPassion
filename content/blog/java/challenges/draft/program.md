@@ -5,7 +5,7 @@ Wyzwania programistyczne (poniedziałki):
 * Pierwszy program
 * Podstawowe operacje, zmienne, pętlę, funkcje
 * Tablice
-* Operacje wejście wyjścia
+* Operacje wejście wyjścia, strumienie
 * Operacje matematyczne, na tekstach  i na datach
 * Wstęp do programowania obiektowego
 * Kolekcje
