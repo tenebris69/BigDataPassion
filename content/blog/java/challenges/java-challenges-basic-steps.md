@@ -105,13 +105,20 @@ ale nie jest to zalecane, gdyż utrudnia czytanie programów.
 Zmiennych które są tylko zadeklarowane nie możemy użyć, dlatego trzeba najpierw je *zainicjalizować*, czyli przypisać im jakąś wartość początkową:
 ~~~java
 days = 5;
+money = 50.6;
 ~~~
 
 Najlepiej jest jednak deklarować zmienne i je inicjalizować w tej samej linijce jak poniżej:
 ~~~java
 int days = 5;
+double money = 50.6;
 ~~~
 Jeśli nie jest to możliwe, należy deklarację napisać jak najbliżej w kodzie miejsca inicjalizacji, kod będzie łatwiejszy do analizowania.
+
+W powyższym przykładem powiedzieliśmy kompilatorowi, że nasza zmienna *days* ma mieć na początku wartość równą 5, zaś *money* wartość równą 50.6. Liczbę 5 oraz 50.6 w tym przypadku nazywamy *literałem* (ang. literal), czyli konkretną wartością zapisaną w naszym kodzie. Więcej przykładów takich literałów możemy znaleźć w dokumentacji na stronie: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+
+# Stałe
+
 
 
 # Legenda
