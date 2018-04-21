@@ -20,3 +20,12 @@ Tematy dodatkowe (piątki):
 * Git i inne repozytoria
 * Maven
 * Co dalej po wyzwaniach?
+
+
+
+
+TODO:
+- String + char
+- rzutowanie
+- %
+- więcej o pętlach...

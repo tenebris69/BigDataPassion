@@ -428,8 +428,72 @@ public class MyFirstJavaApplication {
 
 }
 ~~~
+Jeśli zmienna *number* już za pierwszym razem zostanie podana prawidłowa, nasza pętla nigdy się nie wykona, gdyż najpierw jest sprawdzany warunek.
 
+Pętla **do-while** działa bardzo podobnie do **while*, jednak w tym przypadku najpierw wykonujemy blok kodu a dopiero potem sprawdzamy warunek. Nasz program z użyciem pętli **do-while** będzie wyglądać tak:
+~~~java
+package pl.kodolamacz;
 
+import java.util.Scanner;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        double number;
+        do {
+            System.out.println("Podaj proszę liczbę większą od 100:");
+            number = scanner.nextDouble();
+        } while (number <= 100);
+
+        scanner.close();
+
+        System.out.println("Dziękuję! Podałeś liczbę: " + number);
+    }
+
+}
+~~~
+
+Pętla **for** służy do wykonania jakieś instrukcji określoną liczbę razy. Jej składnia wygląda następująco:
+~~~java
+for ( inicjalizacja zmiennych pomocniczych; warunek ; zmiana wartości zmiennych pomocniczych)
+    instrukcja
+~~~
+
+Wyobraźmy sobie, że chcemy wypisać wszystkie liczby od 1 do 10. Nasz program z użyciem pętli while wyglądałby tak:
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+
+        int i = 1;
+        while (i <= 10) {
+            System.out.println(i++);
+        }
+    }
+
+}
+~~~
+zaś w przypadku pętli **for** tak:
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+        }
+    }
+
+}
+~~~
+Jak widać na dwóch powyższych przykładach, obydwu pętli można stosować zamiennie w zależności od tego, której w danym momencie jest nam łatwiej użyć!
 
 # Wyzwanie
 
@@ -449,9 +513,3 @@ Chcesz wykonać kolejne działanie? Wpisz literę t lub n.
 * http://www.oracle.com/technetwork/java/codeconventions-150003.pdf
 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
-
-
-TODO:
-- String + char
-- rzutowanie
-- %
