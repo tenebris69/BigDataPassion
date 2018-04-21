@@ -26,7 +26,7 @@ Zaczynamy!
 
 # Zmienne
 
-W poprzednim programie wczytywaliśmy od użytkownika jego imię i nazwisko a następnie wyświetlaliśmy te informacje. Nasz program wyglądał mniej więcej tak:
+W poprzednim programie wczytywaliśmy od użytkownika jego imię i nazwisko, a następnie wyświetlaliśmy te informacje. Nasz program wyglądał mniej więcej tak:
 ~~~java
 package pl.kodolamacz;
 
@@ -52,7 +52,7 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
-Żeby taki program mógł zadziałać, musieliśmy w jakiś sposób zapamiętać sobie naszą wartość, czyli imię i nazwisko użytkownika. Potrzebujemy do tego czegoś w rodzaju "pudełka" na dane, gdzie będziemy mogli w każdej chwili coś włożyć a potem pobrać i w razie potrzeby włożyć coś innego. Takie "pudełka" na dane w językach programowania nazywamy **zmiennymi** (ang. variable).
+Aby taki program mógł zadziałać, musieliśmy w jakiś sposób zapamiętać sobie naszą wartość, czyli imię i nazwisko użytkownika. Potrzebujemy do tego czegoś w rodzaju "pudełka" na dane, gdzie będziemy mogli w każdej chwili coś włożyć, a potem pobrać i w razie potrzeby włożyć coś innego. Takie "pudełka" na dane w językach programowania nazywamy **zmiennymi** (ang. variable).
 
 W naszym kodzie z wyzwania stworzyliśmy dwie zmienne, *forename* i *surname*:
 ~~~java
@@ -60,13 +60,13 @@ String forename = scanner.nextLine();
 String surname = scanner.nextLine();
 ~~~
 
-Nazwa zmiennej musi się zaczynać literą oraz składać się z liter i cyfr. Za "literę" w Javie traktujemy dowolny znak Unicode (https://pl.wikipedia.org/wiki/Unikod), w tym także polskie znaki potocznie nazywane literami z ogonkami jak np. "ą". Przyjęto jednak zwyczajowo, że nasze **programy piszemy w języku angielskim**, ułatwia to współpracę z programistami z całego świata oraz unikamy problemów z kodowaniem.
+Nazwa zmiennej musi się zaczynać literą oraz może składać się z liter i cyfr. Za "literę" w Javie traktujemy dowolny znak Unicode (https://pl.wikipedia.org/wiki/Unikod), w tym także polskie znaki potocznie nazywane literami z ogonkami jak np. "ą". Przyjęto jednak zwyczajowo, że nasze **programy piszemy w języku angielskim**, ułatwia to współpracę z programistami z całego świata oraz unikamy problemów z kodowaniem.
 
 W nazwach zmiennych możemy używać zarówno dużych i małych liter, trzeba jednak pamiętać, że wielkość liter ma znaczenie i zmienna *forename*, *Forename* czy *foreName* to zupełnie inne zmienne. Przyjęto, że w Javie stosujemy notację **camelCase** (https://pl.wikipedia.org/wiki/CamelCase), czyli nazwy zmiennych zaczynamy zawsze małą literą, zaś w przypadku nazw będących złożeniem kilku słów, każde kolejne słowo zaczyna się dużą literą, np. *myDogName*.
 
 Dodatkowo nie można stosować w nazwach symboli taki jak "+", spacji oraz słów zarezerwowanych (https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html).
 
-Więcej o "zwyczajach" stosowanych w języku Java, czyli tak zwanych *konwencjach*, możemy przeczytać tutaj: http://www.oracle.com/technetwork/java/codeconventions-150003.pdf. Oczywiście nie ma obowiązku ich przestrzegania, jest to jednak mocno zalecane i ułatwia współpracę w innymi programistami. Zdarza się także, że różne firmy tworzą własne reguły pisania kodu, gdybyśmy chcieli zobaczyć jak robi to firma Google wystarczy zajrzeć na stronę: https://google.github.io/styleguide/javaguide.html.
+Więcej o "zwyczajach" stosowanych w języku Java, czyli tak zwanych *konwencjach*, możemy przeczytać tutaj: http://www.oracle.com/technetwork/java/codeconventions-150003.pdf. Oczywiście nie ma obowiązku ich przestrzegania, jest to jednak mocno zalecane i ułatwia współpracę z innymi programistami. Zdarza się także, że różne firmy tworzą własne reguły pisania kodu, gdybyśmy chcieli zobaczyć jak robi to firma Google wystarczy zajrzeć na stronę: https://google.github.io/styleguide/javaguide.html.
 
 # Typy danych
 
@@ -87,7 +87,7 @@ Więcej informacji o typach możemy znaleźć pod adresem: https://docs.oracle.c
 
 ## Deklaracja
 
-Zmienne w języku Java trzeba *deklarować*, czyli podaniu nazwy typu oraz nazwy zmiennej, np:
+Zmienne w języku Java trzeba *deklarować*, czyli podać typ oraz nazwę zmiennej, np:
 ~~~java
 double money;
 int days;
@@ -115,11 +115,11 @@ double money = 50.6;
 ~~~
 Jeśli nie jest to możliwe, należy deklarację napisać jak najbliżej w kodzie miejsca inicjalizacji, kod będzie łatwiejszy do analizowania.
 
-W powyższym przykładem powiedzieliśmy kompilatorowi, że nasza zmienna *days* ma mieć na początku wartość równą 5, zaś *money* wartość równą 50.6. Liczbę 5 oraz 50.6 w tym przypadku nazywamy *literałem* (ang. literal), czyli konkretną wartością zapisaną w naszym kodzie. Więcej przykładów takich literałów możemy znaleźć w dokumentacji na stronie: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+W powyższym przykładzie powiedzieliśmy kompilatorowi, że nasza zmienna *days* ma mieć na początku wartość równą 5, zaś *money* wartość równą 50.6. Liczbę 5 oraz 50.6 w tym przypadku nazywamy *literałem* (ang. literal), czyli konkretną wartością zapisaną w naszym kodzie. Więcej przykładów takich literałów możemy znaleźć w dokumentacji na stronie: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
 
 # Stałe
 
-Wartość przechowywaną w zmiennej w każdej chwili możemy zmienić na inną (stąd też nazwa zmienna). Jednak czasami potrzebujemy powiedzieć kompilatorowi oraz innym programistą, że coś ma być "stałe". Wtedy warto skorzystać ze słówka *final*.
+Wartość przechowywaną w zmiennej w każdej chwili możemy zmienić na inną (stąd też nazwa zmienna). Jednak czasami potrzebujemy powiedzieć kompilatorowi oraz innym programistom, że coś ma być "stałe". Wtedy warto skorzystać ze słówka *final*.
 
 Poniższy kod jest prawidłowy:
 ~~~java
