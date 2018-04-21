@@ -285,10 +285,43 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
-Więcej operatorów możemy znaleźć pod adresem: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
+Ostatnimi podstawowymi i często używanymi operatorami są operator równości "==" i nierówności "!=", pozwalające sprawdzić czy wartości dwóch zmiennych są równe lub nie. Operatory te zwracają prawdę (true) lub fałsz (false) czyli zmienną typu boolean. Poniżej przykład użycia tych operatorów:
+
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+        double x = 10;
+        double y = 10;
+        
+        boolean result = x == y;
+        System.out.println(result);
+
+        y = 5;
+        result = x == y;
+        System.out.println(result);
+    }
+
+}
+~~~
+Operatory te są używane przede wszystkim w instrukcjach sterujących (patrz dalej).
+
+Więcej operatorów możemy znaleźć pod adresem: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html. Zamieszczona tam tabela nie tylko pokazuje wszystkie dostępne operatory w języku Java, ale także odzwierciedla kolejność wykonywania operacji gdy w jednej linijce kodu użyjemy kilku operatorów, podobnie jak w szkole podstawowej na lekcjach matematyki słuchaliśmy o kolejności wykonywania działań matematycznych. Tak samo jak na matematyce, w Javie także można się wspomagać nawiasami, gdy domyślna kolejność nam nie odpowiada.
+
+# Instrukcje sterujące
 
 # Legenda
 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
 * http://www.oracle.com/technetwork/java/codeconventions-150003.pdf
 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
+
+
+TODO:
+- pętle
+- warunki
+- String
+- rzutowanie
+- %
