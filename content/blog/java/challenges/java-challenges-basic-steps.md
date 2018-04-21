@@ -52,7 +52,7 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
-Żeby taki program mógł zadziałać, musieliśmy w jakiś sposób zapamiętać sobie naszą wartość, czyli imię i nazwisko użytkownika. Potrzebujemy do tego czegoś w rodzaju "pudełka" na dane, gdzie będziemy mogli w każdej chwili coś włożyć a potem pobrać i w razie potrzeby włożyć coś innego. Takie "pudełka" na dane w językach programowania nazywamy **zmiennymi**.
+Żeby taki program mógł zadziałać, musieliśmy w jakiś sposób zapamiętać sobie naszą wartość, czyli imię i nazwisko użytkownika. Potrzebujemy do tego czegoś w rodzaju "pudełka" na dane, gdzie będziemy mogli w każdej chwili coś włożyć a potem pobrać i w razie potrzeby włożyć coś innego. Takie "pudełka" na dane w językach programowania nazywamy **zmiennymi** (ang. variable).
 
 W naszym kodzie z wyzwania stworzyliśmy dwie zmienne, *forename* i *surname*:
 ~~~java
@@ -119,7 +119,19 @@ W powyższym przykładem powiedzieliśmy kompilatorowi, że nasza zmienna *days*
 
 # Stałe
 
+Wartość przechowywaną w zmiennej w każdej chwili możemy zmienić na inną (stąd też nazwa zmienna). Jednak czasami potrzebujemy powiedzieć kompilatorowi oraz innym programistą, że coś ma być "stałe". Wtedy warto skorzystać ze słówka *final*.
 
+Poniższy kod jest prawidłowy:
+~~~java
+int days = 5;
+days = 10;
+~~~
+
+zaś poniższy już nie:
+~~~java
+final int days = 5;
+days = 10;
+~~~
 
 # Legenda
 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
