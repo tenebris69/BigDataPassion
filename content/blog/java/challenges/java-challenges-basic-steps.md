@@ -491,7 +491,7 @@ for ( inicjalizacja zmiennych pomocniczych; warunek ; zmiana wartości zmiennych
     instrukcja
 ~~~
 
-Wyobraźmy sobie, że chcemy wypisać wszystkie liczby od 1 do 10. Nasz program z użyciem pętli while wyglądałby tak:
+Wyobraźmy sobie, że chcemy wyświetlić wszystkie liczby od 1 do 10. Nasz program z użyciem pętli while wyglądałby tak:
 ~~~java
 package pl.kodolamacz;
 
