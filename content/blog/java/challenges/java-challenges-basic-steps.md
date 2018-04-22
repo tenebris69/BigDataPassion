@@ -195,7 +195,7 @@ W starszych wersjach języka Java zawsze musieliśmy podawać typ zmiennej. Od w
 var days = 5;
 var money = 50.6;
 ~~~
-
+W kolejnych przykładach kodu, będziemy na przemian korzystać ze słówka *var* lub deklaracji typu zmiennej by przyzwyczaić się do obydwu możliwości.
 
 
 
