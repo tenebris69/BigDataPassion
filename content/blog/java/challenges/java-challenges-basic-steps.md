@@ -41,8 +41,8 @@ Zaczniemy od dość prostego zagadnienia, ale przydatnego na kolejnych etapach n
 
 Wyróżniamy trzy rodzaje komentarzy:
 
-* liniowe - od znaków "//" do końca linii
-* blokowe - wszystko pomiędzy znakami "/*" i "*/"
+* liniowe - od znaków // do końca linii
+* blokowe - wszystko pomiędzy znakami /* i */
 * **Javadoc** - służy do tworzenia dokumentacji
 
 Poniżej przykład użycia w kodzie takich komentarzy:
@@ -73,6 +73,11 @@ public class MyFirstJavaApplication {
 ~~~
 
 Komentarzy będziemy używać w przykładach kodu w celu wyjaśnienia niektórych instrukcji. Więcej o komentarzach możemy poczytać tutaj: http://www.oracle.com/technetwork/articles/java/index-137868.html
+
+
+
+
+
 
 # Zmienne
 
