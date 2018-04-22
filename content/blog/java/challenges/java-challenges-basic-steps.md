@@ -195,7 +195,9 @@ W starszych wersjach języka Java zawsze musieliśmy podawać typ zmiennej. Od w
 var days = 5;
 var money = 50.6;
 ~~~
-W kolejnych przykładach kodu, będziemy na przemian korzystać ze słówka *var* lub deklaracji typu zmiennej by przyzwyczaić się do obydwu możliwości.
+W kolejnych przykładach kodu, będziemy na przemian korzystać ze słówka *var* lub deklaracji typu zmiennej, by przyzwyczaić się do obydwu możliwości.
+
+
 
 
 
@@ -214,6 +216,7 @@ zaś poniższy już nie:
 final int days = 5;
 days = 10; // tutaj będzie błąd!
 ~~~
+
 
 
 
@@ -399,6 +402,8 @@ public class MyFirstJavaApplication {
 Operatory te są używane przede wszystkim w instrukcjach sterujących (patrz dalej).
 
 Więcej operatorów możemy znaleźć pod adresem: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html. Zamieszczona tam tabela nie tylko pokazuje wszystkie dostępne operatory w języku Java, ale także odzwierciedla kolejność wykonywania operacji gdy w jednej linijce kodu użyjemy kilku operatorów, podobnie jak w szkole podstawowej na lekcjach matematyki słuchaliśmy o kolejności wykonywania działań matematycznych. Tak samo jak na matematyce, w Javie także można się wspomagać nawiasami, gdy domyślna kolejność nam nie odpowiada.
+
+
 
 
 

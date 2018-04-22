@@ -29,6 +29,4 @@ TODO:
 
 - String + char
 - rzutowanie
-- %
 - więcej o pętlach...
-- var
