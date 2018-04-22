@@ -352,7 +352,7 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
-Ostatnimi podstawowymi i często używanymi operatorami są operator równości "==", operator nierówności "!=" i cztery operatory większości ">", "<", ">=", "<=", pozwalające sprawdzić czy wartości dwóch zmiennych są równe czy nie, oraz która wartość jest większa. Operatory te zwracają prawdę (true) lub fałsz (false) czyli zmienną typu boolean. Poniżej przykład użycia tych operatorów:
+Ostatnimi podstawowymi i często używanymi operatorami są operator równości "==", operator nierówności "!=" i cztery operatory większości ">", "<", ">=", "<=", pozwalające sprawdzić czy wartości dwóch zmiennych są równe, czy nie oraz która wartość jest większa. Operatory te zwracają prawdę (true) lub fałsz (false) czyli zmienną typu boolean. Poniżej przykład użycia tych operatorów:
 
 ~~~java
 package pl.kodolamacz;
@@ -506,7 +506,7 @@ public class MyFirstJavaApplication {
 ~~~
 Jeśli zmienna *number* już za pierwszym razem zostanie podana prawidłowa, nasza pętla nigdy się nie wykona, gdyż najpierw jest sprawdzany warunek.
 
-Pętla **do-while** działa bardzo podobnie do **while*, jednak w tym przypadku najpierw wykonujemy blok kodu a dopiero potem sprawdzamy warunek. Nasz program z użyciem pętli **do-while** będzie wyglądać tak:
+Pętla **do-while** działa bardzo podobnie do **while*, jednak w tym przypadku najpierw wykonujemy blok kodu, a dopiero potem sprawdzamy warunek. Nasz program z użyciem pętli **do-while** będzie wyglądać tak:
 ~~~java
 package pl.kodolamacz;
 
