@@ -428,7 +428,7 @@ Pętla **while** służy do wykonywania jakiejś instrukcji dopóki spełniony j
 ~~~java
 while (warunek) instrukcja
 ~~~
-Tak samo jak w przypadku instrukcji warunkowych możemy w pętli wykonywać całe bloki kodu dzięki nawiasom {}.
+Tak samo jak w przypadku instrukcji warunkowych możemy w pętli wykonywać całe bloki kodu dzięki nawiasom { }.
 
 Poniższy program pobiera od użytkownika liczbę dopóki jej wartość nie będzie większa od 100:
 ~~~java
@@ -524,6 +524,7 @@ public class MyFirstJavaApplication {
 ~~~
 Jak widać na dwóch powyższych przykładach, obydwu pętli można stosować zamiennie w zależności od tego, której w danym momencie jest nam łatwiej użyć!
 
+Pętla **for** ma jeszcze drugą wersję, tak zwany **foreach**, ale do tego przypadku wrócimy gdy poznamy tablice i kolekcje w Javie.
 
 
 
