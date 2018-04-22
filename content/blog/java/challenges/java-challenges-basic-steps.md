@@ -233,7 +233,7 @@ public class MyFirstJavaApplication {
         double x = 10;
         double y = 2;
 
-        double result = x + y;
+        var result = x + y;
         System.out.println(result);
 
         result = x - y;
