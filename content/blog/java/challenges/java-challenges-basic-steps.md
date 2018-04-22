@@ -25,7 +25,54 @@ Przed nami takie rzeczy jak:
 Zaczynamy!
 
 
+# Od kodu do programu, czyli jak to wszystko działa
 
+Zanim przejdziemy do podstaw składni samego języka Java, kilka słów wyjaśnienia, jak to wszystko działa. Java jest językiem kompilowanym (https://pl.wikipedia.org/wiki/J%C4%99zyk_kompilowany), to znaczy, zanim uruchomimy nasz program, cały nasz kod będzie musiał zostać poddany procesowi kompilacji do postaci zrozumiałem dla komputera. W przypadku Javy, nasze programy będą uruchamiane przez maszynę wirtualną Java, więc narzędzie zwane **kompilatorem**, będzie tłumaczyć nasz kod Java do postaci kodu maszynowego zrozumiałego dla JVM. Jak wiecie z poprzedniego postu, z wprowadzenia do świata Java, mamy dostępnych wiele języków obsługiwanych przez maszynę wirtualną, ale tak naprawdę każdy z nich korzysta z odpowiedniego kompilatora, który tłumaczy kod do postaci zrozumiałem dla maszyny wirtualnej. Dopiero sama maszyna wirtualna tłumaczy ten kod dalej do postaci zrozumiałem przez system operacyjny naszego komputera.
+
+Jako programiści, będziemy pisać nasz kod w plikach **.java**, zaś kompilator będzie je tłumaczył na kod maszynowy i umieszczał w plikach **.class**. W przypadku środowiska IntelliJ IDEA, pliki typu *class* znajdują się domyślnie w katalogu *out*. W przeciwieństwie do programów napisanych np. w języku C++, gotowe programy, czyli zbiór plików *class*, nie są umieszczane w pliku **exe**, są zaś pakowane do plików **.jar**.
+
+Kompilator jest dla programistów bardzo przydatnym narzędziem. Już na etapie tłumaczenia naszego kodu na język maszyny wirtualnej, jest w stanie wyłapać wszystkie błędy składni (dostajemy wtedy tak zwany błąd kompilacji), oraz ostrzega nasz przed wieloma potencjalnymi błędami. Drugą zaletą języków kompilowanych, jest możliwość "zrzucenia" części własnej pracy na kompilator który może za nas stosować wiele różnych optymalizacji, by nasze programy działały szybciej.
+
+Proces kompilacji może wydawać się bardzo skomplikowanym zagadnieniem i faktycznie takie jest, ale dla nas mechanizm jego działania nie jest na tym etapie do niczego potrzebny. Musimy tylko wiedzieć, że istnieje coś takiego jak **kompilator** który analizuje i tłumaczy nasz kod na zrozumiały dla maszyny wirtualnej.
+
+# Komentarze
+
+Zaczniemy od dość prostego zagadnienia, ale przydatnego na kolejnych etapach nauki, mianowicie komentarzy. Komentarz to tak naprawdę dowolny kawałek naszego kodu, który nie zostanie uwzględniony w programie wykonywalnym, czyli zostanie pominięty przez kompilator języka Java. Komentarze mogą służyć do zostawienia krótkiej informacji dla innych programistów lub czasami "wyłączenia" kawałka kodu, w trakcie pisania i testowania naszego programu.
+
+Wyróżniamy trzy rodzaje komentarzy:
+
+* liniowe - od znaków "//" do końca linii
+* blokowe - wszystko pomiędzy znakami "/*" i "*/"
+* **Javadoc** - służy do tworzenia dokumentacji
+
+Poniżej przykład użycia w kodzie takich komentarzy:
+~~~java
+package pl.kodolamacz;
+
+/**
+ * To jest Javadoc 
+ * dla klasy
+ */
+public class MyFirstJavaApplication {
+
+    /**
+     * Tutaj Javadoc 
+     * dla funkcji
+     */
+    public static void main(String[] args) {
+
+        // Tutaj jest komentarz liniowy
+
+        /*
+        To jest komentarz blokowy
+        Może on mieć wiele linii
+         */
+    }
+
+}
+~~~
+
+Komentarzy będziemy używać w przykładach kodu w celu wyjaśnienia niektórych instrukcji. Więcej o komentarzach możemy poczytać tutaj: http://www.oracle.com/technetwork/articles/java/index-137868.html
 
 # Zmienne
 
@@ -549,3 +596,4 @@ Chcesz wykonać kolejne działanie? Wpisz literę t lub n.
 * http://www.oracle.com/technetwork/java/codeconventions-150003.pdf
 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
 * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
+* http://www.oracle.com/technetwork/articles/java/index-137868.html
