@@ -346,14 +346,14 @@ W najprostszej postaci instrukcja warunkowa wygląda tak:
 if (warunek) polecenie;
 ~~~
 
-Jeśli chcemy dla danego warunku wykonać kilka instrukcji musimy użyć nawiasów {}:
+Jeśli chcemy dla danego warunku wykonać kilka instrukcji musimy użyć nawiasów { }:
 ~~~java
 if (warunek) {
     instrukcja 1;
     instrukcja 2;
 }
 ~~~
-Instrukcje wewnątrz nawiasów {} nazywamy *blokiem* instrukcji.
+Instrukcje wewnątrz nawiasów { } nazywamy *blokiem* instrukcji.
 
 Gotowy kod Java może więc wyglądać tak:
 ~~~java
