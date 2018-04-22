@@ -168,9 +168,9 @@ ale nie jest to zalecane, gdyż utrudnia czytanie programów.
 Zmiennych które są tylko zadeklarowane nie możemy użyć, dlatego trzeba najpierw je *zainicjalizować*, czyli przypisać im jakąś wartość początkową:
 ~~~java
 days = 5;
-miliseconds = 1212312807128l;
+miliseconds = 1212312807128L;
 avg = 4.5f;
-money = 2.5;
+money = 50.6;
 success = true;
 character = 'a';
 ~~~
@@ -178,11 +178,15 @@ character = 'a';
 Najlepiej jest jednak deklarować zmienne i je inicjalizować w tej samej linijce jak poniżej:
 ~~~java
 int days = 5;
+long miliseconds = 1212312807128L;
+float avg = 4.5f;
 double money = 50.6;
+boolean success = true;
+char character = 'a';
 ~~~
 Jeśli nie jest to możliwe, należy deklarację napisać jak najbliżej w kodzie miejsca inicjalizacji, kod będzie łatwiejszy do analizowania.
 
-W powyższym przykładzie powiedzieliśmy kompilatorowi, że nasza zmienna *days* ma mieć na początku wartość równą 5, zaś *money* wartość równą 50.6. Liczbę 5 oraz 50.6 w tym przypadku nazywamy *literałem* (ang. literal), czyli konkretną wartością zapisaną w naszym kodzie. Należy zauważyć, że literały w Javie domyślnie są typu *int* oraz *double* dlatego w przypadku literałów typu *long* i *float* pojawiły się odpowiednio litery *l* oraz *f*. Więcej przykładów takich literałów możemy znaleźć w dokumentacji na stronie: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+W powyższym przykładzie powiedzieliśmy kompilatorowi, że nasza zmienna *days* ma mieć na początku wartość równą 5, zaś *money* wartość równą 50.6. Liczbę 5 oraz 50.6 w tym przypadku nazywamy *literałem* (ang. literal), czyli konkretną wartością zapisaną w naszym kodzie. Należy zauważyć, że literały w Javie domyślnie są typu *int* oraz *double* dlatego w przypadku literałów typu *long* i *float* pojawiły się odpowiednio litery *L* oraz *f*. Więcej przykładów takich literałów możemy znaleźć w dokumentacji na stronie: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
 
 ## Słowo var
 
