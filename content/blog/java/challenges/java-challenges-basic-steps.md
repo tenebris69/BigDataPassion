@@ -222,7 +222,7 @@ days = 10; // tutaj będzie błąd!
 
 Na zmiennych możemy wykonywać różne operacje, np. arytmetyczne. Robimy to za pomocą operatorów.
 
-Podstawowymi operatorami są znaki "+", "-", "*" oraz "/" oznaczające operację odpowiednio dodawania, odejmowania, mnożenia oraz dzielenia. Także znak "=" jest tak zwanym operatorem przypisania. Poniżej przykład użycia tych operatorów:
+Podstawowymi operatorami są znaki "+", "-", "*", "/" oraz "%" oznaczające operację odpowiednio dodawania, odejmowania, mnożenia, dzielenia oraz modulo (reszta z dzielenia). Także znak "=" jest tak zwanym operatorem przypisania. Poniżej przykład użycia tych operatorów:
 ~~~java
 package pl.kodolamacz;
 
@@ -243,6 +243,9 @@ public class MyFirstJavaApplication {
         System.out.println(result);
 
         result = x / y;
+        System.out.println(result);
+        
+        result = x % y;
         System.out.println(result);
     }
 
