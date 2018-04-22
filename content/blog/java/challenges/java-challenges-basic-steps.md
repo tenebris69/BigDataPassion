@@ -16,6 +16,7 @@ W poprzednim wyzwaniu przygotowaliśmy sobie środowisko do pracy i stworzyliśm
 
 Przed nami takie rzeczy jak:
 
+* Komentarze
 * Zmienne i stałe
 * Typy danych
 * Operatory
@@ -29,7 +30,7 @@ Zaczynamy!
 
 # Komentarze
 
-Zaczniemy od  zagadnienia dość prostego, ale przydatnego na kolejnych etapach nauki, mianowicie komentarzy. Komentarz to tak naprawdę dowolny kawałek naszego kodu, który nie zostanie uwzględniony w programie wykonywalnym, czyli zostanie pominięty przez kompilator języka Java. Komentarze mogą służyć do zostawienia krótkiej informacji dla innych programistów lub czasami "wyłączenia" kawałka kodu, w trakcie pisania i testowania naszego programu.
+Zaczniemy od  zagadnienia dość prostego, ale przydatnego na kolejnych etapach nauki, mianowicie komentarzy. Komentarz to tak naprawdę dowolny kawałek naszego kodu, który nie zostanie uwzględniony w programie. Komentarze mogą służyć do zostawienia krótkiej informacji dla innych programistów lub czasami "wyłączenia" kawałka kodu, w trakcie pisania i testowania naszego programu.
 
 Wyróżniamy trzy rodzaje komentarzy:
 
