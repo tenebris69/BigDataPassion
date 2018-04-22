@@ -157,11 +157,6 @@ String text = "To jest dowolny tekst";
 var otherText = "To jest inny tekst";
 ~~~
 
-Teksty można ze sobą sklejać:
-~~~java
-var fullText = text + " " + otherText;
-~~~
-
 ## Deklaracja
 
 Zmienne w języku Java trzeba *deklarować*, czyli podać typ oraz nazwę zmiennej, np:
@@ -416,6 +411,23 @@ public class MyFirstJavaApplication {
 
 }
 ~~~
+
+Należy pamiętać, że operatory równości działają dla typów prostych. Dla typów złożonych, o których powiemy sobie w kolejnym wyzwaniu, mają zupełnie inne zastosowanie niż "porównanie wartości". Jest to bardzo ważne, by o tym pamiętać. Dla przykładu takim typem złożonym jest poznany wcześniej *String* czyli łańcuch znaków. Jeśli chcemy porównać dwa łańcuchy, musimy użyć funkcji **equals**. Poniżej przykład porównania dwóch napisów:
+~~~java
+package pl.kodolamacz;
+
+public class MyFirstJavaApplication {
+
+    public static void main(String[] args) {
+        String text = "To jest dowolny tekst";
+        var otherText = "To jest inny tekst";
+
+        System.out.println(text.equals(otherText)); // Zwróci false, gdyż obydwa napisy są różne
+    }
+
+}
+~~~
+
 Operatory te są używane przede wszystkim w instrukcjach sterujących (patrz dalej).
 
 Więcej operatorów możemy znaleźć pod adresem: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html. Zamieszczona tam tabela nie tylko pokazuje wszystkie dostępne operatory w języku Java, ale także odzwierciedla kolejność wykonywania operacji gdy w jednej linijce kodu użyjemy kilku operatorów, podobnie jak w szkole podstawowej na lekcjach matematyki słuchaliśmy o kolejności wykonywania działań matematycznych. Tak samo jak na matematyce, w Javie także można się wspomagać nawiasami, gdy domyślna kolejność nam nie odpowiada.
