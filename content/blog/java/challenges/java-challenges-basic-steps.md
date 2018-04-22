@@ -126,6 +126,8 @@ Więcej o "zwyczajach" stosowanych w języku Java, czyli tak zwanych *konwencjac
 
 
 
+
+
 # Typy danych
 
 Java jest językiem o **ścisłej kontroli typów** (https://pl.wikipedia.org/wiki/Typowanie_statyczne). Oznacza to, że każda zmienna ma z góry określony typ, czyli informację o tym co można do takiej zmiennej zapisać. Typy dzielimy na proste (ang. primitive) oraz złożone, czyli obiekty o których powiemy sobie więcej w kolejnych wyzwaniach.
@@ -144,6 +146,21 @@ Do typów prostych zaliczamy:
 Brzmi to dość skomplikowanie, ale wcale tak nie jest. Pierwsze cztery typy przechowują liczby, im większa liczba, tym "bardziej pojemny" typ musimy użyć, co oczywiście skutkuje zużyciem większego miejsca w pamięci komputera. Kolejne dwa typy, czyli *float* i *double* przechowują liczby niecałkowite, które nazywamy w informatyce zmiennoprzecinkowymi, im "więcej miejsc po przecinku", tym musimy użyć typu o większej precyzji, czyli *double* zamiast *float*. Typ boolean przechowuje dwa rodzaje wartości, *true* lub *false* i zostanie pokazany w rozdziale z warunkami. Ostatni typ służy do przechowywania znaków, czyli np. liter lub cyfr.
 
 Więcej informacji o typach możemy znaleźć pod adresem: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+
+## Łańcuchy znaków
+
+W Javie nie wbudowanego typu prostego dla łańcucha znaków, czyli jakiegoś napisu. W zamian mamy klasę **String** pozwalającą nam na przypisanie napisów. O łańcuchach powiemy sobie więcej w innym wyzwaniu, gdzie skupimy się na obsłudze dat i napisów w Javie.
+
+Poniżej przykład stworzenia dowolnego łańcucha:
+~~~java
+String text = "To jest dowolny tekst";
+var otherText = "To jest inny tekst";
+~~~
+
+Teksty można ze sobą sklejać:
+~~~java
+var fullText = text + " " + otherText;
+~~~
 
 ## Deklaracja
 
@@ -602,6 +619,8 @@ Pętla **for** ma jeszcze drugą wersję, tak zwany **foreach**, ale do tego prz
 
 
 
+
+
 # Wyzwanie
 
 Nasze drugie wyzwanie będzie bardziej wymagające od poprzedniego. Chcemy byście napisali uproszczoną wersję kalkulatora! Uproszczoną dlatego, że nie będziemy mieć okienka z przyciskami, liczby jak i polecenia będziemy podawać w terminalu, np. tak:
@@ -613,6 +632,8 @@ Proszę podaj w oddzielnych linijkach jakąś liczbę, operację matematyczną +
 Twój wynik to: 15
 Chcesz wykonać kolejne działanie? Wpisz literę t lub n.
 ~~~
+
+
 
 
 

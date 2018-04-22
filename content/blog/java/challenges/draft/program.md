@@ -4,7 +4,7 @@ Java wyzwania program: http://kodolamacz.pl/kurs-java/
 Wyzwania programistyczne (poniedziałki):
 * Pierwszy program
 * Podstawowe operacje, zmienne, pętle, funkcje
-* Wstęp do programowania obiektowego + funkcje
+* Wstęp do programowania obiektowego + funkcje, boxing
 * Wstęp do programowania funkcyjnego
 * Tablice i kolekcje
 * Operacje wejście wyjścia, strumienie
@@ -30,3 +30,8 @@ TODO:
 - String + char
 - rzutowanie
 - więcej o pętlach...
+
+
+
+
+
