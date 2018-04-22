@@ -485,7 +485,7 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
-Pętla **for** służy do wykonania jakieś instrukcji określoną liczbę razy. Jej składnia wygląda następująco:
+Pętla **for** służy do wykonania jakiejś instrukcji określoną liczbę razy. Jej składnia wygląda następująco:
 ~~~java
 for ( inicjalizacja zmiennych pomocniczych; warunek ; zmiana wartości zmiennych pomocniczych)
     instrukcja
