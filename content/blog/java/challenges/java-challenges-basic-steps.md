@@ -201,7 +201,7 @@ var money = 50.6;
 
 # Stałe
 
-Wartość przechowywaną w zmiennej w każdej chwili możemy zmienić na inną (stąd też nazwa zmienna). Jednak czasami potrzebujemy powiedzieć kompilatorowi oraz innym programistom, że coś ma być "stałe". Wtedy warto skorzystać ze słówka *final*.
+Wartość przechowywaną w zmiennej w każdej chwili możemy zmienić na inną (stąd też nazwa zmienna). Jednak czasami potrzebujemy powiedzieć kompilatorowi oraz innym programistom, że coś ma być "stałe". Wtedy warto skorzystać ze słówka **final**.
 
 Poniższy kod jest prawidłowy:
 ~~~java
@@ -212,7 +212,7 @@ days = 10;
 zaś poniższy już nie:
 ~~~java
 final int days = 5;
-days = 10;
+days = 10; // tutaj będzie błąd!
 ~~~
 
 

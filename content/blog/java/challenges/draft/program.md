@@ -26,10 +26,9 @@ Tematy dodatkowe (piątki):
 
 
 TODO:
--- komentarze
+
 - String + char
 - rzutowanie
 - %
 - więcej o pętlach...
 - var
-- poprawić typy danych
