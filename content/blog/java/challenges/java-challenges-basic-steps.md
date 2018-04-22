@@ -138,8 +138,10 @@ Do typów prostych zaliczamy:
 * long - przechowuje liczby całkowite z zakresu -2<sup>63</sup> do 2<sup>63</sup>-1
 * float - przechowuje liczby zmiennoprzecinkowe 32 bitowe zgodne ze standardem IEEE 754
 * double - przechowuje liczby zmiennoprzecinkowe 64 bitowe zgodne ze standardem IEEE 754
-* boolean - przechowuje wartość logiczną (prawda / fałsz, ang. true / false)
-* char - przechowuje znak Unicode (16-bit, 0-65,535)
+* boolean - przechowuje wartość logiczną (prawda lub fałsz, ang. true or false)
+* char - przechowuje znaki (dokładnie znaki Unicode, 16-bit, 0-65,535)
+
+Brzmi to dość skomplikowanie, ale wcale tak nie jest. Pierwsze cztery typy przechowują liczby, im większa liczba, tym "bardziej pojemny" typ musimy użyć, co oczywiście skutkuje zużyciem większego miejsca w pamięci komputera. Kolejne dwa typy, czyli *float* i *double* przechowują liczby niecałkowite, które nazywamy w informatyce zmiennoprzecinkowymi, im "więcej miejsc po przecinku", tym musimy użyć typu o większej precyzji, czyli *double* zamiast *float*. Typ boolean przechowuje dwa rodzaje wartości, *true* lub *false* i zostanie pokazany w rozdziale z warunkami. Ostatni typ służy do przechowywania znaków, czyli np. liter lub cyfr.
 
 Więcej informacji o typach możemy znaleźć pod adresem: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
 
