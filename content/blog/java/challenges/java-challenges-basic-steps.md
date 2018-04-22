@@ -305,7 +305,7 @@ public class MyFirstJavaApplication {
 }
 ~~~
 
-Ostatnimi podstawowymi i często używanymi operatorami są operator równości "==", operator nierówności "!=" i cztery operatory większości ">", "<", ">=", "<=", pozwalające sprawdzić czy wartości dwóch zmiennych są równe czy nie, oraz która wartość jest większa. Operatory te zwracają prawdę (true) lub fałsz (false) czyli zmienną typu boolean. Poniżej przykład użycia tych operatorów:
+Ostatnimi podstawowymi i często używanymi operatorami są operator równości "==", operator nierówności "!=" i cztery operatory większości ">", "<", ">=", "<=", pozwalające sprawdzić czy wartości dwóch zmiennych są równe, czy nie oraz która wartość jest większa. Operatory te zwracają prawdę (true) lub fałsz (false) czyli zmienną typu boolean. Poniżej przykład użycia tych operatorów:
 
 ~~~java
 package pl.kodolamacz;
