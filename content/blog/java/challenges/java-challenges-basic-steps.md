@@ -459,7 +459,7 @@ public class MyFirstJavaApplication {
 ~~~
 Jeśli zmienna *number* już za pierwszym razem zostanie podana prawidłowa, nasza pętla nigdy się nie wykona, gdyż najpierw jest sprawdzany warunek.
 
-Pętla **do-while** działa bardzo podobnie do **while*, jednak w tym przypadku najpierw wykonujemy blok kodu a dopiero potem sprawdzamy warunek. Nasz program z użyciem pętli **do-while** będzie wyglądać tak:
+Pętla **do-while** działa bardzo podobnie do **while*, jednak w tym przypadku najpierw wykonujemy blok kodu, a dopiero potem sprawdzamy warunek. Nasz program z użyciem pętli **do-while** będzie wyglądać tak:
 ~~~java
 package pl.kodolamacz;
 
