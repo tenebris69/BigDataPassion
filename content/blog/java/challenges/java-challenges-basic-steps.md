@@ -136,18 +136,17 @@ Do typów prostych zaliczamy:
 * boolean - przechowuje wartość logiczną (prawda lub fałsz, ang. true or false)
 * char - przechowuje znaki (dokładnie znaki Unicode, 16-bit, 0-65,535)
 
-Brzmi to dość skomplikowanie, ale wcale tak nie jest. Pierwsze cztery typy przechowują liczby, im większa liczba, tym "bardziej pojemny" typ musimy użyć, co oczywiście skutkuje zużyciem większego miejsca w pamięci komputera. Kolejne dwa typy, czyli *float* i *double* przechowują liczby niecałkowite, które nazywamy w informatyce zmiennoprzecinkowymi, im "więcej miejsc po przecinku", tym musimy użyć typu o większej precyzji, czyli *double* zamiast *float*. Typ boolean przechowuje dwa rodzaje wartości, *true* lub *false* i zostanie pokazany w rozdziale z warunkami. Ostatni typ służy do przechowywania znaków, czyli np. liter lub cyfr.
+Brzmi to dość skomplikowanie, ale wcale tak nie jest. Pierwsze cztery typy przechowują liczby - im większa liczba, tym "bardziej pojemny" typ musimy użyć, co oczywiście skutkuje zużyciem większego miejsca w pamięci komputera. Kolejne dwa typy, czyli *float* i *double* przechowują liczby niecałkowite, które nazywamy w informatyce zmiennoprzecinkowymi - im "więcej miejsc po przecinku", tym typu o większej precyzji musimy użyć,  czyli *double* zamiast *float*. Typ boolean przechowuje dwa rodzaje wartości, *true* lub *false* i zostanie pokazany w rozdziale z warunkami. Ostatni typ służy do przechowywania pojedynczych znaków, czyli np. liter lub cyfr.
 
 Więcej informacji o typach możemy znaleźć pod adresem: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
 
 ## Łańcuchy znaków
 
-W Javie nie wbudowanego typu prostego dla łańcucha znaków, czyli jakiegoś napisu. W zamian mamy klasę **String** pozwalającą nam na przypisanie napisów. O łańcuchach powiemy sobie więcej w innym wyzwaniu, gdzie skupimy się na obsłudze dat i napisów w Javie.
+W Javie nie ma wbudowanego typu prostego dla łańcucha znaków, czyli jakiegoś napisu. W zamian mamy klasę **String** pozwalającą nam na przypisanie napisów. O łańcuchach powiemy sobie więcej w innym wyzwaniu, gdzie skupimy się na obsłudze dat i napisów w Javie.
 
 Poniżej przykład stworzenia dowolnego łańcucha:
 ~~~java
 String text = "To jest dowolny tekst";
-var otherText = "To jest inny tekst";
 ~~~
 
 ## Deklaracja
@@ -415,7 +414,7 @@ public class MyFirstJavaApplication {
         String text = "To jest dowolny tekst";
         var otherText = "To jest inny tekst";
 
-        System.out.println(text.equals(otherText)); // Zwróci false, gdyż obydwa napisy są różne
+        System.out.println(text.equals(otherText)); // Zwróci false, gdyż napisy są różne
     }
 
 }
