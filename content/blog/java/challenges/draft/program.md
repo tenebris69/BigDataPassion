@@ -10,6 +10,7 @@ Wyzwania programistyczne (poniedziałki):
 * Operacje wejście wyjścia, strumienie
 * Operacje matematyczne, na tekstach  i na datach
 * obsługa błędów
+* testy
 
 Tematy dodatkowe (piątki):
 * Jaki język wybrać, historia i świat Java

@@ -23,6 +23,8 @@ Informatyka to dyscyplina naukowa wchodząca zarówno w skład obszaru nauk ści
 
 Za pierwszego programistę (a właściwie programistkę) w historii uważa się [Adę Lovelace](https://pl.wikipedia.org/wiki/Ada_Lovelace) która w październiku 1842 roku opublikowała algorytm przeznaczony do wykonania na maszynie Charlesa Babbage. Niektórzy jednak za pierwszego programistę uważają znacznie starszego [Joseph'a Marie Jacquard'a](https://pl.wikipedia.org/wiki/Joseph_Marie_Jacquard) który stworzył maszynę Jacquarda którą można było sterować za pomocą [kart perforowanych](https://pl.wikipedia.org/wiki/Karta_dziurkowana). Początkowo przez dłuższy czas, właśnie na podobnych kartach programowało się komputery. Osobą która jako pierwsza uruchomiła program na komputerze w 1941 roku był [Konrad Zuse](https://pl.wikipedia.org/wiki/Konrad_Zuse).
 
+Za pierwszy język programowania uważa się język **Fortran**
+
 # Kim są programiści?
 
 O programistach mówi się żartobliwie jako o osobach "przetwarzających filiżanki kawy na kod". W przypadku języka Java, którego nazwa pochodzi od ziaren kawy z wyspy Java, nabiera to jeszcze większego sensu.
@@ -46,6 +48,8 @@ Nie da się programować bez poznania odpowiednich narzędzi, począwszy od [**I
 Programując nigdy nie piszemy wszystkiego sami, bardzo często korzystamy z kodu napisanego przez innych programistów, dlatego w naszej pracy będziemy używać wielu bibliotek i frameworków do tego służących. Do najpopularniejszych bibliotek i frameworków stosowanych przez programistów Java należą np. **Spring** i **Hibernate**.
 
 Jeśli chcemy programować aplikacje internetowe będziemy także musieli poznać narzędzia takie jak serwery aplikacyjne (np. Tomcat, JBoss) czy biblioteki do tworzenia stron jak Angular, React czy Vue.jd, jeśli aplikacje mobilne środowisko Androida, zaś do pisania aplikacji okienkowych biblioteki takie jak Swing, SWT lub JavaFX.
+
+Współpracując z innymi programistami nad wspólnym projektem, nie sposób obejść się bez narzędzia które pozwoli nam wymieniać się kodem oraz przechowywać jego historię zmian. Takie narzędzie nazywamy [**systemami kontroli wersji**](https://pl.wikipedia.org/wiki/System_kontroli_wersji). Najpopularniejszym systemem kontroli wersji jest **Git** z którego możemy bezpłatnie skorzystać na popularnym portalu [*GitHub*](https://try.github.io).
 
 # Podsumowanie
 
