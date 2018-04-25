@@ -20,6 +20,7 @@ Tematy dodatkowe (piątki):
 * Proces tworzenia oprogramowania, ci, CD, agile, itd itp
 * Git i inne repozytoria
 * Maven
+* Jak działa Java od środka?
 * Co dalej po wyzwaniach?
 
 
