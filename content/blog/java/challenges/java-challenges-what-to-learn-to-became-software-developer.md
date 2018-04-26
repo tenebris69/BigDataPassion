@@ -54,7 +54,7 @@ Jeśli chcemy programować aplikacje internetowe, będziemy także musieli pozna
 
 Współpracując z innymi programistami nad wspólnym projektem, nie sposób obejść się bez narzędzia, które pozwoli nam wymieniać się kodem oraz przechowywać jego historię zmian. Takie narzędzie nazywamy [**systemami kontroli wersji**](https://pl.wikipedia.org/wiki/System_kontroli_wersji). Najpopularniejszym systemem kontroli wersji jest **Git**, z którego możemy bezpłatnie skorzystać na popularnym portalu [*GitHub*](https://try.github.io).
 
-
+Pracując w zespole, będziemy też musieli poznać różne techniki prowadzenia projektów pozwalające nam organizować naszę pracę, dlatego nie obce powinny być nam takie zwroty jak [**Agile**](https://pl.wikipedia.org/wiki/Programowanie_zwinne), **Scrum**, **Kanban** i inne.
 
 # Podsumowanie
 
