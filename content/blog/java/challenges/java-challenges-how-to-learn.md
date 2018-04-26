@@ -23,7 +23,7 @@ Informatyka to dyscyplina naukowa wchodząca zarówno w skład obszaru nauk ści
 
 Za pierwszego programistę (a właściwie programistkę) w historii uważa się [Adę Lovelace](https://pl.wikipedia.org/wiki/Ada_Lovelace) która w październiku 1842 roku opublikowała algorytm przeznaczony do wykonania na maszynie Charlesa Babbage. Niektórzy jednak za pierwszego programistę uważają znacznie starszego [Joseph'a Marie Jacquard'a](https://pl.wikipedia.org/wiki/Joseph_Marie_Jacquard) który stworzył maszynę Jacquarda którą można było sterować za pomocą [kart perforowanych](https://pl.wikipedia.org/wiki/Karta_dziurkowana). Początkowo przez dłuższy czas, właśnie na podobnych kartach programowało się komputery. Osobą która jako pierwsza uruchomiła program na komputerze w 1941 roku był [Konrad Zuse](https://pl.wikipedia.org/wiki/Konrad_Zuse).
 
-Za pierwszy język programowania uważa się język **Fortran**
+Za pierwszy wysokopoziomowy język programowania uważany jest język **Fortran** stworzony w roku 1954. Pięć lat później narodził się język **COBOL** który powstał dla systemów bankowych. W dwudziestym wieku praktycznie każda transakcja bankowa była przetwarzana przez systemy napisane w tym właśnie języku i jest on używany do dzisiaj. W 1964 roku powstał kolejny znany język programowania zwany **BASIC**. W 1969 roku narodził się jeden z najpopularniejszych języków programowania, czyli język **C** który stopniowo ewaluował w język **C++** (1983 rok). W 1994 roku w Holandii wydano pierwszą wersję języka **Python** który zyskał nazwę od Latającego Cyrku Monty Pythona. W 1993 roku, w Japonii, narodził się język Ruby, który miał czerpać to co najlepsze z języków takich jak Python, Perl i Smalltalk. W 1995 roku narodził się język **PHP** (Personal Home Page) oraz język **Java**. Rok później, została wydana pierwsza wersja języka JavaScript, będącego najpopularniejszym językiem programowania używanym przy tworzeniu stron internetowych. Ostatni z najpopularniejszych języków programowania narodził się w 2000 roku, kiedy to firma Microsoft opracowała język **C#**. Oczywiście języków programowania jest znacznie więcej, tutaj tylko historia kilku najpopularniejszych. Jak widać **Java** jest jednym z młodszych z obecnie używanych języków programowania.
 
 # Kim są programiści?
 
@@ -53,4 +53,4 @@ Współpracując z innymi programistami nad wspólnym projektem, nie sposób obe
 
 # Podsumowanie
 
-Jak widać, zostanie programistą wymaga naprawdę sporo pracy
+Jak widać, zostanie programistą wymaga naprawdę sporo pracy. Jeśli marzy się Wam kariera w świecie IT potraktujcie powyższy spis jako listę rzeczy których musicie się nauczyć by osiągnąć sukces.
