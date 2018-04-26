@@ -50,7 +50,7 @@ Nie da się programować bez poznania odpowiednich narzędzi, począwszy od [**I
 
 Programując nigdy nie piszemy wszystkiego sami, bardzo często korzystamy z kodu napisanego przez innych programistów, dlatego w naszej pracy będziemy używać wielu bibliotek i frameworków do tego służących. Do najpopularniejszych bibliotek i frameworków stosowanych przez programistów Java należą np. **Spring** i **Hibernate**.
 
-Jeśli chcemy programować aplikacje internetowe, będziemy także musieli poznać narzędzia takie jak serwery aplikacyjne (np. Tomcat, JBoss), biblioteki **JavaScript** do tworzenia stron jak Angular, React czy Vue.jd, język HTML oraz CSS. Jeśli znowu chcemy tworzyć aplikacje mobilne musimy poznać np. środowisko Androida, zaś do pisania aplikacji okienkowych biblioteki takie jak Swing, SWT lub JavaFX.
+Jeśli chcemy programować aplikacje internetowe, będziemy także musieli poznać narzędzia takie jak serwery aplikacyjne (np. Tomcat, JBoss), biblioteki **JavaScript** do tworzenia stron internetowych jak Angular, React czy Vue.jd, język HTML oraz CSS. Jeśli znowu chcemy tworzyć aplikacje mobilne musimy poznać np. środowisko Androida, zaś do pisania aplikacji okienkowych biblioteki takie jak Swing, SWT lub JavaFX.
 
 Współpracując z innymi programistami nad wspólnym projektem, nie sposób obejść się bez narzędzia, które pozwoli nam wymieniać się kodem oraz przechowywać jego historię zmian. Takie narzędzie nazywamy [**systemami kontroli wersji**](https://pl.wikipedia.org/wiki/System_kontroli_wersji). Najpopularniejszym systemem kontroli wersji jest **Git**, z którego możemy bezpłatnie skorzystać na popularnym portalu [*GitHub*](https://try.github.io).
 
