@@ -46,7 +46,7 @@ Znajomość jednego czy nawet wielu języków programowania na poziomie wręcz m
 
 Kolejnym niezwykle ważnym zagadnieniem podczas programowania jest umiejętność **testowania** naszego kodu. Musimy tutaj poznać wiele różnych narzędzi i bibliotek jak choćby JUnit, Mockito, AssertJ oraz czym są testy jednostkowe, jak pisać dobre testy jednostkowe, czym jest Test Driven Development oraz przyswoić inne pojęcia z tego zakresu.
 
-Nie da się programować bez poznania odpowiednich narzędzi, począwszy od [**IDE**](https://www.youtube.com/watch?v=eq3KiAH4IBI)(Zintegrowane środowisko programistyczne) przechodząc przez bazy danych, repozytoria kodu, narzędzia do budowania jak np. **Maven**, środowiska **Continuous Integration i Continuous Delivery**.
+Nie da się programować bez poznania odpowiednich narzędzi, począwszy od [**IDE**](https://www.youtube.com/watch?v=eq3KiAH4IBI) (Zintegrowane środowisko programistyczne) przechodząc przez bazy danych, repozytoria kodu, narzędzia do budowania jak np. **Maven**, środowiska **Continuous Integration i Continuous Delivery**.
 
 Programując nigdy nie piszemy wszystkiego sami, bardzo często korzystamy z kodu napisanego przez innych programistów, dlatego w naszej pracy będziemy używać wielu bibliotek i frameworków do tego służących. Do najpopularniejszych bibliotek i frameworków stosowanych przez programistów Java należą np. **Spring** i **Hibernate**.
 
