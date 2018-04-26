@@ -16,9 +16,9 @@ draft = true
 
 
 
-# Ggdzie uczyć się programowania w internecie?
+# Gdzie uczyć się programowania w internecie?
 
-Podstaw programowania można uczyć się samodzielnie wykorzystując intenretowe kursy lub książki a także
+Podstaw programowania można uczyć się samodzielnie wykorzystując internetowe kursy lub książki a także:
 
 * https://www.pluralsight.com/
 * https://www.udemy.com/
