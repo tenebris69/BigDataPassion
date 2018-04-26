@@ -7,7 +7,7 @@ featured = "java-kodolamacz.jpg"
 featuredalt = ""
 featuredpath = "/img/java"
 linktitle = ""
-title = "Jak zostać programistą?"
+title = "Czego się uczyć by zostać programistą?"
 type = "post"
 
 +++
